@@ -1,17 +1,18 @@
 class_name RescueStation
 extends Node2D
 
-@export var house1 : House
-@export var house2 : House
-@export var house3 : House
-@export var house4 : House
-@export var house5 : House
-
+#amount of house can be added as needed
 @export var houses : Array[House]
+@export var cost : int
+@export var id : int
 var built : bool = false
+
 
 func _ready() -> void:
 	$Sprite2D.visible = false
+	$Button.text = str(id) + " : " +str(cost)
+	$TextEdit.visible = false
+	$TextEdit.editable =false
 
 func _on_button_button_up() -> void:
 	if(!built) :
@@ -24,6 +25,7 @@ func _on_button_button_up() -> void:
 
 func change_state()->void :
 	$Sprite2D.visible = built
+	$TextEdit.visible = built
 	cover_houses(built)
 
 func cover_houses(value : bool)->void :
