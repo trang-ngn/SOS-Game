@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqhqe56u2p50i"
-path="res://.godot/imported/Tileset.png-a6016d9091d7a0aead82734fd0c733eb.ctex"
+uid="uid://csbr4btkd4ny7"
+path="res://.godot/imported/Black House.png-704eee48ae6b188e94401f11d3f1daea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tileset/Tileset.png"
-dest_files=["res://.godot/imported/Tileset.png-a6016d9091d7a0aead82734fd0c733eb.ctex"]
+source_file="res://Assets/Houses/Black House.png"
+dest_files=["res://.godot/imported/Black House.png-704eee48ae6b188e94401f11d3f1daea.ctex"]
 
 [params]
 
