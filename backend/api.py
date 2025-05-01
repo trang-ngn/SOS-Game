@@ -1,4 +1,6 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, HTTPException
+
+from pydantic import ValidationError
 
 from backend.rescue_stations import RescueStationSolution
 from .rescue_stations import RescueStationInstance, RescueStationSolver
@@ -21,19 +23,25 @@ async def solve_request(request: Request) -> RescueStationSolution:
 
     The response will be a RescueStationSolution object.
     """
-    # Extracting user data from the request body
-    user_data = await request.json()
+    try:
+        # Extracting user data from the request body
+        user_data = await request.json()
 
-    # create instance with values from user_data
-    instance = RescueStationInstance(
-        n=user_data["n"],
-        costs=user_data["costs"],
-        coverage=user_data["coverage"],
-    )
+        # create instance with values from user_data
+        instance = RescueStationInstance(
+            n=user_data["n"],
+            costs=user_data["costs"],
+            coverage=user_data["coverage"],
+        )
 
-    # create a solver and solve the problem
-    solver = RescueStationSolver(instance, verbose=False)
-    result = solver.solve()
+        # create a solver and solve the problem
+        solver = RescueStationSolver(instance, verbose=False)
+        result = solver.solve()
+
+    except ValidationError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Server error: {str(e)}")
 
     # return the content (auto converted to json)
     return result
