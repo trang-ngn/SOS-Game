@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://vq3hxgbojsbq"]
+
+[ext_resource type="Texture2D" uid="uid://db0irs6w4evab" path="res://Assets/Background/Background50%.png" id="1_3bxa3"]
+[ext_resource type="Texture2D" uid="uid://c1xuybe8d22do" path="res://Assets/Buttons/Button-Start.png" id="2_5ogh5"]
+[ext_resource type="Script" uid="uid://djwlskhntoyi4" path="res://Scripts/button_start.gd" id="3_lb6bl"]
+[ext_resource type="Texture2D" uid="uid://suvrfljtlo33" path="res://Assets/Buttons/Button-Sandbox.png" id="4_rk01k"]
+[ext_resource type="Script" uid="uid://dhspi27r0u7kl" path="res://Scripts/button_sandbox.gd" id="5_o3wvq"]
+[ext_resource type="Texture2D" uid="uid://osm55giheu7s" path="res://Assets/Buttons/Button-help.png" id="6_pg4io"]
+[ext_resource type="Texture2D" uid="uid://cgxd2tb7s5oqi" path="res://Assets/Buttons/Button-Info.png" id="7_iceld"]
+
+[node name="main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(957.123, 540.382)
+scale = Vector2(0.999293, 0.999293)
+texture = ExtResource("1_3bxa3")
+
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="Button_Start" type="TextureButton" parent="Buttons"]
+offset_left = 660.0
+offset_top = 372.0
+offset_right = 1268.0
+offset_bottom = 524.0
+texture_normal = ExtResource("2_5ogh5")
+script = ExtResource("3_lb6bl")
+
+[node name="Button_Sandbox" type="TextureButton" parent="Buttons"]
+offset_left = 660.0
+offset_top = 562.0
+offset_right = 1268.0
+offset_bottom = 714.0
+texture_normal = ExtResource("4_rk01k")
+script = ExtResource("5_o3wvq")
+
+[node name="Button_Help" type="TextureButton" parent="Buttons"]
+offset_left = 100.0
+offset_top = 944.0
+offset_right = 252.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("6_pg4io")
+
+[node name="Button_Info" type="TextureButton" parent="Buttons"]
+offset_left = 1668.0
+offset_top = 944.0
+offset_right = 1820.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("7_iceld")
+
+[connection signal="pressed" from="Buttons/Button_Start" to="Buttons/Button_Start" method="_on_pressed"]
