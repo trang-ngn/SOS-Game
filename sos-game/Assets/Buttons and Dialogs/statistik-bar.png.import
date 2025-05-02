@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://suvrfljtlo33"
-path="res://.godot/imported/Button-Sandbox.png-62508c3e8d29d14a2dcee19ce0e2b56d.ctex"
+uid="uid://bsqpnks0pscyj"
+path="res://.godot/imported/statistik-bar.png-3353d067e8ea24827292570c5a846192.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons/Button-Sandbox.png"
-dest_files=["res://.godot/imported/Button-Sandbox.png-62508c3e8d29d14a2dcee19ce0e2b56d.ctex"]
+source_file="res://Assets/Buttons and Dialogs/statistik-bar.png"
+dest_files=["res://.godot/imported/statistik-bar.png-3353d067e8ea24827292570c5a846192.ctex"]
 
 [params]
 

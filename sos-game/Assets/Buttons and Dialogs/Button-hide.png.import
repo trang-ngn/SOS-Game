@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://osm55giheu7s"
-path="res://.godot/imported/Button-help.png-6b5fc2a31bd9e5be3cb5be00f699d86c.ctex"
+uid="uid://dnqh3hdmc4gm3"
+path="res://.godot/imported/Button-hide.png-53858e4fa80fd9e12e66891688dc7488.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons/Button-help.png"
-dest_files=["res://.godot/imported/Button-help.png-6b5fc2a31bd9e5be3cb5be00f699d86c.ctex"]
+source_file="res://Assets/Buttons and Dialogs/Button-hide.png"
+dest_files=["res://.godot/imported/Button-hide.png-53858e4fa80fd9e12e66891688dc7488.ctex"]
 
 [params]
 
