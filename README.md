@@ -7,12 +7,14 @@ TODO
 
 ### 1. Install dependencies for server
 ```bash
-pip install -r requirements.txt
+> cd backend/
+> pip install -r requirements.txt
 ```
 
 ### 2. Start the development server
 ```bash
-fastapi dev
+> cd backend/
+> fastapi dev
 ```
 
 - The server is running at: [http://127.0.0.1:8000](http://127.0.0.1:8000)
