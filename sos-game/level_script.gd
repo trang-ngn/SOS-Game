@@ -1,7 +1,7 @@
 class_name Level
 extends Node2D
 
-var solution : Array[bool] = [true, true, false, true, true, true]
+var solution : Array[bool] = [false, false, true, true, true, true, false]
 var picked : Array[bool] = []
 
 #make sure the houses and station are in order
