@@ -3,18 +3,35 @@
 ## Introduction
 TODO
 
-## Setup
+## Setup Git with Godot
+### Clone the repo
+- If you already cloned, try `git pull`, if there are some errors, install vpn and try again.
+- Open terminal:
+```sh
+git clone git@git.rz.tu-bs.de:isf/sep/sep2025/ibr_alg_g1/code.git
+```
+
+## Setup Server
+
+Make sure that you installed Python (if not, go to python.org and install it). Check by:
+```sh
+python --version 
+pip --version
+```
 
 ### 1. Install dependencies for server
-```bash
-> cd backend/
-> pip install -r requirements.txt
+```sh
+cd backend/
+pip install -r requirements.txt
 ```
 
 ### 2. Start the development server
-```bash
-> cd backend/
-> fastapi dev
+```sh
+cd backend/
+PYTHONPATH=. uvicorn backend.api:app --reload
+
+# or on Linus/MacOs
+fastapi dev
 ```
 
 - The server is running at: [http://127.0.0.1:8000](http://127.0.0.1:8000)
