@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://crtwsuj8qeyxc"]
 
-[ext_resource type="PackedScene" uid="uid://cbl24x0qb50np" path="res://Scenes/level_template.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dtjpdd5jwliip" path="res://Scenes/level_example.tscn" id="1_ig7tw"]
 
 [node name="main" type="Node2D"]
 
-[node name="LevelTemplate" parent="." node_paths=PackedStringArray("stations", "houses") instance=ExtResource("1_ig7tw")]
-stations = [NodePath("Stations/S0"), null]
-houses = [NodePath("Houses/H0"), null, null]
+[node name="LevelTemplate" parent="." instance=ExtResource("1_ig7tw")]

@@ -35,6 +35,7 @@ func cover_houses(value : bool)->void :
 		
 		
 
+
 func is_built()->bool :
 	return built
 	

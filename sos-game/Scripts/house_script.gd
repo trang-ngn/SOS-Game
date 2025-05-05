@@ -2,6 +2,7 @@ class_name House
 extends StaticBody2D
 
 var num_stat_cover : int = 0 
+var covered : bool = false 
 @export var id : int 
 
 func is_covered() -> bool :
@@ -22,3 +23,4 @@ func set_outline() -> void :
 		$Sprite2D.set_instance_shader_parameter("active",false)
 	else :
 		$Sprite2D.set_instance_shader_parameter("active",true)
+	
