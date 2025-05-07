@@ -1,14 +1,14 @@
 [gd_scene load_steps=11 format=4 uid="uid://ci3ngdisnbdsy"]
 
-[ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://level_script.gd" id="1_mpqmn"]
+[ext_resource type="Script" path="res://level_script.gd" id="1_mpqmn"]
 [ext_resource type="Texture2D" uid="uid://bqhqe56u2p50i" path="res://Assets/Tileset/Tileset.png" id="2_b510r"]
-[ext_resource type="Script" uid="uid://bodp6ey6ji3cc" path="res://Scripts/house_script.gd" id="3_2a2fd"]
+[ext_resource type="Script" uid="uid://bodp6ey6ji3cc" path="res://scripts/house_script.gd" id="3_2a2fd"]
 [ext_resource type="Texture2D" uid="uid://csbr4btkd4ny7" path="res://Assets/Houses/Black House.png" id="4_xv378"]
-[ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/station_script.gd" id="5_kaqqc"]
+[ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://scripts/station_script.gd" id="5_kaqqc"]
 [ext_resource type="Texture2D" uid="uid://btniax21u00s0" path="res://Assets/Rescue Station/rescue-default.png" id="6_ojxi3"]
-[ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="7_odk1q"]
+[ext_resource type="Script" path="res://Scripts/camera_movement.gd" id="7_odk1q"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tf3fl"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mpqmn"]
 texture = ExtResource("2_b510r")
 0:0/0 = 0
 1:0/0 = 0
@@ -79,15 +79,15 @@ texture = ExtResource("2_b510r")
 7:16/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_hbq6r"]
-sources/0 = SubResource("TileSetAtlasSource_tf3fl")
+sources/0 = SubResource("TileSetAtlasSource_mpqmn")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g30sg"]
 size = Vector2(67, 68)
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("stations", "houses")]
 script = ExtResource("1_mpqmn")
-stations = [NodePath("Stations/S0"), NodePath("Stations/S1"), NodePath("Stations/S2"), NodePath("Stations/S3"), NodePath("Stations/S4"), NodePath("Stations/S5")]
-houses = [NodePath("Houses/H0"), NodePath("Houses/H1"), NodePath("Houses/H2"), NodePath("Houses/H3"), NodePath("Houses/H4"), NodePath("Houses/H5"), NodePath("Houses/H6"), NodePath("Houses/H7"), NodePath("Houses/H8"), NodePath("Houses/H9"), NodePath("Houses/H10"), NodePath("Houses/H11"), NodePath("Houses/H12")]
+stations = [null, null, null, null, null, null]
+houses = [null, null, null, null, null, null, null, null, null, null, null, null, null]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hbq6r")
@@ -307,10 +307,9 @@ text = "12"
 
 [node name="Stations" type="Node2D" parent="."]
 
-[node name="S0" type="Node2D" parent="Stations" node_paths=PackedStringArray("houses")]
+[node name="S0" type="Node2D" parent="Stations"]
 position = Vector2(302, 155)
 script = ExtResource("5_kaqqc")
-houses = [NodePath("../../Houses/H0"), NodePath("../../Houses/H1"), NodePath("../../Houses/H2")]
 cost = 20
 
 [node name="Button" type="Button" parent="Stations/S0"]
@@ -336,10 +335,9 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "00"
 
-[node name="S1" type="Node2D" parent="Stations" node_paths=PackedStringArray("houses")]
+[node name="S1" type="Node2D" parent="Stations"]
 position = Vector2(322, 43)
 script = ExtResource("5_kaqqc")
-houses = [NodePath("../../Houses/H11"), NodePath("../../Houses/H2"), NodePath("../../Houses/H7"), NodePath("../../Houses/H8")]
 cost = 25
 id = 1
 
@@ -366,10 +364,9 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "01"
 
-[node name="S2" type="Node2D" parent="Stations" node_paths=PackedStringArray("houses")]
+[node name="S2" type="Node2D" parent="Stations"]
 position = Vector2(-76, 170)
 script = ExtResource("5_kaqqc")
-houses = [NodePath("../../Houses/H10"), NodePath("../../Houses/H9"), NodePath("../../Houses/H3"), NodePath("../../Houses/H4"), NodePath("../../Houses/H5"), NodePath("../../Houses/H6")]
 cost = 50
 id = 2
 
@@ -396,10 +393,9 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "02"
 
-[node name="S3" type="Node2D" parent="Stations" node_paths=PackedStringArray("houses")]
+[node name="S3" type="Node2D" parent="Stations"]
 position = Vector2(-76, 43)
 script = ExtResource("5_kaqqc")
-houses = [NodePath("../../Houses/H3"), NodePath("../../Houses/H9"), NodePath("../../Houses/H10")]
 cost = 15
 id = 3
 
@@ -426,10 +422,9 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "03"
 
-[node name="S4" type="Node2D" parent="Stations" node_paths=PackedStringArray("houses")]
+[node name="S4" type="Node2D" parent="Stations"]
 position = Vector2(71, 283)
 script = ExtResource("5_kaqqc")
-houses = [NodePath("../../Houses/H4"), NodePath("../../Houses/H5"), NodePath("../../Houses/H6")]
 cost = 30
 id = 4
 
@@ -456,10 +451,9 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "04"
 
-[node name="S5" type="Node2D" parent="Stations" node_paths=PackedStringArray("houses")]
+[node name="S5" type="Node2D" parent="Stations"]
 position = Vector2(484, -83)
 script = ExtResource("5_kaqqc")
-houses = [NodePath("../../Houses/H11"), NodePath("../../Houses/H12")]
 cost = 10
 id = 5
 

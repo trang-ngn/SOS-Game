@@ -22,7 +22,6 @@ func _on_button_button_up() -> void:
 	
 	change_state()
 
-
 func change_state()->void :
 	$Sprite2D.visible = built
 	$TextEdit.visible = built
@@ -34,5 +33,3 @@ func cover_houses(value : bool)->void :
 
 func is_built()->bool :
 	return built
-
-	

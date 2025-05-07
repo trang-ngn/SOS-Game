@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://db0irs6w4evab" path="res://Assets/Background/Background50%.png" id="1_3bxa3"]
 [ext_resource type="Texture2D" uid="uid://c1xuybe8d22do" path="res://Assets/Buttons and Dialogs/Button-Start.png" id="2_5ogh5"]
-[ext_resource type="Script" uid="uid://djwlskhntoyi4" path="res://Scripts/button_start.gd" id="3_lb6bl"]
+[ext_resource type="Script" uid="uid://djwlskhntoyi4" path="res://scripts/button_start.gd" id="3_lb6bl"]
 [ext_resource type="Texture2D" uid="uid://suvrfljtlo33" path="res://Assets/Buttons and Dialogs/Button-Sandbox.png" id="4_rk01k"]
-[ext_resource type="Script" uid="uid://dhspi27r0u7kl" path="res://Scripts/button_sandbox.gd" id="5_o3wvq"]
+[ext_resource type="Script" uid="uid://dhspi27r0u7kl" path="res://scripts/button_sandbox.gd" id="5_o3wvq"]
 [ext_resource type="Texture2D" uid="uid://osm55giheu7s" path="res://Assets/Buttons and Dialogs/Button-help.png" id="6_pg4io"]
 [ext_resource type="Texture2D" uid="uid://cgxd2tb7s5oqi" path="res://Assets/Buttons and Dialogs/Button-Info.png" id="7_iceld"]
 
@@ -32,6 +32,7 @@ offset_right = 1268.0
 offset_bottom = 714.0
 texture_normal = ExtResource("4_rk01k")
 script = ExtResource("5_o3wvq")
+metadata/_edit_use_anchors_ = true
 
 [node name="Button_Help" type="TextureButton" parent="Buttons"]
 offset_left = 100.0
@@ -48,3 +49,4 @@ offset_bottom = 1080.0
 texture_normal = ExtResource("7_iceld")
 
 [connection signal="pressed" from="Buttons/Button_Start" to="Buttons/Button_Start" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Button_Sandbox" to="Buttons/Button_Sandbox" method="_on_pressed"]
