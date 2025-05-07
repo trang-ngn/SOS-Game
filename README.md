@@ -27,7 +27,8 @@ pip install -r requirements.txt
 
 ### 2. Start the development server
 ```sh
-cd backend/
+# root of the repo
+cd code/ 
 PYTHONPATH=. uvicorn backend.api:app --reload
 
 # or on Linus/MacOs
@@ -56,4 +57,6 @@ func _ready():
 	...
 ```
 
-<i>Remember that, every time you want to get the solution, you need to start the server!</i>
+<i>Remember that, every time you want to call the solution on Godot (client), you need to start the server!</i>
+
+(It is like if you want to get food from your sleeping mom, you need to awake her first)
