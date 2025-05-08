@@ -110,7 +110,7 @@ git commit -m "feat: add margin to nav items to prevent them from overlapping th
 #### Examples
 
 ```
-<type>: short message
+<type>: short message (with imperative verb)
 
 feat: add asset for roads option
 fix: fix mouse click error
@@ -132,4 +132,3 @@ Must be one of the following:
 - **test**: Adding missing tests or correcting existing tests
 - **build**: Changes that affect the build system or external dependencies (example scopes: npm)
 - **ci**: Changes to our CI configuration files and scripts (examples: Github Actions)
-- **perf** : Performance
