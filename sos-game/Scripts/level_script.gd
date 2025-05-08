@@ -10,7 +10,7 @@ var picked : Array[bool] = []
 
 func houses_covered()->bool : #check if all houses is covered
 	for house in houses :
-		if(!house.covered) :
+		if(!house.is_covered()) :
 			return false
 	
 	return true

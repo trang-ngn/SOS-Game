@@ -23,8 +23,18 @@ func change_state()->void :
 
 func cover_houses(value : bool)->void :
 	for h in houses :
-		h.covered = value
-		h.set_outline(value)
+		if(value == true)  :
+			h.num_stat_cover += 1
+			h.set_outline()
+		elif (value == false && h.num_stat_cover == 0) :
+			h.num_stat_cover = 0
+			h.set_outline()
+		else :
+			h.num_stat_cover -= 1
+			h.set_outline()
+		
+		
+
 
 func is_built()->bool :
 	return built
