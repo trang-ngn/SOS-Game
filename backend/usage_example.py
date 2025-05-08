@@ -17,6 +17,16 @@ instance = RescueStationInstance(
 
 solver = RescueStationSolver(instance=instance, verbose=False)
 solution: RescueStationSolution = solver.solve()
+
 selected_stations: list[bool] = solution.selected
+"""
+@attributes RescueStationSolution
+    instance: RescueStationInstance
+    selected: list[bool]
+    cost: float
+    bound: float
+    is_optimal: bool
+    time: float
+"""
 
 print(solution)
