@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://btniax21u00s0" path="res://Assets/Rescue Station/rescue_default.png" id="7_pv4ap"]
 [ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="8_e7krn"]
 [ext_resource type="Texture2D" uid="uid://ci0vb2amef8yw" path="res://Assets/Buttons and Dialogs/CheckBox-Checked.png" id="9_2a2fd"]
-[ext_resource type="PackedScene" uid="uid://dle83pi206ovy" path="res://Scenes/DialogPanel/result_dialog.tscn" id="10_xv378"]
+[ext_resource type="PackedScene" uid="uid://cdhqm638yme71" path="res://Scenes/DialogPanel/result_dialog.tscn" id="10_xv378"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tf3fl"]
 shader = ExtResource("4_kaqqc")
@@ -561,7 +561,8 @@ texture_normal = ExtResource("9_2a2fd")
 
 [node name="PopupPanel" type="Popup" parent="."]
 transparent_bg = true
-size = Vector2i(850, 500)
+size = Vector2i(1250, 700)
+unresizable = false
 transparent = true
 
 [node name="ResultDialog" parent="PopupPanel" instance=ExtResource("10_xv378")]
