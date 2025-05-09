@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://dtjpdd5jwliip"]
+[gd_scene load_steps=21 format=4 uid="uid://dtjpdd5jwliip"]
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/level_script.gd" id="1_b510r"]
 [ext_resource type="TileSet" uid="uid://cooaxagih3mdw" path="res://Assets/Tileset/tileset_1.0.tres" id="2_b510r"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/station_script.gd" id="6_odk1q"]
 [ext_resource type="Texture2D" uid="uid://btniax21u00s0" path="res://Assets/Rescue Station/rescue_default.png" id="7_pv4ap"]
 [ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="8_e7krn"]
+[ext_resource type="Texture2D" uid="uid://ci0vb2amef8yw" path="res://Assets/Buttons and Dialogs/CheckBox-Checked.png" id="9_2a2fd"]
+[ext_resource type="PackedScene" uid="uid://cdhqm638yme71" path="res://Scenes/DialogPanel/result_dialog.tscn" id="10_xv378"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tf3fl"]
 shader = ExtResource("4_kaqqc")
@@ -92,6 +94,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H1" type="StaticBody2D" parent="Houses"]
 position = Vector2(-265, -150)
 script = ExtResource("3_xv378")
+id = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H1"]
 texture_filter = 1
@@ -114,6 +117,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H2" type="StaticBody2D" parent="Houses"]
 position = Vector2(-52, -13)
 script = ExtResource("3_xv378")
+id = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H2"]
 texture_filter = 1
@@ -136,6 +140,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H3" type="StaticBody2D" parent="Houses"]
 position = Vector2(-493, 115)
 script = ExtResource("3_xv378")
+id = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H3"]
 texture_filter = 1
@@ -158,6 +163,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H4" type="StaticBody2D" parent="Houses"]
 position = Vector2(-248, 91)
 script = ExtResource("3_xv378")
+id = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H4"]
 texture_filter = 1
@@ -180,6 +186,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H5" type="StaticBody2D" parent="Houses"]
 position = Vector2(258, -128)
 script = ExtResource("3_xv378")
+id = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H5"]
 texture_filter = 1
@@ -202,6 +209,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H6" type="StaticBody2D" parent="Houses"]
 position = Vector2(473, -91)
 script = ExtResource("3_xv378")
+id = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H6"]
 texture_filter = 1
@@ -224,6 +232,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H7" type="StaticBody2D" parent="Houses"]
 position = Vector2(126, 95)
 script = ExtResource("3_xv378")
+id = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H7"]
 texture_filter = 1
@@ -246,6 +255,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H8" type="StaticBody2D" parent="Houses"]
 position = Vector2(440, 120)
 script = ExtResource("3_xv378")
+id = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H8"]
 texture_filter = 1
@@ -268,6 +278,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H9" type="StaticBody2D" parent="Houses"]
 position = Vector2(585, 13)
 script = ExtResource("3_xv378")
+id = 9
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H9"]
 texture_filter = 1
@@ -293,7 +304,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 position = Vector2(338, 9)
 script = ExtResource("6_odk1q")
 cost = 40
-id = null
 
 [node name="Plot" type="Button" parent="Stations/S0"]
 texture_filter = 1
@@ -550,6 +560,26 @@ offset_right = 717.0
 offset_bottom = 388.0
 text = "END"
 
+[node name="DoneButton" type="TextureButton" parent="."]
+offset_left = 584.0
+offset_top = -414.0
+offset_right = 664.0
+offset_bottom = -334.0
+texture_normal = ExtResource("9_2a2fd")
+
+[node name="PopupPanel" type="Popup" parent="."]
+transparent_bg = true
+size = Vector2i(1250, 700)
+unresizable = false
+transparent = true
+
+[node name="ResultDialog" parent="PopupPanel" instance=ExtResource("10_xv378")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+
 [connection signal="button_up" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_button_up"]
 [connection signal="mouse_entered" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_exited"]
@@ -593,3 +623,4 @@ text = "END"
 [connection signal="body_entered" from="Stations/S6/Radius" to="Stations/S6" method="_on_area_2d_body_entered"]
 [connection signal="body_shape_entered" from="Stations/S6/Radius" to="Stations/S6" method="_on_area_2d_body_shape_entered"]
 [connection signal="button_up" from="EndButton" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="DoneButton" to="." method="_on_done_button_pressed"]

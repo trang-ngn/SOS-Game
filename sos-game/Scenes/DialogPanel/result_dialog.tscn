@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdhqm638yme71"]
+
+[ext_resource type="FontFile" uid="uid://c8f1xkqvr2h7a" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="1_5tu22"]
+[ext_resource type="Texture2D" uid="uid://d2fwkm7ofx7tj" path="res://Assets/Buttons and Dialogs/Result-dialog.png" id="1_ywtve"]
+[ext_resource type="Texture2D" uid="uid://mqa3wwnk2b00" path="res://Assets/Buttons and Dialogs/Button-nextlevel.png" id="3_8xopk"]
+[ext_resource type="Texture2D" uid="uid://dkhddl4kkxhf2" path="res://Assets/Buttons and Dialogs/Button-tryagain.png" id="4_gr5ms"]
+[ext_resource type="FontFile" uid="uid://cbkaala8qo5w5" path="res://Assets/Fonts/Silkscreen-Bold.ttf" id="5_dtqdy"]
+
+[node name="ResultDialog" type="TextureRect"]
+anchors_preset = -1
+anchor_right = 0.757
+anchor_bottom = 0.668
+offset_right = -0.440063
+offset_bottom = -0.440063
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_ywtve")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.075
+anchor_top = 0.85
+anchor_right = 0.923
+anchor_bottom = 0.961
+offset_left = -0.0500031
+offset_top = 0.25
+offset_right = 0.0778809
+offset_bottom = 0.144958
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_fonts/font = ExtResource("1_5tu22")
+theme_override_font_sizes/font_size = 35
+text = "Score"
+
+[node name="SuccessLabel" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_fonts/font = ExtResource("5_dtqdy")
+theme_override_font_sizes/font_size = 35
+text = "Success!!!"
+
+[node name="NextLevelButton" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+texture_normal = ExtResource("3_8xopk")
+stretch_mode = 5
+
+[node name="TryAgainButton" type="TextureButton" parent="HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+texture_normal = ExtResource("4_gr5ms")
+stretch_mode = 5
+
+[node name="LeftLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.066
+anchor_top = 0.097
+anchor_right = 0.454
+anchor_bottom = 0.77
+offset_left = 0.101997
+offset_top = 0.0630035
+offset_right = 0.337952
+offset_bottom = -0.169983
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_fonts/font = ExtResource("1_5tu22")
+theme_override_font_sizes/font_size = 30
+text = "Left
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+"
+autowrap_mode = 3
+clip_text = true
+
+[node name="RightLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.543
+anchor_top = 0.1
+anchor_right = 0.941
+anchor_bottom = 0.769
+offset_left = 0.0209351
+offset_top = -0.0999985
+offset_right = -12.2729
+offset_bottom = 0.551025
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_fonts/font = ExtResource("1_5tu22")
+theme_override_font_sizes/font_size = 30
+text = "Right
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+"
+autowrap_mode = 3
+clip_text = true
