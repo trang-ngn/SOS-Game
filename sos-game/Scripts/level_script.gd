@@ -47,3 +47,11 @@ func print_something(array : Array[bool]) ->void :
 		print(str(i) + " : " + str(value))
 		i += 1
 	print("====================\n")
+
+
+func _on_done_button_pressed() -> void:
+	$PopupPanel.popup_centered()
+	var label: Label = $PopupPanel/ResultDialog/Panel/ResultLabel
+	update_picked()
+	label.text = "Optimal Solution:" + "\n" + str(solution)+ "\n"
+	label.text += "Your Solution:" + "\n" + str(picked) + "\n"
