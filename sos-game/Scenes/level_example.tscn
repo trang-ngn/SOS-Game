@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://dtjpdd5jwliip"]
+[gd_scene load_steps=22 format=4 uid="uid://dtjpdd5jwliip"]
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/level_script.gd" id="1_b510r"]
 [ext_resource type="TileSet" uid="uid://cooaxagih3mdw" path="res://Assets/Tileset/tileset_1.0.tres" id="2_b510r"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="8_e7krn"]
 [ext_resource type="Texture2D" uid="uid://ci0vb2amef8yw" path="res://Assets/Buttons and Dialogs/CheckBox-Checked.png" id="9_2a2fd"]
 [ext_resource type="PackedScene" uid="uid://cdhqm638yme71" path="res://Scenes/DialogPanel/result_dialog.tscn" id="10_xv378"]
+[ext_resource type="Script" uid="uid://bd4mgwpnngm2d" path="res://Scripts/Dialogs/result_dialog.gd" id="11_kaqqc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tf3fl"]
 shader = ExtResource("4_kaqqc")
@@ -554,6 +555,7 @@ position = Vector2(1, -62)
 shape = SubResource("RectangleShape2D_g30sg")
 
 [node name="EndButton" type="Button" parent="."]
+visible = false
 offset_left = 570.0
 offset_top = 300.0
 offset_right = 717.0
@@ -567,18 +569,19 @@ offset_right = 664.0
 offset_bottom = -334.0
 texture_normal = ExtResource("9_2a2fd")
 
-[node name="PopupPanel" type="Popup" parent="."]
+[node name="ResultPopup" type="Popup" parent="."]
 transparent_bg = true
 size = Vector2i(1250, 700)
 unresizable = false
 transparent = true
 
-[node name="ResultDialog" parent="PopupPanel" instance=ExtResource("10_xv378")]
+[node name="ResultDialog" parent="ResultPopup" instance=ExtResource("10_xv378")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 0.0
 offset_bottom = 0.0
+script = ExtResource("11_kaqqc")
 
 [connection signal="button_up" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_button_up"]
 [connection signal="mouse_entered" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_entered"]

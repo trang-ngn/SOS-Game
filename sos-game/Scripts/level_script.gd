@@ -1,21 +1,23 @@
 class_name Level
 extends Node2D
 
-var solution: Array[bool] = [false, false, true, true, true, true, false]
-var picked: Array[bool] = []
+#var solution: Array[bool] = [false, false, true, true, true, true, false]
+var picked_stations: Array[bool] = []
 var total_cost: float = 0
+var all_houses_covered: bool = false
 
 #make sure the houses and station are in order
 @export var stations: Array[RescueStation]
 @export var houses: Array[House]
 
 
-func houses_covered()->bool: #check if all houses is covered
+func update_houses_covered() -> void: #check if all houses is covered
 	for house in houses:
 		if (!house.is_covered()):
-			return false
-
-	return true
+			all_houses_covered = false
+			return
+	
+	all_houses_covered = true
 
 
 func update_picked():
@@ -27,27 +29,27 @@ func update_picked():
 		cost += station.cost if station.is_built() else 0
 
 	total_cost = cost
-	picked = result
+	picked_stations = result
+	update_houses_covered()
 
 
 #func _process(delta: float) -> void:
 	#pass
 
 
-func _on_button_button_up() -> void:
-	update_picked()
-	if (houses_covered()):
-		print("Optimal solution : ")
-		print_something(solution)
-		print("Your solution : ")
-		print_something(picked)
+#func _on_button_button_up() -> void:
+	#update_picked()
+	#if (all_houses_covered):
+		#print("Optimal solution : ")
+		#print_array(solution)
+		#print("Your solution : ")
+		#print_array(picked_stations)
+#
+	#else:
+		#print("Not all house is covered\n")
 
-	else:
-		print("Not all house is covered\n")
 
-
-#cannot think of better name atm my bad
-func print_something(array: Array[bool]) -> void:
+func print_array(array: Array[bool]) -> void:
 	print("====================")
 	var i: int = 0
 
@@ -60,42 +62,7 @@ func print_something(array: Array[bool]) -> void:
 
 func _on_done_button_pressed() -> void:
 	update_picked()
-	print(stations)
-	var left_label: Label = $PopupPanel/ResultDialog/LeftLabel
-	var right_label: Label = $PopupPanel/ResultDialog/RightLabel
-	var score_label: Label = $PopupPanel/ResultDialog/HBoxContainer/ScoreLabel
-	var success_label: Label = $PopupPanel/ResultDialog/HBoxContainer/SuccessLabel
-	var next_level_button: TextureButton = $PopupPanel/ResultDialog/HBoxContainer/NextLevelButton
-	var try_again_button: TextureButton = $PopupPanel/ResultDialog/HBoxContainer/TryAgainButton
-	var optimal_solution: Solution = await get_optimal_solution()
-
-	if optimal_solution == null:
-		print("Cannot get the solution!")
-		return
-
-	print(optimal_solution)
-
-	left_label.text = "Optimal solution:\n" + "\n-Used %d stations" % [optimal_solution.selected.count(true)] + "\n-Total cost %.1f" % [optimal_solution.cost]
-
-	right_label.text="Your solution:\n" + "\n-Used %d stations" % [picked.count(true)] + "\n-Total cost %.1f" % [total_cost]
-	print(total_cost)
-	var percentage = float(total_cost) / optimal_solution.cost * 100
-
-	score_label.text = "Score: %.f%%" % percentage
-
-	var all_houses_covered = houses_covered()
-
-	right_label.text += "\n\nNot all houses are covered!" if not all_houses_covered else ""
-
-	var level_passed = percentage >= 80 and all_houses_covered;
-
-	success_label.text = "Success!!!" if level_passed else "FAILED!"
-	next_level_button.visible = level_passed
-	try_again_button.visible = not level_passed
-	$PopupPanel.popup_centered()
-
-
-func get_optimal_solution() -> Solution:
+	#var optimal_solution: Solution = await get_optimal_solution()
 	var i: Instance = Instance.new()
 	i.n = len(houses)
 
@@ -103,6 +70,11 @@ func get_optimal_solution() -> Solution:
 		i.costs.append(station.cost)
 		i.coverage.append(station.get_covered_houses())
 
-	var solution: Solution = await Resquest.get_solution(self, i)
-	print(solution)
-	return solution
+	var optimal_solution: Solution = await Resquest.get_solution(self, i)
+	if optimal_solution == null:
+		print("Request failed!")
+		return 
+	print("Request successed!")
+
+	$ResultPopup/ResultDialog.show_results(optimal_solution, picked_stations, total_cost, all_houses_covered)
+	$ResultPopup.popup_centered()
