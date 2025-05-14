@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=4 uid="uid://dtjpdd5jwliip"]
 
-[ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/level_script.gd" id="1_b510r"]
+[ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_b510r"]
 [ext_resource type="TileSet" uid="uid://cooaxagih3mdw" path="res://Assets/Tileset/tileset_1.0.tres" id="2_b510r"]
 [ext_resource type="Script" uid="uid://bodp6ey6ji3cc" path="res://Scripts/house_script.gd" id="3_xv378"]
 [ext_resource type="Shader" uid="uid://b1wvm2ng2bjhx" path="res://Shaders/highlight.gdshader" id="4_kaqqc"]
