@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsqpnks0pscyj"
-path="res://.godot/imported/statistik-bar.png-3353d067e8ea24827292570c5a846192.ctex"
+uid="uid://cioxxrsm6s6ue"
+path="res://.godot/imported/StatistikBar.png-0d16259364b40f7be906ee190bbef99d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons and Dialogs/statistik-bar.png"
-dest_files=["res://.godot/imported/statistik-bar.png-3353d067e8ea24827292570c5a846192.ctex"]
+source_file="res://Assets/Buttons and Dialogs/StatistikBar.png"
+dest_files=["res://.godot/imported/StatistikBar.png-0d16259364b40f7be906ee190bbef99d.ctex"]
 
 [params]
 

@@ -6,6 +6,8 @@ var houses: Array[House]
 @export var id: int
 var built: bool = false
 
+signal stations_updated
+
 
 func _ready() -> void:
 	initialize()
@@ -24,6 +26,7 @@ func change_state()->void:
 	$Sprite2D.visible = built
 	#$TextEdit.visible = built
 	cover_houses(built)
+	emit_signal("stations_updated")
 
 
 func cover_houses(value: bool)->void:
