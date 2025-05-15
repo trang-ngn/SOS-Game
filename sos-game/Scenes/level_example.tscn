@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="8_e7krn"]
 [ext_resource type="Texture2D" uid="uid://ci0vb2amef8yw" path="res://Assets/Buttons and Dialogs/CheckBox-Checked.png" id="9_2a2fd"]
 [ext_resource type="PackedScene" uid="uid://cdhqm638yme71" path="res://Scenes/DialogPanel/result_dialog.tscn" id="10_xv378"]
-[ext_resource type="Script" uid="uid://bd4mgwpnngm2d" path="res://Scripts/Dialogs/result_dialog.gd" id="11_kaqqc"]
+[ext_resource type="Script" uid="uid://bd4mgwpnngm2d" path="res://Scenes/DialogPanel/result_dialog.gd" id="11_kaqqc"]
 [ext_resource type="PackedScene" uid="uid://bxs73etkg8msh" path="res://Scenes/DialogPanel/statistik_bar.tscn" id="12_odk1q"]
 [ext_resource type="Texture2D" uid="uid://drjlj1jgbcpqf" path="res://Assets/Buttons and Dialogs/Button-green.png" id="13_odk1q"]
 [ext_resource type="FontFile" uid="uid://c8f1xkqvr2h7a" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="13_pv4ap"]
