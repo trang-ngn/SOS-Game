@@ -658,9 +658,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_xn6q0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xn6q0")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xn6q0")
 
-[node name="Window" type="Window" parent="."]
-position = Vector2i(0, 36)
-
 [connection signal="button_up" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_button_up"]
 [connection signal="mouse_entered" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_exited"]
