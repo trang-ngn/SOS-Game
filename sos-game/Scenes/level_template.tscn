@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=4 uid="uid://cbl24x0qb50np"]
 
-[ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_hiugd"]
+[ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/level_script.gd" id="1_hiugd"]
 [ext_resource type="Texture2D" uid="uid://bqhqe56u2p50i" path="res://Assets/Tileset/Tileset.png" id="2_hwrsy"]
 [ext_resource type="Script" uid="uid://bodp6ey6ji3cc" path="res://Scripts/house_script.gd" id="3_rhjl8"]
 [ext_resource type="Texture2D" uid="uid://csbr4btkd4ny7" path="res://Assets/Houses/black_house.png" id="4_n70ur"]
