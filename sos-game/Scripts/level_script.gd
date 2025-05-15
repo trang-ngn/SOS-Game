@@ -17,6 +17,7 @@ var num_picked_stations: int = 0
 func _ready() -> void:
 	for station in stations:
 		station.connect("stations_updated", Callable(self, "update_picked"))
+	update_picked()
 
 func update_houses_covered() -> void: #check if all houses is covered
 	var num : int = 0
