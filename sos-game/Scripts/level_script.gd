@@ -1,8 +1,6 @@
 class_name Level
 extends Node2D
 
-signal station_updated
-
 #var solution: Array[bool] = [false, false, true, true, true, true, false]
 var picked_stations: Array[bool] = []
 var total_cost: float = 0.0
@@ -18,7 +16,7 @@ func _ready() -> void:
 	for station in stations:
 		station.connect("stations_updated", Callable(self, "update_picked"))
 	update_picked()
-
+	
 func update_houses_covered() -> void: #check if all houses is covered
 	var num : int = 0
 	for house in houses:
@@ -49,7 +47,6 @@ func update_statistik():
 	$StatistikBar.update_number(num_picked_stations, len(stations))
 	$StatistikBar.update_coverage(num_covered_houses, len(houses))
 	$StatistikBar.update_cost(total_cost)
-	print("statistik")
 
 
 #func _on_button_button_up() -> void:
@@ -98,3 +95,7 @@ func _on_done_button_pressed() -> void:
 func _on_hide_button_toggled(hide: bool) -> void:
 	$HideButton/HideLabel.text = "Show" if hide else "Hide"
 	$StatistikBar.visible = not hide
+
+
+func _on_restart_button_pressed() -> void:
+	get_tree().reload_current_scene()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://dtjpdd5jwliip"]
+[gd_scene load_steps=27 format=4 uid="uid://dtjpdd5jwliip"]
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/level_script.gd" id="1_b510r"]
 [ext_resource type="TileSet" uid="uid://cooaxagih3mdw" path="res://Assets/Tileset/tileset_1.0.tres" id="2_b510r"]
@@ -8,12 +8,12 @@
 [ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/station_script.gd" id="6_odk1q"]
 [ext_resource type="Texture2D" uid="uid://btniax21u00s0" path="res://Assets/Rescue Station/rescue_default.png" id="7_pv4ap"]
 [ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="8_e7krn"]
-[ext_resource type="Texture2D" uid="uid://ci0vb2amef8yw" path="res://Assets/Buttons and Dialogs/CheckBox-Checked.png" id="9_2a2fd"]
 [ext_resource type="PackedScene" uid="uid://cdhqm638yme71" path="res://Scenes/DialogPanel/result_dialog.tscn" id="10_xv378"]
 [ext_resource type="Script" uid="uid://bd4mgwpnngm2d" path="res://Scenes/DialogPanel/result_dialog.gd" id="11_kaqqc"]
 [ext_resource type="PackedScene" uid="uid://bxs73etkg8msh" path="res://Scenes/DialogPanel/statistik_bar.tscn" id="12_odk1q"]
 [ext_resource type="Texture2D" uid="uid://drjlj1jgbcpqf" path="res://Assets/Buttons and Dialogs/Button-green.png" id="13_odk1q"]
 [ext_resource type="FontFile" uid="uid://c8f1xkqvr2h7a" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="13_pv4ap"]
+[ext_resource type="Texture2D" uid="uid://lhmlbnmpqa" path="res://Assets/Buttons and Dialogs/Button-DoneRestart.png" id="15_e7krn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tf3fl"]
 shader = ExtResource("4_kaqqc")
@@ -46,6 +46,18 @@ radius = 16.1368
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g30sg"]
 size = Vector2(67, 68)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7krn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_bottom_left = 30
+anti_aliasing = false
+anti_aliasing_size = 0.815
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xn6q0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+anti_aliasing = false
 
 [node name="LevelTemplate" type="Node2D" node_paths=PackedStringArray("stations", "houses")]
 texture_filter = 1
@@ -557,25 +569,11 @@ visible = false
 position = Vector2(1, -62)
 shape = SubResource("RectangleShape2D_g30sg")
 
-[node name="EndButton" type="Button" parent="."]
-visible = false
-offset_left = 570.0
-offset_top = 300.0
-offset_right = 717.0
-offset_bottom = 388.0
-text = "END"
-
-[node name="DoneButton" type="TextureButton" parent="."]
-offset_left = 584.0
-offset_top = -414.0
-offset_right = 664.0
-offset_bottom = -334.0
-texture_normal = ExtResource("9_2a2fd")
-metadata/_edit_use_anchors_ = true
-
 [node name="ResultPopup" type="Popup" parent="."]
+process_mode = 3
 transparent_bg = true
-size = Vector2i(1250, 700)
+mode = 1
+size = Vector2i(1300, 680)
 unresizable = false
 transparent = true
 
@@ -617,6 +615,51 @@ theme_override_font_sizes/font_size = 40
 text = "Hide"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DoneRestartContainer" type="TextureRect" parent="."]
+process_mode = 3
+offset_left = 436.0
+offset_top = -416.0
+offset_right = 639.0
+offset_bottom = -321.0
+texture = ExtResource("15_e7krn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DoneButton" type="Button" parent="DoneRestartContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.039
+anchor_right = 0.517
+anchor_bottom = 0.853
+offset_left = 0.0829997
+offset_right = 0.048996
+offset_bottom = -0.0350037
+theme_override_styles/focus = SubResource("StyleBoxFlat_e7krn")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_e7krn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e7krn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e7krn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_e7krn")
+
+[node name="RestartButton" type="Button" parent="DoneRestartContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.532
+anchor_top = -0.011
+anchor_right = 0.951
+anchor_bottom = 0.853
+offset_left = -0.996002
+offset_top = 0.0450001
+offset_right = -0.053009
+offset_bottom = -1.035
+theme_override_styles/focus = SubResource("StyleBoxFlat_xn6q0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_xn6q0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xn6q0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xn6q0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xn6q0")
+
+[node name="Window" type="Window" parent="."]
+position = Vector2i(0, 36)
 
 [connection signal="button_up" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_button_up"]
 [connection signal="mouse_entered" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_entered"]
@@ -660,6 +703,6 @@ vertical_alignment = 1
 [connection signal="area_shape_entered" from="Stations/S6/Radius" to="Stations/S6" method="_on_area_2d_area_shape_entered"]
 [connection signal="body_entered" from="Stations/S6/Radius" to="Stations/S6" method="_on_area_2d_body_entered"]
 [connection signal="body_shape_entered" from="Stations/S6/Radius" to="Stations/S6" method="_on_area_2d_body_shape_entered"]
-[connection signal="button_up" from="EndButton" to="." method="_on_button_button_up"]
-[connection signal="pressed" from="DoneButton" to="." method="_on_done_button_pressed"]
 [connection signal="toggled" from="HideButton" to="." method="_on_hide_button_toggled"]
+[connection signal="pressed" from="DoneRestartContainer/DoneButton" to="." method="_on_done_button_pressed"]
+[connection signal="pressed" from="DoneRestartContainer/RestartButton" to="." method="_on_restart_button_pressed"]
