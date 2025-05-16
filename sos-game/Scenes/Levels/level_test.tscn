@@ -4,9 +4,9 @@
 [ext_resource type="TileSet" uid="uid://cooaxagih3mdw" path="res://Assets/Tileset/tileset_1.0.tres" id="2_3rhg7"]
 [ext_resource type="Script" uid="uid://bodp6ey6ji3cc" path="res://Scripts/ObjectScript/house_script.gd" id="3_aqqml"]
 [ext_resource type="Shader" uid="uid://b1wvm2ng2bjhx" path="res://Shaders/highlight.gdshader" id="4_7f2hg"]
-[ext_resource type="Texture2D" uid="uid://csbr4btkd4ny7" path="res://Assets/Houses/black_house.png" id="5_x3fiy"]
+[ext_resource type="Texture2D" uid="uid://csbr4btkd4ny7" path="res://Assets/Houses/black_house(dont use).png" id="5_x3fiy"]
 [ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/ObjectScript/station_script.gd" id="6_u2n6r"]
-[ext_resource type="Texture2D" uid="uid://btniax21u00s0" path="res://Assets/Rescue Station/rescue_default.png" id="7_57e81"]
+[ext_resource type="Texture2D" uid="uid://btniax21u00s0" path="res://Assets/Rescue Station/rescue_default(dont use).png" id="7_57e81"]
 [ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="8_56wb0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tf3fl"]

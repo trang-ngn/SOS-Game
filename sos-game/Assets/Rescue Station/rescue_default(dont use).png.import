@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btniax21u00s0"
-path="res://.godot/imported/rescue_default.png-29bcb085075b6302c401c3ed265ec596.ctex"
+path="res://.godot/imported/rescue_default(dont use).png-053c2929bc54e0d773324eda9fe463d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Rescue Station/rescue_default.png"
-dest_files=["res://.godot/imported/rescue_default.png-29bcb085075b6302c401c3ed265ec596.ctex"]
+source_file="res://Assets/Rescue Station/rescue_default(dont use).png"
+dest_files=["res://.godot/imported/rescue_default(dont use).png-053c2929bc54e0d773324eda9fe463d2.ctex"]
 
 [params]
 

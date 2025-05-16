@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bodp6ey6ji3cc" path="res://Scripts/ObjectScript/house_script.gd" id="3_cf1ce"]
 [ext_resource type="Shader" uid="uid://b1wvm2ng2bjhx" path="res://Shaders/highlight.gdshader" id="4_37vo7"]
 [ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/ObjectScript/station_script.gd" id="5_htqux"]
-[ext_resource type="Texture2D" uid="uid://btniax21u00s0" path="res://Assets/Rescue Station/rescue_default.png" id="6_gdbjo"]
+[ext_resource type="Texture2D" uid="uid://btniax21u00s0" path="res://Assets/Rescue Station/rescue_default(dont use).png" id="6_gdbjo"]
 [ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="7_xfxn4"]
 [ext_resource type="PackedScene" uid="uid://bxs73etkg8msh" path="res://Scenes/Dialogs/statistik_bar.tscn" id="8_dh3ah"]
 [ext_resource type="Texture2D" uid="uid://drjlj1jgbcpqf" path="res://Assets/Buttons and Dialogs/Button-green.png" id="9_r8ray"]
