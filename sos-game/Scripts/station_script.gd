@@ -1,10 +1,32 @@
+@tool
 class_name RescueStation
 extends Node2D
 
 var houses : Array[House]
 @export var cost : int
 @export var id : int
+
+@onready var radius_size : CollisionShape2D = $Radius/RadiusSize
+@export var radius : float : 
+	set(value):
+		radius = value
+		if radius_size and radius_size.shape :
+			radius_size.shape.radius = radius
+		
 var built : bool = false
+
+
+#For sandbox
+@export var rect: Rect2
+
+func get_global_rect():
+	return Rect2(
+		global_position - rect.size / 2,
+		rect.size
+	)
+func set_on_place():
+	modulate.a = 1
+
 
 func _ready() -> void:
 	initialize()
@@ -32,19 +54,17 @@ func cover_houses(value : bool)->void :
 		else :
 			h.num_stat_cover -= 1
 			h.set_outline()
-		
-		
-
 
 func is_built()->bool :
 	return built
 	
 func initialize() -> void :
-	$Sprite2D.visible = false
-	$Plot.text = str(id) + " : " +str(cost)
+	#$Sprite2D.visible = false
+	#$Plot.text = str(id) + " : " +str(cost)
 	$StationNumber.visible = false
 	$StationNumber.editable =false
-	$Radius/RadiusSize.visible = false
+	#$Radius/RadiusSize.visible = false
+	$Radius/RadiusSize.shape.radius = radius
 	
 
 func _on_area_2d_body_entered(body: House) -> void:
