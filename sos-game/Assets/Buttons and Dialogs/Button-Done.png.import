@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hi0l42et70bo"
-path="res://.godot/imported/Option-House.png-8156652d6ccadf8bfa236fc304cd25ab.ctex"
+uid="uid://oghtmujvkj8c"
+path="res://.godot/imported/Button-Done.png-694b29bb67cf19f062a446f16338df81.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons and Dialogs/Option-House.png"
-dest_files=["res://.godot/imported/Option-House.png-8156652d6ccadf8bfa236fc304cd25ab.ctex"]
+source_file="res://Assets/Buttons and Dialogs/Button-Done.png"
+dest_files=["res://.godot/imported/Button-Done.png-694b29bb67cf19f062a446f16338df81.ctex"]
 
 [params]
 

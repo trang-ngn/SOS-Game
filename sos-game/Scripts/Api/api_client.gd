@@ -32,7 +32,7 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 	elif response_code == 500: 
 		server_error = "Server error: " + text 
 	else:
-		server_error = "Unknown error: HHTP %d - %s" % [response_code, text]
+		server_error = "Unknown error: HTTP %d - %s" % [response_code, text]
 
 func _http_post(url: String, data: Dictionary = {}, headers: Array[String] = []) -> Array:
 	request_done = false # reset the flags
@@ -80,7 +80,7 @@ static func get_solution(node: Node, instance: Instance) -> Solution:
 	req.queue_free() 
 	
 	if get_result[1] != OK:
-		print(get_result[0]["error"])
+		print("ERROR: ", get_result[0]["error"])
 		return null
 
 	var solution = Solution.new()

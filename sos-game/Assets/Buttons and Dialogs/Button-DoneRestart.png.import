@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duev0nd405d0j"
-path="res://.godot/imported/statistik-bar-Sandbox.png-d6334f335fbe160f11f99f1aa57338ba.ctex"
+uid="uid://lhmlbnmpqa"
+path="res://.godot/imported/Button-DoneRestart.png-3eb085b84f84a6f3428bbc655a38feed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons and Dialogs/statistik-bar-Sandbox.png"
-dest_files=["res://.godot/imported/statistik-bar-Sandbox.png-d6334f335fbe160f11f99f1aa57338ba.ctex"]
+source_file="res://Assets/Buttons and Dialogs/Button-DoneRestart.png"
+dest_files=["res://.godot/imported/Button-DoneRestart.png-3eb085b84f84a6f3428bbc655a38feed.ctex"]
 
 [params]
 
