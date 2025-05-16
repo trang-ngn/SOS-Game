@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://cbl24x0qb50np"]
+[gd_scene load_steps=11 format=4 uid="uid://cdvq7i6o7347o"]
 
-[ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_grlps"]
+[ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/level_script.gd" id="1_grlps"]
 [ext_resource type="Texture2D" uid="uid://bqhqe56u2p50i" path="res://Assets/Tileset/Tileset.png" id="2_4ow6c"]
-[ext_resource type="Script" uid="uid://bodp6ey6ji3cc" path="res://Scripts/house_script.gd" id="3_348vf"]
+[ext_resource type="Script" uid="uid://bodp6ey6ji3cc" path="res://Scripts/ObjectScript/house_script.gd" id="3_348vf"]
 [ext_resource type="Texture2D" uid="uid://csbr4btkd4ny7" path="res://Assets/Houses/black_house.png" id="4_cl41i"]
-[ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/station_script.gd" id="5_43uut"]
+[ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/ObjectScript/station_script.gd" id="5_43uut"]
 [ext_resource type="Texture2D" uid="uid://btniax21u00s0" path="res://Assets/Rescue Station/rescue_default.png" id="6_unlps"]
 [ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="7_p06lh"]
 

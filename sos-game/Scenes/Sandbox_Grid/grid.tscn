@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b14h810twocjd"]
 
-[ext_resource type="Script" uid="uid://bewqcpslnvrl" path="res://Scripts/grid.gd" id="1_ylnr7"]
+[ext_resource type="Script" uid="uid://bewqcpslnvrl" path="res://Scripts/Sandbox_grid/grid.gd" id="1_ylnr7"]
 
 [node name="Grid" type="GridContainer"]
 theme_override_constants/h_separation = 0

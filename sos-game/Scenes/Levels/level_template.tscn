@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/level_script.gd" id="1_hiugd"]
 [ext_resource type="Texture2D" uid="uid://bqhqe56u2p50i" path="res://Assets/Tileset/Tileset.png" id="2_hwrsy"]
-[ext_resource type="Script" uid="uid://bodp6ey6ji3cc" path="res://Scripts/house_script.gd" id="3_rhjl8"]
+[ext_resource type="Script" uid="uid://bodp6ey6ji3cc" path="res://Scripts/ObjectScript/house_script.gd" id="3_rhjl8"]
 [ext_resource type="Texture2D" uid="uid://csbr4btkd4ny7" path="res://Assets/Houses/black_house.png" id="4_n70ur"]
 [ext_resource type="Shader" uid="uid://b1wvm2ng2bjhx" path="res://Shaders/highlight.gdshader" id="4_tf3fl"]
-[ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/station_script.gd" id="5_5516i"]
+[ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/ObjectScript/station_script.gd" id="5_5516i"]
 [ext_resource type="Texture2D" uid="uid://btniax21u00s0" path="res://Assets/Rescue Station/rescue_default.png" id="6_qpq55"]
 [ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="7_jr16f"]
 
@@ -96,11 +96,9 @@ radius = 10.1342
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g30sg"]
 size = Vector2(67, 68)
 
-[node name="LevelTemplate" type="Node2D" node_paths=PackedStringArray("stations", "houses")]
+[node name="LevelTemplate" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_hiugd")
-stations = [NodePath("Stations/S0"), null]
-houses = [NodePath("Houses/H0"), null, null]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hbq6r")
@@ -128,6 +126,7 @@ script = ExtResource("3_rhjl8")
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H0"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
+instance_shader_parameters/active = false
 position = Vector2(0, -45)
 texture = ExtResource("4_n70ur")
 
@@ -139,7 +138,6 @@ offset_bottom = -29.0
 text = "00"
 
 [node name="CollisionSize" type="CollisionShape2D" parent="Houses/H0"]
-visible = false
 position = Vector2(0, -41)
 shape = SubResource("RectangleShape2D_hiugd")
 
@@ -156,6 +154,7 @@ offset_left = -31.0
 offset_top = -55.0
 offset_right = 31.0
 offset_bottom = -19.0
+text = "0 : 20"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S0"]
 position = Vector2(0, -50)
