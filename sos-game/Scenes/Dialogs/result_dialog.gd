@@ -38,7 +38,6 @@ func _get_chosen_station_indices(picked_stations: Array) -> Array[int]:
 	for i in range(len(picked_stations)):
 		if picked_stations[i]:
 			chosen_stations_indices.append(i)
-	print(chosen_stations)
 	return chosen_stations_indices
 	
 func _toogle_result_button(passed: bool):

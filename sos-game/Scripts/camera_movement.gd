@@ -8,7 +8,7 @@ func get_input() :
 	input.y = Input.get_action_strength("down") - Input.get_action_strength("up")
 	return input.normalized() #make diagonal movement same speed
 	
-func _process(delta: float) :
+func _process(_delta: float) :
 	var playerInput = get_input()
 	velocity = playerInput * speed
 	move_and_slide()
