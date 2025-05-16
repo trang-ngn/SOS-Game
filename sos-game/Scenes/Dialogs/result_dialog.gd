@@ -14,13 +14,13 @@ func show_results(optimal_solution: Solution, picked_stations: Array[bool], tota
 	
 	# Optimal solution
 	chosen_stations = _get_chosen_station_indices(optimal_solution.selected)
-	left_label.text = "Optimal solution:\n" + "\n-Used %d stations" % [optimal_solution.selected.count(true)] + "\n-Total cost %.1f" % [optimal_solution.cost]
-	left_label.text += "\n\n Chosen stations: %s" % [chosen_stations]
+	left_label.text = "-Used %d stations" % [optimal_solution.selected.count(true)] + "\n-Total cost %.1f€" % [optimal_solution.cost]
+	left_label.text += "\n\nChosen stations: \n%s" % [chosen_stations]
 	
 	# Player solution
 	chosen_stations = _get_chosen_station_indices(picked_stations)
-	right_label.text = "Your solution:\n" + "\n-Used %d stations" % [picked_stations.count(true)] + "\n-Total cost %.1f" % [total_cost]
-	right_label.text += "\n\n Chosen stations: %s" % [chosen_stations]
+	right_label.text = "-Used %d stations" % [picked_stations.count(true)] + "\n-Total cost %.1f€" % [total_cost]
+	right_label.text += "\n\nChosen stations: \n%s" % [chosen_stations]
 	
 	#print(total_cost)
 	

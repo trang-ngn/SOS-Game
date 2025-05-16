@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://dtjpdd5jwliip"]
+[gd_scene load_steps=26 format=4 uid="uid://dtjpdd5jwliip"]
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/level_script.gd" id="1_b510r"]
 [ext_resource type="TileSet" uid="uid://cooaxagih3mdw" path="res://Assets/Tileset/tileset_1.0.tres" id="2_b510r"]
@@ -8,9 +8,8 @@
 [ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/station_script.gd" id="6_odk1q"]
 [ext_resource type="Texture2D" uid="uid://btniax21u00s0" path="res://Assets/Rescue Station/rescue_default.png" id="7_pv4ap"]
 [ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="8_e7krn"]
-[ext_resource type="PackedScene" uid="uid://cdhqm638yme71" path="res://Scenes/DialogPanel/result_dialog.tscn" id="10_xv378"]
-[ext_resource type="Script" uid="uid://bd4mgwpnngm2d" path="res://Scenes/DialogPanel/result_dialog.gd" id="11_kaqqc"]
-[ext_resource type="PackedScene" uid="uid://bxs73etkg8msh" path="res://Scenes/DialogPanel/statistik_bar.tscn" id="12_odk1q"]
+[ext_resource type="PackedScene" uid="uid://bxs73etkg8msh" path="res://Scenes/Dialogs/statistik_bar.tscn" id="12_odk1q"]
+[ext_resource type="PackedScene" uid="uid://p8jlq8xdcf0t" path="res://Scenes/Dialogs/result_pop_up.tscn" id="13_e7krn"]
 [ext_resource type="Texture2D" uid="uid://drjlj1jgbcpqf" path="res://Assets/Buttons and Dialogs/Button-green.png" id="13_odk1q"]
 [ext_resource type="FontFile" uid="uid://c8f1xkqvr2h7a" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="13_pv4ap"]
 [ext_resource type="Texture2D" uid="uid://lhmlbnmpqa" path="res://Assets/Buttons and Dialogs/Button-DoneRestart.png" id="15_e7krn"]
@@ -559,6 +558,7 @@ shape = SubResource("CircleShape2D_fypjr")
 debug_color = Color(0.842477, 0.377384, 0.137897, 0.42)
 
 [node name="Camera" type="CharacterBody2D" parent="."]
+visible = false
 script = ExtResource("8_e7krn")
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
@@ -568,22 +568,6 @@ zoom = Vector2(1.3, 1.3)
 visible = false
 position = Vector2(1, -62)
 shape = SubResource("RectangleShape2D_g30sg")
-
-[node name="ResultPopup" type="Popup" parent="."]
-process_mode = 3
-transparent_bg = true
-mode = 1
-size = Vector2i(1300, 680)
-unresizable = false
-transparent = true
-
-[node name="ResultDialog" parent="ResultPopup" instance=ExtResource("10_xv378")]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 0.0
-offset_bottom = 0.0
-script = ExtResource("11_kaqqc")
 
 [node name="StatistikBar" parent="." instance=ExtResource("12_odk1q")]
 
@@ -657,6 +641,8 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_xn6q0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xn6q0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xn6q0")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xn6q0")
+
+[node name="ResultPopUp" parent="." instance=ExtResource("13_e7krn")]
 
 [connection signal="button_up" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_button_up"]
 [connection signal="mouse_entered" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_entered"]

@@ -88,8 +88,8 @@ func _on_done_button_pressed() -> void:
 		return 
 	print("Request successed!")
 
-	$ResultPopup/ResultDialog.show_results(optimal_solution, picked_stations, total_cost, all_houses_covered)
-	$ResultPopup.popup_centered()
+	$ResultPopUp/ResultDialog.show_results(optimal_solution, picked_stations, total_cost, all_houses_covered)
+	$ResultPopUp.visible = true
 
 
 func _on_hide_button_toggled(hide: bool) -> void:
