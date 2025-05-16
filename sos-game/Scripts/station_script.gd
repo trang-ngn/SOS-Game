@@ -1,12 +1,35 @@
+@tool
 class_name RescueStation
 extends Node2D
 
-var houses: Array[House]
-@export var cost: int
-@export var id: int
-var built: bool = false
+var houses : Array[House]
+@export var cost : int
+@export var id : int
+
+@onready var radius_size : CollisionShape2D = $Radius/RadiusSize
+@export var radius : float : 
+	set(value):
+		radius = value
+		if radius_size and radius_size.shape :
+			radius_size.shape.radius = radius
+		
+var built : bool = false
 
 signal stations_updated
+
+>>>>>>> sos-game/Scripts/station_script.gd
+
+
+#For sandbox
+@export var rect: Rect2
+
+func get_global_rect():
+	return Rect2(
+		global_position - rect.size / 2,
+		rect.size
+	)
+func set_on_place():
+	modulate.a = 1
 
 
 func _ready() -> void:
@@ -40,7 +63,10 @@ func cover_houses(value: bool)->void:
 		else:
 			h.num_stat_cover -= 1
 			h.set_outline()
+<<<<<<< sos-game/Scripts/station_script.gd
+=======
 
+>>>>>>> sos-game/Scripts/station_script.gd
 
 func get_covered_houses() -> Array:
 	var bodies: Array = $Radius.get_overlapping_bodies()
@@ -55,6 +81,17 @@ func get_covered_houses() -> Array:
 
 func is_built()->bool:
 	return built
+<<<<<<< sos-game/Scripts/station_script.gd
+	
+func initialize() -> void :
+	#$Sprite2D.visible = false
+	#$Plot.text = str(id) + " : " +str(cost)
+	$StationNumber.visible = false
+	$StationNumber.editable =false
+	#$Radius/RadiusSize.visible = false
+	$Radius/RadiusSize.shape.radius = radius
+	
+=======
 
 
 func initialize() -> void:
@@ -64,6 +101,7 @@ func initialize() -> void:
 	$StationNumber.editable =false
 	$Radius/RadiusSize.visible = false
 
+>>>>>>> sos-game/Scripts/station_script.gd
 
 func _on_area_2d_body_entered(body: House) -> void:
 	houses.append(body)

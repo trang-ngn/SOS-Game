@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b14h810twocjd"]
+
+[ext_resource type="Script" uid="uid://bewqcpslnvrl" path="res://Scripts/grid.gd" id="1_ylnr7"]
+
+[node name="Grid" type="GridContainer"]
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 5
+script = ExtResource("1_ylnr7")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://xegq7mbvc3s3"]
+
+[ext_resource type="Script" uid="uid://bodp6ey6ji3cc" path="res://Scripts/house_script.gd" id="1_iwrrl"]
+[ext_resource type="Shader" uid="uid://b1wvm2ng2bjhx" path="res://Shaders/highlight.gdshader" id="2_4tj7w"]
+[ext_resource type="Texture2D" uid="uid://csbr4btkd4ny7" path="res://Assets/Houses/black_house.png" id="3_iwrrl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tf3fl"]
+shader = ExtResource("2_4tj7w")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 1.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwrrl"]
+size = Vector2(62, 67)
+
+[node name="House" type="StaticBody2D"]
+position = Vector2(94, 62)
+script = ExtResource("1_iwrrl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_tf3fl")
+instance_shader_parameters/active = false
+texture = ExtResource("3_iwrrl")
+
+[node name="HouseNumber" type="TextEdit" parent="."]
+visible = false
+offset_left = -13.5
+offset_top = -30.0
+offset_right = 15.5
+offset_bottom = 5.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_iwrrl")
