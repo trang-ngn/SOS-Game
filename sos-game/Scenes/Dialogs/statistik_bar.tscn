@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxs73etkg8msh"]
 
 [ext_resource type="Texture2D" uid="uid://cioxxrsm6s6ue" path="res://Assets/Buttons and Dialogs/StatistikBar.png" id="1_2nkfv"]
-[ext_resource type="Script" uid="uid://c1xyvra3wdikk" path="res://Scenes/DialogPanel/statistik_bar.gd" id="2_bvqih"]
+[ext_resource type="Script" uid="uid://c1xyvra3wdikk" path="res://Scenes/Dialogs/statistik_bar.gd" id="2_bvqih"]
 [ext_resource type="FontFile" uid="uid://c8f1xkqvr2h7a" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="2_jhlwi"]
 
 [node name="StatistikBar" type="TextureRect"]
