@@ -9,13 +9,31 @@ var num_covered_houses: int = 0
 var num_picked_stations: int = 0
 
 #make sure the houses and station are in order
-@export var stations: Array[RescueStation]
-@export var houses: Array[House]
+var stations: Array[RescueStation] = []
+var houses: Array[House] = []
 
 func _ready() -> void:
+	initialize_arrays()
+	connect_signal()
+	update_picked_stations()
+
+func initialize_arrays() -> void:
+	var station_nodes = $Stations.get_children()
+	for node in station_nodes:
+		if node is RescueStation:
+			stations.append(node)
+			
+	var houses_node = $Houses.get_children()
+	for node in houses_node:
+		if node is House:
+			houses.append(node)
+
+func connect_signal() -> void:
 	for station in stations:
-		station.connect("stations_updated", Callable(self, "update_picked"))
-	update_picked()
+		station.connect("stations_updated", Callable(self, "update_picked_stations"))
+	
+#func _process(delta: float) -> void:
+	#print(stations)
 	
 func update_houses_covered() -> void: #check if all houses is covered
 	var num : int = 0
@@ -26,7 +44,7 @@ func update_houses_covered() -> void: #check if all houses is covered
 	all_houses_covered = num_covered_houses == len(houses)
 
 
-func update_picked():
+func update_picked_stations():
 	var result: Array[bool] = []
 	var cost: float = 0.0
 	var num: int = 0
@@ -48,32 +66,8 @@ func update_statistik():
 	$StatistikBar.update_coverage(num_covered_houses, len(houses))
 	$StatistikBar.update_cost(total_cost)
 
-
-#func _on_button_button_up() -> void:
-	#update_picked()
-	#if (all_houses_covered):
-		#print("Optimal solution : ")
-		#print_array(solution)
-		#print("Your solution : ")
-		#print_array(picked_stations)
-#
-	#else:
-		#print("Not all house is covered\n")
-
-
-func print_array(array: Array[bool]) -> void:
-	print("====================")
-	var i: int = 0
-
-	for value in array:
-		print(str(i) + " : " + str(value))
-		i += 1
-
-	print("====================\n")
-
-
 func _on_done_button_pressed() -> void:
-	update_picked()
+	update_picked_stations()
 	#var optimal_solution: Solution = await get_optimal_solution()
 	var i: Instance = Instance.new()
 	i.n = len(houses)
@@ -92,9 +86,9 @@ func _on_done_button_pressed() -> void:
 	$ResultPopUp.visible = true
 
 
-func _on_hide_button_toggled(hide: bool) -> void:
-	$HideButton/HideLabel.text = "Show" if hide else "Hide"
-	$StatistikBar.visible = not hide
+func _on_hide_button_toggled(is_hidden: bool) -> void:
+	$HideButton/HideLabel.text = "Show" if is_hidden else "Hide"
+	$StatistikBar.visible = not is_hidden
 
 
 func _on_restart_button_pressed() -> void:
