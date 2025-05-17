@@ -4,7 +4,7 @@ extends Node2D
 
 var houses : Array[House]
 @export var cost : int
-@export var id : int
+var id : int
 
 @onready var radius_size : CollisionShape2D = $Radius/RadiusSize
 @export var radius : float : 
@@ -32,6 +32,7 @@ func set_on_place():
 
 
 func _ready() -> void:
+	id = get_index()
 	initialize()
 
 
@@ -70,7 +71,7 @@ func get_covered_houses() -> Array:
 	for body in bodies:
 		if body is House:
 			index_array.append(body.id)
-
+	print("index_array: ", index_array)
 	return index_array
 
 
@@ -80,7 +81,7 @@ func is_built()->bool:
 
 func initialize() -> void:
 	$Sprite2D.visible = false
-	$Plot.text = str(id) + " : " +str(cost)
+	$Plot.text = str(id) + " : " +str(cost) + "€"
 	$StationNumber.visible = false
 	$StationNumber.editable =false
 	$Radius/RadiusSize.visible = false
