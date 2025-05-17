@@ -1124,4 +1124,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_h5ye2")
 [connection signal="body_entered" from="Stations/S3/Radius" to="Stations/S3" method="_on_area_2d_body_entered"]
 [connection signal="body_shape_entered" from="Stations/S3/Radius" to="Stations/S3" method="_on_area_2d_body_shape_entered"]
 [connection signal="button_up" from="EndButton" to="." method="_on_button_button_up"]
+[connection signal="toggled" from="HideButton" to="." method="_on_hide_button_toggled"]
 [connection signal="pressed" from="DoneRestartContainer/DoneButton" to="." method="_on_done_button_pressed"]
+[connection signal="pressed" from="DoneRestartContainer/RestartButton" to="." method="_on_restart_button_pressed"]
