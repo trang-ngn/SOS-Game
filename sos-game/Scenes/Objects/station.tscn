@@ -17,6 +17,7 @@ visible = false
 texture_filter = 1
 
 [node name="RadiusSize" type="CollisionShape2D" parent="Radius"]
+visible = false
 shape = SubResource("CircleShape2D_xqm5m")
 
 [node name="Plot" type="Button" parent="."]
@@ -25,9 +26,10 @@ texture_filter = 1
 offset_left = -25.0
 offset_right = 24.0
 offset_bottom = 31.0
-text = "0 : 40"
+text = "0 : 40€"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_pie1o")
 
 [node name="StationNumber" type="TextEdit" parent="."]
