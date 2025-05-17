@@ -190,9 +190,10 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "0 : 20"
+text = "0 : 20€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S0"]
+visible = false
 texture = ExtResource("7_ert0c")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S0"]
