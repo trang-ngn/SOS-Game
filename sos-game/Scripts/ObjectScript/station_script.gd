@@ -71,7 +71,7 @@ func get_covered_houses() -> Array:
 	for body in bodies:
 		if body is House:
 			index_array.append(body.id)
-	print("index_array: ", index_array)
+	#print("index_array: ", index_array)
 	return index_array
 
 

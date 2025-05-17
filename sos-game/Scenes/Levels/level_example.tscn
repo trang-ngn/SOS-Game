@@ -324,7 +324,7 @@ offset_left = -31.0
 offset_top = -55.0
 offset_right = 31.0
 offset_bottom = -19.0
-text = "0 : 40"
+text = "0 : 40€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S0"]
 visible = false
@@ -360,7 +360,7 @@ offset_left = -31.0
 offset_top = -55.0
 offset_right = 31.0
 offset_bottom = -19.0
-text = "1 : 40"
+text = "1 : 40€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S1"]
 visible = false
@@ -397,7 +397,7 @@ offset_left = -31.0
 offset_top = -55.0
 offset_right = 31.0
 offset_bottom = -19.0
-text = "2 : 20"
+text = "2 : 20€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S2"]
 visible = false
@@ -433,7 +433,7 @@ offset_left = -31.0
 offset_top = -55.0
 offset_right = 31.0
 offset_bottom = -19.0
-text = "3 : 15"
+text = "3 : 15€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S3"]
 visible = false
@@ -470,7 +470,7 @@ offset_left = -31.0
 offset_top = -55.0
 offset_right = 31.0
 offset_bottom = -19.0
-text = "4 : 8"
+text = "4 : 8€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S4"]
 visible = false
@@ -507,7 +507,7 @@ offset_left = -31.0
 offset_top = -55.0
 offset_right = 31.0
 offset_bottom = -19.0
-text = "5 : 20"
+text = "5 : 20€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S5"]
 visible = false
@@ -544,7 +544,7 @@ offset_left = -31.0
 offset_top = -55.0
 offset_right = 31.0
 offset_bottom = -19.0
-text = "6 : 20"
+text = "6 : 20€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S6"]
 visible = false
