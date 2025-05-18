@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://cbl24x0qb50np"]
+[gd_scene load_steps=25 format=4 uid="uid://cdmta2edi32rw"]
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/level_script.gd" id="1_hiugd"]
 [ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://Assets/Tileset/Tileset - v2.png" id="2_tvne3"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b2r4cix5na7mw" path="res://Assets/Houses/green_house.png" id="6_08cxd"]
 [ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://Assets/Rescue Station/rescue_station_2.png" id="7_ert0c"]
 [ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="7_jr16f"]
+[ext_resource type="Script" uid="uid://bhn2knupgw6fc" path="res://Scripts/radius_visual.gd" id="10_0jff0"]
 [ext_resource type="PackedScene" uid="uid://bxs73etkg8msh" path="res://Scenes/Dialogs/statistik_bar.tscn" id="11_2ejuk"]
 [ext_resource type="Texture2D" uid="uid://drjlj1jgbcpqf" path="res://Assets/Buttons and Dialogs/Button-green.png" id="12_0jff0"]
 [ext_resource type="FontFile" uid="uid://c8f1xkqvr2h7a" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="13_iihae"]
@@ -109,7 +110,6 @@ tile_set = SubResource("TileSet_gd6ao")
 [node name="H0" type="StaticBody2D" parent="Houses"]
 position = Vector2(-22, -37)
 script = ExtResource("3_rhjl8")
-design = ExtResource("4_tvne3")
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H0"]
 texture_filter = 1
@@ -133,7 +133,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H1" type="StaticBody2D" parent="Houses"]
 position = Vector2(132, -36)
 script = ExtResource("3_rhjl8")
-design = ExtResource("6_08cxd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H1"]
 texture_filter = 1
@@ -157,7 +156,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H2" type="StaticBody2D" parent="Houses"]
 position = Vector2(208, -36)
 script = ExtResource("3_rhjl8")
-design = ExtResource("5_ert0c")
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H2"]
 texture_filter = 1
@@ -212,6 +210,11 @@ texture_filter = 1
 visible = false
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_fypjr")
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S0/Radius"]
+visible = false
+script = ExtResource("10_0jff0")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="Camera" type="CharacterBody2D" parent="."]
 script = ExtResource("7_jr16f")
