@@ -93,7 +93,8 @@ func _on_area_2d_body_entered(body: House) -> void:
 
 func _on_button_mouse_entered() -> void:
 	$Radius/RadiusSize.visible = true
-
+	$Radius/RadiusVisual.visible = true
 
 func _on_button_mouse_exited() -> void:
 	$Radius/RadiusSize.visible = false
+	$Radius/RadiusVisual.visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://b00sls01fhthg"]
+[gd_scene load_steps=33 format=4 uid="uid://b00sls01fhthg"]
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/level_script.gd" id="1_tjl6l"]
 [ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://Assets/Tileset/Tileset - v2.png" id="2_3628d"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b2qe6xh3aeg1s" path="res://Assets/Houses/brown_house.png" id="7_nojx8"]
 [ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/ObjectScript/station_script.gd" id="8_vvknj"]
 [ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://Assets/Rescue Station/rescue_station_2.png" id="9_ad63i"]
+[ext_resource type="Script" uid="uid://bhn2knupgw6fc" path="res://Scripts/radius_visual.gd" id="10_3628d"]
 [ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="10_pmbdk"]
 [ext_resource type="PackedScene" uid="uid://bxs73etkg8msh" path="res://Scenes/Dialogs/statistik_bar.tscn" id="11_ksf1i"]
 [ext_resource type="Texture2D" uid="uid://drjlj1jgbcpqf" path="res://Assets/Buttons and Dialogs/Button-green.png" id="12_vif5h"]
@@ -696,6 +697,11 @@ scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_tjl6l")
 debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
+[node name="RadiusVisual" type="Node2D" parent="Stations/S0/Radius"]
+visible = false
+script = ExtResource("10_3628d")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
 [node name="S1" type="Node2D" parent="Stations"]
 position = Vector2(-400, -259)
 script = ExtResource("8_vvknj")
@@ -729,6 +735,11 @@ visible = false
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_3628d")
 debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S1/Radius"]
+visible = false
+script = ExtResource("10_3628d")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S2" type="Node2D" parent="Stations"]
 position = Vector2(-465, -1)
@@ -765,6 +776,11 @@ scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_irw6p")
 debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
+[node name="RadiusVisual" type="Node2D" parent="Stations/S2/Radius"]
+visible = false
+script = ExtResource("10_3628d")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
 [node name="S4" type="Node2D" parent="Stations"]
 position = Vector2(-400, 157)
 script = ExtResource("8_vvknj")
@@ -799,6 +815,11 @@ position = Vector2(-3, 27)
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_7r2dd")
 debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S4/Radius"]
+visible = false
+script = ExtResource("10_3628d")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S5" type="Node2D" parent="Stations"]
 position = Vector2(-72, 188)
@@ -835,6 +856,11 @@ scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_31phq")
 debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
+[node name="RadiusVisual" type="Node2D" parent="Stations/S5/Radius"]
+visible = false
+script = ExtResource("10_3628d")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
 [node name="S6" type="Node2D" parent="Stations"]
 position = Vector2(104, 150)
 script = ExtResource("8_vvknj")
@@ -869,6 +895,11 @@ position = Vector2(-3, 27)
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_7hll7")
 debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S6/Radius"]
+visible = false
+script = ExtResource("10_3628d")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S7" type="Node2D" parent="Stations"]
 position = Vector2(408, -8)
@@ -905,6 +936,11 @@ scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_fayjm")
 debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
+[node name="RadiusVisual" type="Node2D" parent="Stations/S7/Radius"]
+visible = false
+script = ExtResource("10_3628d")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
 [node name="S8" type="Node2D" parent="Stations"]
 position = Vector2(-136, 16)
 script = ExtResource("8_vvknj")
@@ -940,6 +976,11 @@ scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_nojx8")
 debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
+[node name="RadiusVisual" type="Node2D" parent="Stations/S8/Radius"]
+visible = false
+script = ExtResource("10_3628d")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
 [node name="S3" type="Node2D" parent="Stations"]
 position = Vector2(-460, 246)
 script = ExtResource("8_vvknj")
@@ -974,6 +1015,11 @@ position = Vector2(-3, 27)
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_k2mw1")
 debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S3/Radius"]
+visible = false
+script = ExtResource("10_3628d")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="Camera" type="CharacterBody2D" parent="."]
 script = ExtResource("10_pmbdk")
