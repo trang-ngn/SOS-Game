@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://cbl24x0qb50np"]
+[gd_scene load_steps=28 format=4 uid="uid://cbl24x0qb50np"]
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/level_script.gd" id="1_hiugd"]
 [ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://Assets/Tileset/Tileset - v2.png" id="2_tvne3"]
@@ -16,7 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://lhmlbnmpqa" path="res://Assets/Buttons and Dialogs/Button-DoneRestart.png" id="14_yiwsm"]
 [ext_resource type="PackedScene" uid="uid://p8jlq8xdcf0t" path="res://Scenes/Dialogs/result_pop_up.tscn" id="15_n4o5f"]
 [ext_resource type="Texture2D" uid="uid://4rqgghfr1k30" path="res://Assets/Buttons and Dialogs/Button-back.png" id="16_iihae"]
-[ext_resource type="Script" uid="uid://cehkk0jbkwyht" path="res://Scripts/Buttons/back_button.gd" id="17_yiwsm"]
+[ext_resource type="Texture2D" uid="uid://dxe0vev11yt7i" path="res://Assets/Buttons and Dialogs/Dialog-Back.png" id="18_n4o5f"]
+[ext_resource type="Script" uid="uid://bbshj5irgw0hc" path="res://Scripts/Dialogs/confirmdialog_back_to_start.gd" id="18_o2vlx"]
+[ext_resource type="Texture2D" uid="uid://d04k3dynlule1" path="res://Assets/Buttons and Dialogs/Button-close.png" id="19_o2vlx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_08cxd"]
 texture = ExtResource("2_tvne3")
@@ -329,7 +331,64 @@ offset_left = 90.0
 offset_right = 262.0
 offset_bottom = 156.0
 texture_normal = ExtResource("16_iihae")
-script = ExtResource("17_yiwsm")
+
+[node name="Confirmdialog_BackToStart" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("18_o2vlx")
+
+[node name="ColorRect" type="ColorRect" parent="Confirmdialog_BackToStart"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.262745, 0.262745, 0.262745, 0.784314)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Confirmdialog_BackToStart"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 530.0
+offset_top = 320.0
+offset_right = 1350.0
+offset_bottom = 700.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("18_n4o5f")
+
+[node name="CloseButton" type="TextureButton" parent="Confirmdialog_BackToStart"]
+layout_mode = 0
+offset_left = 1252.0
+offset_top = 404.0
+offset_right = 1316.0
+offset_bottom = 468.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("19_o2vlx")
+
+[node name="OkButton" type="Button" parent="Confirmdialog_BackToStart"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 962.0
+offset_top = 630.0
+offset_right = 1362.0
+offset_bottom = 720.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="CancelButton" type="Button" parent="Confirmdialog_BackToStart"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 560.0
+offset_top = 630.0
+offset_right = 960.0
+offset_bottom = 720.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [connection signal="button_up" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_button_up"]
 [connection signal="mouse_entered" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_entered"]
@@ -342,3 +401,6 @@ script = ExtResource("17_yiwsm")
 [connection signal="pressed" from="DoneRestartContainer/DoneButton" to="." method="_on_done_button_pressed"]
 [connection signal="pressed" from="DoneRestartContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Confirmdialog_BackToStart/CloseButton" to="Confirmdialog_BackToStart" method="_on_close_button_pressed"]
+[connection signal="pressed" from="Confirmdialog_BackToStart/OkButton" to="Confirmdialog_BackToStart" method="_on_ok_button_pressed"]
+[connection signal="pressed" from="Confirmdialog_BackToStart/CancelButton" to="Confirmdialog_BackToStart" method="_on_cancel_button_pressed"]
