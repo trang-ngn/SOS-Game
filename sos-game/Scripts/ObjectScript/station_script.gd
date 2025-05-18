@@ -87,8 +87,9 @@ func initialize() -> void:
 	$Radius/RadiusSize.visible = false
 
 
-func _on_area_2d_body_entered(body: House) -> void:
-	houses.append(body)
+func _on_area_2d_body_entered(body: Node) -> void:
+	if body is House:
+		houses.append(body)
 
 
 func _on_button_mouse_entered() -> void:
