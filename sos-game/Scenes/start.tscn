@@ -24,6 +24,7 @@ offset_right = 1268.0
 offset_bottom = 524.0
 texture_normal = ExtResource("2_5ogh5")
 script = ExtResource("3_lb6bl")
+metadata/_edit_use_anchors_ = true
 
 [node name="Button_Sandbox" type="TextureButton" parent="Buttons"]
 offset_left = 660.0
