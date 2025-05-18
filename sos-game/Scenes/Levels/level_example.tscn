@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://dtjpdd5jwliip"]
+[gd_scene load_steps=26 format=4 uid="uid://dtjpdd5jwliip"]
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/level_script.gd" id="1_04lb0"]
 [ext_resource type="TileSet" uid="uid://cooaxagih3mdw" path="res://Assets/Tileset/tileset_1.0.tres" id="2_vi7m4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shader" uid="uid://b1wvm2ng2bjhx" path="res://Shaders/highlight.gdshader" id="4_37vo7"]
 [ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/ObjectScript/station_script.gd" id="5_htqux"]
 [ext_resource type="Texture2D" uid="uid://btniax21u00s0" path="res://Assets/Rescue Station/rescue_default(dont use).png" id="6_gdbjo"]
+[ext_resource type="Script" uid="uid://bhn2knupgw6fc" path="res://Scripts/radius_visual.gd" id="7_vi7m4"]
 [ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="7_xfxn4"]
 [ext_resource type="PackedScene" uid="uid://bxs73etkg8msh" path="res://Scenes/Dialogs/statistik_bar.tscn" id="8_dh3ah"]
 [ext_resource type="Texture2D" uid="uid://drjlj1jgbcpqf" path="res://Assets/Buttons and Dialogs/Button-green.png" id="9_r8ray"]
@@ -349,6 +350,11 @@ visible = false
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_b510r")
 
+[node name="RadiusVisual" type="Node2D" parent="Stations/S0/Radius"]
+visible = false
+script = ExtResource("7_vi7m4")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
 [node name="S1" type="Node2D" parent="Stations"]
 position = Vector2(-318, 10)
 script = ExtResource("5_htqux")
@@ -386,6 +392,11 @@ scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_2a2fd")
 debug_color = Color(0.282722, 0.618852, 0.359162, 0.42)
 
+[node name="RadiusVisual" type="Node2D" parent="Stations/S1/Radius"]
+visible = false
+script = ExtResource("7_vi7m4")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
 [node name="S2" type="Node2D" parent="Stations"]
 position = Vector2(-521, -98)
 script = ExtResource("5_htqux")
@@ -421,6 +432,11 @@ position = Vector2(0, -45)
 visible = false
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_xv378")
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S2/Radius"]
+visible = false
+script = ExtResource("7_vi7m4")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S3" type="Node2D" parent="Stations"]
 position = Vector2(-68, 161)
@@ -459,6 +475,11 @@ scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_kaqqc")
 debug_color = Color(0.491742, 0.444078, 0.971108, 0.42)
 
+[node name="RadiusVisual" type="Node2D" parent="Stations/S3/Radius"]
+visible = false
+script = ExtResource("7_vi7m4")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
 [node name="S4" type="Node2D" parent="Stations"]
 position = Vector2(263, 190)
 script = ExtResource("5_htqux")
@@ -495,6 +516,11 @@ visible = false
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_ojxi3")
 debug_color = Color(0.727003, 0.379446, 0.738958, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S4/Radius"]
+visible = false
+script = ExtResource("7_vi7m4")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S5" type="Node2D" parent="Stations"]
 position = Vector2(468, -213)
@@ -533,6 +559,11 @@ scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_odk1q")
 debug_color = Color(0.500007, 0.449375, 0.947741, 0.42)
 
+[node name="RadiusVisual" type="Node2D" parent="Stations/S5/Radius"]
+visible = false
+script = ExtResource("7_vi7m4")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
 [node name="S6" type="Node2D" parent="Stations"]
 position = Vector2(647, 77)
 script = ExtResource("5_htqux")
@@ -569,6 +600,11 @@ visible = false
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_fypjr")
 debug_color = Color(0.842477, 0.377384, 0.137897, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S6/Radius"]
+visible = false
+script = ExtResource("7_vi7m4")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="Camera" type="CharacterBody2D" parent="."]
 visible = false
