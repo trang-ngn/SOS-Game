@@ -92,7 +92,7 @@ func _on_hide_button_toggled(is_hidden: bool) -> void:
 
 
 func _on_restart_button_pressed() -> void:
-	get_tree().reload_current_scene()
+	$Confirmdialog_Restart.visible = true
 
 
 func _on_back_button_pressed() -> void:
