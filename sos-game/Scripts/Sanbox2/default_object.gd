@@ -1,0 +1,2 @@
+class_name DefaultObject
+extends ObjectSandbox

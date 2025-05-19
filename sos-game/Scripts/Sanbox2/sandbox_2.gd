@@ -1,38 +1,47 @@
 extends Node2D
 
-@export var blueprint: Sprite2D  # The blueprint sprite
-@export var tilemap: TileMap  # The TileMap node
+@onready var house_scene = preload("res://Scenes/Objects/house_2.tscn")
+@onready var houses = $Houses
+@onready var default_object : ObjectSandbox = $PreviewObjects/DefaultObject
+@onready var tilemap : TileMap = $TileMap
 
-const HOUSE = preload("res://Scenes/Objects/house.tscn")
+var current_grid_position
+var current_object : ObjectSandbox
+var is_building = false
 
-# Continuously check cell under the mouse
+func _ready() -> void:
+	current_object = default_object
+	
 func _process(delta: float) -> void:
-	checkCell()
+	check_area()
 
-func checkCell() -> void:
-	# Step 1: Get the mouse position in the viewport
+func check_area() -> void :
 	var mouse_tile = get_global_mouse_position()
-	
-	# Step 2: Convert mouse position to the TileMap's grid position
 	var map_pos = tilemap.local_to_map(mouse_tile)
-	
-	# Step 3: Convert the grid position back to a local coordinate
 	var coordinate = tilemap.map_to_local(map_pos)
+	current_object.position = to_global(coordinate)
+	current_grid_position = to_global(coordinate)
 	
-	# Step 4: Set the blueprint's position to the calculated global coordinate
-	blueprint.position = to_global(coordinate)
-
-func _input(event):
-	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_LEFT :
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_released():
+		if !is_building :
+			change_to_object()
+			is_building = true
+		else :
 			place_object()
-		
 
+func change_to_object() -> void :
+	default_object.visible = false
+	var new_house = house_scene.instantiate()
+	houses.add_child(new_house)
+	current_object = new_house
+	
 func place_object() -> void :
-	print("clicked")
-	var object : StaticBody2D = HOUSE.instantiate()
-	object.global_position = blueprint.global_position
-	add_child(object)
-	
-	
+	if current_object.is_colliding() :
+		print("This object is overlapping with another object")
+	else :
+		current_object.position = current_grid_position
+		current_object = default_object
+		current_object.visible = true
+		is_building = false
 	
