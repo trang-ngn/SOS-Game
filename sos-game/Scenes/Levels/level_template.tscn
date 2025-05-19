@@ -377,6 +377,7 @@ texture_normal = ExtResource("19_o2vlx")
 
 [node name="OkButton" type="Button" parent="Confirmdialog_BackToStart"]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 962.0
 offset_top = 630.0
 offset_right = 1362.0
@@ -386,6 +387,7 @@ size_flags_vertical = 4
 
 [node name="CancelButton" type="Button" parent="Confirmdialog_BackToStart"]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 560.0
 offset_top = 630.0
 offset_right = 960.0
@@ -436,6 +438,7 @@ texture_normal = ExtResource("19_o2vlx")
 
 [node name="OkButton" type="Button" parent="Confirmdialog_Restart"]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 962.0
 offset_top = 630.0
 offset_right = 1362.0
@@ -445,6 +448,7 @@ size_flags_vertical = 4
 
 [node name="CancelButton" type="Button" parent="Confirmdialog_Restart"]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 560.0
 offset_top = 630.0
 offset_right = 960.0

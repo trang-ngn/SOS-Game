@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://vq3hxgbojsbq"]
+[gd_scene load_steps=11 format=3 uid="uid://vq3hxgbojsbq"]
 
 [ext_resource type="Texture2D" uid="uid://db0irs6w4evab" path="res://Assets/Background/Background50%.png" id="1_3bxa3"]
 [ext_resource type="Texture2D" uid="uid://c1xuybe8d22do" path="res://Assets/Buttons and Dialogs/Button-Start.png" id="2_5ogh5"]
@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://dhspi27r0u7kl" path="res://Scripts/Buttons/button_sandbox.gd" id="5_o3wvq"]
 [ext_resource type="Texture2D" uid="uid://osm55giheu7s" path="res://Assets/Buttons and Dialogs/Button-help.png" id="6_pg4io"]
 [ext_resource type="Texture2D" uid="uid://cgxd2tb7s5oqi" path="res://Assets/Buttons and Dialogs/Button-Info.png" id="7_iceld"]
+[ext_resource type="Script" uid="uid://btb2ec2dkwpcv" path="res://Scripts/Dialogs/dialog_help.gd" id="8_5bn4p"]
+[ext_resource type="Texture2D" uid="uid://xrdvv81ies5k" path="res://Assets/Buttons and Dialogs/Dialog-Help.png" id="9_qmsyr"]
+[ext_resource type="Texture2D" uid="uid://d04k3dynlule1" path="res://Assets/Buttons and Dialogs/Button-close.png" id="10_knwj7"]
 
 [node name="main" type="Node2D"]
 
@@ -48,4 +51,61 @@ offset_right = 1820.0
 offset_bottom = 1080.0
 texture_normal = ExtResource("7_iceld")
 
+[node name="Dialog_Help" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_5bn4p")
+
+[node name="ColorRect" type="ColorRect" parent="Dialog_Help"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.262745, 0.262745, 0.262745, 0.784314)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Dialog_Help"]
+layout_mode = 1
+offset_left = 328.0
+offset_top = 210.0
+offset_right = 1592.0
+offset_bottom = 890.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_qmsyr")
+
+[node name="CloseButton" type="TextureButton" parent="Dialog_Help"]
+layout_mode = 0
+offset_left = 1474.0
+offset_top = 254.0
+offset_right = 1538.0
+offset_bottom = 318.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("10_knwj7")
+
+[node name="OkButton" type="Button" parent="Dialog_Help"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 962.0
+offset_top = 630.0
+offset_right = 1362.0
+offset_bottom = 720.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="CancelButton" type="Button" parent="Dialog_Help"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 560.0
+offset_top = 630.0
+offset_right = 960.0
+offset_bottom = 720.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
 [connection signal="pressed" from="Buttons/Button_Start" to="Buttons/Button_Start" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Button_Help" to="Dialog_Help" method="_on_button_help_pressed"]
+[connection signal="pressed" from="Dialog_Help/CloseButton" to="Dialog_Help" method="_on_close_button_pressed"]
+[connection signal="pressed" from="Dialog_Help/OkButton" to="Dialog_Help" method="_on_ok_button_pressed"]
+[connection signal="pressed" from="Dialog_Help/CancelButton" to="Dialog_Help" method="_on_cancel_button_pressed"]
