@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://caufal412q3qk"]
+[gd_scene load_steps=10 format=3 uid="uid://caufal412q3qk"]
 
 [ext_resource type="Script" uid="uid://cwhhanmpthajn" path="res://Scripts/Sanbox2/sandbox_2.gd" id="1_8sd2g"]
 [ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://Assets/Tileset/Tileset - v2.png" id="2_ugay7"]
-[ext_resource type="Texture2D" uid="uid://b1xkwj41oa1f6" path="res://default_object.png" id="4_qhnav"]
+[ext_resource type="Texture2D" uid="uid://bp2nhnscsp41o" path="res://Assets/Cursor/default_object.png" id="3_ugay7"]
 [ext_resource type="Script" uid="uid://ixfakxeau86w" path="res://Scripts/Sanbox2/default_object.gd" id="4_ugay7"]
+[ext_resource type="Script" uid="uid://dda24cx7xxmwv" path="res://Scripts/Sanbox2/delete_object.gd" id="5_qhnav"]
+[ext_resource type="Texture2D" uid="uid://b1xkwj41oa1f6" path="res://Assets/Cursor/delete_object.png" id="6_stmkc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mf7m1"]
 texture = ExtResource("2_ugay7")
@@ -45,6 +47,9 @@ texture = ExtResource("2_ugay7")
 [sub_resource type="TileSet" id="TileSet_ugay7"]
 sources/0 = SubResource("TileSetAtlasSource_mf7m1")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrb1b"]
+size = Vector2(16, 16)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_8sd2g")
 
@@ -60,8 +65,19 @@ zoom = Vector2(2.5, 2.5)
 
 [node name="PreviewObjects" type="Node2D" parent="."]
 
-[node name="DefaultObject" type="Node2D" parent="PreviewObjects"]
+[node name="DefaultObject" type="Sprite2D" parent="PreviewObjects"]
+texture = ExtResource("3_ugay7")
 script = ExtResource("4_ugay7")
 
-[node name="Sprite2D" type="Sprite2D" parent="PreviewObjects/DefaultObject"]
-texture = ExtResource("4_qhnav")
+[node name="ObjectDeleter" type="Area2D" parent="PreviewObjects"]
+script = ExtResource("5_qhnav")
+
+[node name="DeleteDesign" type="Sprite2D" parent="PreviewObjects/ObjectDeleter"]
+texture = ExtResource("6_stmkc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PreviewObjects/ObjectDeleter"]
+visible = false
+shape = SubResource("RectangleShape2D_rrb1b")
+
+[connection signal="area_entered" from="PreviewObjects/ObjectDeleter" to="." method="_on_object_deleter_area_entered"]
+[connection signal="area_exited" from="PreviewObjects/ObjectDeleter" to="." method="_on_object_deleter_area_exited"]

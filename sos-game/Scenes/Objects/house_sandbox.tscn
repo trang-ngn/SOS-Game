@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvwglm8jol5a1"]
 
-[ext_resource type="Texture2D" uid="uid://wdkq6dlpx1a0" path="res://Assets/Houses/white_house.png" id="1_co17u"]
-[ext_resource type="Script" uid="uid://b7v6ccpj4h5kd" path="res://Scripts/ObjectScript/house_2.gd" id="1_eg1ne"]
+[ext_resource type="Script" uid="uid://b7v6ccpj4h5kd" path="res://Scripts/ObjectScript/house_2.gd" id="1_56b1i"]
+[ext_resource type="Texture2D" uid="uid://wdkq6dlpx1a0" path="res://Assets/Houses/white_house.png" id="2_t3efg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eg1ne"]
 size = Vector2(63.9, 63.9)
 
 [node name="House2" type="Area2D"]
-script = ExtResource("1_eg1ne")
+script = ExtResource("1_56b1i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_eg1ne")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_co17u")
+texture = ExtResource("2_t3efg")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
