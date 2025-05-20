@@ -7,9 +7,11 @@
 size = Vector2(63.9, 63.9)
 
 [node name="House2" type="Area2D"]
+position = Vector2(0, 16)
 script = ExtResource("1_56b1i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_eg1ne")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
