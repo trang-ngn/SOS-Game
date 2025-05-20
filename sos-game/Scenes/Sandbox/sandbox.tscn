@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://caufal412q3qk"]
 
-[ext_resource type="Script" uid="uid://cwhhanmpthajn" path="res://Scripts/Sanbox2/sandbox_2.gd" id="1_8sd2g"]
-[ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://Assets/Tileset/Tileset - v2.png" id="2_stmkc"]
-[ext_resource type="Texture2D" uid="uid://bp2nhnscsp41o" path="res://Assets/Cursor/default_object.png" id="3_ugay7"]
-[ext_resource type="Script" uid="uid://ixfakxeau86w" path="res://Scripts/Sanbox2/default_object.gd" id="4_ugay7"]
-[ext_resource type="Script" uid="uid://dda24cx7xxmwv" path="res://Scripts/Sanbox2/delete_object.gd" id="5_qhnav"]
-[ext_resource type="Texture2D" uid="uid://b1xkwj41oa1f6" path="res://Assets/Cursor/delete_object.png" id="6_stmkc"]
+[ext_resource type="Script" uid="uid://cwhhanmpthajn" path="res://Scripts/Sanbox2/sandbox_2.gd" id="1_62cd8"]
+[ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://Assets/Tileset/Tileset - v2.png" id="2_4yamo"]
+[ext_resource type="Texture2D" uid="uid://bp2nhnscsp41o" path="res://Assets/Cursor/default_object.png" id="3_0r1v2"]
+[ext_resource type="Script" uid="uid://ixfakxeau86w" path="res://Scripts/Sanbox2/default_object.gd" id="4_aox5q"]
+[ext_resource type="Script" uid="uid://dda24cx7xxmwv" path="res://Scripts/Sanbox2/delete_object.gd" id="5_qee5c"]
+[ext_resource type="Texture2D" uid="uid://b1xkwj41oa1f6" path="res://Assets/Cursor/delete_object.png" id="6_ixw05"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rrb1b"]
-texture = ExtResource("2_stmkc")
+texture = ExtResource("2_4yamo")
 0:0/0 = 0
 1:0/0 = 0
 3:0/0 = 0
@@ -53,7 +53,7 @@ sources/0 = SubResource("TileSetAtlasSource_rrb1b")
 size = Vector2(15.5, 15.5)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_8sd2g")
+script = ExtResource("1_62cd8")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ovf5p")
@@ -68,14 +68,14 @@ zoom = Vector2(3.5, 3.5)
 [node name="PreviewObjects" type="Node2D" parent="."]
 
 [node name="DefaultObject" type="Sprite2D" parent="PreviewObjects"]
-texture = ExtResource("3_ugay7")
-script = ExtResource("4_ugay7")
+texture = ExtResource("3_0r1v2")
+script = ExtResource("4_aox5q")
 
 [node name="ObjectDeleter" type="Area2D" parent="PreviewObjects"]
-script = ExtResource("5_qhnav")
+script = ExtResource("5_qee5c")
 
 [node name="DeleteDesign" type="Sprite2D" parent="PreviewObjects/ObjectDeleter"]
-texture = ExtResource("6_stmkc")
+texture = ExtResource("6_ixw05")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PreviewObjects/ObjectDeleter"]
 visible = false

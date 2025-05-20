@@ -53,7 +53,7 @@ func _input(event: InputEvent) -> void:
 			delete_object()
 		
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.is_released():
-		if !is_deleting :
+		if !is_deleting and current_object == default_object:
 			switch_mode(MODE.DELETE)
 		elif is_deleting :
 			switch_mode(MODE.DEFAULT)
