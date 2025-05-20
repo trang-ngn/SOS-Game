@@ -2,19 +2,9 @@
 class_name House
 extends StaticBody2D
 
-
-
 var num_stat_cover : int = 0 
 var covered : bool = false 
-var id : int 
-
-@onready var sprite : Sprite2D = $Sprite2D
-
-#@export var design : Texture2D :
-	#set(value) :
-		#design = value
-		#if sprite :
-			#sprite.texture = design
+@export var id : int 
 	
 
 
