@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://xegq7mbvc3s3"]
+[gd_scene load_steps=6 format=3 uid="uid://dnvxsiyqsrgnn"]
 
 [ext_resource type="Script" uid="uid://bodp6ey6ji3cc" path="res://Scripts/ObjectScript/house_script.gd" id="1_iwrrl"]
 [ext_resource type="Shader" uid="uid://b1wvm2ng2bjhx" path="res://Shaders/highlight.gdshader" id="2_4tj7w"]
