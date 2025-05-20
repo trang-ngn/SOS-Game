@@ -6,7 +6,7 @@ extends Node2D
 @onready var object_deleter : ObjectsDeleter = $PreviewObjects/ObjectDeleter
 @onready var tilemap : TileMap = $TileMap
 
-var current_grid_position
+var offset : Vector2 = Vector2(0,0)
 var current_object : ObjectSandbox
 var is_building 
 var is_deleting 
@@ -15,6 +15,12 @@ enum MODE{
 	DEFAULT,
 	BUILD,
 	DELETE
+}
+
+#not used yet
+enum BUILDING{
+	HOUSE,
+	STATION
 }
 
 func _ready() -> void:
@@ -30,8 +36,9 @@ func check_area() -> void :
 	var mouse_tile = get_global_mouse_position()
 	var map_pos = tilemap.local_to_map(mouse_tile)
 	var coordinate = tilemap.map_to_local(map_pos)
-	current_object.position = to_global(coordinate)
-	current_grid_position = to_global(coordinate)
+	current_object.position = to_global(coordinate + offset).snapped(Vector2.ONE)
+	
+	
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_released():
@@ -72,6 +79,7 @@ func default_mode() -> void :
 	current_object = default_object
 	is_building = false
 	is_deleting = false
+	set_offset(0,0)
 
 func build_mode() -> void :
 	default_object.switch_default(false)
@@ -79,6 +87,7 @@ func build_mode() -> void :
 	#current_object will be changed in other function according to the building type
 	is_building = true
 	is_deleting = false
+	set_offset(-8, 8)
 
 func delete_mode() -> void :
 	default_object.switch_default(false)
@@ -86,6 +95,7 @@ func delete_mode() -> void :
 	current_object = object_deleter
 	is_building = false
 	is_deleting = true
+	set_offset(0,0)
 
 func change_to_house() -> void :
 	var new_house = house_scene.instantiate()
@@ -96,7 +106,6 @@ func place_object() -> void :
 	if current_object.is_colliding() :
 		print("This object is overlapping with another object")
 	else :
-		current_object.position = current_grid_position 
 		switch_mode(MODE.DEFAULT)
 
 func delete_object() -> void :
@@ -104,3 +113,9 @@ func delete_object() -> void :
 		print("hover over to an object")
 	else :
 		object_deleter.collided_object.queue_free()
+
+#this function should be expand further in the future
+#it should set off set for each type of building
+#for now only for house
+func set_offset(x :float, y : float) -> void :
+	offset = Vector2(x,y)
