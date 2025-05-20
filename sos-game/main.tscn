@@ -5,3 +5,4 @@
 [node name="main" type="Node2D"]
 
 [node name="LevelTemplate" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(721, 213)
