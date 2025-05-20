@@ -19,6 +19,7 @@ func is_covered() -> bool :
 
 func _ready() -> void:
 	initialize()
+	id = get_index()
 	
 func set_outline() -> void :
 	if(num_stat_cover == 0) :
@@ -28,6 +29,7 @@ func set_outline() -> void :
 		
 
 func initialize() -> void :
+	#sprite.texture = design
 	$HouseNumber.visible = false
 	set_outline()
 	

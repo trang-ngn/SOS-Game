@@ -23,11 +23,9 @@ radius = 18.8968
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g30sg"]
 size = Vector2(67, 68)
 
-[node name="LevelTemplate" type="Node2D" node_paths=PackedStringArray("stations", "houses")]
+[node name="LevelTemplate" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_meq67")
-stations = [null, NodePath("Stations/S1"), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath("")]
-houses = [null, NodePath("Houses/H1"), NodePath("Houses/H2"), NodePath("Houses/H3"), NodePath("Houses/H4"), NodePath("Houses/H5"), NodePath("Houses/H6"), NodePath("Houses/H7"), NodePath("Houses/H8"), NodePath("Houses/H9")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_3rhg7")
@@ -56,10 +54,12 @@ script = ExtResource("3_aqqml")
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H1"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
+instance_shader_parameters/active = false
 position = Vector2(0, -45)
 texture = ExtResource("5_x3fiy")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H1"]
+visible = false
 offset_left = -16.0
 offset_top = -64.0
 offset_right = 13.0
@@ -78,10 +78,12 @@ script = ExtResource("3_aqqml")
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H2"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
+instance_shader_parameters/active = false
 position = Vector2(0, -45)
 texture = ExtResource("5_x3fiy")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H2"]
+visible = false
 offset_left = -16.0
 offset_top = -64.0
 offset_right = 13.0
@@ -100,10 +102,12 @@ script = ExtResource("3_aqqml")
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H3"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
+instance_shader_parameters/active = false
 position = Vector2(0, -45)
 texture = ExtResource("5_x3fiy")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H3"]
+visible = false
 offset_left = -16.0
 offset_top = -64.0
 offset_right = 13.0
@@ -122,10 +126,12 @@ script = ExtResource("3_aqqml")
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H4"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
+instance_shader_parameters/active = false
 position = Vector2(0, -45)
 texture = ExtResource("5_x3fiy")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H4"]
+visible = false
 offset_left = -16.0
 offset_top = -64.0
 offset_right = 13.0
@@ -144,10 +150,12 @@ script = ExtResource("3_aqqml")
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H5"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
+instance_shader_parameters/active = false
 position = Vector2(0, -45)
 texture = ExtResource("5_x3fiy")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H5"]
+visible = false
 offset_left = -16.0
 offset_top = -64.0
 offset_right = 13.0
@@ -166,10 +174,12 @@ script = ExtResource("3_aqqml")
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H6"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
+instance_shader_parameters/active = false
 position = Vector2(0, -45)
 texture = ExtResource("5_x3fiy")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H6"]
+visible = false
 offset_left = -16.0
 offset_top = -64.0
 offset_right = 13.0
@@ -188,10 +198,12 @@ script = ExtResource("3_aqqml")
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H7"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
+instance_shader_parameters/active = false
 position = Vector2(0, -45)
 texture = ExtResource("5_x3fiy")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H7"]
+visible = false
 offset_left = -16.0
 offset_top = -64.0
 offset_right = 13.0
@@ -210,10 +222,12 @@ script = ExtResource("3_aqqml")
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H8"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
+instance_shader_parameters/active = false
 position = Vector2(0, -45)
 texture = ExtResource("5_x3fiy")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H8"]
+visible = false
 offset_left = -16.0
 offset_top = -64.0
 offset_right = 13.0
@@ -232,10 +246,12 @@ script = ExtResource("3_aqqml")
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H9"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
+instance_shader_parameters/active = false
 position = Vector2(0, -45)
 texture = ExtResource("5_x3fiy")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H9"]
+visible = false
 offset_left = -16.0
 offset_top = -64.0
 offset_right = 13.0
@@ -253,7 +269,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 position = Vector2(-318, 10)
 script = ExtResource("6_u2n6r")
 cost = 40
-id = 1
 
 [node name="Plot" type="Button" parent="Stations/S1"]
 texture_filter = 1
@@ -261,12 +276,15 @@ offset_left = -31.0
 offset_top = -55.0
 offset_right = 31.0
 offset_bottom = -19.0
+text = "0 : 40€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S1"]
+visible = false
 position = Vector2(0, -50)
 texture = ExtResource("7_57e81")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S1"]
+visible = false
 offset_left = -14.0
 offset_top = -57.0
 offset_right = 13.0

@@ -18,7 +18,7 @@ func _init(): # automatically run when this node is created
 	# server responds -> trigger signale -> cause callback fucntion to run, which will run when http request finish
 	http.request_completed.connect(_on_request_completed) 
 
-func _on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray):
+func _on_request_completed(result: int, response_code: int, _headers: PackedStringArray, body: PackedByteArray):
 	request_done = true
 	
 	var text: String = body.get_string_from_utf8()

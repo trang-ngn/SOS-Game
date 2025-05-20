@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://dtjpdd5jwliip"]
+[gd_scene load_steps=26 format=4 uid="uid://dtjpdd5jwliip"]
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/level_script.gd" id="1_04lb0"]
 [ext_resource type="TileSet" uid="uid://cooaxagih3mdw" path="res://Assets/Tileset/tileset_1.0.tres" id="2_vi7m4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shader" uid="uid://b1wvm2ng2bjhx" path="res://Shaders/highlight.gdshader" id="4_37vo7"]
 [ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/ObjectScript/station_script.gd" id="5_htqux"]
 [ext_resource type="Texture2D" uid="uid://btniax21u00s0" path="res://Assets/Rescue Station/rescue_default(dont use).png" id="6_gdbjo"]
+[ext_resource type="Script" uid="uid://bhn2knupgw6fc" path="res://Scripts/radius_visual.gd" id="7_vi7m4"]
 [ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="7_xfxn4"]
 [ext_resource type="PackedScene" uid="uid://bxs73etkg8msh" path="res://Scenes/Dialogs/statistik_bar.tscn" id="8_dh3ah"]
 [ext_resource type="Texture2D" uid="uid://drjlj1jgbcpqf" path="res://Assets/Buttons and Dialogs/Button-green.png" id="9_r8ray"]
@@ -107,7 +108,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H1" type="StaticBody2D" parent="Houses"]
 position = Vector2(-265, -150)
 script = ExtResource("3_cf1ce")
-id = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H1"]
 texture_filter = 1
@@ -131,7 +131,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H2" type="StaticBody2D" parent="Houses"]
 position = Vector2(-52, -13)
 script = ExtResource("3_cf1ce")
-id = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H2"]
 texture_filter = 1
@@ -155,7 +154,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H3" type="StaticBody2D" parent="Houses"]
 position = Vector2(-493, 115)
 script = ExtResource("3_cf1ce")
-id = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H3"]
 texture_filter = 1
@@ -179,7 +177,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H4" type="StaticBody2D" parent="Houses"]
 position = Vector2(-248, 91)
 script = ExtResource("3_cf1ce")
-id = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H4"]
 texture_filter = 1
@@ -203,7 +200,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H5" type="StaticBody2D" parent="Houses"]
 position = Vector2(258, -128)
 script = ExtResource("3_cf1ce")
-id = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H5"]
 texture_filter = 1
@@ -227,7 +223,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H6" type="StaticBody2D" parent="Houses"]
 position = Vector2(473, -91)
 script = ExtResource("3_cf1ce")
-id = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H6"]
 texture_filter = 1
@@ -251,7 +246,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H7" type="StaticBody2D" parent="Houses"]
 position = Vector2(126, 95)
 script = ExtResource("3_cf1ce")
-id = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H7"]
 texture_filter = 1
@@ -275,7 +269,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H8" type="StaticBody2D" parent="Houses"]
 position = Vector2(440, 120)
 script = ExtResource("3_cf1ce")
-id = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H8"]
 texture_filter = 1
@@ -299,7 +292,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H9" type="StaticBody2D" parent="Houses"]
 position = Vector2(585, 13)
 script = ExtResource("3_cf1ce")
-id = 9
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H9"]
 texture_filter = 1
@@ -333,7 +325,7 @@ offset_left = -31.0
 offset_top = -55.0
 offset_right = 31.0
 offset_bottom = -19.0
-text = "0 : 40"
+text = "0 : 40€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S0"]
 visible = false
@@ -358,11 +350,15 @@ visible = false
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_b510r")
 
+[node name="RadiusVisual" type="Node2D" parent="Stations/S0/Radius"]
+visible = false
+script = ExtResource("7_vi7m4")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
 [node name="S1" type="Node2D" parent="Stations"]
 position = Vector2(-318, 10)
 script = ExtResource("5_htqux")
 cost = 40
-id = 1
 
 [node name="Plot" type="Button" parent="Stations/S1"]
 texture_filter = 1
@@ -370,7 +366,7 @@ offset_left = -31.0
 offset_top = -55.0
 offset_right = 31.0
 offset_bottom = -19.0
-text = "1 : 40"
+text = "1 : 40€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S1"]
 visible = false
@@ -396,11 +392,15 @@ scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_2a2fd")
 debug_color = Color(0.282722, 0.618852, 0.359162, 0.42)
 
+[node name="RadiusVisual" type="Node2D" parent="Stations/S1/Radius"]
+visible = false
+script = ExtResource("7_vi7m4")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
 [node name="S2" type="Node2D" parent="Stations"]
 position = Vector2(-521, -98)
 script = ExtResource("5_htqux")
 cost = 20
-id = 2
 
 [node name="Plot" type="Button" parent="Stations/S2"]
 texture_filter = 1
@@ -408,7 +408,7 @@ offset_left = -31.0
 offset_top = -55.0
 offset_right = 31.0
 offset_bottom = -19.0
-text = "2 : 20"
+text = "2 : 20€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S2"]
 visible = false
@@ -433,11 +433,15 @@ visible = false
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_xv378")
 
+[node name="RadiusVisual" type="Node2D" parent="Stations/S2/Radius"]
+visible = false
+script = ExtResource("7_vi7m4")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
 [node name="S3" type="Node2D" parent="Stations"]
 position = Vector2(-68, 161)
 script = ExtResource("5_htqux")
 cost = 15
-id = 3
 
 [node name="Plot" type="Button" parent="Stations/S3"]
 texture_filter = 1
@@ -445,7 +449,7 @@ offset_left = -31.0
 offset_top = -55.0
 offset_right = 31.0
 offset_bottom = -19.0
-text = "3 : 15"
+text = "3 : 15€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S3"]
 visible = false
@@ -471,11 +475,15 @@ scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_kaqqc")
 debug_color = Color(0.491742, 0.444078, 0.971108, 0.42)
 
+[node name="RadiusVisual" type="Node2D" parent="Stations/S3/Radius"]
+visible = false
+script = ExtResource("7_vi7m4")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
 [node name="S4" type="Node2D" parent="Stations"]
 position = Vector2(263, 190)
 script = ExtResource("5_htqux")
 cost = 8
-id = 4
 
 [node name="Plot" type="Button" parent="Stations/S4"]
 texture_filter = 1
@@ -483,7 +491,7 @@ offset_left = -31.0
 offset_top = -55.0
 offset_right = 31.0
 offset_bottom = -19.0
-text = "4 : 8"
+text = "4 : 8€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S4"]
 visible = false
@@ -509,11 +517,15 @@ scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_ojxi3")
 debug_color = Color(0.727003, 0.379446, 0.738958, 0.42)
 
+[node name="RadiusVisual" type="Node2D" parent="Stations/S4/Radius"]
+visible = false
+script = ExtResource("7_vi7m4")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
 [node name="S5" type="Node2D" parent="Stations"]
 position = Vector2(468, -213)
 script = ExtResource("5_htqux")
 cost = 20
-id = 5
 
 [node name="Plot" type="Button" parent="Stations/S5"]
 texture_filter = 1
@@ -521,7 +533,7 @@ offset_left = -31.0
 offset_top = -55.0
 offset_right = 31.0
 offset_bottom = -19.0
-text = "5 : 20"
+text = "5 : 20€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S5"]
 visible = false
@@ -547,11 +559,15 @@ scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_odk1q")
 debug_color = Color(0.500007, 0.449375, 0.947741, 0.42)
 
+[node name="RadiusVisual" type="Node2D" parent="Stations/S5/Radius"]
+visible = false
+script = ExtResource("7_vi7m4")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
 [node name="S6" type="Node2D" parent="Stations"]
 position = Vector2(647, 77)
 script = ExtResource("5_htqux")
 cost = 20
-id = 6
 
 [node name="Plot" type="Button" parent="Stations/S6"]
 texture_filter = 1
@@ -559,7 +575,7 @@ offset_left = -31.0
 offset_top = -55.0
 offset_right = 31.0
 offset_bottom = -19.0
-text = "6 : 20"
+text = "6 : 20€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S6"]
 visible = false
@@ -584,6 +600,11 @@ visible = false
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_fypjr")
 debug_color = Color(0.842477, 0.377384, 0.137897, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S6/Radius"]
+visible = false
+script = ExtResource("7_vi7m4")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="Camera" type="CharacterBody2D" parent="."]
 visible = false

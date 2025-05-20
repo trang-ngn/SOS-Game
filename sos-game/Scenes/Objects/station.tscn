@@ -26,7 +26,7 @@ texture_filter = 1
 offset_left = -25.0
 offset_right = 24.0
 offset_bottom = 31.0
-text = "0 : 40"
+text = "0 : 40€"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
