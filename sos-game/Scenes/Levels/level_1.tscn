@@ -1161,7 +1161,6 @@ stretch_mode = 0
 [node name="ResultPopUp" parent="." instance=ExtResource("15_1fgkh")]
 
 [node name="RestartDialog" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -1193,10 +1192,10 @@ texture = ExtResource("19_ad63i")
 
 [node name="CloseButton" type="TextureButton" parent="RestartDialog"]
 layout_mode = 0
-offset_left = 222.0
-offset_top = -114.0
-offset_right = 271.0
-offset_bottom = -65.0
+offset_left = 224.0
+offset_top = -113.0
+offset_right = 273.0
+offset_bottom = -64.0
 texture_normal = ExtResource("20_nojx8")
 ignore_texture_size = true
 stretch_mode = 0

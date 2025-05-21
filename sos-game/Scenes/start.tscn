@@ -58,6 +58,7 @@ offset_bottom = 40.0
 script = ExtResource("8_iceld")
 
 [node name="ColorRect" type="ColorRect" parent="HelpDialog"]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.262745, 0.262745, 0.262745, 0.784314)
