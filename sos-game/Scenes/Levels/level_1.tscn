@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=33 format=4 uid="uid://diuwpweu2tr0n"]
+=======
+[gd_scene load_steps=33 format=4 uid="uid://b00sls01fhthg"]
+>>>>>>> main
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/level_script.gd" id="1_tjl6l"]
 [ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://Assets/Tileset/Tileset - v2.png" id="2_3628d"]
@@ -198,7 +202,11 @@ corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 anti_aliasing = false
 
+<<<<<<< HEAD
 [node name="LevelTemplate2" type="Node2D"]
+=======
+[node name="LevelTemplate" type="Node2D"]
+>>>>>>> main
 texture_filter = 1
 script = ExtResource("1_tjl6l")
 
@@ -724,7 +732,10 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 position = Vector2(-400, -259)
 script = ExtResource("8_vvknj")
 cost = 15
+<<<<<<< HEAD
 id = 1
+=======
+>>>>>>> main
 
 [node name="Plot" type="Button" parent="Stations/S1"]
 texture_filter = 1
@@ -764,7 +775,10 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 position = Vector2(-465, -1)
 script = ExtResource("8_vvknj")
 cost = 5
+<<<<<<< HEAD
 id = 2
+=======
+>>>>>>> main
 
 [node name="Plot" type="Button" parent="Stations/S2"]
 texture_filter = 1
@@ -805,7 +819,10 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 position = Vector2(-400, 157)
 script = ExtResource("8_vvknj")
 cost = 20
+<<<<<<< HEAD
 id = 3
+=======
+>>>>>>> main
 
 [node name="Plot" type="Button" parent="Stations/S4"]
 texture_filter = 1
@@ -846,7 +863,10 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 position = Vector2(-72, 188)
 script = ExtResource("8_vvknj")
 cost = 15
+<<<<<<< HEAD
 id = 4
+=======
+>>>>>>> main
 
 [node name="Plot" type="Button" parent="Stations/S5"]
 texture_filter = 1
@@ -887,7 +907,10 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 position = Vector2(104, 150)
 script = ExtResource("8_vvknj")
 cost = 20
+<<<<<<< HEAD
 id = 5
+=======
+>>>>>>> main
 
 [node name="Plot" type="Button" parent="Stations/S6"]
 texture_filter = 1
@@ -928,7 +951,10 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 position = Vector2(408, -8)
 script = ExtResource("8_vvknj")
 cost = 15
+<<<<<<< HEAD
 id = 6
+=======
+>>>>>>> main
 
 [node name="Plot" type="Button" parent="Stations/S7"]
 texture_filter = 1
@@ -969,7 +995,10 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 position = Vector2(-136, 16)
 script = ExtResource("8_vvknj")
 cost = 70
+<<<<<<< HEAD
 id = 7
+=======
+>>>>>>> main
 
 [node name="Plot" type="Button" parent="Stations/S8"]
 texture_filter = 1
@@ -1010,7 +1039,10 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 position = Vector2(-460, 246)
 script = ExtResource("8_vvknj")
 cost = 5
+<<<<<<< HEAD
 id = 8
+=======
+>>>>>>> main
 
 [node name="Plot" type="Button" parent="Stations/S3"]
 texture_filter = 1

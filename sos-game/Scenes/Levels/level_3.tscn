@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=33 format=4 uid="uid://b7fqyyvnmq208"]
+=======
+[gd_scene load_steps=33 format=4 uid="uid://djp1ruygga3g8"]
+>>>>>>> main
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/level_script.gd" id="1_md4x4"]
 [ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://Assets/Tileset/Tileset - v2.png" id="2_1hf40"]
@@ -111,7 +115,11 @@ corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 anti_aliasing = false
 
+<<<<<<< HEAD
 [node name="LevelTemplate" type="Node2D"]
+=======
+[node name="LevelTemplate2" type="Node2D"]
+>>>>>>> main
 texture_filter = 1
 script = ExtResource("1_md4x4")
 
@@ -162,7 +170,10 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H2" type="StaticBody2D" parent="Houses"]
 position = Vector2(328, -193)
 script = ExtResource("3_13yca")
+<<<<<<< HEAD
 id = 1
+=======
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H2"]
 texture_filter = 1
@@ -186,7 +197,10 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H3" type="StaticBody2D" parent="Houses"]
 position = Vector2(475, 85)
 script = ExtResource("3_13yca")
+<<<<<<< HEAD
 id = 2
+=======
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H3"]
 texture_filter = 1
@@ -210,7 +224,10 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H4" type="StaticBody2D" parent="Houses"]
 position = Vector2(440, -91)
 script = ExtResource("3_13yca")
+<<<<<<< HEAD
 id = 3
+=======
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H4"]
 texture_filter = 1
@@ -234,7 +251,10 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H5" type="StaticBody2D" parent="Houses"]
 position = Vector2(318, 111)
 script = ExtResource("3_13yca")
+<<<<<<< HEAD
 id = 4
+=======
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H5"]
 texture_filter = 1
@@ -258,7 +278,10 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H6" type="StaticBody2D" parent="Houses"]
 position = Vector2(446, 199)
 script = ExtResource("3_13yca")
+<<<<<<< HEAD
 id = 5
+=======
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H6"]
 texture_filter = 1
@@ -282,7 +305,10 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H7" type="StaticBody2D" parent="Houses"]
 position = Vector2(288, 289)
 script = ExtResource("3_13yca")
+<<<<<<< HEAD
 id = 6
+=======
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H7"]
 texture_filter = 1
@@ -306,7 +332,10 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H8" type="StaticBody2D" parent="Houses"]
 position = Vector2(-115, 271)
 script = ExtResource("3_13yca")
+<<<<<<< HEAD
 id = 7
+=======
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H8"]
 texture_filter = 1
@@ -330,7 +359,10 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H9" type="StaticBody2D" parent="Houses"]
 position = Vector2(64, 119)
 script = ExtResource("3_13yca")
+<<<<<<< HEAD
 id = 8
+=======
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H9"]
 texture_filter = 1
@@ -354,7 +386,10 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H10" type="StaticBody2D" parent="Houses"]
 position = Vector2(93, -111)
 script = ExtResource("3_13yca")
+<<<<<<< HEAD
 id = 9
+=======
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H10"]
 texture_filter = 1
@@ -378,7 +413,10 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H11" type="StaticBody2D" parent="Houses"]
 position = Vector2(-59, -65)
 script = ExtResource("3_13yca")
+<<<<<<< HEAD
 id = 10
+=======
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H11"]
 texture_filter = 1
@@ -402,7 +440,10 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H12" type="StaticBody2D" parent="Houses"]
 position = Vector2(-5, -214)
 script = ExtResource("3_13yca")
+<<<<<<< HEAD
 id = 11
+=======
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H12"]
 texture_filter = 1
@@ -426,7 +467,10 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H13" type="StaticBody2D" parent="Houses"]
 position = Vector2(139, 51)
 script = ExtResource("3_13yca")
+<<<<<<< HEAD
 id = 12
+=======
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H13"]
 texture_filter = 1
@@ -450,7 +494,10 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H14" type="StaticBody2D" parent="Houses"]
 position = Vector2(-209, -21)
 script = ExtResource("3_13yca")
+<<<<<<< HEAD
 id = 13
+=======
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H14"]
 texture_filter = 1
@@ -474,7 +521,10 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H15" type="StaticBody2D" parent="Houses"]
 position = Vector2(-285, 64)
 script = ExtResource("3_13yca")
+<<<<<<< HEAD
 id = 14
+=======
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H15"]
 texture_filter = 1
@@ -498,7 +548,10 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H16" type="StaticBody2D" parent="Houses"]
 position = Vector2(176, 257)
 script = ExtResource("3_13yca")
+<<<<<<< HEAD
 id = 15
+=======
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H16"]
 texture_filter = 1
@@ -522,7 +575,10 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H17" type="StaticBody2D" parent="Houses"]
 position = Vector2(-460, 84)
 script = ExtResource("3_13yca")
+<<<<<<< HEAD
 id = 16
+=======
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H17"]
 texture_filter = 1
@@ -546,7 +602,10 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H18" type="StaticBody2D" parent="Houses"]
 position = Vector2(-362, 270)
 script = ExtResource("3_13yca")
+<<<<<<< HEAD
 id = 17
+=======
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H18"]
 texture_filter = 1
@@ -580,7 +639,15 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
+<<<<<<< HEAD
 text = "0 : 15€"
+=======
+<<<<<<<< HEAD:sos-game/Scenes/Levels/level3.tscn
+text = "0 : 15"
+========
+text = "0 : 15€"
+>>>>>>>> main:sos-game/Scenes/Levels/level_3.tscn
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S0"]
 visible = false
@@ -608,7 +675,10 @@ debug_color = Color(0.670384, 0.658091, 0.670901, 0.42)
 position = Vector2(283, -91)
 script = ExtResource("6_ocbj8")
 cost = 25
+<<<<<<< HEAD
 id = 1
+=======
+>>>>>>> main
 radius = 15.0
 
 [node name="Plot" type="Button" parent="Stations/S1"]
@@ -616,7 +686,15 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
+<<<<<<< HEAD
 text = "1 : 25€"
+=======
+<<<<<<<< HEAD:sos-game/Scenes/Levels/level3.tscn
+text = "0 : 25"
+========
+text = "1 : 25€"
+>>>>>>>> main:sos-game/Scenes/Levels/level_3.tscn
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S1"]
 visible = false
@@ -644,7 +722,10 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 position = Vector2(105, -40)
 script = ExtResource("6_ocbj8")
 cost = 30
+<<<<<<< HEAD
 id = 2
+=======
+>>>>>>> main
 radius = 15.0
 
 [node name="Plot" type="Button" parent="Stations/S2"]
@@ -652,7 +733,15 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
+<<<<<<< HEAD
 text = "2 : 30€"
+=======
+<<<<<<<< HEAD:sos-game/Scenes/Levels/level3.tscn
+text = "0 : 30"
+========
+text = "2 : 30€"
+>>>>>>>> main:sos-game/Scenes/Levels/level_3.tscn
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S2"]
 visible = false
@@ -680,7 +769,10 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 position = Vector2(439, 5)
 script = ExtResource("6_ocbj8")
 cost = 10
+<<<<<<< HEAD
 id = 3
+=======
+>>>>>>> main
 radius = 8.0
 
 [node name="Plot" type="Button" parent="Stations/S3"]
@@ -688,7 +780,15 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
+<<<<<<< HEAD
 text = "3 : 10€"
+=======
+<<<<<<<< HEAD:sos-game/Scenes/Levels/level3.tscn
+text = "0 : 10"
+========
+text = "3 : 10€"
+>>>>>>>> main:sos-game/Scenes/Levels/level_3.tscn
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S3"]
 visible = false
@@ -716,7 +816,10 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 position = Vector2(357, 230)
 script = ExtResource("6_ocbj8")
 cost = 15
+<<<<<<< HEAD
 id = 4
+=======
+>>>>>>> main
 radius = 10.0
 
 [node name="Plot" type="Button" parent="Stations/S4"]
@@ -724,7 +827,15 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
+<<<<<<< HEAD
 text = "4 : 15€"
+=======
+<<<<<<<< HEAD:sos-game/Scenes/Levels/level3.tscn
+text = "0 : 15"
+========
+text = "4 : 15€"
+>>>>>>>> main:sos-game/Scenes/Levels/level_3.tscn
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S4"]
 visible = false
@@ -752,7 +863,10 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 position = Vector2(-132, -118)
 script = ExtResource("6_ocbj8")
 cost = 15
+<<<<<<< HEAD
 id = 5
+=======
+>>>>>>> main
 radius = 12.0
 
 [node name="Plot" type="Button" parent="Stations/S5"]
@@ -760,7 +874,15 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
+<<<<<<< HEAD
 text = "5 : 15€"
+=======
+<<<<<<<< HEAD:sos-game/Scenes/Levels/level3.tscn
+text = "0 : 15"
+========
+text = "5 : 15€"
+>>>>>>>> main:sos-game/Scenes/Levels/level_3.tscn
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S5"]
 visible = false
@@ -788,7 +910,10 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 position = Vector2(-50, 82)
 script = ExtResource("6_ocbj8")
 cost = 40
+<<<<<<< HEAD
 id = 6
+=======
+>>>>>>> main
 radius = 18.0
 
 [node name="Plot" type="Button" parent="Stations/S6"]
@@ -796,7 +921,15 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
+<<<<<<< HEAD
 text = "6 : 40€"
+=======
+<<<<<<<< HEAD:sos-game/Scenes/Levels/level3.tscn
+text = "0 : 40"
+========
+text = "6 : 40€"
+>>>>>>>> main:sos-game/Scenes/Levels/level_3.tscn
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S6"]
 visible = false
@@ -824,7 +957,10 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 position = Vector2(-12, 188)
 script = ExtResource("6_ocbj8")
 cost = 20
+<<<<<<< HEAD
 id = 7
+=======
+>>>>>>> main
 radius = 15.0
 
 [node name="Plot" type="Button" parent="Stations/S7"]
@@ -860,7 +996,10 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 position = Vector2(-263, 135)
 script = ExtResource("6_ocbj8")
 cost = 25
+<<<<<<< HEAD
 id = 8
+=======
+>>>>>>> main
 radius = 16.0
 
 [node name="Plot" type="Button" parent="Stations/S8"]
@@ -868,7 +1007,15 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
+<<<<<<< HEAD
 text = "8 : 25€"
+=======
+<<<<<<<< HEAD:sos-game/Scenes/Levels/level3.tscn
+text = "0 : 25"
+========
+text = "8 : 25€"
+>>>>>>>> main:sos-game/Scenes/Levels/level_3.tscn
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S8"]
 visible = false
@@ -896,7 +1043,10 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 position = Vector2(-366, 149)
 script = ExtResource("6_ocbj8")
 cost = 15
+<<<<<<< HEAD
 id = 9
+=======
+>>>>>>> main
 radius = 10.0
 
 [node name="Plot" type="Button" parent="Stations/S9"]
@@ -904,7 +1054,15 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
+<<<<<<< HEAD
 text = "9 : 15€"
+=======
+<<<<<<<< HEAD:sos-game/Scenes/Levels/level3.tscn
+text = "0 : 15"
+========
+text = "9 : 15€"
+>>>>>>>> main:sos-game/Scenes/Levels/level_3.tscn
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S9"]
 visible = false
@@ -932,7 +1090,10 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 position = Vector2(277, 35)
 script = ExtResource("6_ocbj8")
 cost = 60
+<<<<<<< HEAD
 id = 10
+=======
+>>>>>>> main
 radius = 19.0
 
 [node name="Plot" type="Button" parent="Stations/S10"]
@@ -940,7 +1101,15 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
+<<<<<<< HEAD
 text = "10 : 60€"
+=======
+<<<<<<<< HEAD:sos-game/Scenes/Levels/level3.tscn
+text = "0 : 60"
+========
+text = "10 : 60€"
+>>>>>>>> main:sos-game/Scenes/Levels/level_3.tscn
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S10"]
 visible = false
@@ -968,7 +1137,10 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 position = Vector2(250, 196)
 script = ExtResource("6_ocbj8")
 cost = 30
+<<<<<<< HEAD
 id = 11
+=======
+>>>>>>> main
 radius = 15.0
 
 [node name="Plot" type="Button" parent="Stations/S11"]
@@ -976,7 +1148,15 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
+<<<<<<< HEAD
 text = "11 : 30€"
+=======
+<<<<<<<< HEAD:sos-game/Scenes/Levels/level3.tscn
+text = "0 : 30"
+========
+text = "11 : 30€"
+>>>>>>>> main:sos-game/Scenes/Levels/level_3.tscn
+>>>>>>> main
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S11"]
 visible = false

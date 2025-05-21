@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=32 format=4 uid="uid://ctwvo0lxlsd8g"]
+=======
+[gd_scene load_steps=32 format=4 uid="uid://dmlcrc04ea2cf"]
+>>>>>>> main
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/level_script.gd" id="1_yxf76"]
 [ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://Assets/Tileset/Tileset - v2.png" id="2_ia1lp"]
@@ -104,7 +108,11 @@ corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 anti_aliasing = false
 
+<<<<<<< HEAD
 [node name="LevelTemplate2" type="Node2D"]
+=======
+[node name="LevelTemplate" type="Node2D"]
+>>>>>>> main
 texture_filter = 1
 script = ExtResource("1_yxf76")
 
@@ -1180,7 +1188,10 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 position = Vector2(480, 230)
 script = ExtResource("8_jip10")
 cost = 10
+<<<<<<< HEAD
 id = 1
+=======
+>>>>>>> main
 
 [node name="Plot" type="Button" parent="Stations/S1"]
 texture_filter = 1
@@ -1219,7 +1230,10 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 position = Vector2(480, -163)
 script = ExtResource("8_jip10")
 cost = 10
+<<<<<<< HEAD
 id = 2
+=======
+>>>>>>> main
 
 [node name="Plot" type="Button" parent="Stations/S2"]
 texture_filter = 1
@@ -1258,7 +1272,10 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 position = Vector2(-476, -116)
 script = ExtResource("8_jip10")
 cost = 10
+<<<<<<< HEAD
 id = 3
+=======
+>>>>>>> main
 
 [node name="Plot" type="Button" parent="Stations/S3"]
 texture_filter = 1
@@ -1297,7 +1314,10 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 position = Vector2(0, -10)
 script = ExtResource("8_jip10")
 cost = 30
+<<<<<<< HEAD
 id = 4
+=======
+>>>>>>> main
 
 [node name="Plot" type="Button" parent="Stations/S4"]
 texture_filter = 1
@@ -1336,7 +1356,10 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 position = Vector2(6, 216)
 script = ExtResource("8_jip10")
 cost = 20
+<<<<<<< HEAD
 id = 5
+=======
+>>>>>>> main
 
 [node name="Plot" type="Button" parent="Stations/S5"]
 texture_filter = 1
@@ -1375,7 +1398,10 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 position = Vector2(8, -161)
 script = ExtResource("8_jip10")
 cost = 22
+<<<<<<< HEAD
 id = 6
+=======
+>>>>>>> main
 
 [node name="Plot" type="Button" parent="Stations/S6"]
 texture_filter = 1
@@ -1414,7 +1440,10 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 position = Vector2(-554, 46)
 script = ExtResource("8_jip10")
 cost = 25
+<<<<<<< HEAD
 id = 7
+=======
+>>>>>>> main
 
 [node name="Plot" type="Button" parent="Stations/S7"]
 texture_filter = 1
@@ -1453,7 +1482,10 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 position = Vector2(520, 55)
 script = ExtResource("8_jip10")
 cost = 15
+<<<<<<< HEAD
 id = 8
+=======
+>>>>>>> main
 
 [node name="Plot" type="Button" parent="Stations/S8"]
 texture_filter = 1

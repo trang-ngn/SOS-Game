@@ -57,7 +57,7 @@ corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 anti_aliasing = false
 
-[node name="LevelTemplate" type="Node2D"]
+[node name="LevelTemplate2" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_04lb0")
 
@@ -107,7 +107,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H1" type="StaticBody2D" parent="Houses"]
 position = Vector2(-265, -150)
 script = ExtResource("3_cf1ce")
-id = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H1"]
 texture_filter = 1
@@ -131,7 +130,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H2" type="StaticBody2D" parent="Houses"]
 position = Vector2(-52, -13)
 script = ExtResource("3_cf1ce")
-id = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H2"]
 texture_filter = 1
@@ -155,7 +153,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H3" type="StaticBody2D" parent="Houses"]
 position = Vector2(-493, 115)
 script = ExtResource("3_cf1ce")
-id = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H3"]
 texture_filter = 1
@@ -179,7 +176,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H4" type="StaticBody2D" parent="Houses"]
 position = Vector2(-248, 91)
 script = ExtResource("3_cf1ce")
-id = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H4"]
 texture_filter = 1
@@ -203,7 +199,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H5" type="StaticBody2D" parent="Houses"]
 position = Vector2(258, -128)
 script = ExtResource("3_cf1ce")
-id = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H5"]
 texture_filter = 1
@@ -227,7 +222,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H6" type="StaticBody2D" parent="Houses"]
 position = Vector2(473, -91)
 script = ExtResource("3_cf1ce")
-id = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H6"]
 texture_filter = 1
@@ -251,7 +245,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H7" type="StaticBody2D" parent="Houses"]
 position = Vector2(126, 95)
 script = ExtResource("3_cf1ce")
-id = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H7"]
 texture_filter = 1
@@ -275,7 +268,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H8" type="StaticBody2D" parent="Houses"]
 position = Vector2(440, 120)
 script = ExtResource("3_cf1ce")
-id = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H8"]
 texture_filter = 1
@@ -299,7 +291,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H9" type="StaticBody2D" parent="Houses"]
 position = Vector2(585, 13)
 script = ExtResource("3_cf1ce")
-id = 9
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H9"]
 texture_filter = 1
@@ -362,7 +353,6 @@ shape = SubResource("CircleShape2D_b510r")
 position = Vector2(-318, 10)
 script = ExtResource("5_htqux")
 cost = 40
-id = 1
 
 [node name="Plot" type="Button" parent="Stations/S1"]
 texture_filter = 1
@@ -400,7 +390,6 @@ debug_color = Color(0.282722, 0.618852, 0.359162, 0.42)
 position = Vector2(-521, -98)
 script = ExtResource("5_htqux")
 cost = 20
-id = 2
 
 [node name="Plot" type="Button" parent="Stations/S2"]
 texture_filter = 1
@@ -437,7 +426,6 @@ shape = SubResource("CircleShape2D_xv378")
 position = Vector2(-68, 161)
 script = ExtResource("5_htqux")
 cost = 15
-id = 3
 
 [node name="Plot" type="Button" parent="Stations/S3"]
 texture_filter = 1
@@ -475,7 +463,6 @@ debug_color = Color(0.491742, 0.444078, 0.971108, 0.42)
 position = Vector2(263, 190)
 script = ExtResource("5_htqux")
 cost = 8
-id = 4
 
 [node name="Plot" type="Button" parent="Stations/S4"]
 texture_filter = 1
@@ -513,7 +500,6 @@ debug_color = Color(0.727003, 0.379446, 0.738958, 0.42)
 position = Vector2(468, -213)
 script = ExtResource("5_htqux")
 cost = 20
-id = 5
 
 [node name="Plot" type="Button" parent="Stations/S5"]
 texture_filter = 1
@@ -551,7 +537,6 @@ debug_color = Color(0.500007, 0.449375, 0.947741, 0.42)
 position = Vector2(647, 77)
 script = ExtResource("5_htqux")
 cost = 20
-id = 6
 
 [node name="Plot" type="Button" parent="Stations/S6"]
 texture_filter = 1

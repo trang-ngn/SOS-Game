@@ -2,19 +2,9 @@
 class_name House
 extends StaticBody2D
 
-
-
 var num_stat_cover : int = 0 
 var covered : bool = false 
 @export var id : int 
-
-@onready var sprite : Sprite2D = $Sprite2D
-
-@export var design : Texture2D :
-	set(value) :
-		design = value
-		if sprite :
-			sprite.texture = design
 	
 
 
@@ -29,6 +19,7 @@ func is_covered() -> bool :
 
 func _ready() -> void:
 	initialize()
+	id = get_index()
 	
 func set_outline() -> void :
 	if(num_stat_cover == 0) :
@@ -38,7 +29,7 @@ func set_outline() -> void :
 		
 
 func initialize() -> void :
-	sprite.texture = design
+	#sprite.texture = design
 	$HouseNumber.visible = false
 	set_outline()
 	
