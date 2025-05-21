@@ -10,7 +10,7 @@
 ```sh
 # on main
 git checkout main
-git checkout -b feat/sandbox_userinput # create and switch to your branch
+git checkout -b feat/<purpose> # create and switch to your branch
 ```
 
 <i>For Branch Name Convention, read below.</i>
@@ -20,27 +20,38 @@ git checkout -b feat/sandbox_userinput # create and switch to your branch
 ```sh
 git add <files>
 git commit -m "fix: game title"
+
+# on your_branch
+git push
 ```
 
 <i>For commits convention, read below</i>
 
 ### 3. Keep regularly updated "local" with changes from "remote" main:
 
-If there is no new changes on your branch, can easily get commits from main:
+> [!IMPORTANT]
+> After you push changes to your_branch, Don't merge immediately!
 
 ```sh
-# on feat/sandbox_userinput
-git rebase origin/main # move changes of main on the top of feature branch
-git push # or git push --force
+# Go to main branch
+git checkout main
+git pull # pull from origin/main
+
+# Switch to your_branch
+git checkout <your_branch>
+
+git rebase main # move changes of main on the top of feature branch
+# If there are conflicts, resolve them on VScode or another IDE
+git push --force # or git push --force
 ```
 
-Option : You made some changes but dont want to commit (like you want to make a copy of main and continue work on it)
+Option : You want to switch branch but there are some changes, which are commited/pushed, and you cannot switsch, stash your changes (store it and take it out later)
 
 ```sh
-# on feat/sandbox_userinput
+# on feat/your_branch
 git stash # save your changes locally
 git rebase origin/main # update changes from main (remote)
-git stash pop
+git stash pop # get your saved changes
 # if there is conflict -> vscode -> resolve confict
 ```
 
@@ -57,13 +68,14 @@ git push  # For first time:  git push -u origin feat/sandbox_userinput
 
 Go to GitLab , from left Sidebar :
 
-- `Code` -> `Merge Requests` -> `New Merge Request` 
+- `Code` -> `Merge Requests` -> `New Merge Request`
 - By Source Branch: `Select source branch` -> choose the branch you want to merge -> `Compare branch and continue`
 - Optional: Description, Assignee (`Assign to me`) , Reviewer (if you need someone to check the code changes with you)
 - `Create Merge Request`
 
 (2) Merge on terminal
-```sh 
+
+```sh
 # on feat/sandbox_userinput
 git checkout main
 # Now on main (locally)
@@ -73,19 +85,23 @@ git push
 ```
 
 ### 6. Clean up: Delete branch locally and remotely:
+
 ```sh
 # on main
 git branch -d feat/your-branch # delete locally
 git push origin --delete feat/your-branch  # Careful! Make sure that no one uses this branch anymore
 ```
 
-### 7. (Others) 
-Update branch list: 
+### 7. (Others)
+
+Update branch list:
+
 ```sh
 git pull -p # normal pull + update branch list
 ```
 
 ## Git Branch Convention
+
 ### Branch Prefixes
 
 Using prefixes in branch names helps to quickly identify the purpose of the branches.
@@ -99,9 +115,11 @@ Using prefixes in branch names helps to quickly identify the purpose of the bran
 4. **Testing** : `test/menu`,....
 
 ## Git Commit Convention
+
 ### Good Practice with git commit message
 
 Commit for small changes with clearly messages => better for readers and your future
+
 ```
 git commit -m "feat: add margin" // 😕 Not so helpful
 git commit -m "feat: add margin to nav items to prevent them from overlapping the logo" // 🤩 better
