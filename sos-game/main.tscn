@@ -4,4 +4,9 @@
 
 [node name="main" type="Node2D"]
 
+<<<<<<< HEAD
 [node name="Startmenu" parent="." instance=ExtResource("1_ig7tw")]
+=======
+[node name="LevelTemplate" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(721, 213)
+>>>>>>> feat/level3

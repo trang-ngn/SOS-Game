@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b2qe6xh3aeg1s" path="res://Assets/Houses/brown_house.png" id="7_jd2hh"]
 [ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/ObjectScript/station_script.gd" id="8_jip10"]
 [ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://Assets/Rescue Station/rescue_station_2.png" id="9_1xj2d"]
-[ext_resource type="Script" uid="uid://bhn2knupgw6fc" path="res://Scripts/radius_visual.gd" id="10_7h8th"]
+[ext_resource type="Script" path="res://Scripts/radius_visual.gd" id="10_7h8th"]
 [ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="11_m4i1e"]
 [ext_resource type="PackedScene" uid="uid://bxs73etkg8msh" path="res://Scenes/Dialogs/statistik_bar.tscn" id="12_ixm8h"]
 [ext_resource type="Texture2D" uid="uid://drjlj1jgbcpqf" path="res://Assets/Buttons and Dialogs/Button-green.png" id="13_xk8vt"]
@@ -1107,7 +1107,7 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "0 : 20€"
+text = "0 : 10€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S0"]
 visible = false
@@ -1126,6 +1126,7 @@ editable = false
 texture_filter = 1
 
 [node name="RadiusSize" type="CollisionShape2D" parent="Stations/S0/Radius"]
+visible = false
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_yxf76")
 
@@ -1144,7 +1145,7 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "1 : 20€"
+text = "1 : 10€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S1"]
 visible = false
@@ -1163,6 +1164,7 @@ editable = false
 texture_filter = 1
 
 [node name="RadiusSize" type="CollisionShape2D" parent="Stations/S1/Radius"]
+visible = false
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_ia1lp")
 
@@ -1200,6 +1202,7 @@ editable = false
 texture_filter = 1
 
 [node name="RadiusSize" type="CollisionShape2D" parent="Stations/S2/Radius"]
+visible = false
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_5buja")
 
@@ -1237,6 +1240,7 @@ editable = false
 texture_filter = 1
 
 [node name="RadiusSize" type="CollisionShape2D" parent="Stations/S3/Radius"]
+visible = false
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_wyygt")
 
@@ -1255,7 +1259,7 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "4 : 10€"
+text = "4 : 30€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S4"]
 visible = false
@@ -1274,6 +1278,7 @@ editable = false
 texture_filter = 1
 
 [node name="RadiusSize" type="CollisionShape2D" parent="Stations/S4/Radius"]
+visible = false
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_u87on")
 
@@ -1292,7 +1297,7 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "5 : 30€"
+text = "5 : 20€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S5"]
 visible = false
@@ -1311,6 +1316,7 @@ editable = false
 texture_filter = 1
 
 [node name="RadiusSize" type="CollisionShape2D" parent="Stations/S5/Radius"]
+visible = false
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_iunut")
 
@@ -1348,6 +1354,7 @@ editable = false
 texture_filter = 1
 
 [node name="RadiusSize" type="CollisionShape2D" parent="Stations/S6/Radius"]
+visible = false
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_jd2hh")
 
@@ -1366,7 +1373,7 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "7 : 22€"
+text = "7 : 25€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S7"]
 visible = false
@@ -1385,6 +1392,7 @@ editable = false
 texture_filter = 1
 
 [node name="RadiusSize" type="CollisionShape2D" parent="Stations/S7/Radius"]
+visible = false
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_jip10")
 
@@ -1422,6 +1430,7 @@ editable = false
 texture_filter = 1
 
 [node name="RadiusSize" type="CollisionShape2D" parent="Stations/S8/Radius"]
+visible = false
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_jip10")
 
