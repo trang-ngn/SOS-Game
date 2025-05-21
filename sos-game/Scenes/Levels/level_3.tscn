@@ -1,21 +1,21 @@
-[gd_scene load_steps=33 format=4 uid="uid://djp1ruygga3g8"]
+[gd_scene load_steps=33 format=4 uid="uid://b7fqyyvnmq208"]
 
-[ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/level_script.gd" id="1_du1gc"]
-[ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://Assets/Tileset/Tileset - v2.png" id="2_uwisk"]
-[ext_resource type="Script" uid="uid://bodp6ey6ji3cc" path="res://Scripts/ObjectScript/house_script.gd" id="3_yqib7"]
-[ext_resource type="Shader" uid="uid://b1wvm2ng2bjhx" path="res://Shaders/highlight.gdshader" id="5_pyjyt"]
-[ext_resource type="Texture2D" uid="uid://b2r4cix5na7mw" path="res://Assets/Houses/green_house.png" id="6_qm4xx"]
-[ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/ObjectScript/station_script.gd" id="8_rdfk5"]
-[ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://Assets/Rescue Station/rescue_station_2.png" id="9_jedjv"]
-[ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="10_etuld"]
-[ext_resource type="PackedScene" uid="uid://bxs73etkg8msh" path="res://Scenes/Dialogs/statistik_bar.tscn" id="11_v1uej"]
-[ext_resource type="Texture2D" uid="uid://drjlj1jgbcpqf" path="res://Assets/Buttons and Dialogs/Button-green.png" id="12_f80nq"]
-[ext_resource type="FontFile" uid="uid://c8f1xkqvr2h7a" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="13_lnl7s"]
-[ext_resource type="Texture2D" uid="uid://lhmlbnmpqa" path="res://Assets/Buttons and Dialogs/Button-DoneRestart.png" id="14_kbn7v"]
-[ext_resource type="PackedScene" uid="uid://p8jlq8xdcf0t" path="res://Scenes/Dialogs/result_pop_up.tscn" id="15_laeu0"]
+[ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/level_script.gd" id="1_md4x4"]
+[ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://Assets/Tileset/Tileset - v2.png" id="2_1hf40"]
+[ext_resource type="Script" uid="uid://bodp6ey6ji3cc" path="res://Scripts/ObjectScript/house_script.gd" id="3_13yca"]
+[ext_resource type="Shader" uid="uid://b1wvm2ng2bjhx" path="res://Shaders/highlight.gdshader" id="4_8dmpc"]
+[ext_resource type="Texture2D" uid="uid://b2r4cix5na7mw" path="res://Assets/Houses/green_house.png" id="5_anjjd"]
+[ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/ObjectScript/station_script.gd" id="6_ocbj8"]
+[ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://Assets/Rescue Station/rescue_station_2.png" id="7_r8neg"]
+[ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="8_rcyh2"]
+[ext_resource type="PackedScene" uid="uid://bxs73etkg8msh" path="res://Scenes/Dialogs/statistik_bar.tscn" id="9_341pv"]
+[ext_resource type="Texture2D" uid="uid://drjlj1jgbcpqf" path="res://Assets/Buttons and Dialogs/Button-green.png" id="10_wnlxl"]
+[ext_resource type="FontFile" uid="uid://c8f1xkqvr2h7a" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="11_jgaqf"]
+[ext_resource type="Texture2D" uid="uid://lhmlbnmpqa" path="res://Assets/Buttons and Dialogs/Button-DoneRestart.png" id="12_x66yp"]
+[ext_resource type="PackedScene" uid="uid://p8jlq8xdcf0t" path="res://Scenes/Dialogs/result_pop_up.tscn" id="13_8ve8p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_08cxd"]
-texture = ExtResource("2_uwisk")
+texture = ExtResource("2_1hf40")
 0:0/0 = 0
 1:0/0 = 0
 3:0/0 = 0
@@ -55,7 +55,7 @@ texture = ExtResource("2_uwisk")
 sources/0 = SubResource("TileSetAtlasSource_08cxd")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tf3fl"]
-shader = ExtResource("5_pyjyt")
+shader = ExtResource("4_8dmpc")
 shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/outline_width = 1.5
 
@@ -111,9 +111,9 @@ corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 anti_aliasing = false
 
-[node name="LevelTemplate2" type="Node2D"]
+[node name="LevelTemplate" type="Node2D"]
 texture_filter = 1
-script = ExtResource("1_du1gc")
+script = ExtResource("1_md4x4")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_gd6ao")
@@ -138,14 +138,13 @@ tile_set = SubResource("TileSet_gd6ao")
 
 [node name="H1" type="StaticBody2D" parent="Houses"]
 position = Vector2(133, -231)
-script = ExtResource("3_yqib7")
-design = ExtResource("6_qm4xx")
+script = ExtResource("3_13yca")
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H1"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
 instance_shader_parameters/active = false
-texture = ExtResource("6_qm4xx")
+texture = ExtResource("5_anjjd")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H1"]
 visible = false
@@ -162,14 +161,14 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H2" type="StaticBody2D" parent="Houses"]
 position = Vector2(328, -193)
-script = ExtResource("3_yqib7")
-design = ExtResource("6_qm4xx")
+script = ExtResource("3_13yca")
+id = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H2"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
 instance_shader_parameters/active = false
-texture = ExtResource("6_qm4xx")
+texture = ExtResource("5_anjjd")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H2"]
 visible = false
@@ -186,14 +185,14 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H3" type="StaticBody2D" parent="Houses"]
 position = Vector2(475, 85)
-script = ExtResource("3_yqib7")
-design = ExtResource("6_qm4xx")
+script = ExtResource("3_13yca")
+id = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H3"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
 instance_shader_parameters/active = false
-texture = ExtResource("6_qm4xx")
+texture = ExtResource("5_anjjd")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H3"]
 visible = false
@@ -210,14 +209,14 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H4" type="StaticBody2D" parent="Houses"]
 position = Vector2(440, -91)
-script = ExtResource("3_yqib7")
-design = ExtResource("6_qm4xx")
+script = ExtResource("3_13yca")
+id = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H4"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
 instance_shader_parameters/active = false
-texture = ExtResource("6_qm4xx")
+texture = ExtResource("5_anjjd")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H4"]
 visible = false
@@ -234,14 +233,14 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H5" type="StaticBody2D" parent="Houses"]
 position = Vector2(318, 111)
-script = ExtResource("3_yqib7")
-design = ExtResource("6_qm4xx")
+script = ExtResource("3_13yca")
+id = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H5"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
 instance_shader_parameters/active = false
-texture = ExtResource("6_qm4xx")
+texture = ExtResource("5_anjjd")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H5"]
 visible = false
@@ -258,14 +257,14 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H6" type="StaticBody2D" parent="Houses"]
 position = Vector2(446, 199)
-script = ExtResource("3_yqib7")
-design = ExtResource("6_qm4xx")
+script = ExtResource("3_13yca")
+id = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H6"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
 instance_shader_parameters/active = false
-texture = ExtResource("6_qm4xx")
+texture = ExtResource("5_anjjd")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H6"]
 visible = false
@@ -282,14 +281,14 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H7" type="StaticBody2D" parent="Houses"]
 position = Vector2(288, 289)
-script = ExtResource("3_yqib7")
-design = ExtResource("6_qm4xx")
+script = ExtResource("3_13yca")
+id = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H7"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
 instance_shader_parameters/active = false
-texture = ExtResource("6_qm4xx")
+texture = ExtResource("5_anjjd")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H7"]
 visible = false
@@ -306,14 +305,14 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H8" type="StaticBody2D" parent="Houses"]
 position = Vector2(-115, 271)
-script = ExtResource("3_yqib7")
-design = ExtResource("6_qm4xx")
+script = ExtResource("3_13yca")
+id = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H8"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
 instance_shader_parameters/active = false
-texture = ExtResource("6_qm4xx")
+texture = ExtResource("5_anjjd")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H8"]
 visible = false
@@ -330,14 +329,14 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H9" type="StaticBody2D" parent="Houses"]
 position = Vector2(64, 119)
-script = ExtResource("3_yqib7")
-design = ExtResource("6_qm4xx")
+script = ExtResource("3_13yca")
+id = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H9"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
 instance_shader_parameters/active = false
-texture = ExtResource("6_qm4xx")
+texture = ExtResource("5_anjjd")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H9"]
 visible = false
@@ -354,14 +353,14 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H10" type="StaticBody2D" parent="Houses"]
 position = Vector2(93, -111)
-script = ExtResource("3_yqib7")
-design = ExtResource("6_qm4xx")
+script = ExtResource("3_13yca")
+id = 9
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H10"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
 instance_shader_parameters/active = false
-texture = ExtResource("6_qm4xx")
+texture = ExtResource("5_anjjd")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H10"]
 visible = false
@@ -378,14 +377,14 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H11" type="StaticBody2D" parent="Houses"]
 position = Vector2(-59, -65)
-script = ExtResource("3_yqib7")
-design = ExtResource("6_qm4xx")
+script = ExtResource("3_13yca")
+id = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H11"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
 instance_shader_parameters/active = false
-texture = ExtResource("6_qm4xx")
+texture = ExtResource("5_anjjd")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H11"]
 visible = false
@@ -402,14 +401,14 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H12" type="StaticBody2D" parent="Houses"]
 position = Vector2(-5, -214)
-script = ExtResource("3_yqib7")
-design = ExtResource("6_qm4xx")
+script = ExtResource("3_13yca")
+id = 11
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H12"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
 instance_shader_parameters/active = false
-texture = ExtResource("6_qm4xx")
+texture = ExtResource("5_anjjd")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H12"]
 visible = false
@@ -426,14 +425,14 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H13" type="StaticBody2D" parent="Houses"]
 position = Vector2(139, 51)
-script = ExtResource("3_yqib7")
-design = ExtResource("6_qm4xx")
+script = ExtResource("3_13yca")
+id = 12
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H13"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
 instance_shader_parameters/active = false
-texture = ExtResource("6_qm4xx")
+texture = ExtResource("5_anjjd")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H13"]
 visible = false
@@ -450,14 +449,14 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H14" type="StaticBody2D" parent="Houses"]
 position = Vector2(-209, -21)
-script = ExtResource("3_yqib7")
-design = ExtResource("6_qm4xx")
+script = ExtResource("3_13yca")
+id = 13
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H14"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
 instance_shader_parameters/active = false
-texture = ExtResource("6_qm4xx")
+texture = ExtResource("5_anjjd")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H14"]
 visible = false
@@ -474,14 +473,14 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H15" type="StaticBody2D" parent="Houses"]
 position = Vector2(-285, 64)
-script = ExtResource("3_yqib7")
-design = ExtResource("6_qm4xx")
+script = ExtResource("3_13yca")
+id = 14
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H15"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
 instance_shader_parameters/active = false
-texture = ExtResource("6_qm4xx")
+texture = ExtResource("5_anjjd")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H15"]
 visible = false
@@ -498,14 +497,14 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H16" type="StaticBody2D" parent="Houses"]
 position = Vector2(176, 257)
-script = ExtResource("3_yqib7")
-design = ExtResource("6_qm4xx")
+script = ExtResource("3_13yca")
+id = 15
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H16"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
 instance_shader_parameters/active = false
-texture = ExtResource("6_qm4xx")
+texture = ExtResource("5_anjjd")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H16"]
 visible = false
@@ -522,14 +521,14 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H17" type="StaticBody2D" parent="Houses"]
 position = Vector2(-460, 84)
-script = ExtResource("3_yqib7")
-design = ExtResource("6_qm4xx")
+script = ExtResource("3_13yca")
+id = 16
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H17"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
 instance_shader_parameters/active = false
-texture = ExtResource("6_qm4xx")
+texture = ExtResource("5_anjjd")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H17"]
 visible = false
@@ -546,14 +545,14 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H18" type="StaticBody2D" parent="Houses"]
 position = Vector2(-362, 270)
-script = ExtResource("3_yqib7")
-design = ExtResource("6_qm4xx")
+script = ExtResource("3_13yca")
+id = 17
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H18"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tf3fl")
 instance_shader_parameters/active = false
-texture = ExtResource("6_qm4xx")
+texture = ExtResource("5_anjjd")
 
 [node name="HouseNumber" type="TextEdit" parent="Houses/H18"]
 visible = false
@@ -572,7 +571,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="S0" type="Node2D" parent="Stations"]
 position = Vector2(208, -178)
-script = ExtResource("8_rdfk5")
+script = ExtResource("6_ocbj8")
 cost = 15
 radius = 9.0
 
@@ -581,11 +580,11 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "0 : 15"
+text = "0 : 15€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S0"]
 visible = false
-texture = ExtResource("9_jedjv")
+texture = ExtResource("7_r8neg")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S0"]
 visible = false
@@ -607,8 +606,9 @@ debug_color = Color(0.670384, 0.658091, 0.670901, 0.42)
 
 [node name="S1" type="Node2D" parent="Stations"]
 position = Vector2(283, -91)
-script = ExtResource("8_rdfk5")
+script = ExtResource("6_ocbj8")
 cost = 25
+id = 1
 radius = 15.0
 
 [node name="Plot" type="Button" parent="Stations/S1"]
@@ -616,11 +616,11 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "0 : 25"
+text = "1 : 25€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S1"]
 visible = false
-texture = ExtResource("9_jedjv")
+texture = ExtResource("7_r8neg")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S1"]
 visible = false
@@ -642,8 +642,9 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 
 [node name="S2" type="Node2D" parent="Stations"]
 position = Vector2(105, -40)
-script = ExtResource("8_rdfk5")
+script = ExtResource("6_ocbj8")
 cost = 30
+id = 2
 radius = 15.0
 
 [node name="Plot" type="Button" parent="Stations/S2"]
@@ -651,11 +652,11 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "0 : 30"
+text = "2 : 30€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S2"]
 visible = false
-texture = ExtResource("9_jedjv")
+texture = ExtResource("7_r8neg")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S2"]
 visible = false
@@ -677,8 +678,9 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 
 [node name="S3" type="Node2D" parent="Stations"]
 position = Vector2(439, 5)
-script = ExtResource("8_rdfk5")
+script = ExtResource("6_ocbj8")
 cost = 10
+id = 3
 radius = 8.0
 
 [node name="Plot" type="Button" parent="Stations/S3"]
@@ -686,11 +688,11 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "0 : 10"
+text = "3 : 10€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S3"]
 visible = false
-texture = ExtResource("9_jedjv")
+texture = ExtResource("7_r8neg")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S3"]
 visible = false
@@ -712,8 +714,9 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 
 [node name="S4" type="Node2D" parent="Stations"]
 position = Vector2(357, 230)
-script = ExtResource("8_rdfk5")
+script = ExtResource("6_ocbj8")
 cost = 15
+id = 4
 radius = 10.0
 
 [node name="Plot" type="Button" parent="Stations/S4"]
@@ -721,11 +724,11 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "0 : 15"
+text = "4 : 15€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S4"]
 visible = false
-texture = ExtResource("9_jedjv")
+texture = ExtResource("7_r8neg")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S4"]
 visible = false
@@ -747,8 +750,9 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 
 [node name="S5" type="Node2D" parent="Stations"]
 position = Vector2(-132, -118)
-script = ExtResource("8_rdfk5")
+script = ExtResource("6_ocbj8")
 cost = 15
+id = 5
 radius = 12.0
 
 [node name="Plot" type="Button" parent="Stations/S5"]
@@ -756,11 +760,11 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "0 : 15"
+text = "5 : 15€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S5"]
 visible = false
-texture = ExtResource("9_jedjv")
+texture = ExtResource("7_r8neg")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S5"]
 visible = false
@@ -782,8 +786,9 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 
 [node name="S6" type="Node2D" parent="Stations"]
 position = Vector2(-50, 82)
-script = ExtResource("8_rdfk5")
+script = ExtResource("6_ocbj8")
 cost = 40
+id = 6
 radius = 18.0
 
 [node name="Plot" type="Button" parent="Stations/S6"]
@@ -791,11 +796,11 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "0 : 40"
+text = "6 : 40€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S6"]
 visible = false
-texture = ExtResource("9_jedjv")
+texture = ExtResource("7_r8neg")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S6"]
 visible = false
@@ -817,8 +822,9 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 
 [node name="S7" type="Node2D" parent="Stations"]
 position = Vector2(-12, 188)
-script = ExtResource("8_rdfk5")
+script = ExtResource("6_ocbj8")
 cost = 20
+id = 7
 radius = 15.0
 
 [node name="Plot" type="Button" parent="Stations/S7"]
@@ -826,11 +832,11 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "0 : 20"
+text = "7 : 20€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S7"]
 visible = false
-texture = ExtResource("9_jedjv")
+texture = ExtResource("7_r8neg")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S7"]
 visible = false
@@ -852,8 +858,9 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 
 [node name="S8" type="Node2D" parent="Stations"]
 position = Vector2(-263, 135)
-script = ExtResource("8_rdfk5")
+script = ExtResource("6_ocbj8")
 cost = 25
+id = 8
 radius = 16.0
 
 [node name="Plot" type="Button" parent="Stations/S8"]
@@ -861,11 +868,11 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "0 : 25"
+text = "8 : 25€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S8"]
 visible = false
-texture = ExtResource("9_jedjv")
+texture = ExtResource("7_r8neg")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S8"]
 visible = false
@@ -887,8 +894,9 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 
 [node name="S9" type="Node2D" parent="Stations"]
 position = Vector2(-366, 149)
-script = ExtResource("8_rdfk5")
+script = ExtResource("6_ocbj8")
 cost = 15
+id = 9
 radius = 10.0
 
 [node name="Plot" type="Button" parent="Stations/S9"]
@@ -896,11 +904,11 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "0 : 15"
+text = "9 : 15€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S9"]
 visible = false
-texture = ExtResource("9_jedjv")
+texture = ExtResource("7_r8neg")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S9"]
 visible = false
@@ -922,8 +930,9 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 
 [node name="S10" type="Node2D" parent="Stations"]
 position = Vector2(277, 35)
-script = ExtResource("8_rdfk5")
+script = ExtResource("6_ocbj8")
 cost = 60
+id = 10
 radius = 19.0
 
 [node name="Plot" type="Button" parent="Stations/S10"]
@@ -931,11 +940,11 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "0 : 60"
+text = "10 : 60€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S10"]
 visible = false
-texture = ExtResource("9_jedjv")
+texture = ExtResource("7_r8neg")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S10"]
 visible = false
@@ -957,8 +966,9 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 
 [node name="S11" type="Node2D" parent="Stations"]
 position = Vector2(250, 196)
-script = ExtResource("8_rdfk5")
+script = ExtResource("6_ocbj8")
 cost = 30
+id = 11
 radius = 15.0
 
 [node name="Plot" type="Button" parent="Stations/S11"]
@@ -966,11 +976,11 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "0 : 30"
+text = "11 : 30€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S11"]
 visible = false
-texture = ExtResource("9_jedjv")
+texture = ExtResource("7_r8neg")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S11"]
 visible = false
@@ -991,7 +1001,7 @@ shape = SubResource("CircleShape2D_jedjv")
 debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 
 [node name="Camera" type="CharacterBody2D" parent="."]
-script = ExtResource("10_etuld")
+script = ExtResource("8_rcyh2")
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
 zoom = Vector2(1.3, 1.3)
@@ -1009,7 +1019,7 @@ offset_right = 717.0
 offset_bottom = 388.0
 text = "END"
 
-[node name="StatistikBar" parent="." instance=ExtResource("11_v1uej")]
+[node name="StatistikBar" parent="." instance=ExtResource("9_341pv")]
 
 [node name="HideButton" type="TextureButton" parent="."]
 offset_left = 190.0
@@ -1017,7 +1027,7 @@ offset_top = -415.0
 offset_right = 282.0
 offset_bottom = -363.0
 toggle_mode = true
-texture_normal = ExtResource("12_f80nq")
+texture_normal = ExtResource("10_wnlxl")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -1034,7 +1044,7 @@ offset_right = 73.476
 offset_bottom = 26.004
 scale = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
-theme_override_fonts/font = ExtResource("13_lnl7s")
+theme_override_fonts/font = ExtResource("11_jgaqf")
 theme_override_font_sizes/font_size = 40
 text = "Hide"
 horizontal_alignment = 1
@@ -1046,7 +1056,7 @@ offset_left = 436.0
 offset_top = -416.0
 offset_right = 639.0
 offset_bottom = -321.0
-texture = ExtResource("14_kbn7v")
+texture = ExtResource("12_x66yp")
 expand_mode = 1
 stretch_mode = 5
 
@@ -1082,7 +1092,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_h5ye2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_h5ye2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_h5ye2")
 
-[node name="ResultPopUp" parent="." instance=ExtResource("15_laeu0")]
+[node name="ResultPopUp" parent="." instance=ExtResource("13_8ve8p")]
 
 [connection signal="button_up" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_button_up"]
 [connection signal="mouse_entered" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_entered"]
