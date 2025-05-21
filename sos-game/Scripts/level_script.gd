@@ -89,7 +89,6 @@ func _on_done_button_pressed() -> void:
 func _on_hide_button_toggled(is_hidden: bool) -> void:
 	$HideButton/HideLabel.text = "Show" if is_hidden else "Hide"
 	$StatistikBar.visible = not is_hidden
-
-
-func _on_restart_button_pressed() -> void:
-	get_tree().reload_current_scene()
+	$HelpButton.visible = not is_hidden
+	$BackButton.visible = not is_hidden
+	$DoneRestartContainer.visible = not is_hidden

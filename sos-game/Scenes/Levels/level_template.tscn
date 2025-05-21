@@ -1,11 +1,9 @@
-[gd_scene load_steps=25 format=4 uid="uid://cbl24x0qb50np"]
+[gd_scene load_steps=23 format=4 uid="uid://cbl24x0qb50np"]
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/level_script.gd" id="1_hiugd"]
 [ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://Assets/Tileset/Tileset - v2.png" id="2_tvne3"]
-[ext_resource type="Script" path="res://Scripts/house_script.gd" id="3_rhjl8"]
 [ext_resource type="Shader" uid="uid://b1wvm2ng2bjhx" path="res://Shaders/highlight.gdshader" id="4_tf3fl"]
 [ext_resource type="Texture2D" uid="uid://wdkq6dlpx1a0" path="res://Assets/Houses/white_house.png" id="4_tvne3"]
-[ext_resource type="Script" path="res://Scripts/station_script.gd" id="5_5516i"]
 [ext_resource type="Texture2D" uid="uid://b2qe6xh3aeg1s" path="res://Assets/Houses/brown_house.png" id="5_ert0c"]
 [ext_resource type="Texture2D" uid="uid://b2r4cix5na7mw" path="res://Assets/Houses/green_house.png" id="6_08cxd"]
 [ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://Assets/Rescue Station/rescue_station_2.png" id="7_ert0c"]
@@ -109,7 +107,6 @@ tile_set = SubResource("TileSet_gd6ao")
 
 [node name="H0" type="StaticBody2D" parent="Houses"]
 position = Vector2(-22, -37)
-script = ExtResource("3_rhjl8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H0"]
 texture_filter = 1
@@ -132,7 +129,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H1" type="StaticBody2D" parent="Houses"]
 position = Vector2(132, -36)
-script = ExtResource("3_rhjl8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H1"]
 texture_filter = 1
@@ -155,7 +151,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H2" type="StaticBody2D" parent="Houses"]
 position = Vector2(208, -36)
-script = ExtResource("3_rhjl8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H2"]
 texture_filter = 1
@@ -180,8 +175,6 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="S0" type="Node2D" parent="Stations"]
 position = Vector2(57, -39)
-script = ExtResource("5_5516i")
-cost = 20
 
 [node name="Plot" type="Button" parent="Stations/S0"]
 texture_filter = 1
