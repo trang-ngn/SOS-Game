@@ -32,6 +32,7 @@ cd code/
 PYTHONPATH=. uvicorn backend.api:app --reload
 
 # or on Linus/MacOs
+cd backend/
 fastapi dev
 ```
 
