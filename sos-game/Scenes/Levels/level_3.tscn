@@ -162,6 +162,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H2" type="StaticBody2D" parent="Houses"]
 position = Vector2(328, -193)
 script = ExtResource("3_13yca")
+id = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H2"]
 texture_filter = 1
@@ -185,6 +186,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H3" type="StaticBody2D" parent="Houses"]
 position = Vector2(475, 85)
 script = ExtResource("3_13yca")
+id = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H3"]
 texture_filter = 1
@@ -208,6 +210,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H4" type="StaticBody2D" parent="Houses"]
 position = Vector2(440, -91)
 script = ExtResource("3_13yca")
+id = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H4"]
 texture_filter = 1
@@ -231,6 +234,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H5" type="StaticBody2D" parent="Houses"]
 position = Vector2(318, 111)
 script = ExtResource("3_13yca")
+id = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H5"]
 texture_filter = 1
@@ -254,6 +258,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H6" type="StaticBody2D" parent="Houses"]
 position = Vector2(446, 199)
 script = ExtResource("3_13yca")
+id = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H6"]
 texture_filter = 1
@@ -277,6 +282,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H7" type="StaticBody2D" parent="Houses"]
 position = Vector2(288, 289)
 script = ExtResource("3_13yca")
+id = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H7"]
 texture_filter = 1
@@ -300,6 +306,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H8" type="StaticBody2D" parent="Houses"]
 position = Vector2(-115, 271)
 script = ExtResource("3_13yca")
+id = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H8"]
 texture_filter = 1
@@ -323,6 +330,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H9" type="StaticBody2D" parent="Houses"]
 position = Vector2(64, 119)
 script = ExtResource("3_13yca")
+id = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H9"]
 texture_filter = 1
@@ -346,6 +354,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H10" type="StaticBody2D" parent="Houses"]
 position = Vector2(93, -111)
 script = ExtResource("3_13yca")
+id = 9
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H10"]
 texture_filter = 1
@@ -369,6 +378,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H11" type="StaticBody2D" parent="Houses"]
 position = Vector2(-59, -65)
 script = ExtResource("3_13yca")
+id = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H11"]
 texture_filter = 1
@@ -392,6 +402,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H12" type="StaticBody2D" parent="Houses"]
 position = Vector2(-5, -214)
 script = ExtResource("3_13yca")
+id = 11
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H12"]
 texture_filter = 1
@@ -415,6 +426,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H13" type="StaticBody2D" parent="Houses"]
 position = Vector2(139, 51)
 script = ExtResource("3_13yca")
+id = 12
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H13"]
 texture_filter = 1
@@ -438,6 +450,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H14" type="StaticBody2D" parent="Houses"]
 position = Vector2(-209, -21)
 script = ExtResource("3_13yca")
+id = 13
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H14"]
 texture_filter = 1
@@ -461,6 +474,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H15" type="StaticBody2D" parent="Houses"]
 position = Vector2(-285, 64)
 script = ExtResource("3_13yca")
+id = 14
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H15"]
 texture_filter = 1
@@ -484,6 +498,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H16" type="StaticBody2D" parent="Houses"]
 position = Vector2(176, 257)
 script = ExtResource("3_13yca")
+id = 15
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H16"]
 texture_filter = 1
@@ -507,6 +522,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H17" type="StaticBody2D" parent="Houses"]
 position = Vector2(-460, 84)
 script = ExtResource("3_13yca")
+id = 16
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H17"]
 texture_filter = 1
@@ -530,6 +546,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="H18" type="StaticBody2D" parent="Houses"]
 position = Vector2(-362, 270)
 script = ExtResource("3_13yca")
+id = 17
 
 [node name="Sprite2D" type="Sprite2D" parent="Houses/H18"]
 texture_filter = 1
