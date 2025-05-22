@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var house_scene = preload("res://Scenes/Objects/house_sandbox.tscn")
+@onready var house_scene = preload("res://Scenes/Sandbox/house_sandbox.tscn")
 @onready var houses = $Houses
 @onready var default_object : DefaultObject = $PreviewObjects/DefaultObject
 @onready var object_deleter : ObjectsDeleter = $PreviewObjects/ObjectDeleter
@@ -119,3 +119,7 @@ func delete_object() -> void :
 #for now only for house
 func set_offset(x :float, y : float) -> void :
 	offset = Vector2(x,y)
+
+
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/start.tscn")

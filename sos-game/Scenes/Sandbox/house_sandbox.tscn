@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvwglm8jol5a1"]
 
-[ext_resource type="Script" uid="uid://b7v6ccpj4h5kd" path="res://Scripts/ObjectScript/house_2.gd" id="1_56b1i"]
+[ext_resource type="Script" uid="uid://b7v6ccpj4h5kd" path="res://Scripts/SanboxScripts/house_sandbox.gd" id="1_56b1i"]
 [ext_resource type="Texture2D" uid="uid://b2qe6xh3aeg1s" path="res://Assets/Houses/brown_house.png" id="2_56b1i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eg1ne"]

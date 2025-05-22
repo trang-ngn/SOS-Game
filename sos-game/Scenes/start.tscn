@@ -80,5 +80,6 @@ offset_right = 1538.0
 offset_bottom = 318.0
 
 [connection signal="pressed" from="Buttons/StartButton" to="Buttons/StartButton" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/SandboxButton" to="Buttons/SandboxButton" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/HelpButton" to="HelpDialog" method="_on_button_help_pressed"]
 [connection signal="pressed" from="HelpDialog/CloseButton" to="HelpDialog" method="_on_button_close_pressed"]
