@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 	check_area()
 	#debug purpose
 	#print(houses.get_child_count())
-	print(stations.get_child_count())
+	#print(stations.get_child_count())
 
 func check_area() -> void :
 	var mouse_tile = get_global_mouse_position()
@@ -63,7 +63,8 @@ func _input(event: InputEvent) -> void:
 			switch_mode(MODE.DEFAULT)
 			
 		elif mode == MODE.BUILD :
-			print("switch")
+			#debug purpose
+			#print("switch")
 			switch_building()
 	
 
@@ -108,12 +109,10 @@ func switch_building() -> void :
 		current_object.queue_free()
 		current_building = BUILDING.STATION
 		change_to_station()
-		
 	elif current_building == BUILDING.STATION and current_object is StationSandbox :
 		current_object.queue_free()
 		current_building = BUILDING.HOUSE
 		change_to_house()
-	
 	else :
 		print("HOW DO WE GET HERE???")
 		

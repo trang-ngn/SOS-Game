@@ -223,7 +223,6 @@ layer_0/tile_data = PackedInt32Array(-655378, 0, 0, -589842, 0, 1, -655377, 6553
 [node name="Houses" type="Node2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3.5, 3.5)
 
 [node name="ConstantObject" type="Node2D" parent="."]
 
@@ -242,6 +241,7 @@ visible = false
 shape = SubResource("RectangleShape2D_rrb1b")
 
 [node name="UI" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 
