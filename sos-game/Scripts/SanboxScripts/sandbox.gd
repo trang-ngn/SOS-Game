@@ -3,6 +3,7 @@ extends Node2D
 @onready var house = preload("res://Scenes/Sandbox/house_sandbox.tscn")
 @onready var station = preload("res://Scenes/Sandbox/station_sandbox.tscn")
 @onready var houses = $Houses
+@onready var stations = $Stations
 @onready var default_object : DefaultObject = $ConstantObject/DefaultObject
 @onready var object_deleter : ObjectsDeleter = $ConstantObject/ObjectDeleter
 @onready var tilemap : TileMap = $TileMap
@@ -10,13 +11,14 @@ extends Node2D
 var offset : Vector2 = Vector2(0,0)
 var current_object : ObjectSandbox
 var mode : MODE 
+var current_building : BUILDING
+
 enum MODE{
 	DEFAULT,
 	BUILD,
 	DELETE
 }
 
-#not used yet
 enum BUILDING{
 	HOUSE,
 	STATION
@@ -24,12 +26,14 @@ enum BUILDING{
 
 func _ready() -> void:
 	switch_mode(MODE.DEFAULT)
+	current_building = BUILDING.HOUSE
 	
 	
 func _process(delta: float) -> void:
 	check_area()
 	#debug purpose
 	#print(houses.get_child_count())
+	print(stations.get_child_count())
 
 func check_area() -> void :
 	var mouse_tile = get_global_mouse_position()
@@ -43,11 +47,9 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_released():
 		if mode == MODE.DEFAULT :
 			switch_mode(MODE.BUILD)
-			change_to_house()
-		
+			set_building()
+			
 		elif mode == MODE.BUILD :
-			if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.is_released():
-				pass
 			place_object()
 		
 		elif mode == MODE.DELETE :
@@ -56,8 +58,13 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.is_released():
 		if mode == MODE.DEFAULT :
 			switch_mode(MODE.DELETE)
+			
 		elif mode == MODE.DELETE :
 			switch_mode(MODE.DEFAULT)
+			
+		elif mode == MODE.BUILD :
+			print("switch")
+			switch_building()
 	
 
 #this function can be splited in to more function but for now this works!
@@ -96,8 +103,32 @@ func delete_mode() -> void :
 	set_offset(0,0)
 #===================================================================================================
 
+func switch_building() -> void :
+	if current_building == BUILDING.HOUSE and current_object is HouseSandbox:
+		current_object.queue_free()
+		current_building = BUILDING.STATION
+		change_to_station()
+		
+	elif current_building == BUILDING.STATION and current_object is StationSandbox :
+		current_object.queue_free()
+		current_building = BUILDING.HOUSE
+		change_to_house()
+	
+	else :
+		print("HOW DO WE GET HERE???")
+		
+func set_building() -> void :
+	if current_building == BUILDING.HOUSE :
+		change_to_house()
+	elif current_building == BUILDING.STATION :
+		change_to_station()
+	else :
+		print("How do I live without the ones I love? Time still turns the pages of the book it's burned")
+
 func change_to_station() -> void :
-	pass
+	var new_station = station.instantiate()
+	stations.add_child(new_station)
+	current_object = new_station
 
 func change_to_house() -> void :
 	var new_house = house.instantiate()
