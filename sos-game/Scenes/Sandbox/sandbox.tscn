@@ -223,23 +223,25 @@ layer_0/tile_data = PackedInt32Array(-655378, 0, 0, -589842, 0, 1, -655377, 6553
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3.5, 3.5)
 
-[node name="PreviewObjects" type="Node2D" parent="."]
+[node name="ConstantObject" type="Node2D" parent="."]
 
-[node name="DefaultObject" type="Sprite2D" parent="PreviewObjects"]
+[node name="DefaultObject" type="Sprite2D" parent="ConstantObject"]
 texture = ExtResource("3_0r1v2")
 script = ExtResource("4_aox5q")
 
-[node name="ObjectDeleter" type="Area2D" parent="PreviewObjects"]
+[node name="ObjectDeleter" type="Area2D" parent="ConstantObject"]
 script = ExtResource("5_qee5c")
 
-[node name="DeleteDesign" type="Sprite2D" parent="PreviewObjects/ObjectDeleter"]
+[node name="DeleteDesign" type="Sprite2D" parent="ConstantObject/ObjectDeleter"]
 texture = ExtResource("6_ixw05")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PreviewObjects/ObjectDeleter"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConstantObject/ObjectDeleter"]
 visible = false
 shape = SubResource("RectangleShape2D_rrb1b")
 
-[node name="UI" type="Node2D" parent="."]
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="BackButton" type="TextureButton" parent="UI"]
 offset_left = -256.0
@@ -251,6 +253,6 @@ texture_normal = ExtResource("7_4yamo")
 ignore_texture_size = true
 stretch_mode = 0
 
-[connection signal="area_entered" from="PreviewObjects/ObjectDeleter" to="PreviewObjects/ObjectDeleter" method="_on_area_entered"]
-[connection signal="area_exited" from="PreviewObjects/ObjectDeleter" to="PreviewObjects/ObjectDeleter" method="_on_area_exited"]
+[connection signal="area_entered" from="ConstantObject/ObjectDeleter" to="ConstantObject/ObjectDeleter" method="_on_area_entered"]
+[connection signal="area_exited" from="ConstantObject/ObjectDeleter" to="ConstantObject/ObjectDeleter" method="_on_area_exited"]
 [connection signal="pressed" from="UI/BackButton" to="." method="_on_back_button_pressed"]

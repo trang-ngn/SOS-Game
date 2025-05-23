@@ -1,6 +1,5 @@
-class_name HouseSandbox
+class_name StationSandbox
 extends ObjectSandbox
-
 
 func _on_area_entered(area: HouseSandbox) -> void:
 	area.collision_count += 1

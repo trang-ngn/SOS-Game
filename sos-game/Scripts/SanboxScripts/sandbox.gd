@@ -1,16 +1,15 @@
 extends Node2D
 
-@onready var house_scene = preload("res://Scenes/Sandbox/house_sandbox.tscn")
+@onready var house = preload("res://Scenes/Sandbox/house_sandbox.tscn")
+@onready var station = preload("res://Scenes/Sandbox/station_sandbox.tscn")
 @onready var houses = $Houses
-@onready var default_object : DefaultObject = $PreviewObjects/DefaultObject
-@onready var object_deleter : ObjectsDeleter = $PreviewObjects/ObjectDeleter
+@onready var default_object : DefaultObject = $ConstantObject/DefaultObject
+@onready var object_deleter : ObjectsDeleter = $ConstantObject/ObjectDeleter
 @onready var tilemap : TileMap = $TileMap
 
 var offset : Vector2 = Vector2(0,0)
 var current_object : ObjectSandbox
-var is_building 
-var is_deleting 
-
+var mode : MODE 
 enum MODE{
 	DEFAULT,
 	BUILD,
@@ -42,20 +41,22 @@ func check_area() -> void :
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_released():
-		if !is_building and !is_deleting :
+		if mode == MODE.DEFAULT :
 			switch_mode(MODE.BUILD)
 			change_to_house()
 		
-		elif is_building :
+		elif mode == MODE.BUILD :
+			if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.is_released():
+				pass
 			place_object()
 		
-		elif is_deleting :
+		elif mode == MODE.DELETE :
 			delete_object()
 		
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.is_released():
-		if !is_deleting and current_object == default_object:
+		if mode == MODE.DEFAULT :
 			switch_mode(MODE.DELETE)
-		elif is_deleting :
+		elif mode == MODE.DELETE :
 			switch_mode(MODE.DEFAULT)
 	
 
@@ -74,31 +75,32 @@ func switch_mode(mode : MODE ) -> void :
 #why don't i just call this function to switch mode? idk i just realized that
 #switch_mode sound cooler though
 func default_mode() -> void :
+	mode = MODE.DEFAULT
 	default_object.switch_default(true)
 	object_deleter.switch_deleter(false)
 	current_object = default_object
-	is_building = false
-	is_deleting = false
 	set_offset(0,0)
 
 func build_mode() -> void :
 	default_object.switch_default(false)
 	object_deleter.switch_deleter(false)
 	#current_object will be changed in other function according to the building type
-	is_building = true
-	is_deleting = false
+	mode = MODE.BUILD
 	set_offset(-8, 8)
 
 func delete_mode() -> void :
 	default_object.switch_default(false)
 	object_deleter.switch_deleter(true)
 	current_object = object_deleter
-	is_building = false
-	is_deleting = true
+	mode = MODE.DELETE
 	set_offset(0,0)
+#===================================================================================================
+
+func change_to_station() -> void :
+	pass
 
 func change_to_house() -> void :
-	var new_house = house_scene.instantiate()
+	var new_house = house.instantiate()
 	houses.add_child(new_house)
 	current_object = new_house
 	

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://q0rs5s4vg5mm"]
+
+[ext_resource type="Script" uid="uid://c84t8hcv7cj58" path="res://Scripts/SanboxScripts/station_sandbox.gd" id="1_w60pj"]
+[ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://Assets/Rescue Station/rescue_station_2.png" id="2_m5l2c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfayr"]
+size = Vector2(63.9, 63.99)
+
+[node name="StationSandbox" type="Area2D"]
+script = ExtResource("1_w60pj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nfayr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_m5l2c")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
