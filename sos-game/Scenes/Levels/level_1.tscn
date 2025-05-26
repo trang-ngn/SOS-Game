@@ -1267,14 +1267,14 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="S0" type="Node2D" parent="Stations"]
 position = Vector2(-489, -196)
 script = ExtResource("8_vvknj")
-cost = 20
+cost = 4
 
 [node name="Plot" type="Button" parent="Stations/S0"]
 texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "0 : 20€"
+text = "0 : 4M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S0"]
 visible = false
@@ -1306,14 +1306,14 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="S1" type="Node2D" parent="Stations"]
 position = Vector2(-408, -264)
 script = ExtResource("8_vvknj")
-cost = 15
+cost = 3
 
 [node name="Plot" type="Button" parent="Stations/S1"]
 texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "1 : 15€"
+text = "1 : 3M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S1"]
 visible = false
@@ -1345,14 +1345,14 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="S2" type="Node2D" parent="Stations"]
 position = Vector2(-465, -1)
 script = ExtResource("8_vvknj")
-cost = 5
+cost = 1
 
 [node name="Plot" type="Button" parent="Stations/S2"]
 texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "2 : 5€"
+text = "2 : 1M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S2"]
 visible = false
@@ -1385,14 +1385,14 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="S4" type="Node2D" parent="Stations"]
 position = Vector2(-408, 152)
 script = ExtResource("8_vvknj")
-cost = 20
+cost = 4
 
 [node name="Plot" type="Button" parent="Stations/S4"]
 texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "3 : 20€"
+text = "3 : 4M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S4"]
 visible = false
@@ -1425,14 +1425,14 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="S5" type="Node2D" parent="Stations"]
 position = Vector2(-72, 188)
 script = ExtResource("8_vvknj")
-cost = 15
+cost = 3
 
 [node name="Plot" type="Button" parent="Stations/S5"]
 texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "4 : 15€"
+text = "4 : 3M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S5"]
 visible = false
@@ -1465,14 +1465,14 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="S6" type="Node2D" parent="Stations"]
 position = Vector2(104, 150)
 script = ExtResource("8_vvknj")
-cost = 20
+cost = 4
 
 [node name="Plot" type="Button" parent="Stations/S6"]
 texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "5 : 20€"
+text = "5 : 4M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S6"]
 visible = false
@@ -1505,14 +1505,14 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="S7" type="Node2D" parent="Stations"]
 position = Vector2(408, -8)
 script = ExtResource("8_vvknj")
-cost = 15
+cost = 3
 
 [node name="Plot" type="Button" parent="Stations/S7"]
 texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "6 : 15€"
+text = "6 : 3M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S7"]
 visible = false
@@ -1545,7 +1545,7 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="S8" type="Node2D" parent="Stations"]
 position = Vector2(-136, 16)
 script = ExtResource("8_vvknj")
-cost = 70
+cost = 14
 
 [node name="Plot" type="Button" parent="Stations/S8"]
 texture_filter = 1
@@ -1553,7 +1553,7 @@ offset_left = -32.0
 offset_top = 8.0
 offset_right = 30.0
 offset_bottom = 44.0
-text = "7 : 70€"
+text = "7 : 14M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S8"]
 visible = false
@@ -1586,14 +1586,14 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="S3" type="Node2D" parent="Stations"]
 position = Vector2(-460, 246)
 script = ExtResource("8_vvknj")
-cost = 5
+cost = 1
 
 [node name="Plot" type="Button" parent="Stations/S3"]
 texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "8 : 5€"
+text = "8 : 1M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S3"]
 visible = false

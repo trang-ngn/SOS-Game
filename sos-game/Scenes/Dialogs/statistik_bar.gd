@@ -7,4 +7,4 @@ func update_coverage(coverage: int, total_coverage: int) -> void:
 	$CoverageLabel.text = str(coverage) + "/" + str(total_coverage)
 
 func update_cost(total_cost: float) -> void:
-	$CostLabel.text =  str(int(total_cost)) + "€"
+	$CostLabel.text =  str(int(total_cost)) + "M €"

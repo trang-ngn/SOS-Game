@@ -81,7 +81,7 @@ func is_built()->bool:
 
 func initialize() -> void:
 	$Sprite2D.visible = false
-	$Plot.text = str(id) + " : " +str(cost) + "€"
+	$Plot.text = str(id) + "\n" +str(cost) + "M €"
 	$StationNumber.visible = false
 	$StationNumber.editable =false
 	$Radius/RadiusSize.visible = false

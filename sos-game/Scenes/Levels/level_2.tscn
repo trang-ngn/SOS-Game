@@ -896,7 +896,7 @@ position = Vector2(0.5, 4.5)
 shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H25" type="StaticBody2D" parent="Houses"]
-position = Vector2(0, -59)
+position = Vector2(-91, -66)
 script = ExtResource("3_5buja")
 id = 32
 
@@ -920,7 +920,7 @@ position = Vector2(0.5, 4.5)
 shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H26" type="StaticBody2D" parent="Houses"]
-position = Vector2(1, 62)
+position = Vector2(108, 81)
 script = ExtResource("3_5buja")
 id = 33
 
@@ -944,7 +944,7 @@ position = Vector2(0.5, 4.5)
 shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H27" type="StaticBody2D" parent="Houses"]
-position = Vector2(59, 0)
+position = Vector2(106, 3)
 script = ExtResource("3_5buja")
 id = 34
 
@@ -968,7 +968,7 @@ position = Vector2(0.5, 4.5)
 shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H28" type="StaticBody2D" parent="Houses"]
-position = Vector2(59, -59)
+position = Vector2(107, -68)
 script = ExtResource("3_5buja")
 id = 35
 
@@ -992,7 +992,7 @@ position = Vector2(0.5, 4.5)
 shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H29" type="StaticBody2D" parent="Houses"]
-position = Vector2(-59, 0)
+position = Vector2(-91, 4)
 script = ExtResource("3_5buja")
 id = 36
 
@@ -1016,7 +1016,7 @@ position = Vector2(0.5, 4.5)
 shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="H30" type="StaticBody2D" parent="Houses"]
-position = Vector2(-59, 62)
+position = Vector2(-90, 85)
 script = ExtResource("3_5buja")
 id = 37
 
@@ -1140,7 +1140,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 [node name="S0" type="Node2D" parent="Stations"]
 position = Vector2(-467, 234)
 script = ExtResource("8_jip10")
-cost = 10
+cost = 2
 radius = 10.0
 
 [node name="Plot" type="Button" parent="Stations/S0"]
@@ -1148,10 +1148,11 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "0 : 10€"
+text = "0 : 2M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S0"]
 visible = false
+position = Vector2(0, -11)
 texture = ExtResource("9_1xj2d")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S0"]
@@ -1179,17 +1180,18 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="S1" type="Node2D" parent="Stations"]
 position = Vector2(480, 230)
 script = ExtResource("8_jip10")
-cost = 10
+cost = 2
 
 [node name="Plot" type="Button" parent="Stations/S1"]
 texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "1 : 10€"
+text = "1 : 2M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S1"]
 visible = false
+position = Vector2(0, -11)
 texture = ExtResource("9_1xj2d")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S1"]
@@ -1217,17 +1219,18 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="S2" type="Node2D" parent="Stations"]
 position = Vector2(480, -163)
 script = ExtResource("8_jip10")
-cost = 10
+cost = 2
 
 [node name="Plot" type="Button" parent="Stations/S2"]
 texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "2 : 10€"
+text = "2 : 2M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S2"]
 visible = false
+position = Vector2(0, -11)
 texture = ExtResource("9_1xj2d")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S2"]
@@ -1255,17 +1258,18 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="S3" type="Node2D" parent="Stations"]
 position = Vector2(-476, -116)
 script = ExtResource("8_jip10")
-cost = 10
+cost = 2
 
 [node name="Plot" type="Button" parent="Stations/S3"]
 texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "3 : 10€"
+text = "3 : 2M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S3"]
 visible = false
+position = Vector2(0, -11)
 texture = ExtResource("9_1xj2d")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S3"]
@@ -1293,17 +1297,18 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="S4" type="Node2D" parent="Stations"]
 position = Vector2(0, -10)
 script = ExtResource("8_jip10")
-cost = 30
+cost = 6
 
 [node name="Plot" type="Button" parent="Stations/S4"]
 texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "4 : 30€"
+text = "4 : 6M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S4"]
 visible = false
+position = Vector2(0, -11)
 texture = ExtResource("9_1xj2d")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S4"]
@@ -1329,16 +1334,16 @@ script = ExtResource("10_7h8th")
 color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S5" type="Node2D" parent="Stations"]
-position = Vector2(6, 216)
+position = Vector2(6, 209)
 script = ExtResource("8_jip10")
-cost = 20
+cost = 4
 
 [node name="Plot" type="Button" parent="Stations/S5"]
 texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "5 : 20€"
+text = "5 : 4M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S5"]
 visible = false
@@ -1369,17 +1374,18 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="S6" type="Node2D" parent="Stations"]
 position = Vector2(8, -161)
 script = ExtResource("8_jip10")
-cost = 22
+cost = 5
 
 [node name="Plot" type="Button" parent="Stations/S6"]
 texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "6 : 22€"
+text = "6 : 5M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S6"]
 visible = false
+position = Vector2(0, -11)
 texture = ExtResource("9_1xj2d")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S6"]
@@ -1407,17 +1413,18 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="S7" type="Node2D" parent="Stations"]
 position = Vector2(-554, 46)
 script = ExtResource("8_jip10")
-cost = 25
+cost = 5
 
 [node name="Plot" type="Button" parent="Stations/S7"]
 texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "7 : 25€"
+text = "7 : 5M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S7"]
 visible = false
+position = Vector2(0, -11)
 texture = ExtResource("9_1xj2d")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S7"]
@@ -1445,17 +1452,18 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="S8" type="Node2D" parent="Stations"]
 position = Vector2(520, 55)
 script = ExtResource("8_jip10")
-cost = 15
+cost = 3
 
 [node name="Plot" type="Button" parent="Stations/S8"]
 texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "8 : 15€"
+text = "8 : 3M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S8"]
 visible = false
+position = Vector2(0, -11)
 texture = ExtResource("9_1xj2d")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S8"]

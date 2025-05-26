@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://cbl24x0qb50np"]
+[gd_scene load_steps=24 format=4 uid="uid://cbl24x0qb50np"]
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/LevelScripts/level_script.gd" id="1_hiugd"]
 [ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://Assets/Tileset/Tileset_v2.png" id="2_tvne3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://wdkq6dlpx1a0" path="res://Assets/Houses/white_house.png" id="4_tvne3"]
 [ext_resource type="Texture2D" uid="uid://b2qe6xh3aeg1s" path="res://Assets/Houses/brown_house.png" id="5_ert0c"]
 [ext_resource type="Texture2D" uid="uid://b2r4cix5na7mw" path="res://Assets/Houses/green_house.png" id="6_08cxd"]
+[ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/LevelScripts/station_script.gd" id="7_2ejuk"]
 [ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://Assets/Rescue Station/rescue_station_2.png" id="7_ert0c"]
 [ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="7_jr16f"]
 [ext_resource type="Script" uid="uid://bhn2knupgw6fc" path="res://Scripts/LevelScripts/radius_visual.gd" id="10_0jff0"]
@@ -175,6 +176,7 @@ shape = SubResource("RectangleShape2D_hiugd")
 
 [node name="S0" type="Node2D" parent="Stations"]
 position = Vector2(57, -39)
+script = ExtResource("7_2ejuk")
 
 [node name="Plot" type="Button" parent="Stations/S0"]
 texture_filter = 1
@@ -184,7 +186,7 @@ offset_bottom = 36.0
 text = "0 : 20€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S0"]
-visible = false
+position = Vector2(0, -11)
 texture = ExtResource("7_ert0c")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S0"]
