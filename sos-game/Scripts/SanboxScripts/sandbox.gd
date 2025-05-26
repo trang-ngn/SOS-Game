@@ -2,10 +2,16 @@ extends Node2D
 
 @onready var house = preload("res://Scenes/Sandbox/house_sandbox.tscn")
 @onready var station = preload("res://Scenes/Sandbox/station_sandbox.tscn")
+@onready var options_scene = preload("res://Scenes/Dialogs/options_dialog.tscn")
+@onready var options_instance
 @onready var houses = $Houses
+@onready var stations = $Stations
 @onready var default_object : DefaultObject = $ConstantObject/DefaultObject
 @onready var object_deleter : ObjectsDeleter = $ConstantObject/ObjectDeleter
 @onready var tilemap : TileMap = $TileMap
+@onready var current_radius: int
+@onready var current_cost: int
+@onready var object_type: BUILDING = BUILDING.HOUSE
 
 var offset : Vector2 = Vector2(0,0)
 var current_object : ObjectSandbox
@@ -25,7 +31,6 @@ enum BUILDING{
 func _ready() -> void:
 	switch_mode(MODE.DEFAULT)
 	
-	
 func _process(delta: float) -> void:
 	check_area()
 	#debug purpose
@@ -43,8 +48,15 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_released():
 		if mode == MODE.DEFAULT :
 			switch_mode(MODE.BUILD)
-			change_to_house()
-		
+			options_instance = load("res://Scenes/Dialogs/options_dialog.tscn").instantiate()
+			#add_child(options_instance)
+			get_tree().change_scene_to_file("res://Scenes/Dialogs/options_dialog.tscn")
+
+			if object_type == BUILDING.STATION:
+				change_to_station()
+			else:
+				change_to_house()
+
 		elif mode == MODE.BUILD :
 			if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.is_released():
 				pass
@@ -60,7 +72,7 @@ func _input(event: InputEvent) -> void:
 			switch_mode(MODE.DEFAULT)
 	
 
-#this function can be splited in to more function but for now this works!
+#this function can be split into more functions but for now this works!
 func switch_mode(mode : MODE ) -> void :
 	if mode == MODE.DEFAULT :
 		default_mode()
@@ -96,8 +108,11 @@ func delete_mode() -> void :
 	set_offset(0,0)
 #===================================================================================================
 
+# Under construction, depends on options dialog
 func change_to_station() -> void :
-	pass
+	var new_station = station.instantiate()
+	stations.add_child(new_station)
+	current_object = new_station
 
 func change_to_house() -> void :
 	var new_house = house.instantiate()

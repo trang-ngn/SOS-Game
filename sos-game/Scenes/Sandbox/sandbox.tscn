@@ -220,6 +220,8 @@ layer_0/tile_data = PackedInt32Array(-655378, 0, 0, -589842, 0, 1, -655377, 6553
 
 [node name="Houses" type="Node2D" parent="."]
 
+[node name="Stations" type="Node2D" parent="."]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3.5, 3.5)
 
@@ -244,6 +246,7 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="BackButton" type="TextureButton" parent="UI"]
+layout_mode = 0
 offset_left = -256.0
 offset_top = -154.0
 offset_right = -151.0

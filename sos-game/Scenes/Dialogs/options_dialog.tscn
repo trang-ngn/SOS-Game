@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://37r7vmox7di3"]
+[gd_scene load_steps=10 format=3 uid="uid://37r7vmox7di3"]
 
 [ext_resource type="FontFile" uid="uid://c8f1xkqvr2h7a" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="1_iiljw"]
+[ext_resource type="Script" uid="uid://dah3a55nubw6o" path="res://Scenes/Dialogs/options_dialog.gd" id="1_wh35q"]
 [ext_resource type="Texture2D" uid="uid://ci0vb2amef8yw" path="res://Assets/Buttons and Dialogs/CheckBox-Checked.png" id="2_62olq"]
 [ext_resource type="Texture2D" uid="uid://b8l44qwjrw623" path="res://Assets/Buttons and Dialogs/CheckBox-Unchecked.png" id="3_8nlid"]
+[ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://Assets/Rescue Station/rescue_station_2.png" id="5_3qgsv"]
+[ext_resource type="Texture2D" uid="uid://b2qe6xh3aeg1s" path="res://Assets/Houses/brown_house.png" id="5_upao6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugmqo"]
 bg_color = Color(0.905882, 0.905882, 0.905882, 1)
@@ -16,29 +19,48 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qgsv"]
+bg_color = Color(0.905882, 0.905882, 0.905882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cir7"]
+bg_color = Color(0.905882, 0.905882, 0.905882, 1)
+
 [node name="OptionsDialog" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wh35q")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 640.0
+offset_left = -254.0
+offset_top = -320.0
+offset_right = 909.0
+offset_bottom = -104.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ugmqo")
 
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 0
-offset_top = 160.0
-offset_right = 1280.0
-offset_bottom = 680.0
+offset_left = -246.0
+offset_top = -118.0
+offset_right = 907.0
+offset_bottom = 535.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ugmqo")
 
-[node name="CheckBox2" type="CheckBox" parent="."]
+[node name="StationBox" type="CheckBox" parent="."]
 layout_mode = 0
-offset_left = 752.0
-offset_top = 40.0
-offset_right = 1050.0
-offset_bottom = 128.0
+offset_left = 395.0
+offset_top = -251.0
+offset_right = 750.0
+offset_bottom = -163.0
+mouse_default_cursor_shape = 2
 theme_override_colors/font_disabled_color = Color(0.4, 0.294118, 0.180392, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.4, 0.294118, 0.180392, 1)
 theme_override_colors/font_hover_color = Color(0.4, 0.294118, 0.180392, 1)
@@ -46,17 +68,82 @@ theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
 theme_override_colors/font_focus_color = Color(0.4, 0.294118, 0.180392, 1)
 theme_override_colors/font_pressed_color = Color(0.4, 0.294118, 0.180392, 1)
 theme_override_fonts/font = ExtResource("1_iiljw")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 theme_override_icons/checked = ExtResource("2_62olq")
 theme_override_icons/unchecked = ExtResource("3_8nlid")
 text = " Station"
 
-[node name="CheckBox3" type="CheckBox" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="StationBox"]
+position = Vector2(-381.25, 356.25)
+scale = Vector2(6.73828, 6.73828)
+texture = ExtResource("5_3qgsv")
+
+[node name="RadiusInput" type="LineEdit" parent="StationBox"]
 layout_mode = 0
-offset_left = 160.0
-offset_top = 40.0
-offset_right = 515.0
-offset_bottom = 128.0
+offset_left = 100.0
+offset_top = 231.25
+offset_right = 757.0
+offset_bottom = 574.25
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("1_iiljw")
+theme_override_font_sizes/font_size = 70
+placeholder_text = "Enter Radius"
+alignment = 1
+
+[node name="CostInput" type="LineEdit" parent="StationBox"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 450.0
+offset_right = 757.0
+offset_bottom = 795.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("1_iiljw")
+theme_override_font_sizes/font_size = 70
+placeholder_text = "Enter Cost"
+alignment = 1
+
+[node name="Cost" type="TextEdit" parent="StationBox"]
+layout_mode = 0
+offset_left = -74.9995
+offset_top = 487.5
+offset_right = 252.0
+offset_bottom = 643.5
+scale = Vector2(0.4, 0.4)
+mouse_filter = 2
+theme_override_colors/word_highlighted_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_colors/font_outline_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_colors/font_placeholder_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_colors/font_readonly_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_fonts/font = ExtResource("1_iiljw")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_3qgsv")
+text = "COST:"
+
+[node name="Radius" type="TextEdit" parent="StationBox"]
+layout_mode = 0
+offset_left = -99.9995
+offset_top = 268.75
+offset_right = 353.0
+offset_bottom = 409.75
+scale = Vector2(0.4, 0.4)
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_colors/font_placeholder_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_colors/font_readonly_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_fonts/font = ExtResource("1_iiljw")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_3cir7")
+text = "RADIUS:"
+
+[node name="HouseBox" type="CheckBox" parent="."]
+layout_mode = 0
+offset_left = -107.0
+offset_top = -248.0
+offset_right = 191.0
+offset_bottom = -160.0
+mouse_default_cursor_shape = 2
 theme_override_colors/font_disabled_color = Color(0.4, 0.294118, 0.180392, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.4, 0.294118, 0.180392, 1)
 theme_override_colors/font_hover_color = Color(0.4, 0.294118, 0.180392, 1)
@@ -64,7 +151,59 @@ theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
 theme_override_colors/font_focus_color = Color(0.4, 0.294118, 0.180392, 1)
 theme_override_colors/font_pressed_color = Color(0.4, 0.294118, 0.180392, 1)
 theme_override_fonts/font = ExtResource("1_iiljw")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 theme_override_icons/checked = ExtResource("2_62olq")
 theme_override_icons/unchecked = ExtResource("3_8nlid")
 text = " House"
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBox"]
+visible = false
+position = Vector2(436, 364)
+scale = Vector2(7.33984, 7.52344)
+texture = ExtResource("5_upao6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(322.5, 75)
+scale = Vector2(0.4, 0.4)
+
+[node name="Confirm" type="CheckBox" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 356.0
+offset_right = 606.0
+offset_bottom = 498.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_disabled_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_colors/font_hover_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_colors/icon_disabled_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_colors/icon_hover_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_colors/icon_pressed_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_colors/icon_focus_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_colors/icon_normal_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_colors/font_outline_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_colors/font_focus_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_colors/font_pressed_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_fonts/font = ExtResource("1_iiljw")
+theme_override_font_sizes/font_size = 35
+theme_override_icons/checked = ExtResource("2_62olq")
+theme_override_icons/unchecked = ExtResource("3_8nlid")
+text = "Confirm Selection"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+show_behind_parent = true
+layout_mode = 0
+offset_left = -605.0
+offset_top = -477.0
+offset_right = 1355.0
+offset_bottom = 737.0
+mouse_filter = 2
+color = Color(0.262745, 0.262745, 0.262745, 0.784314)
+
+[connection signal="toggled" from="StationBox" to="." method="_on_station_box_toggled"]
+[connection signal="toggled" from="HouseBox" to="." method="_on_house_box_toggled"]
+[connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="toggled" from="Confirm" to="." method="_on_confirm_toggled"]
