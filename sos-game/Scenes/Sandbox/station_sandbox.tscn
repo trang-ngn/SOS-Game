@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://Assets/Rescue Station/rescue_station_2.png" id="2_m5l2c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfayr"]
-size = Vector2(63.9, 63.99)
+size = Vector2(79.9, 79.9)
 
 [node name="StationSandbox" type="Area2D"]
 script = ExtResource("1_w60pj")
