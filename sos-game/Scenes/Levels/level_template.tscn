@@ -183,7 +183,8 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "0 : 20€"
+text = "0
+0M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S0"]
 position = Vector2(0, -11)

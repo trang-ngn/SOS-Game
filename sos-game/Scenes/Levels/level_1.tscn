@@ -1274,10 +1274,12 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "0 : 4M €"
+text = "0
+4M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S0"]
 visible = false
+position = Vector2(0, -11)
 texture = ExtResource("9_ad63i")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S0"]
@@ -1313,10 +1315,12 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "1 : 3M €"
+text = "1
+3M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S1"]
 visible = false
+position = Vector2(0, -11)
 texture = ExtResource("9_ad63i")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S1"]
@@ -1352,10 +1356,12 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "2 : 1M €"
+text = "2
+1M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S2"]
 visible = false
+position = Vector2(0, -11)
 texture = ExtResource("9_ad63i")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S2"]
@@ -1392,10 +1398,12 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "3 : 4M €"
+text = "3
+4M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S4"]
 visible = false
+position = Vector2(0, -11)
 texture = ExtResource("9_ad63i")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S4"]
@@ -1432,10 +1440,12 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "4 : 3M €"
+text = "4
+3M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S5"]
 visible = false
+position = Vector2(0, -11)
 texture = ExtResource("9_ad63i")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S5"]
@@ -1472,10 +1482,12 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "5 : 4M €"
+text = "5
+4M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S6"]
 visible = false
+position = Vector2(0, -11)
 texture = ExtResource("9_ad63i")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S6"]
@@ -1512,10 +1524,12 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "6 : 3M €"
+text = "6
+3M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S7"]
 visible = false
+position = Vector2(0, -11)
 texture = ExtResource("9_ad63i")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S7"]
@@ -1553,10 +1567,12 @@ offset_left = -32.0
 offset_top = 8.0
 offset_right = 30.0
 offset_bottom = 44.0
-text = "7 : 14M €"
+text = "7
+14M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S8"]
 visible = false
+position = Vector2(0, -5)
 texture = ExtResource("9_ad63i")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S8"]
@@ -1593,10 +1609,12 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "8 : 1M €"
+text = "8
+1M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S3"]
 visible = false
+position = Vector2(0, -11)
 texture = ExtResource("9_ad63i")
 
 [node name="StationNumber" type="TextEdit" parent="Stations/S3"]
