@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://dq6o6kh37inuj"]
+
+[ext_resource type="Texture2D" uid="uid://db0irs6w4evab" path="res://Assets/Background/Background50%.png" id="1_umr3n"]
+[ext_resource type="Texture2D" uid="uid://cmot25cuuce2r" path="res://Assets/Buttons/LevelPicker/Button-Level-1.png" id="2_3g87n"]
+[ext_resource type="Texture2D" uid="uid://xdfevy2e7e7r" path="res://Assets/Buttons/LevelPicker/Button-Level-2.png" id="3_x8c62"]
+[ext_resource type="Texture2D" uid="uid://2u6hs6dliady" path="res://Assets/Buttons/LevelPicker/Button-Level-3.png" id="4_a8vvm"]
+[ext_resource type="Texture2D" uid="uid://c3hjl5uawku4d" path="res://Assets/Buttons/LevelPicker/Button-Level-4.png" id="5_7s41y"]
+[ext_resource type="Texture2D" uid="uid://cskhl0nclhasm" path="res://Assets/Buttons/LevelPicker/Button-Level-5.png" id="6_1obp6"]
+[ext_resource type="Texture2D" uid="uid://fxmnc7hn3rcs" path="res://Assets/Buttons/LevelPicker/Button-Level-6.png" id="7_jctgc"]
+
+[node name="LevelPicker" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_umr3n")
+
+[node name="ButtonLevel1" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 160.0
+offset_right = 648.0
+offset_bottom = 468.0
+texture_normal = ExtResource("2_3g87n")
+
+[node name="ButtonLevel2" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 724.0
+offset_top = 160.0
+offset_right = 1204.0
+offset_bottom = 476.0
+texture_normal = ExtResource("3_x8c62")
+
+[node name="ButtonLevel3" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 1272.0
+offset_top = 160.0
+offset_right = 1752.0
+offset_bottom = 476.0
+texture_normal = ExtResource("4_a8vvm")
+
+[node name="ButtonLevel4" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 540.0
+offset_right = 656.0
+offset_bottom = 856.0
+texture_normal = ExtResource("5_7s41y")
+
+[node name="ButtonLevel5" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 724.0
+offset_top = 540.0
+offset_right = 1204.0
+offset_bottom = 856.0
+texture_normal = ExtResource("6_1obp6")
+
+[node name="ButtonLevel6" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 1272.0
+offset_top = 540.0
+offset_right = 1752.0
+offset_bottom = 856.0
+texture_normal = ExtResource("7_jctgc")
