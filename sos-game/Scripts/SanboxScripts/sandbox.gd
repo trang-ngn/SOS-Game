@@ -10,7 +10,7 @@ extends Node2D
 
 var offset : Vector2 = Vector2(0,0)
 var current_object : ObjectSandbox
-var mode : MODE 
+var current_mode : MODE 
 var current_building : BUILDING
 
 enum MODE{
@@ -40,32 +40,39 @@ func check_area() -> void :
 	var map_pos = tilemap.local_to_map(mouse_tile)
 	var coordinate = tilemap.map_to_local(map_pos)
 	current_object.position = to_global(coordinate + offset).snapped(Vector2.ONE)
-	
-	
-	
+
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_released():
-		if mode == MODE.DEFAULT :
+		if current_mode == MODE.DEFAULT :
 			switch_mode(MODE.BUILD)
 			set_building()
 			
-		elif mode == MODE.BUILD :
+		elif current_mode == MODE.BUILD :
 			place_object()
 		
-		elif mode == MODE.DELETE :
+		elif current_mode == MODE.DELETE :
 			delete_object()
 		
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.is_released():
-		if mode == MODE.DEFAULT :
+		if current_mode == MODE.DEFAULT :
 			switch_mode(MODE.DELETE)
 			
-		elif mode == MODE.DELETE :
+		elif current_mode == MODE.DELETE :
 			switch_mode(MODE.DEFAULT)
 			
-		elif mode == MODE.BUILD :
+		elif current_mode == MODE.BUILD :
 			#debug purpose
 			#print("switch")
-			switch_building()
+			switch_building() 
+	
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_WHEEL_UP and event.is_released():
+		if current_mode == MODE.BUILD :
+			current_object.change_sprite(true)
+	
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.is_released():
+		if current_mode == MODE.BUILD :
+			current_object.change_sprite(false)
 	
 
 #this function can be splited in to more function but for now this works!
@@ -83,24 +90,24 @@ func switch_mode(mode : MODE ) -> void :
 #why don't i just call this function to switch mode? idk i just realized that
 #switch_mode sound cooler though
 func default_mode() -> void :
-	mode = MODE.DEFAULT
+	current_mode = MODE.DEFAULT
 	default_object.switch_default(true)
 	object_deleter.switch_deleter(false)
 	current_object = default_object
-	set_offset(0,0)
+	set_offset(8,8)
 
 func build_mode() -> void :
 	default_object.switch_default(false)
 	object_deleter.switch_deleter(false)
 	#current_object will be changed in other function according to the building type
-	mode = MODE.BUILD
-	set_offset(-8, 8)
+	current_mode = MODE.BUILD
+	
 
 func delete_mode() -> void :
 	default_object.switch_default(false)
 	object_deleter.switch_deleter(true)
 	current_object = object_deleter
-	mode = MODE.DELETE
+	current_mode = MODE.DELETE
 	set_offset(0,0)
 #===================================================================================================
 
@@ -128,11 +135,14 @@ func change_to_station() -> void :
 	var new_station = station.instantiate()
 	stations.add_child(new_station)
 	current_object = new_station
+	set_offset(16, 16)
+	
 
 func change_to_house() -> void :
 	var new_house = house.instantiate()
 	houses.add_child(new_house)
 	current_object = new_house
+	set_offset(8, 8)
 	
 func place_object() -> void :
 	if current_object.is_colliding() :

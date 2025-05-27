@@ -17,7 +17,6 @@ shape = SubResource("RectangleShape2D_eg1ne")
 [node name="Design" type="Node2D" parent="."]
 
 [node name="Brown" type="Sprite2D" parent="Design"]
-visible = false
 texture = ExtResource("2_56b1i")
 
 [node name="White" type="Sprite2D" parent="Design"]
@@ -25,6 +24,7 @@ visible = false
 texture = ExtResource("3_an53c")
 
 [node name="Green" type="Sprite2D" parent="Design"]
+visible = false
 texture = ExtResource("4_ud6bi")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
