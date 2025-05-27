@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkhddl4kkxhf2"
-path="res://.godot/imported/Button-tryagain.png-efd39e29d46160773ff6846f310b17ce.ctex"
+uid="uid://drjlj1jgbcpqf"
+path="res://.godot/imported/Button-green.png-2771c4adc899edbde759f1d5d3503db6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons and Dialogs/Button-tryagain.png"
-dest_files=["res://.godot/imported/Button-tryagain.png-efd39e29d46160773ff6846f310b17ce.ctex"]
+source_file="res://Assets/Buttons/Button-green.png"
+dest_files=["res://.godot/imported/Button-green.png-2771c4adc899edbde759f1d5d3503db6.ctex"]
 
 [params]
 

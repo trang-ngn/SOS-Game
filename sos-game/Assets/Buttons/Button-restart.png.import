@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lhmlbnmpqa"
-path="res://.godot/imported/Button-DoneRestart.png-3eb085b84f84a6f3428bbc655a38feed.ctex"
+uid="uid://bjbmqo6ktwsk0"
+path="res://.godot/imported/Button-restart.png-5fb088e8f69b3437ed173a918f99d72a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons and Dialogs/Button-DoneRestart.png"
-dest_files=["res://.godot/imported/Button-DoneRestart.png-3eb085b84f84a6f3428bbc655a38feed.ctex"]
+source_file="res://Assets/Buttons/Button-restart.png"
+dest_files=["res://.godot/imported/Button-restart.png-5fb088e8f69b3437ed173a918f99d72a.ctex"]
 
 [params]
 

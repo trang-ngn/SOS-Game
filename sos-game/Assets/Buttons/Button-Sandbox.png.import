@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgqeqcmhkawy6"
-path="res://.godot/imported/Dialog-Help.png-0239256fc48d38d4534e55d0d8ebfe05.ctex"
+uid="uid://suvrfljtlo33"
+path="res://.godot/imported/Button-Sandbox.png-62508c3e8d29d14a2dcee19ce0e2b56d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons and Dialogs/Dialog-Help.png"
-dest_files=["res://.godot/imported/Dialog-Help.png-0239256fc48d38d4534e55d0d8ebfe05.ctex"]
+source_file="res://Assets/Buttons/Button-Sandbox.png"
+dest_files=["res://.godot/imported/Button-Sandbox.png-62508c3e8d29d14a2dcee19ce0e2b56d.ctex"]
 
 [params]
 

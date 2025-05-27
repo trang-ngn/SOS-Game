@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4rqgghfr1k30"
-path="res://.godot/imported/Button-back.png-051297c56426914126338a978efd58e1.ctex"
+uid="uid://b8l44qwjrw623"
+path="res://.godot/imported/CheckBox-Unchecked.png-6489e4bf74ef253bd5314e624a0c25ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons and Dialogs/Button-back.png"
-dest_files=["res://.godot/imported/Button-back.png-051297c56426914126338a978efd58e1.ctex"]
+source_file="res://Assets/Buttons/CheckBox-Unchecked.png"
+dest_files=["res://.godot/imported/CheckBox-Unchecked.png-6489e4bf74ef253bd5314e624a0c25ae.ctex"]
 
 [params]
 

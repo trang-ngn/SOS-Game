@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://ixfakxeau86w" path="res://Scripts/SanboxScripts/default_object.gd" id="4_aox5q"]
 [ext_resource type="Script" uid="uid://dda24cx7xxmwv" path="res://Scripts/SanboxScripts/delete_object.gd" id="5_qee5c"]
 [ext_resource type="Texture2D" uid="uid://hub27jtpuyaf" path="res://Assets/Cursor/delete_object_2.png" id="6_0r1v2"]
-[ext_resource type="Texture2D" uid="uid://4rqgghfr1k30" path="res://Assets/Buttons and Dialogs/Button-back.png" id="7_4yamo"]
+[ext_resource type="Texture2D" uid="uid://4rqgghfr1k30" path="res://Assets/Buttons/Button-back.png" id="7_4yamo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4yamo"]
 texture = ExtResource("2_62cd8")

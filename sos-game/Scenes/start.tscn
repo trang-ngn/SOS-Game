@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://vq3hxgbojsbq"]
 
 [ext_resource type="Texture2D" uid="uid://db0irs6w4evab" path="res://Assets/Background/Background50%.png" id="1_3bxa3"]
-[ext_resource type="Texture2D" uid="uid://c1xuybe8d22do" path="res://Assets/Buttons and Dialogs/Button-Start.png" id="2_5ogh5"]
+[ext_resource type="Texture2D" uid="uid://c1xuybe8d22do" path="res://Assets/Buttons/Button-Start.png" id="2_5ogh5"]
 [ext_resource type="Script" uid="uid://djwlskhntoyi4" path="res://Scripts/Buttons/button_start.gd" id="3_lb6bl"]
-[ext_resource type="Texture2D" uid="uid://suvrfljtlo33" path="res://Assets/Buttons and Dialogs/Button-Sandbox.png" id="4_rk01k"]
+[ext_resource type="Texture2D" uid="uid://suvrfljtlo33" path="res://Assets/Buttons/Button-Sandbox.png" id="4_rk01k"]
 [ext_resource type="Script" uid="uid://dhspi27r0u7kl" path="res://Scripts/Buttons/button_sandbox.gd" id="5_o3wvq"]
-[ext_resource type="Texture2D" uid="uid://osm55giheu7s" path="res://Assets/Buttons and Dialogs/Button-help.png" id="6_pg4io"]
-[ext_resource type="Texture2D" uid="uid://cgxd2tb7s5oqi" path="res://Assets/Buttons and Dialogs/Button-Info.png" id="7_iceld"]
+[ext_resource type="Texture2D" uid="uid://osm55giheu7s" path="res://Assets/Buttons/Button-help.png" id="6_pg4io"]
+[ext_resource type="Texture2D" uid="uid://cgxd2tb7s5oqi" path="res://Assets/Buttons/Button-Info.png" id="7_iceld"]
 [ext_resource type="Script" uid="uid://g0k7bbimhpye" path="res://Scripts/Dialogs/dialog_help.gd" id="8_iceld"]
-[ext_resource type="Texture2D" uid="uid://bgqeqcmhkawy6" path="res://Assets/Buttons and Dialogs/Dialog-Help.png" id="9_7pwkw"]
+[ext_resource type="Texture2D" uid="uid://bgqeqcmhkawy6" path="res://Assets/Dialogs/Dialog-Help.png" id="9_7pwkw"]
 
 [node name="Startmenu" type="Node2D"]
 

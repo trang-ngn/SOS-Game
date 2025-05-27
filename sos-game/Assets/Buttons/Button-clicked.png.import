@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qpvjl5m1y4qa"
-path="res://.godot/imported/Button-help-weiss.png-890c00610edca35909ab12cab69895df.ctex"
+uid="uid://dg8khhclt0gwk"
+path="res://.godot/imported/Button-clicked.png-e1707977c3d83c50536f7eb3ef0868b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons and Dialogs/Button-help-weiss.png"
-dest_files=["res://.godot/imported/Button-help-weiss.png-890c00610edca35909ab12cab69895df.ctex"]
+source_file="res://Assets/Buttons/Button-clicked.png"
+dest_files=["res://.godot/imported/Button-clicked.png-e1707977c3d83c50536f7eb3ef0868b0.ctex"]
 
 [params]
 

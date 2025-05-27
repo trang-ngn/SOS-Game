@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct6b4rxd8ha2h"
-path="res://.godot/imported/Dialog-Back.png-5a723bab1537e76a4561d160ffb91683.ctex"
+uid="uid://dkhddl4kkxhf2"
+path="res://.godot/imported/Button-tryagain.png-7629dac0bc05b29a49ea05e7da78023d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons and Dialogs/Dialog-Back.png"
-dest_files=["res://.godot/imported/Dialog-Back.png-5a723bab1537e76a4561d160ffb91683.ctex"]
+source_file="res://Assets/Buttons/Button-tryagain.png"
+dest_files=["res://.godot/imported/Button-tryagain.png-7629dac0bc05b29a49ea05e7da78023d.ctex"]
 
 [params]
 
