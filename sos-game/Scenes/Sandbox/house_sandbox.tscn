@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvwglm8jol5a1"]
+[gd_scene load_steps=6 format=3 uid="uid://bvwglm8jol5a1"]
 
 [ext_resource type="Script" uid="uid://b7v6ccpj4h5kd" path="res://Scripts/SanboxScripts/house_sandbox.gd" id="1_56b1i"]
 [ext_resource type="Texture2D" uid="uid://b2qe6xh3aeg1s" path="res://Assets/Houses/brown_house.png" id="2_56b1i"]
+[ext_resource type="Texture2D" uid="uid://wdkq6dlpx1a0" path="res://Assets/Houses/white_house.png" id="3_an53c"]
+[ext_resource type="Texture2D" uid="uid://b2r4cix5na7mw" path="res://Assets/Houses/green_house.png" id="4_ud6bi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eg1ne"]
 size = Vector2(63.99, 63.99)
@@ -12,8 +14,18 @@ script = ExtResource("1_56b1i")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_eg1ne")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Design" type="Node2D" parent="."]
+
+[node name="Brown" type="Sprite2D" parent="Design"]
 texture = ExtResource("2_56b1i")
+
+[node name="White" type="Sprite2D" parent="Design"]
+visible = false
+texture = ExtResource("3_an53c")
+
+[node name="Green" type="Sprite2D" parent="Design"]
+visible = false
+texture = ExtResource("4_ud6bi")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
