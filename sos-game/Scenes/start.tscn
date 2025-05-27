@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://vq3hxgbojsbq"]
+[gd_scene load_steps=9 format=3 uid="uid://vq3hxgbojsbq"]
 
 [ext_resource type="Texture2D" uid="uid://db0irs6w4evab" path="res://Assets/Background/Background50%.png" id="1_3bxa3"]
 [ext_resource type="Texture2D" uid="uid://c1xuybe8d22do" path="res://Assets/Buttons/Button-Start.png" id="2_5ogh5"]
@@ -7,14 +7,13 @@
 [ext_resource type="Script" uid="uid://dhspi27r0u7kl" path="res://Scripts/Buttons/button_sandbox.gd" id="5_o3wvq"]
 [ext_resource type="Texture2D" uid="uid://osm55giheu7s" path="res://Assets/Buttons/Button-help.png" id="6_pg4io"]
 [ext_resource type="Texture2D" uid="uid://cgxd2tb7s5oqi" path="res://Assets/Buttons/Button-Info.png" id="7_iceld"]
-[ext_resource type="Script" uid="uid://g0k7bbimhpye" path="res://Scripts/Dialogs/dialog_help.gd" id="8_iceld"]
-[ext_resource type="Texture2D" uid="uid://bgqeqcmhkawy6" path="res://Assets/Dialogs/Dialog-Help.png" id="9_7pwkw"]
+[ext_resource type="PackedScene" uid="uid://bhahj3sfha8xs" path="res://Scenes/Dialogs/help_dialog.tscn" id="8_iceld"]
 
 [node name="Startmenu" type="Node2D"]
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(957.123, 540.382)
-scale = Vector2(0.999293, 0.999293)
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("1_3bxa3")
 
 [node name="Buttons" type="Node2D" parent="."]
@@ -49,37 +48,8 @@ offset_right = 1820.0
 offset_bottom = 1080.0
 texture_normal = ExtResource("7_iceld")
 
-[node name="HelpDialog" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("8_iceld")
-
-[node name="ColorRect" type="ColorRect" parent="HelpDialog"]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(0.262745, 0.262745, 0.262745, 0.784314)
-
-[node name="NinePatchRect" type="NinePatchRect" parent="HelpDialog"]
-layout_mode = 0
-offset_left = 328.0
-offset_top = 210.0
-offset_right = 1592.0
-offset_bottom = 890.0
-texture = ExtResource("9_7pwkw")
-
-[node name="CloseButton" type="Button" parent="HelpDialog"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 1474.0
-offset_top = 254.0
-offset_right = 1538.0
-offset_bottom = 318.0
+[node name="HelpDialog" parent="." instance=ExtResource("8_iceld")]
 
 [connection signal="pressed" from="Buttons/StartButton" to="Buttons/StartButton" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/SandboxButton" to="Buttons/SandboxButton" method="_on_pressed"]
-[connection signal="pressed" from="Buttons/HelpButton" to="HelpDialog" method="_on_button_help_pressed"]
-[connection signal="pressed" from="HelpDialog/CloseButton" to="HelpDialog" method="_on_button_close_pressed"]
+[connection signal="pressed" from="Buttons/HelpButton" to="HelpDialog" method="_on_help_button_pressed"]
