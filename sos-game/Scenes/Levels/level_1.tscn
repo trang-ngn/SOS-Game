@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://b00sls01fhthg"]
+[gd_scene load_steps=54 format=4 uid="uid://b00sls01fhthg"]
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/LevelScripts/level_script.gd" id="1_tjl6l"]
 [ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://Assets/Tileset/Tileset_v2.png" id="2_3628d"]
@@ -17,13 +17,17 @@
 [ext_resource type="Texture2D" uid="uid://drjlj1jgbcpqf" path="res://Assets/Buttons and Dialogs/Button-green.png" id="12_vif5h"]
 [ext_resource type="FontFile" uid="uid://c8f1xkqvr2h7a" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="13_i7ma5"]
 [ext_resource type="Texture2D" uid="uid://4rqgghfr1k30" path="res://Assets/Buttons and Dialogs/Button-back.png" id="13_irw6p"]
-[ext_resource type="Texture2D" uid="uid://lhmlbnmpqa" path="res://Assets/Buttons and Dialogs/Button-DoneRestart.png" id="14_t8afp"]
 [ext_resource type="PackedScene" uid="uid://p8jlq8xdcf0t" path="res://Scenes/Dialogs/result_pop_up.tscn" id="15_1fgkh"]
 [ext_resource type="Script" uid="uid://efxlgmysihqy" path="res://Scripts/Dialogs/back_dialog.gd" id="18_31phq"]
+[ext_resource type="Texture2D" uid="uid://bo35yi8jvcfwy" path="res://Assets/Buttons and Dialogs/Button-done-enabled.png" id="18_hnn05"]
 [ext_resource type="Script" uid="uid://co33oh6oqpu8d" path="res://Scripts/Dialogs/restart_dialog.gd" id="18_vvknj"]
 [ext_resource type="Texture2D" uid="uid://dru4m1t38rih1" path="res://Assets/Buttons and Dialogs/Dialog-restart.png" id="19_ad63i"]
 [ext_resource type="Texture2D" uid="uid://ct6b4rxd8ha2h" path="res://Assets/Buttons and Dialogs/Dialog-Back.png" id="19_fayjm"]
+[ext_resource type="Texture2D" uid="uid://dov56crmnobk7" path="res://Assets/Buttons and Dialogs/Button-done-disabled.png" id="19_wxmgb"]
+[ext_resource type="Texture2D" uid="uid://bjbmqo6ktwsk0" path="res://Assets/Buttons and Dialogs/Button-restart.png" id="20_k1rx4"]
 [ext_resource type="Texture2D" uid="uid://d04k3dynlule1" path="res://Assets/Buttons and Dialogs/Button-close.png" id="20_nojx8"]
+[ext_resource type="Texture2D" uid="uid://btrvd3unuwufd" path="res://Assets/Buttons and Dialogs/Hover-Anleitung.png" id="21_wxmgb"]
+[ext_resource type="Script" uid="uid://by3fctddwmhg1" path="res://Scripts/Dialogs/coverage_pop_up.gd" id="22_k1rx4"]
 [ext_resource type="Script" uid="uid://g0k7bbimhpye" path="res://Scripts/Dialogs/dialog_help.gd" id="23_pmbdk"]
 [ext_resource type="Texture2D" uid="uid://bgqeqcmhkawy6" path="res://Assets/Buttons and Dialogs/Dialog-Help.png" id="24_ksf1i"]
 [ext_resource type="Texture2D" uid="uid://qpvjl5m1y4qa" path="res://Assets/Buttons and Dialogs/Button-help-weiss.png" id="25_ksf1i"]
@@ -771,18 +775,6 @@ radius = 37.9354
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g30sg"]
 size = Vector2(67, 68)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o2vlx"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-corner_radius_bottom_left = 30
-anti_aliasing = false
-anti_aliasing_size = 0.815
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5ye2"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
-anti_aliasing = false
 
 [node name="LevelTemplate" type="Node2D"]
 texture_filter = 1
@@ -1890,47 +1882,46 @@ text = "Hide"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DoneRestartContainer" type="TextureRect" parent="."]
-process_mode = 3
-offset_left = 436.0
-offset_top = -416.0
-offset_right = 639.0
-offset_bottom = -321.0
-texture = ExtResource("14_t8afp")
-expand_mode = 1
-stretch_mode = 5
+[node name="DoneRestartContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = -43.0
+offset_right = 10.0
+offset_bottom = -43.0
+rotation = -0.00189047
 
-[node name="DoneButton" type="Button" parent="DoneRestartContainer"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.039
-anchor_right = 0.517
-anchor_bottom = 0.853
-offset_left = 0.0829997
-offset_right = 0.048996
-offset_bottom = -0.0350037
-theme_override_styles/focus = SubResource("StyleBoxFlat_o2vlx")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_o2vlx")
-theme_override_styles/hover = SubResource("StyleBoxFlat_o2vlx")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_o2vlx")
-theme_override_styles/normal = SubResource("StyleBoxFlat_o2vlx")
+[node name="DoneButton" type="TextureButton" parent="DoneRestartContainer"]
+layout_mode = 0
+offset_left = 407.704
+offset_top = -371.867
+offset_right = 599.704
+offset_bottom = -287.867
+disabled = true
+texture_normal = ExtResource("18_hnn05")
+texture_disabled = ExtResource("19_wxmgb")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="RestartButton" type="Button" parent="DoneRestartContainer"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.532
-anchor_top = -0.011
-anchor_right = 0.951
-anchor_bottom = 0.853
-offset_left = -0.996002
-offset_top = 0.0450001
-offset_right = -0.053009
-offset_bottom = -1.035
-theme_override_styles/focus = SubResource("StyleBoxFlat_h5ye2")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_h5ye2")
-theme_override_styles/hover = SubResource("StyleBoxFlat_h5ye2")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_h5ye2")
-theme_override_styles/normal = SubResource("StyleBoxFlat_h5ye2")
+[node name="RestartButton" type="TextureButton" parent="DoneRestartContainer"]
+layout_mode = 0
+offset_left = 505.0
+offset_top = -372.0
+offset_right = 599.0
+offset_bottom = -288.0
+texture_normal = ExtResource("20_k1rx4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CoveragePopUp" type="TextureRect" parent="DoneRestartContainer"]
+layout_mode = 0
+offset_left = 158.537
+offset_top = -283.701
+offset_right = 903.537
+offset_bottom = -148.701
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("21_wxmgb")
+script = ExtResource("22_k1rx4")
 
 [node name="HelpButton" type="TextureButton" parent="."]
 offset_left = -628.0
@@ -2111,6 +2102,7 @@ scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("28_t8afp")
 
 [node name="HideOptButton" type="TextureButton" parent="."]
+visible = false
 offset_left = -192.0
 offset_top = -386.0
 offset_right = 192.0
@@ -2171,9 +2163,10 @@ texture_normal = ExtResource("29_1fgkh")
 [connection signal="area_shape_entered" from="Stations/S8/Radius" to="Stations/S8" method="_on_area_2d_area_shape_entered"]
 [connection signal="body_entered" from="Stations/S8/Radius" to="Stations/S8" method="_on_area_2d_body_entered"]
 [connection signal="body_shape_entered" from="Stations/S8/Radius" to="Stations/S8" method="_on_area_2d_body_shape_entered"]
-[connection signal="button_up" from="EndButton" to="." method="_on_button_button_up"]
 [connection signal="pressed" from="BackButton" to="BackDialog" method="_on_back_button_pressed"]
 [connection signal="toggled" from="HideButton" to="." method="_on_hide_button_toggled"]
+[connection signal="mouse_entered" from="DoneRestartContainer/DoneButton" to="DoneRestartContainer/CoveragePopUp" method="_on_done_button_mouse_entered"]
+[connection signal="mouse_exited" from="DoneRestartContainer/DoneButton" to="DoneRestartContainer/CoveragePopUp" method="_on_done_button_mouse_exited"]
 [connection signal="pressed" from="DoneRestartContainer/DoneButton" to="." method="_on_done_button_pressed"]
 [connection signal="pressed" from="DoneRestartContainer/RestartButton" to="RestartDialog" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="HelpButton" to="HelpDialog" method="_on_button_help_pressed"]

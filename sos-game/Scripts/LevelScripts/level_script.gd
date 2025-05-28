@@ -22,6 +22,9 @@ func _ready() -> void:
 	$ShowOptButton.visible = false
 	$HideOptButton.visible = false
 	$ResultPopUp.visible = false
+	$DoneRestartContainer/DoneButton.disabled = true
+	$DoneRestartContainer/CoveragePopUp.visible = false
+
 
 func initialize_arrays() -> void:
 	var station_nodes = $Stations.get_children()
@@ -48,6 +51,9 @@ func update_houses_covered() -> void: #check if all houses is covered
 			num += 1
 	num_covered_houses = num
 	all_houses_covered = num_covered_houses == len(houses)
+	
+	#enable Done when all_houses_covered
+	$DoneRestartContainer/DoneButton.disabled = not all_houses_covered
 
 
 func update_picked_stations():
@@ -113,7 +119,7 @@ func opt_highlight() -> void:
 			station.set_optimal(false)
 
 
-#show-results	
+#show-results
 func _on_show_opt_button_pressed() -> void:
 	if optimal_solution != null:
 		opt_highlight() #show-results
@@ -125,7 +131,7 @@ func _on_show_opt_button_pressed() -> void:
 	$BackButton.visible = false
 	$DoneRestartContainer.visible = false
 	$HideButton.visible = false
-	#show hideoptbutton
+	#show hideOptButton
 	$HideOptButton.visible = true
 
 #show-results
