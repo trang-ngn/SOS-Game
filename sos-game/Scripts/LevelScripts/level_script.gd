@@ -12,10 +12,16 @@ var num_picked_stations: int = 0
 var stations: Array[RescueStation] = []
 var houses: Array[House] = []
 
+#show-results
+var optimal_solution: Solution = null
+
 func _ready() -> void:
 	initialize_arrays()
 	connect_signal()
 	update_picked_stations()
+	$ShowOptButton.visible = false
+	$HideOptButton.visible = false
+	$ResultPopUp.visible = false
 
 func initialize_arrays() -> void:
 	var station_nodes = $Stations.get_children()
@@ -76,14 +82,15 @@ func _on_done_button_pressed() -> void:
 		i.costs.append(station.cost)
 		i.coverage.append(station.get_covered_houses())
 
-	var optimal_solution: Solution = await Resquest.get_solution(self, i)
+	optimal_solution = await Resquest.get_solution(self, i)
 	if optimal_solution == null:
 		print("Request failed!")
 		return 
 	print("Request successed!")
-
+	
 	$ResultPopUp/ResultDialog.show_results(optimal_solution, picked_stations, total_cost, all_houses_covered)
 	$ResultPopUp.visible = true
+	$ShowOptButton.visible = true
 
 
 func _on_hide_button_toggled(is_hidden: bool) -> void:
@@ -92,3 +99,44 @@ func _on_hide_button_toggled(is_hidden: bool) -> void:
 	$HelpButton.visible = not is_hidden
 	$BackButton.visible = not is_hidden
 	$DoneRestartContainer.visible = not is_hidden
+
+
+#show-results	
+func opt_highlight() -> void:
+	for station in stations:
+		var idx = int(station.name)
+		if optimal_solution.selected[idx]:
+			print("true:", idx)
+			station.set_optimal(true)
+		else:
+			print("false:", idx)
+			station.set_optimal(false)
+
+
+#show-results	
+func _on_show_opt_button_pressed() -> void:
+	if optimal_solution != null:
+		opt_highlight() #show-results
+	$ResultPopUp.visible = false
+	$ShowOptButton.visible = false
+	#hide all buttons
+	$StatistikBar.visible = false
+	$HelpButton.visible = false
+	$BackButton.visible = false
+	$DoneRestartContainer.visible = false
+	$HideButton.visible = false
+	#show hideoptbutton
+	$HideOptButton.visible = true
+
+#show-results
+func _on_hide_opt_button_pressed() -> void:
+	$ResultPopUp.visible = true
+	$ShowOptButton.visible = true
+	#show all buttons
+	$StatistikBar.visible = true
+	$HelpButton.visible = true
+	$BackButton.visible = true
+	$DoneRestartContainer.visible = true
+	$HideButton.visible = true
+	#hide self
+	$HideOptButton.visible = false
