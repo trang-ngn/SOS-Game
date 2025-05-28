@@ -187,6 +187,7 @@ text = "0
 0M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S0"]
+visible = false
 position = Vector2(0, -11)
 texture = ExtResource("7_ert0c")
 

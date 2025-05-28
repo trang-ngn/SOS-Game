@@ -1452,7 +1452,8 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "3 : 5€"
+text = "3
+5M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S3"]
 visible = false
@@ -1499,6 +1500,41 @@ visible = false
 script = ExtResource("10_3628d")
 color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
+[node name="RadiusSize2" type="CollisionShape2D" parent="Stations/S3/Radius"]
+visible = false
+position = Vector2(-3, 27)
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_k2mw1")
+debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="RadiusVisual2" type="Node2D" parent="Stations/S3/Radius"]
+visible = false
+script = ExtResource("10_3628d")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="Plot2" type="Button" parent="Stations/S3"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "8 : 5€"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Stations/S3"]
+visible = false
+texture = ExtResource("9_ad63i")
+
+[node name="StationNumber2" type="TextEdit" parent="Stations/S3"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius2" type="Area2D" parent="Stations/S3"]
+texture_filter = 1
+
 [node name="S4" type="Node2D" parent="Stations"]
 position = Vector2(-408, 152)
 script = ExtResource("8_vvknj")
@@ -1509,7 +1545,7 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "3
+text = "4
 4M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S4"]
@@ -1568,7 +1604,8 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "4 : 15€"
+text = "5
+3M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S5"]
 visible = false
@@ -1626,7 +1663,8 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "5 : 20€"
+text = "6
+4M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S6"]
 visible = false
@@ -1684,7 +1722,8 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "6 : 15€"
+text = "7
+3M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S7"]
 visible = false
@@ -1743,7 +1782,8 @@ offset_left = -32.0
 offset_top = 8.0
 offset_right = 30.0
 offset_bottom = 44.0
-text = "7 : 70€"
+text = "8
+14M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S8"]
 visible = false
@@ -1790,47 +1830,6 @@ debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 visible = false
 script = ExtResource("10_3628d")
 color = Color(0.682341, 0.415773, 0.735881, 0.42)
-
-[node name="S3" type="Node2D" parent="Stations"]
-position = Vector2(-460, 246)
-script = ExtResource("8_vvknj")
-cost = 5
-
-[node name="Plot" type="Button" parent="Stations/S3"]
-texture_filter = 1
-offset_left = -31.0
-offset_right = 31.0
-offset_bottom = 36.0
-text = "8 : 5€"
-
-[node name="Sprite2D" type="Sprite2D" parent="Stations/S3"]
-visible = false
-texture = ExtResource("9_ad63i")
-
-[node name="StationNumber" type="TextEdit" parent="Stations/S3"]
-visible = false
-offset_left = -14.0
-offset_top = -20.0
-offset_right = 13.0
-offset_bottom = 15.0
-text = "00"
-editable = false
-
-[node name="Radius" type="Area2D" parent="Stations/S3"]
-texture_filter = 1
-
-[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S3/Radius"]
-visible = false
-position = Vector2(-3, 27)
-scale = Vector2(15, 15)
-shape = SubResource("CircleShape2D_k2mw1")
-debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
-
-[node name="RadiusVisual" type="Node2D" parent="Stations/S3/Radius"]
-visible = false
-script = ExtResource("10_3628d")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
-
 
 [node name="Camera" type="CharacterBody2D" parent="."]
 script = ExtResource("10_pmbdk")
@@ -1943,6 +1942,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="ResultPopUp" parent="." instance=ExtResource("15_1fgkh")]
+visible = false
 
 [node name="RestartDialog" type="Control" parent="."]
 visible = false
@@ -2102,6 +2102,7 @@ offset_right = 452.0
 offset_bottom = -171.0
 
 [node name="ShowOptButton" type="TextureButton" parent="."]
+visible = false
 offset_left = -382.0
 offset_top = 95.0
 offset_right = 2.0
