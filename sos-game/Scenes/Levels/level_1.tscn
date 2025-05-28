@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://b00sls01fhthg"]
+[gd_scene load_steps=52 format=4 uid="uid://b00sls01fhthg"]
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/LevelScripts/level_script.gd" id="1_tjl6l"]
 [ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://Assets/Tileset/Tileset_v2.png" id="2_3628d"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://Assets/Rescue Station/rescue_station_2.png" id="9_ad63i"]
 [ext_resource type="Script" uid="uid://bhn2knupgw6fc" path="res://Scripts/LevelScripts/radius_visual.gd" id="10_3628d"]
 [ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="10_pmbdk"]
+[ext_resource type="Texture2D" uid="uid://b0bh0dre1prsg" path="res://Assets/Buttons and Dialogs/mask.png" id="11_i7ma5"]
 [ext_resource type="PackedScene" uid="uid://bxs73etkg8msh" path="res://Scenes/Dialogs/statistik_bar.tscn" id="11_ksf1i"]
 [ext_resource type="Texture2D" uid="uid://drjlj1jgbcpqf" path="res://Assets/Buttons and Dialogs/Button-green.png" id="12_vif5h"]
 [ext_resource type="FontFile" uid="uid://c8f1xkqvr2h7a" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="13_i7ma5"]
@@ -26,6 +27,8 @@
 [ext_resource type="Script" uid="uid://g0k7bbimhpye" path="res://Scripts/Dialogs/dialog_help.gd" id="23_pmbdk"]
 [ext_resource type="Texture2D" uid="uid://bgqeqcmhkawy6" path="res://Assets/Buttons and Dialogs/Dialog-Help.png" id="24_ksf1i"]
 [ext_resource type="Texture2D" uid="uid://qpvjl5m1y4qa" path="res://Assets/Buttons and Dialogs/Button-help-weiss.png" id="25_ksf1i"]
+[ext_resource type="Texture2D" uid="uid://bt0xeoojmpu7x" path="res://Assets/Buttons and Dialogs/Show-Solution-Button.png" id="28_t8afp"]
+[ext_resource type="Texture2D" uid="uid://dqb6u0etuyidd" path="res://Assets/Buttons and Dialogs/Hide-Solution-Button.png" id="29_1fgkh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_08cxd"]
 texture = ExtResource("2_3628d")
@@ -748,6 +751,9 @@ radius = 11.7335
 [sub_resource type="CircleShape2D" id="CircleShape2D_irw6p"]
 radius = 10.4019
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_k2mw1"]
+radius = 14.3521
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_7r2dd"]
 radius = 16.2672
 
@@ -762,9 +768,6 @@ radius = 15.0001
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nojx8"]
 radius = 37.9354
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_k2mw1"]
-radius = 14.3521
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g30sg"]
 size = Vector2(67, 68)
@@ -1280,6 +1283,23 @@ text = "0 : 20€"
 visible = false
 texture = ExtResource("9_ad63i")
 
+[node name="OptResult" type="Control" parent="Stations/S0"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HighlightRect" type="TextureRect" parent="Stations/S0/OptResult"]
+visible = false
+layout_mode = 0
+offset_left = -56.0
+offset_top = -34.0
+offset_right = 168.0
+offset_bottom = 190.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_i7ma5")
+expand_mode = 1
+
 [node name="StationNumber" type="TextEdit" parent="Stations/S0"]
 visible = false
 offset_left = -14.0
@@ -1328,6 +1348,23 @@ offset_bottom = 15.0
 text = "00"
 editable = false
 
+[node name="OptResult" type="Control" parent="Stations/S1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HighlightRect" type="TextureRect" parent="Stations/S1/OptResult"]
+visible = false
+layout_mode = 0
+offset_left = -56.0
+offset_top = -34.0
+offset_right = 168.0
+offset_bottom = 190.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_i7ma5")
+expand_mode = 1
+
 [node name="Radius" type="Area2D" parent="Stations/S1"]
 texture_filter = 1
 
@@ -1367,6 +1404,23 @@ offset_bottom = 15.0
 text = "00"
 editable = false
 
+[node name="OptResult" type="Control" parent="Stations/S2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HighlightRect" type="TextureRect" parent="Stations/S2/OptResult"]
+visible = false
+layout_mode = 0
+offset_left = -56.0
+offset_top = -34.0
+offset_right = 168.0
+offset_bottom = 190.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_i7ma5")
+expand_mode = 1
+
 [node name="Radius" type="Area2D" parent="Stations/S2"]
 texture_filter = 1
 
@@ -1382,6 +1436,63 @@ visible = false
 script = ExtResource("10_3628d")
 color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
+[node name="S3" type="Node2D" parent="Stations"]
+position = Vector2(-460, 246)
+script = ExtResource("8_vvknj")
+cost = 5
+
+[node name="Plot" type="Button" parent="Stations/S3"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "3 : 5€"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S3"]
+visible = false
+texture = ExtResource("9_ad63i")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S3"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="OptResult" type="Control" parent="Stations/S3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HighlightRect" type="TextureRect" parent="Stations/S3/OptResult"]
+visible = false
+layout_mode = 0
+offset_left = -56.0
+offset_top = -34.0
+offset_right = 168.0
+offset_bottom = 190.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_i7ma5")
+expand_mode = 1
+
+[node name="Radius" type="Area2D" parent="Stations/S3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S3/Radius"]
+visible = false
+position = Vector2(-3, 27)
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_k2mw1")
+debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S3/Radius"]
+visible = false
+script = ExtResource("10_3628d")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
 [node name="S4" type="Node2D" parent="Stations"]
 position = Vector2(-408, 152)
 script = ExtResource("8_vvknj")
@@ -1392,7 +1503,7 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "3 : 20€"
+text = "4 : 20€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S4"]
 visible = false
@@ -1406,6 +1517,23 @@ offset_right = 13.0
 offset_bottom = 15.0
 text = "00"
 editable = false
+
+[node name="OptResult" type="Control" parent="Stations/S4"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HighlightRect" type="TextureRect" parent="Stations/S4/OptResult"]
+visible = false
+layout_mode = 0
+offset_left = -56.0
+offset_top = -34.0
+offset_right = 168.0
+offset_bottom = 190.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_i7ma5")
+expand_mode = 1
 
 [node name="Radius" type="Area2D" parent="Stations/S4"]
 texture_filter = 1
@@ -1432,7 +1560,7 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "4 : 15€"
+text = "5 : 15€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S5"]
 visible = false
@@ -1446,6 +1574,23 @@ offset_right = 13.0
 offset_bottom = 15.0
 text = "00"
 editable = false
+
+[node name="OptResult" type="Control" parent="Stations/S5"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HighlightRect" type="TextureRect" parent="Stations/S5/OptResult"]
+visible = false
+layout_mode = 0
+offset_left = -56.0
+offset_top = -34.0
+offset_right = 168.0
+offset_bottom = 190.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_i7ma5")
+expand_mode = 1
 
 [node name="Radius" type="Area2D" parent="Stations/S5"]
 texture_filter = 1
@@ -1472,7 +1617,7 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "5 : 20€"
+text = "6 : 20€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S6"]
 visible = false
@@ -1486,6 +1631,23 @@ offset_right = 13.0
 offset_bottom = 15.0
 text = "00"
 editable = false
+
+[node name="OptResult" type="Control" parent="Stations/S6"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HighlightRect" type="TextureRect" parent="Stations/S6/OptResult"]
+visible = false
+layout_mode = 0
+offset_left = -56.0
+offset_top = -34.0
+offset_right = 168.0
+offset_bottom = 190.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_i7ma5")
+expand_mode = 1
 
 [node name="Radius" type="Area2D" parent="Stations/S6"]
 texture_filter = 1
@@ -1512,7 +1674,7 @@ texture_filter = 1
 offset_left = -31.0
 offset_right = 31.0
 offset_bottom = 36.0
-text = "6 : 15€"
+text = "7 : 15€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S7"]
 visible = false
@@ -1526,6 +1688,23 @@ offset_right = 13.0
 offset_bottom = 15.0
 text = "00"
 editable = false
+
+[node name="OptResult" type="Control" parent="Stations/S7"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HighlightRect" type="TextureRect" parent="Stations/S7/OptResult"]
+visible = false
+layout_mode = 0
+offset_left = -56.0
+offset_top = -34.0
+offset_right = 168.0
+offset_bottom = 190.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_i7ma5")
+expand_mode = 1
 
 [node name="Radius" type="Area2D" parent="Stations/S7"]
 texture_filter = 1
@@ -1553,7 +1732,7 @@ offset_left = -32.0
 offset_top = 8.0
 offset_right = 30.0
 offset_bottom = 44.0
-text = "7 : 70€"
+text = "8 : 70€"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S8"]
 visible = false
@@ -1568,6 +1747,23 @@ offset_bottom = 15.0
 text = "00"
 editable = false
 
+[node name="OptResult" type="Control" parent="Stations/S8"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HighlightRect" type="TextureRect" parent="Stations/S8/OptResult"]
+visible = false
+layout_mode = 0
+offset_left = -56.0
+offset_top = -34.0
+offset_right = 168.0
+offset_bottom = 190.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_i7ma5")
+expand_mode = 1
+
 [node name="Radius" type="Area2D" parent="Stations/S8"]
 texture_filter = 1
 
@@ -1579,46 +1775,6 @@ shape = SubResource("CircleShape2D_nojx8")
 debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="RadiusVisual" type="Node2D" parent="Stations/S8/Radius"]
-visible = false
-script = ExtResource("10_3628d")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
-
-[node name="S3" type="Node2D" parent="Stations"]
-position = Vector2(-460, 246)
-script = ExtResource("8_vvknj")
-cost = 5
-
-[node name="Plot" type="Button" parent="Stations/S3"]
-texture_filter = 1
-offset_left = -31.0
-offset_right = 31.0
-offset_bottom = 36.0
-text = "8 : 5€"
-
-[node name="Sprite2D" type="Sprite2D" parent="Stations/S3"]
-visible = false
-texture = ExtResource("9_ad63i")
-
-[node name="StationNumber" type="TextEdit" parent="Stations/S3"]
-visible = false
-offset_left = -14.0
-offset_top = -20.0
-offset_right = 13.0
-offset_bottom = 15.0
-text = "00"
-editable = false
-
-[node name="Radius" type="Area2D" parent="Stations/S3"]
-texture_filter = 1
-
-[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S3/Radius"]
-visible = false
-position = Vector2(-3, 27)
-scale = Vector2(15, 15)
-shape = SubResource("CircleShape2D_k2mw1")
-debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
-
-[node name="RadiusVisual" type="Node2D" parent="Stations/S3/Radius"]
 visible = false
 script = ExtResource("10_3628d")
 color = Color(0.682341, 0.415773, 0.735881, 0.42)
@@ -1892,6 +2048,21 @@ offset_top = -235.0
 offset_right = 452.0
 offset_bottom = -171.0
 
+[node name="ShowOptButton" type="TextureButton" parent="."]
+offset_left = -382.0
+offset_top = 95.0
+offset_right = 2.0
+offset_bottom = 159.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("28_t8afp")
+
+[node name="HideOptButton" type="TextureButton" parent="."]
+offset_left = -192.0
+offset_top = -386.0
+offset_right = 192.0
+offset_bottom = -326.0
+texture_normal = ExtResource("29_1fgkh")
+
 [connection signal="button_up" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_button_up"]
 [connection signal="mouse_entered" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_exited"]
@@ -1910,6 +2081,12 @@ offset_bottom = -171.0
 [connection signal="area_shape_entered" from="Stations/S2/Radius" to="Stations/S2" method="_on_area_2d_area_shape_entered"]
 [connection signal="body_entered" from="Stations/S2/Radius" to="Stations/S2" method="_on_area_2d_body_entered"]
 [connection signal="body_shape_entered" from="Stations/S2/Radius" to="Stations/S2" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S3/Plot" to="Stations/S3" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S3/Plot" to="Stations/S3" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S3/Plot" to="Stations/S3" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S3/Radius" to="Stations/S3" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S3/Radius" to="Stations/S3" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S3/Radius" to="Stations/S3" method="_on_area_2d_body_shape_entered"]
 [connection signal="button_up" from="Stations/S4/Plot" to="Stations/S4" method="_on_button_button_up"]
 [connection signal="mouse_entered" from="Stations/S4/Plot" to="Stations/S4" method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Stations/S4/Plot" to="Stations/S4" method="_on_button_mouse_exited"]
@@ -1940,12 +2117,6 @@ offset_bottom = -171.0
 [connection signal="area_shape_entered" from="Stations/S8/Radius" to="Stations/S8" method="_on_area_2d_area_shape_entered"]
 [connection signal="body_entered" from="Stations/S8/Radius" to="Stations/S8" method="_on_area_2d_body_entered"]
 [connection signal="body_shape_entered" from="Stations/S8/Radius" to="Stations/S8" method="_on_area_2d_body_shape_entered"]
-[connection signal="button_up" from="Stations/S3/Plot" to="Stations/S3" method="_on_button_button_up"]
-[connection signal="mouse_entered" from="Stations/S3/Plot" to="Stations/S3" method="_on_button_mouse_entered"]
-[connection signal="mouse_exited" from="Stations/S3/Plot" to="Stations/S3" method="_on_button_mouse_exited"]
-[connection signal="area_shape_entered" from="Stations/S3/Radius" to="Stations/S3" method="_on_area_2d_area_shape_entered"]
-[connection signal="body_entered" from="Stations/S3/Radius" to="Stations/S3" method="_on_area_2d_body_entered"]
-[connection signal="body_shape_entered" from="Stations/S3/Radius" to="Stations/S3" method="_on_area_2d_body_shape_entered"]
 [connection signal="button_up" from="EndButton" to="." method="_on_button_button_up"]
 [connection signal="pressed" from="BackButton" to="BackDialog" method="_on_back_button_pressed"]
 [connection signal="toggled" from="HideButton" to="." method="_on_hide_button_toggled"]
@@ -1959,3 +2130,5 @@ offset_bottom = -171.0
 [connection signal="pressed" from="BackDialog/OkButton" to="BackDialog" method="_on_ok_button_pressed"]
 [connection signal="pressed" from="BackDialog/CancelButton" to="BackDialog" method="_on_cancel_button_pressed"]
 [connection signal="pressed" from="HelpDialog/CloseButton" to="HelpDialog" method="_on_button_close_pressed"]
+[connection signal="pressed" from="ShowOptButton" to="." method="_on_show_opt_button_pressed"]
+[connection signal="pressed" from="HideOptButton" to="." method="_on_hide_opt_button_pressed"]

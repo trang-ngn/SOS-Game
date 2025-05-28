@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://p8jlq8xdcf0t"]
+[gd_scene load_steps=9 format=3 uid="uid://p8jlq8xdcf0t"]
 
 [ext_resource type="Texture2D" uid="uid://d2fwkm7ofx7tj" path="res://Assets/Buttons and Dialogs/Result-dialog.png" id="1_qvygd"]
 [ext_resource type="Script" uid="uid://bd4mgwpnngm2d" path="res://Scenes/Dialogs/result_dialog.gd" id="2_va6yu"]
@@ -9,34 +9,7 @@
 [ext_resource type="Script" uid="uid://c78ejc4piq8kg" path="res://Scripts/Buttons/next_level_button.gd" id="6_va6yu"]
 [ext_resource type="Script" uid="uid://cym0jqgaabiea" path="res://Scripts/Buttons/try_again_button.gd" id="7_bmjpc"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gnqyn"]
-bg_color = Color(0.870588, 0.847059, 0.435294, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(0.6, 0.654902, 0.364706, 1)
-border_blend = true
-corner_radius_top_left = 60
-corner_radius_top_right = 60
-corner_radius_bottom_right = 60
-corner_radius_bottom_left = 60
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cdjvi"]
-bg_color = Color(0.870588, 0.847059, 0.435294, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(0.919279, 0.504634, 0.38414, 1)
-border_blend = true
-corner_radius_top_left = 60
-corner_radius_top_right = 60
-corner_radius_bottom_right = 60
-corner_radius_bottom_left = 60
-
 [node name="ResultPopUp" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -756.0
@@ -115,30 +88,6 @@ texture_normal = ExtResource("6_jrpct")
 stretch_mode = 5
 script = ExtResource("7_bmjpc")
 
-[node name="LeftTitleLabel" type="Label" parent="ResultDialog"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.064
-anchor_top = 0.081
-anchor_right = 0.454
-anchor_bottom = 0.186
-offset_left = 18.544
-offset_top = -5.821
-offset_right = 545.484
-offset_bottom = 64.374
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.4, 0.4)
-theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
-theme_override_fonts/font = ExtResource("4_jrslr")
-theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxFlat_gnqyn")
-text = "Optimal Solution"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-clip_text = true
-
 [node name="LeftLabel" type="Label" parent="ResultDialog"]
 layout_mode = 1
 anchors_preset = -1
@@ -146,10 +95,10 @@ anchor_left = 0.066
 anchor_top = 0.198
 anchor_right = 0.454
 anchor_bottom = 0.77
-offset_left = 0.435997
-offset_top = -0.118004
-offset_right = 611.484
-offset_bottom = 473.43
+offset_left = 9.436
+offset_top = 20.882
+offset_right = 587.484
+offset_bottom = 442.43
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.4, 0.4)
@@ -161,30 +110,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 "
 autowrap_mode = 3
 clip_text = true
-
-[node name="RightTitleLabel" type="Label" parent="ResultDialog"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.554
-anchor_top = 0.072
-anchor_right = 0.917
-anchor_bottom = 0.166
-offset_left = 7.08398
-offset_top = 0.0479965
-offset_right = 562.482
-offset_bottom = 76.194
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.4, 0.4)
-theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
-theme_override_fonts/font = ExtResource("4_jrslr")
-theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxFlat_cdjvi")
-text = "Your Solution"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-clip_text = true
+metadata/_edit_group_ = true
 
 [node name="RightLabel" type="Label" parent="ResultDialog"]
 layout_mode = 1
@@ -193,10 +119,10 @@ anchor_left = 0.542
 anchor_top = 0.205
 anchor_right = 0.941
 anchor_bottom = 0.769
-offset_left = -0.268066
-offset_top = 0.0949936
-offset_right = 651.186
-offset_bottom = 468.971
+offset_left = 7.73199
+offset_top = 17.095
+offset_right = 587.186
+offset_bottom = 423.971
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.4, 0.4)

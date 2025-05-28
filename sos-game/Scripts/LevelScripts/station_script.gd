@@ -6,6 +6,7 @@ var houses : Array[House]
 @export var cost : int
 var id : int
 
+
 @onready var radius_size : CollisionShape2D = $Radius/RadiusSize
 @export var radius : float : 
 	set(value):
@@ -14,6 +15,7 @@ var id : int
 			radius_size.shape.radius = radius
 		
 var built : bool = false
+var optimal : bool = false #show-results
 
 signal stations_updated
 
@@ -77,6 +79,10 @@ func get_covered_houses() -> Array:
 
 func is_built()->bool:
 	return built
+
+#show-results
+func set_optimal(state: bool) -> void:
+	$OptResult/HighlightRect.visible = state
 
 
 func initialize() -> void:

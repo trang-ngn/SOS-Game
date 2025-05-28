@@ -244,6 +244,7 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="BackButton" type="TextureButton" parent="UI"]
+layout_mode = 0
 offset_left = -256.0
 offset_top = -154.0
 offset_right = -151.0
