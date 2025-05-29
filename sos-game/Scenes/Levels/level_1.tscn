@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://c2uykbl3d6bg5"]
+[gd_scene load_steps=29 format=4 uid="uid://c2uykbl3d6bg5"]
 
 [ext_resource type="PackedScene" uid="uid://8khcuvpd750f" path="res://Scenes/LevelTemplates/level_template_updated.tscn" id="1_m11of"]
 [ext_resource type="Texture2D" uid="uid://bubtpd0hdotqi" path="res://Assets/Tileset/Tileset_v3.png" id="2_sqlub"]
@@ -593,9 +593,6 @@ shader_parameter/outline_width = 1.5
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qmmr"]
 size = Vector2(47, 47)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vfd3g"]
-radius = 11.7335
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_0b03d"]
 radius = 13.2673
 
@@ -1103,47 +1100,6 @@ text = "00"
 visible = false
 position = Vector2(0.5, 4.5)
 shape = SubResource("RectangleShape2D_7qmmr")
-
-[node name="S1" type="Node2D" parent="Houses" index="19"]
-position = Vector2(-408, -264)
-script = ExtResource("8_7o7qv")
-cost = 3
-
-[node name="Plot" type="Button" parent="Houses/S1" index="0"]
-texture_filter = 1
-offset_left = -31.0
-offset_right = 31.0
-offset_bottom = 36.0
-text = "19
-3M €"
-
-[node name="Sprite2D" type="Sprite2D" parent="Houses/S1" index="1"]
-visible = false
-position = Vector2(0, -11)
-texture = ExtResource("9_po7xu")
-
-[node name="StationNumber" type="TextEdit" parent="Houses/S1" index="2"]
-visible = false
-offset_left = -14.0
-offset_top = -20.0
-offset_right = 13.0
-offset_bottom = 15.0
-text = "00"
-editable = false
-
-[node name="Radius" type="Area2D" parent="Houses/S1" index="3"]
-texture_filter = 1
-
-[node name="RadiusSize" type="CollisionShape2D" parent="Houses/S1/Radius" index="0"]
-visible = false
-scale = Vector2(15, 15)
-shape = SubResource("CircleShape2D_vfd3g")
-debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
-
-[node name="RadiusVisual" type="Node2D" parent="Houses/S1/Radius" index="1"]
-visible = false
-script = ExtResource("10_0b03d")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="Stations" parent="." index="2"]
 position = Vector2(960, 540)
@@ -1706,12 +1662,6 @@ visible = false
 script = ExtResource("10_0b03d")
 color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
-[connection signal="button_up" from="Houses/S1/Plot" to="Houses/S1" method="_on_button_button_up"]
-[connection signal="mouse_entered" from="Houses/S1/Plot" to="Houses/S1" method="_on_button_mouse_entered"]
-[connection signal="mouse_exited" from="Houses/S1/Plot" to="Houses/S1" method="_on_button_mouse_exited"]
-[connection signal="area_shape_entered" from="Houses/S1/Radius" to="Houses/S1" method="_on_area_2d_area_shape_entered"]
-[connection signal="body_entered" from="Houses/S1/Radius" to="Houses/S1" method="_on_area_2d_body_entered"]
-[connection signal="body_shape_entered" from="Houses/S1/Radius" to="Houses/S1" method="_on_area_2d_body_shape_entered"]
 [connection signal="button_up" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_button_up"]
 [connection signal="mouse_entered" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_exited"]
