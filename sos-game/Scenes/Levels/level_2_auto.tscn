@@ -1,0 +1,1528 @@
+[gd_scene load_steps=23 format=4 uid="uid://cinss0t8uy06c"]
+
+[ext_resource type="PackedScene" uid="uid://8khcuvpd750f" path="res://Scenes/LevelTemplates/level_template_updated.tscn" id="1_10pn0"]
+[ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://Assets/Tileset/Tileset_v2.png" id="2_phx2e"]
+[ext_resource type="Script" uid="uid://bodp6ey6ji3cc" path="res://Scripts/LevelScripts/house_script.gd" id="3_iq236"]
+[ext_resource type="Shader" uid="uid://b1wvm2ng2bjhx" path="res://Shaders/highlight.gdshader" id="4_5efk0"]
+[ext_resource type="Texture2D" uid="uid://wdkq6dlpx1a0" path="res://Assets/Houses/white_house.png" id="5_3yq5m"]
+[ext_resource type="Texture2D" uid="uid://b2r4cix5na7mw" path="res://Assets/Houses/green_house.png" id="6_5c27f"]
+[ext_resource type="Texture2D" uid="uid://b2qe6xh3aeg1s" path="res://Assets/Houses/brown_house.png" id="7_i25j7"]
+[ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/LevelScripts/station_script.gd" id="8_lxqf4"]
+[ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://Assets/Rescue Station/rescue_station_2.png" id="9_0roq7"]
+[ext_resource type="Script" uid="uid://bhn2knupgw6fc" path="res://Scripts/LevelScripts/radius_visual.gd" id="10_peo1u"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_65jbb"]
+texture = ExtResource("2_phx2e")
+0:0/0 = 0
+1:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+0:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+0:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+0:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_b0tjx"]
+sources/0 = SubResource("TileSetAtlasSource_65jbb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r1126"]
+shader = ExtResource("4_5efk0")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 1.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mflsu"]
+size = Vector2(47, 47)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i7r3y"]
+radius = 15.7403
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6oq7e"]
+radius = 15.7403
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sogyn"]
+radius = 15.7403
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1djvi"]
+radius = 15.7346
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_exh1n"]
+radius = 28.9631
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0trkh"]
+radius = 34.5344
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d0ucp"]
+radius = 33.0691
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gvrap"]
+radius = 24.8681
+
+[node name="LevelTemplate" instance=ExtResource("1_10pn0")]
+
+[node name="Ground" type="TileMapLayer" parent="TileMap" index="1"]
+use_parent_material = true
+tile_set = SubResource("TileSet_b0tjx")
+
+[node name="Water" type="TileMapLayer" parent="TileMap" index="2"]
+use_parent_material = true
+tile_set = SubResource("TileSet_b0tjx")
+
+[node name="Roads" type="TileMapLayer" parent="TileMap" index="3"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAANAAEAAAAAAAAAAAAOAAEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_b0tjx")
+
+[node name="Houses" parent="." index="1"]
+position = Vector2(960, 540)
+
+[node name="H0" type="StaticBody2D" parent="Houses" index="0"]
+position = Vector2(-648, -238)
+script = ExtResource("3_iq236")
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H0" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("5_3yq5m")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H0" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H0" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H3" type="StaticBody2D" parent="Houses" index="1"]
+position = Vector2(-647, -169)
+script = ExtResource("3_iq236")
+id = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H3" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("5_3yq5m")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H3" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H3" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H4" type="StaticBody2D" parent="Houses" index="2"]
+position = Vector2(-583, -238)
+script = ExtResource("3_iq236")
+id = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H4" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("5_3yq5m")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H4" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H4" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H5" type="StaticBody2D" parent="Houses" index="3"]
+position = Vector2(-583, -169)
+script = ExtResource("3_iq236")
+id = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H5" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("5_3yq5m")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H5" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H5" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H6" type="StaticBody2D" parent="Houses" index="4"]
+position = Vector2(-518, -239)
+script = ExtResource("3_iq236")
+id = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H6" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("5_3yq5m")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H6" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H6" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H7" type="StaticBody2D" parent="Houses" index="5"]
+position = Vector2(-646, -101)
+script = ExtResource("3_iq236")
+id = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H7" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("5_3yq5m")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H7" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H7" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H13" type="StaticBody2D" parent="Houses" index="6"]
+position = Vector2(670, -238)
+script = ExtResource("3_iq236")
+id = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H13" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("5_3yq5m")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H13" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H13" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H14" type="StaticBody2D" parent="Houses" index="7"]
+position = Vector2(609, -238)
+script = ExtResource("3_iq236")
+id = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H14" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("5_3yq5m")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H14" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H14" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H15" type="StaticBody2D" parent="Houses" index="8"]
+position = Vector2(549, -238)
+script = ExtResource("3_iq236")
+id = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H15" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("5_3yq5m")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H15" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H15" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H16" type="StaticBody2D" parent="Houses" index="9"]
+position = Vector2(610, -171)
+script = ExtResource("3_iq236")
+id = 9
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H16" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("5_3yq5m")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H16" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H16" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H17" type="StaticBody2D" parent="Houses" index="10"]
+position = Vector2(671, -169)
+script = ExtResource("3_iq236")
+id = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H17" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("5_3yq5m")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H17" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H17" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H18" type="StaticBody2D" parent="Houses" index="11"]
+position = Vector2(671, -103)
+script = ExtResource("3_iq236")
+id = 11
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H18" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("5_3yq5m")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H18" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H18" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H39" type="StaticBody2D" parent="Houses" index="12"]
+position = Vector2(371, 141)
+script = ExtResource("3_iq236")
+id = 12
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H39" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("5_3yq5m")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H39" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H39" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H40" type="StaticBody2D" parent="Houses" index="13"]
+position = Vector2(269, 234)
+script = ExtResource("3_iq236")
+id = 13
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H40" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("5_3yq5m")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H40" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H40" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H41" type="StaticBody2D" parent="Houses" index="14"]
+position = Vector2(-369, 144)
+script = ExtResource("3_iq236")
+id = 14
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H41" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("5_3yq5m")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H41" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H41" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H42" type="StaticBody2D" parent="Houses" index="15"]
+position = Vector2(-275, 227)
+script = ExtResource("3_iq236")
+id = 15
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H42" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("5_3yq5m")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H42" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H42" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H1" type="StaticBody2D" parent="Houses" index="16"]
+position = Vector2(-646, 354)
+script = ExtResource("3_iq236")
+id = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H1" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("6_5c27f")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H1" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H1" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H8" type="StaticBody2D" parent="Houses" index="17"]
+position = Vector2(-646, 296)
+script = ExtResource("3_iq236")
+id = 17
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H8" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("6_5c27f")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H8" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H8" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H9" type="StaticBody2D" parent="Houses" index="18"]
+position = Vector2(-646, 238)
+script = ExtResource("3_iq236")
+id = 18
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H9" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("6_5c27f")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H9" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H9" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H10" type="StaticBody2D" parent="Houses" index="19"]
+position = Vector2(-586, 296)
+script = ExtResource("3_iq236")
+id = 19
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H10" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("6_5c27f")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H10" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H10" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H11" type="StaticBody2D" parent="Houses" index="20"]
+position = Vector2(-586, 354)
+script = ExtResource("3_iq236")
+id = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H11" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("6_5c27f")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H11" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H11" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H12" type="StaticBody2D" parent="Houses" index="21"]
+position = Vector2(-525, 354)
+script = ExtResource("3_iq236")
+id = 21
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H12" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("6_5c27f")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H12" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H12" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H35" type="StaticBody2D" parent="Houses" index="22"]
+position = Vector2(-281, -130)
+script = ExtResource("3_iq236")
+id = 22
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H35" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("6_5c27f")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H35" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H35" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H36" type="StaticBody2D" parent="Houses" index="23"]
+position = Vector2(-372, -29)
+script = ExtResource("3_iq236")
+id = 23
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H36" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("6_5c27f")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H36" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H36" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H37" type="StaticBody2D" parent="Houses" index="24"]
+position = Vector2(266, -134)
+script = ExtResource("3_iq236")
+id = 24
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H37" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("6_5c27f")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H37" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H37" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H38" type="StaticBody2D" parent="Houses" index="25"]
+position = Vector2(370, -31)
+script = ExtResource("3_iq236")
+id = 25
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H38" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("6_5c27f")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H38" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H38" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H19" type="StaticBody2D" parent="Houses" index="26"]
+position = Vector2(673, 355)
+script = ExtResource("3_iq236")
+id = 26
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H19" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("6_5c27f")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H19" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H19" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H20" type="StaticBody2D" parent="Houses" index="27"]
+position = Vector2(612, 355)
+script = ExtResource("3_iq236")
+id = 27
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H20" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("6_5c27f")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H20" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H20" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H21" type="StaticBody2D" parent="Houses" index="28"]
+position = Vector2(551, 355)
+script = ExtResource("3_iq236")
+id = 28
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H21" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("6_5c27f")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H21" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H21" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H22" type="StaticBody2D" parent="Houses" index="29"]
+position = Vector2(673, 240)
+script = ExtResource("3_iq236")
+id = 29
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H22" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("6_5c27f")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H22" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H22" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H23" type="StaticBody2D" parent="Houses" index="30"]
+position = Vector2(612, 298)
+script = ExtResource("3_iq236")
+id = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H23" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("6_5c27f")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H23" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H23" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H24" type="StaticBody2D" parent="Houses" index="31"]
+position = Vector2(673, 298)
+script = ExtResource("3_iq236")
+id = 31
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H24" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("6_5c27f")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H24" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H24" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H25" type="StaticBody2D" parent="Houses" index="32"]
+position = Vector2(-91, -66)
+script = ExtResource("3_iq236")
+id = 32
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H25" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("7_i25j7")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H25" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H25" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H26" type="StaticBody2D" parent="Houses" index="33"]
+position = Vector2(108, 81)
+script = ExtResource("3_iq236")
+id = 33
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H26" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("7_i25j7")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H26" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H26" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H27" type="StaticBody2D" parent="Houses" index="34"]
+position = Vector2(106, 3)
+script = ExtResource("3_iq236")
+id = 34
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H27" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("7_i25j7")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H27" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H27" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H28" type="StaticBody2D" parent="Houses" index="35"]
+position = Vector2(107, -68)
+script = ExtResource("3_iq236")
+id = 35
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H28" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("7_i25j7")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H28" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H28" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H29" type="StaticBody2D" parent="Houses" index="36"]
+position = Vector2(-91, 4)
+script = ExtResource("3_iq236")
+id = 36
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H29" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("7_i25j7")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H29" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H29" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H30" type="StaticBody2D" parent="Houses" index="37"]
+position = Vector2(-90, 85)
+script = ExtResource("3_iq236")
+id = 37
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H30" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("7_i25j7")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H30" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H30" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H31" type="StaticBody2D" parent="Houses" index="38"]
+position = Vector2(-258, 47)
+script = ExtResource("3_iq236")
+id = 38
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H31" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("7_i25j7")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H31" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H31" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H32" type="StaticBody2D" parent="Houses" index="39"]
+position = Vector2(1, 297)
+script = ExtResource("3_iq236")
+id = 39
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H32" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("7_i25j7")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H32" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H32" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H33" type="StaticBody2D" parent="Houses" index="40"]
+position = Vector2(268, 46)
+script = ExtResource("3_iq236")
+id = 40
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H33" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("7_i25j7")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H33" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H33" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="H34" type="StaticBody2D" parent="Houses" index="41"]
+position = Vector2(0, -276)
+script = ExtResource("3_iq236")
+id = 41
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H34" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1126")
+instance_shader_parameters/active = false
+texture = ExtResource("7_i25j7")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H34" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H34" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_mflsu")
+
+[node name="Stations" parent="." index="2"]
+position = Vector2(960, 540)
+
+[node name="S0" type="Node2D" parent="Stations" index="0"]
+position = Vector2(-467, 234)
+script = ExtResource("8_lxqf4")
+cost = 2
+radius = 10.0
+
+[node name="Plot" type="Button" parent="Stations/S0" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "0
+2M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S0" index="1"]
+visible = false
+position = Vector2(0, -11)
+texture = ExtResource("9_0roq7")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S0" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S0" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S0/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_i7r3y")
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S0/Radius" index="1"]
+visible = false
+script = ExtResource("10_peo1u")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="S1" type="Node2D" parent="Stations" index="1"]
+position = Vector2(480, 230)
+script = ExtResource("8_lxqf4")
+cost = 2
+
+[node name="Plot" type="Button" parent="Stations/S1" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "1
+2M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S1" index="1"]
+visible = false
+position = Vector2(0, -11)
+texture = ExtResource("9_0roq7")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S1" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S1" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S1/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_6oq7e")
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S1/Radius" index="1"]
+visible = false
+script = ExtResource("10_peo1u")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="S2" type="Node2D" parent="Stations" index="2"]
+position = Vector2(480, -163)
+script = ExtResource("8_lxqf4")
+cost = 2
+
+[node name="Plot" type="Button" parent="Stations/S2" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "2
+2M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S2" index="1"]
+visible = false
+position = Vector2(0, -11)
+texture = ExtResource("9_0roq7")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S2" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S2" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S2/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_sogyn")
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S2/Radius" index="1"]
+visible = false
+script = ExtResource("10_peo1u")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="S3" type="Node2D" parent="Stations" index="3"]
+position = Vector2(-476, -116)
+script = ExtResource("8_lxqf4")
+cost = 2
+
+[node name="Plot" type="Button" parent="Stations/S3" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "3
+2M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S3" index="1"]
+visible = false
+position = Vector2(0, -11)
+texture = ExtResource("9_0roq7")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S3" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S3" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S3/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_1djvi")
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S3/Radius" index="1"]
+visible = false
+script = ExtResource("10_peo1u")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="S4" type="Node2D" parent="Stations" index="4"]
+position = Vector2(0, -10)
+script = ExtResource("8_lxqf4")
+cost = 6
+
+[node name="Plot" type="Button" parent="Stations/S4" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "4
+6M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S4" index="1"]
+visible = false
+position = Vector2(0, -11)
+texture = ExtResource("9_0roq7")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S4" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S4" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S4/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_exh1n")
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S4/Radius" index="1"]
+visible = false
+script = ExtResource("10_peo1u")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="S5" type="Node2D" parent="Stations" index="5"]
+position = Vector2(6, 209)
+script = ExtResource("8_lxqf4")
+cost = 4
+
+[node name="Plot" type="Button" parent="Stations/S5" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "5
+4M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S5" index="1"]
+visible = false
+position = Vector2(0, -9)
+texture = ExtResource("9_0roq7")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S5" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S5" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S5/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_0trkh")
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S5/Radius" index="1"]
+visible = false
+script = ExtResource("10_peo1u")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="S6" type="Node2D" parent="Stations" index="6"]
+position = Vector2(8, -161)
+script = ExtResource("8_lxqf4")
+cost = 5
+
+[node name="Plot" type="Button" parent="Stations/S6" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "6
+5M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S6" index="1"]
+visible = false
+position = Vector2(0, -11)
+texture = ExtResource("9_0roq7")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S6" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S6" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S6/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_d0ucp")
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S6/Radius" index="1"]
+visible = false
+script = ExtResource("10_peo1u")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="S7" type="Node2D" parent="Stations" index="7"]
+position = Vector2(-554, 46)
+script = ExtResource("8_lxqf4")
+cost = 5
+
+[node name="Plot" type="Button" parent="Stations/S7" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "7
+5M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S7" index="1"]
+visible = false
+position = Vector2(0, -11)
+texture = ExtResource("9_0roq7")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S7" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S7" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S7/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_gvrap")
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S7/Radius" index="1"]
+visible = false
+script = ExtResource("10_peo1u")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="S8" type="Node2D" parent="Stations" index="8"]
+position = Vector2(520, 55)
+script = ExtResource("8_lxqf4")
+cost = 3
+
+[node name="Plot" type="Button" parent="Stations/S8" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "8
+3M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S8" index="1"]
+visible = false
+position = Vector2(0, -11)
+texture = ExtResource("9_0roq7")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S8" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S8" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S8/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_gvrap")
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S8/Radius" index="1"]
+visible = false
+script = ExtResource("10_peo1u")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[connection signal="button_up" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S0/Radius" to="Stations/S0" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S0/Radius" to="Stations/S0" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S0/Radius" to="Stations/S0" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S1/Plot" to="Stations/S1" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S1/Plot" to="Stations/S1" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S1/Plot" to="Stations/S1" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S1/Radius" to="Stations/S1" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S1/Radius" to="Stations/S1" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S1/Radius" to="Stations/S1" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S2/Plot" to="Stations/S2" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S2/Plot" to="Stations/S2" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S2/Plot" to="Stations/S2" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S2/Radius" to="Stations/S2" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S2/Radius" to="Stations/S2" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S2/Radius" to="Stations/S2" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S3/Plot" to="Stations/S3" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S3/Plot" to="Stations/S3" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S3/Plot" to="Stations/S3" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S3/Radius" to="Stations/S3" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S3/Radius" to="Stations/S3" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S3/Radius" to="Stations/S3" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S4/Plot" to="Stations/S4" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S4/Plot" to="Stations/S4" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S4/Plot" to="Stations/S4" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S4/Radius" to="Stations/S4" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S4/Radius" to="Stations/S4" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S4/Radius" to="Stations/S4" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S5/Plot" to="Stations/S5" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S5/Plot" to="Stations/S5" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S5/Plot" to="Stations/S5" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S5/Radius" to="Stations/S5" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S5/Radius" to="Stations/S5" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S5/Radius" to="Stations/S5" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S6/Plot" to="Stations/S6" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S6/Plot" to="Stations/S6" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S6/Plot" to="Stations/S6" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S6/Radius" to="Stations/S6" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S6/Radius" to="Stations/S6" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S6/Radius" to="Stations/S6" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S7/Plot" to="Stations/S7" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S7/Plot" to="Stations/S7" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S7/Plot" to="Stations/S7" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S7/Radius" to="Stations/S7" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S7/Radius" to="Stations/S7" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S7/Radius" to="Stations/S7" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S8/Plot" to="Stations/S8" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S8/Plot" to="Stations/S8" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S8/Plot" to="Stations/S8" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S8/Radius" to="Stations/S8" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S8/Radius" to="Stations/S8" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S8/Radius" to="Stations/S8" method="_on_area_2d_body_shape_entered"]

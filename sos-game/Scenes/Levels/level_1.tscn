@@ -27,13 +27,13 @@
 [ext_resource type="Texture2D" uid="uid://bjbmqo6ktwsk0" path="res://Assets/Buttons and Dialogs/Button-restart.png" id="20_k1rx4"]
 [ext_resource type="Texture2D" uid="uid://d04k3dynlule1" path="res://Assets/Buttons and Dialogs/Button-close.png" id="20_nojx8"]
 [ext_resource type="Texture2D" uid="uid://btrvd3unuwufd" path="res://Assets/Buttons and Dialogs/Hover-Anleitung.png" id="21_wxmgb"]
-[ext_resource type="Script" uid="uid://by3fctddwmhg1" path="res://Scripts/Dialogs/coverage_pop_up.gd" id="22_k1rx4"]
+[ext_resource type="Script" path="res://Scripts/Dialogs/coverage_pop_up.gd" id="22_k1rx4"]
 [ext_resource type="Script" uid="uid://g0k7bbimhpye" path="res://Scripts/Dialogs/dialog_help.gd" id="23_pmbdk"]
 [ext_resource type="Texture2D" uid="uid://bgqeqcmhkawy6" path="res://Assets/Buttons and Dialogs/Dialog-Help.png" id="24_ksf1i"]
 [ext_resource type="Texture2D" uid="uid://qpvjl5m1y4qa" path="res://Assets/Buttons and Dialogs/Button-help-weiss.png" id="25_ksf1i"]
 [ext_resource type="Texture2D" uid="uid://bt0xeoojmpu7x" path="res://Assets/Buttons and Dialogs/Show-Solution-Button.png" id="28_t8afp"]
 [ext_resource type="Texture2D" uid="uid://dqb6u0etuyidd" path="res://Assets/Buttons and Dialogs/Hide-Solution-Button.png" id="29_1fgkh"]
-[ext_resource type="Script" uid="uid://8gk5ix1c4wm2" path="res://Scripts/Dialogs/done_dialog.gd" id="34_yltcr"]
+[ext_resource type="Script" path="res://Scripts/Dialogs/done_dialog.gd" id="34_yltcr"]
 [ext_resource type="Texture2D" uid="uid://0hnlcv2g8514" path="res://Assets/Buttons and Dialogs/Dialog-done.png" id="35_iht5x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_08cxd"]
@@ -1506,13 +1506,6 @@ visible = false
 script = ExtResource("10_3628d")
 color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
-[node name="Plot2" type="Button" parent="Stations/S3"]
-texture_filter = 1
-offset_left = -31.0
-offset_right = 31.0
-offset_bottom = 36.0
-text = "8 : 5€"
-
 [node name="Sprite2D2" type="Sprite2D" parent="Stations/S3"]
 visible = false
 texture = ExtResource("9_ad63i")
@@ -1916,6 +1909,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="CoveragePopUp" type="TextureRect" parent="DoneRestartContainer"]
+visible = false
 layout_mode = 0
 offset_left = 158.537
 offset_top = -283.701

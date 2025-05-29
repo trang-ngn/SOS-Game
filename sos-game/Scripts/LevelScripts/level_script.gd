@@ -19,11 +19,11 @@ func _ready() -> void:
 	initialize_arrays()
 	connect_signal()
 	update_picked_stations()
-	$ShowOptButton.visible = false
-	$HideOptButton.visible = false
-	$ResultPopUp.visible = false
+	#$ShowOptButton.visible = false
+	#$HideOptButton.visible = false
+	#$ResultPopUp.visible = false
 	$DoneRestartContainer/DoneButton.disabled = true
-	$DoneRestartContainer/CoveragePopUp.visible = false
+	#$DoneRestartContainer/CoveragePopUp.visible = false
 
 
 func initialize_arrays() -> void:
