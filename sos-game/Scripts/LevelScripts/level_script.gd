@@ -79,6 +79,11 @@ func update_statistik():
 	$StatistikBar.update_cost(total_cost)
 
 func _on_done_button_pressed() -> void:
+	$DoneDialog.visible = true;
+
+
+func _on_done_ok_button_pressed() -> void:
+	$DoneDialog.visible = false;
 	update_picked_stations()
 	#var optimal_solution: Solution = await get_optimal_solution()
 	var i: Instance = Instance.new()
@@ -97,6 +102,9 @@ func _on_done_button_pressed() -> void:
 	$ResultPopUp/ResultDialog.show_results(optimal_solution, picked_stations, total_cost, all_houses_covered)
 	$ResultPopUp.visible = true
 	$ShowOptButton.visible = true
+	
+
+
 
 
 func _on_hide_button_toggled(is_hidden: bool) -> void:
