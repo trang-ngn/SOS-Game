@@ -1,0 +1,1070 @@
+[gd_scene load_steps=25 format=3 uid="uid://dwuepwmcx214o"]
+
+[ext_resource type="PackedScene" uid="uid://8khcuvpd750f" path="res://Scenes/LevelTemplates/level_template_updated.tscn" id="1_f17ei"]
+[ext_resource type="Script" uid="uid://bodp6ey6ji3cc" path="res://Scripts/LevelScripts/house_script.gd" id="2_tjrll"]
+[ext_resource type="Shader" uid="uid://b1wvm2ng2bjhx" path="res://Shaders/highlight.gdshader" id="3_end0d"]
+[ext_resource type="Texture2D" uid="uid://wdkq6dlpx1a0" path="res://Assets/Houses/white_house.png" id="4_1tdvq"]
+[ext_resource type="Texture2D" uid="uid://csbr4btkd4ny7" path="res://Assets/Houses/black_house(dont use).png" id="5_o5v48"]
+[ext_resource type="Texture2D" uid="uid://b2qe6xh3aeg1s" path="res://Assets/Houses/brown_house.png" id="6_xjk7w"]
+[ext_resource type="Texture2D" uid="uid://b2r4cix5na7mw" path="res://Assets/Houses/green_house.png" id="7_nyprb"]
+[ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/LevelScripts/station_script.gd" id="8_411kh"]
+[ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://Assets/Rescue Station/rescue_station_2.png" id="9_sxvy5"]
+[ext_resource type="Script" uid="uid://bhn2knupgw6fc" path="res://Scripts/LevelScripts/radius_visual.gd" id="10_6ea8v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w3wc4"]
+shader = ExtResource("3_end0d")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 1.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbnfp"]
+size = Vector2(47, 47)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fbjyp"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6y0rb"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2fx8i"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l22ag"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v05v6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_knsqt"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q6wdx"]
+radius = 18.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_chrwk"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4xqtv"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j4mvy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nk41h"]
+radius = 19.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hn73n"]
+radius = 15.0
+
+[node name="LevelTemplate" instance=ExtResource("1_f17ei")]
+
+[node name="Houses" parent="." index="1"]
+position = Vector2(960, 540)
+
+[node name="H1" type="StaticBody2D" parent="Houses" index="0"]
+position = Vector2(133, -231)
+script = ExtResource("2_tjrll")
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H1" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_w3wc4")
+instance_shader_parameters/active = false
+texture = ExtResource("4_1tdvq")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H1" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H1" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_kbnfp")
+
+[node name="H2" type="StaticBody2D" parent="Houses" index="1"]
+position = Vector2(328, -193)
+script = ExtResource("2_tjrll")
+id = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H2" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_w3wc4")
+instance_shader_parameters/active = false
+texture = ExtResource("5_o5v48")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H2" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H2" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_kbnfp")
+
+[node name="H3" type="StaticBody2D" parent="Houses" index="2"]
+position = Vector2(475, 85)
+script = ExtResource("2_tjrll")
+id = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H3" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_w3wc4")
+instance_shader_parameters/active = false
+texture = ExtResource("5_o5v48")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H3" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H3" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_kbnfp")
+
+[node name="H4" type="StaticBody2D" parent="Houses" index="3"]
+position = Vector2(440, -91)
+script = ExtResource("2_tjrll")
+id = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H4" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_w3wc4")
+instance_shader_parameters/active = false
+texture = ExtResource("5_o5v48")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H4" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H4" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_kbnfp")
+
+[node name="H5" type="StaticBody2D" parent="Houses" index="4"]
+position = Vector2(318, 111)
+script = ExtResource("2_tjrll")
+id = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H5" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_w3wc4")
+instance_shader_parameters/active = false
+texture = ExtResource("6_xjk7w")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H5" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H5" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_kbnfp")
+
+[node name="H6" type="StaticBody2D" parent="Houses" index="5"]
+position = Vector2(446, 199)
+script = ExtResource("2_tjrll")
+id = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H6" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_w3wc4")
+instance_shader_parameters/active = false
+texture = ExtResource("6_xjk7w")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H6" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H6" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_kbnfp")
+
+[node name="H7" type="StaticBody2D" parent="Houses" index="6"]
+position = Vector2(288, 289)
+script = ExtResource("2_tjrll")
+id = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H7" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_w3wc4")
+instance_shader_parameters/active = false
+texture = ExtResource("6_xjk7w")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H7" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H7" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_kbnfp")
+
+[node name="H8" type="StaticBody2D" parent="Houses" index="7"]
+position = Vector2(-115, 271)
+script = ExtResource("2_tjrll")
+id = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H8" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_w3wc4")
+instance_shader_parameters/active = false
+texture = ExtResource("7_nyprb")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H8" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H8" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_kbnfp")
+
+[node name="H9" type="StaticBody2D" parent="Houses" index="8"]
+position = Vector2(64, 119)
+script = ExtResource("2_tjrll")
+id = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H9" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_w3wc4")
+instance_shader_parameters/active = false
+texture = ExtResource("4_1tdvq")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H9" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H9" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_kbnfp")
+
+[node name="H10" type="StaticBody2D" parent="Houses" index="9"]
+position = Vector2(93, -111)
+script = ExtResource("2_tjrll")
+id = 9
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H10" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_w3wc4")
+instance_shader_parameters/active = false
+texture = ExtResource("4_1tdvq")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H10" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H10" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_kbnfp")
+
+[node name="H11" type="StaticBody2D" parent="Houses" index="10"]
+position = Vector2(-59, -65)
+script = ExtResource("2_tjrll")
+id = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H11" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_w3wc4")
+instance_shader_parameters/active = false
+texture = ExtResource("4_1tdvq")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H11" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H11" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_kbnfp")
+
+[node name="H12" type="StaticBody2D" parent="Houses" index="11"]
+position = Vector2(-5, -214)
+script = ExtResource("2_tjrll")
+id = 11
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H12" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_w3wc4")
+instance_shader_parameters/active = false
+texture = ExtResource("4_1tdvq")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H12" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H12" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_kbnfp")
+
+[node name="H13" type="StaticBody2D" parent="Houses" index="12"]
+position = Vector2(139, 51)
+script = ExtResource("2_tjrll")
+id = 12
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H13" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_w3wc4")
+instance_shader_parameters/active = false
+texture = ExtResource("4_1tdvq")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H13" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H13" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_kbnfp")
+
+[node name="H14" type="StaticBody2D" parent="Houses" index="13"]
+position = Vector2(-209, -21)
+script = ExtResource("2_tjrll")
+id = 13
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H14" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_w3wc4")
+instance_shader_parameters/active = false
+texture = ExtResource("7_nyprb")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H14" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H14" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_kbnfp")
+
+[node name="H15" type="StaticBody2D" parent="Houses" index="14"]
+position = Vector2(-285, 64)
+script = ExtResource("2_tjrll")
+id = 14
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H15" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_w3wc4")
+instance_shader_parameters/active = false
+texture = ExtResource("7_nyprb")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H15" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H15" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_kbnfp")
+
+[node name="H16" type="StaticBody2D" parent="Houses" index="15"]
+position = Vector2(176, 257)
+script = ExtResource("2_tjrll")
+id = 15
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H16" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_w3wc4")
+instance_shader_parameters/active = false
+texture = ExtResource("6_xjk7w")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H16" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H16" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_kbnfp")
+
+[node name="H17" type="StaticBody2D" parent="Houses" index="16"]
+position = Vector2(-460, 84)
+script = ExtResource("2_tjrll")
+id = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H17" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_w3wc4")
+instance_shader_parameters/active = false
+texture = ExtResource("7_nyprb")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H17" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H17" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_kbnfp")
+
+[node name="H18" type="StaticBody2D" parent="Houses" index="17"]
+position = Vector2(-362, 270)
+script = ExtResource("2_tjrll")
+id = 17
+
+[node name="Sprite2D" type="Sprite2D" parent="Houses/H18" index="0"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_w3wc4")
+instance_shader_parameters/active = false
+texture = ExtResource("7_nyprb")
+
+[node name="HouseNumber" type="TextEdit" parent="Houses/H18" index="1"]
+visible = false
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 10.0
+text = "00"
+
+[node name="CollisionSize" type="CollisionShape2D" parent="Houses/H18" index="2"]
+visible = false
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_kbnfp")
+
+[node name="Stations" parent="." index="2"]
+position = Vector2(960, 540)
+
+[node name="S0" type="Node2D" parent="Stations" index="0"]
+position = Vector2(208, -178)
+script = ExtResource("8_411kh")
+cost = 3
+radius = 9.0
+
+[node name="Plot" type="Button" parent="Stations/S0" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "0
+3M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S0" index="1"]
+visible = false
+position = Vector2(0, -10)
+texture = ExtResource("9_sxvy5")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S0" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S0" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S0/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_fbjyp")
+debug_color = Color(0.670384, 0.658091, 0.670901, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S0/Radius" index="1"]
+visible = false
+script = ExtResource("10_6ea8v")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="S1" type="Node2D" parent="Stations" index="1"]
+position = Vector2(283, -91)
+script = ExtResource("8_411kh")
+cost = 5
+radius = 15.0
+
+[node name="Plot" type="Button" parent="Stations/S1" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "1
+5M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S1" index="1"]
+visible = false
+position = Vector2(0, -10)
+texture = ExtResource("9_sxvy5")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S1" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S1" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S1/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_6y0rb")
+debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S1/Radius" index="1"]
+visible = false
+script = ExtResource("10_6ea8v")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="S2" type="Node2D" parent="Stations" index="2"]
+position = Vector2(105, -40)
+script = ExtResource("8_411kh")
+cost = 6
+radius = 15.0
+
+[node name="Plot" type="Button" parent="Stations/S2" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "2
+6M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S2" index="1"]
+visible = false
+position = Vector2(0, -10)
+texture = ExtResource("9_sxvy5")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S2" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S2" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S2/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_2fx8i")
+debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S2/Radius" index="1"]
+visible = false
+script = ExtResource("10_6ea8v")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="S3" type="Node2D" parent="Stations" index="3"]
+position = Vector2(439, 5)
+script = ExtResource("8_411kh")
+cost = 2
+radius = 8.0
+
+[node name="Plot" type="Button" parent="Stations/S3" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "3
+2M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S3" index="1"]
+visible = false
+position = Vector2(0, -10)
+texture = ExtResource("9_sxvy5")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S3" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S3" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S3/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_l22ag")
+debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S3/Radius" index="1"]
+visible = false
+script = ExtResource("10_6ea8v")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="S4" type="Node2D" parent="Stations" index="4"]
+position = Vector2(357, 230)
+script = ExtResource("8_411kh")
+cost = 3
+radius = 10.0
+
+[node name="Plot" type="Button" parent="Stations/S4" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "4
+3M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S4" index="1"]
+visible = false
+position = Vector2(0, -10)
+texture = ExtResource("9_sxvy5")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S4" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S4" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S4/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_v05v6")
+debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S4/Radius" index="1"]
+visible = false
+script = ExtResource("10_6ea8v")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="S5" type="Node2D" parent="Stations" index="5"]
+position = Vector2(-132, -118)
+script = ExtResource("8_411kh")
+cost = 3
+radius = 12.0
+
+[node name="Plot" type="Button" parent="Stations/S5" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "5
+3M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S5" index="1"]
+visible = false
+position = Vector2(0, -10)
+texture = ExtResource("9_sxvy5")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S5" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S5" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S5/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_knsqt")
+debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S5/Radius" index="1"]
+visible = false
+script = ExtResource("10_6ea8v")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="S6" type="Node2D" parent="Stations" index="6"]
+position = Vector2(-50, 82)
+script = ExtResource("8_411kh")
+cost = 8
+radius = 18.0
+
+[node name="Plot" type="Button" parent="Stations/S6" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "6
+8M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S6" index="1"]
+visible = false
+position = Vector2(0, -10)
+texture = ExtResource("9_sxvy5")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S6" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S6" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S6/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_q6wdx")
+debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S6/Radius" index="1"]
+visible = false
+script = ExtResource("10_6ea8v")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="S7" type="Node2D" parent="Stations" index="7"]
+position = Vector2(-12, 188)
+script = ExtResource("8_411kh")
+cost = 4
+radius = 15.0
+
+[node name="Plot" type="Button" parent="Stations/S7" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "7
+4M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S7" index="1"]
+visible = false
+position = Vector2(0, -10)
+texture = ExtResource("9_sxvy5")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S7" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S7" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S7/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_chrwk")
+debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S7/Radius" index="1"]
+visible = false
+script = ExtResource("10_6ea8v")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="S8" type="Node2D" parent="Stations" index="8"]
+position = Vector2(-263, 135)
+script = ExtResource("8_411kh")
+cost = 5
+radius = 16.0
+
+[node name="Plot" type="Button" parent="Stations/S8" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "8
+5M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S8" index="1"]
+visible = false
+position = Vector2(0, -10)
+texture = ExtResource("9_sxvy5")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S8" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S8" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S8/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_4xqtv")
+debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S8/Radius" index="1"]
+visible = false
+script = ExtResource("10_6ea8v")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="S9" type="Node2D" parent="Stations" index="9"]
+position = Vector2(-366, 149)
+script = ExtResource("8_411kh")
+cost = 3
+radius = 10.0
+
+[node name="Plot" type="Button" parent="Stations/S9" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "9
+3M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S9" index="1"]
+visible = false
+position = Vector2(0, -10)
+texture = ExtResource("9_sxvy5")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S9" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S9" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S9/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_j4mvy")
+debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S9/Radius" index="1"]
+visible = false
+script = ExtResource("10_6ea8v")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="S10" type="Node2D" parent="Stations" index="10"]
+position = Vector2(277, 35)
+script = ExtResource("8_411kh")
+cost = 13
+radius = 19.0
+
+[node name="Plot" type="Button" parent="Stations/S10" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "10
+13M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S10" index="1"]
+visible = false
+position = Vector2(0, -10)
+texture = ExtResource("9_sxvy5")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S10" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S10" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S10/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_nk41h")
+debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S10/Radius" index="1"]
+visible = false
+script = ExtResource("10_6ea8v")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="S11" type="Node2D" parent="Stations" index="11"]
+position = Vector2(250, 196)
+script = ExtResource("8_411kh")
+cost = 6
+radius = 15.0
+
+[node name="Plot" type="Button" parent="Stations/S11" index="0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "11
+6M €"
+
+[node name="Sprite2D" type="Sprite2D" parent="Stations/S11" index="1"]
+visible = false
+position = Vector2(0, -10)
+texture = ExtResource("9_sxvy5")
+
+[node name="StationNumber" type="TextEdit" parent="Stations/S11" index="2"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="Radius" type="Area2D" parent="Stations/S11" index="3"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Stations/S11/Radius" index="0"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_hn73n")
+debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Stations/S11/Radius" index="1"]
+visible = false
+script = ExtResource("10_6ea8v")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[connection signal="button_up" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S0/Radius" to="Stations/S0" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S0/Radius" to="Stations/S0" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S0/Radius" to="Stations/S0" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S1/Plot" to="Stations/S1" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S1/Plot" to="Stations/S1" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S1/Plot" to="Stations/S1" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S1/Radius" to="Stations/S1" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S1/Radius" to="Stations/S1" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S1/Radius" to="Stations/S1" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S2/Plot" to="Stations/S2" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S2/Plot" to="Stations/S2" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S2/Plot" to="Stations/S2" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S2/Radius" to="Stations/S2" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S2/Radius" to="Stations/S2" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S2/Radius" to="Stations/S2" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S3/Plot" to="Stations/S3" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S3/Plot" to="Stations/S3" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S3/Plot" to="Stations/S3" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S3/Radius" to="Stations/S3" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S3/Radius" to="Stations/S3" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S3/Radius" to="Stations/S3" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S4/Plot" to="Stations/S4" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S4/Plot" to="Stations/S4" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S4/Plot" to="Stations/S4" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S4/Radius" to="Stations/S4" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S4/Radius" to="Stations/S4" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S4/Radius" to="Stations/S4" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S5/Plot" to="Stations/S5" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S5/Plot" to="Stations/S5" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S5/Plot" to="Stations/S5" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S5/Radius" to="Stations/S5" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S5/Radius" to="Stations/S5" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S5/Radius" to="Stations/S5" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S6/Plot" to="Stations/S6" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S6/Plot" to="Stations/S6" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S6/Plot" to="Stations/S6" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S6/Radius" to="Stations/S6" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S6/Radius" to="Stations/S6" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S6/Radius" to="Stations/S6" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S7/Plot" to="Stations/S7" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S7/Plot" to="Stations/S7" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S7/Plot" to="Stations/S7" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S7/Radius" to="Stations/S7" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S7/Radius" to="Stations/S7" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S7/Radius" to="Stations/S7" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S8/Plot" to="Stations/S8" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S8/Plot" to="Stations/S8" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S8/Plot" to="Stations/S8" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S8/Radius" to="Stations/S8" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S8/Radius" to="Stations/S8" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S8/Radius" to="Stations/S8" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S9/Plot" to="Stations/S9" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S9/Plot" to="Stations/S9" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S9/Plot" to="Stations/S9" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S9/Radius" to="Stations/S9" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S9/Radius" to="Stations/S9" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S9/Radius" to="Stations/S9" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S10/Plot" to="Stations/S10" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S10/Plot" to="Stations/S10" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S10/Plot" to="Stations/S10" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S10/Radius" to="Stations/S10" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S10/Radius" to="Stations/S10" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S10/Radius" to="Stations/S10" method="_on_area_2d_body_shape_entered"]
+[connection signal="button_up" from="Stations/S11/Plot" to="Stations/S11" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="Stations/S11/Plot" to="Stations/S11" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Stations/S11/Plot" to="Stations/S11" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="Stations/S11/Radius" to="Stations/S11" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="Stations/S11/Radius" to="Stations/S11" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Stations/S11/Radius" to="Stations/S11" method="_on_area_2d_body_shape_entered"]

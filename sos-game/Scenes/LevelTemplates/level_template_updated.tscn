@@ -267,6 +267,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="CoveragePopUp" type="TextureRect" parent="DoneRestartContainer"]
+visible = false
 layout_mode = 0
 offset_left = 158.537
 offset_top = -283.701
