@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://dq6o6kh37inuj"]
+
+[ext_resource type="Texture2D" uid="uid://db0irs6w4evab" path="res://Assets/Background/Background50%.png" id="1_umr3n"]
+[ext_resource type="Script" uid="uid://uj53jqrirarr" path="res://Scenes/Levels/level_picker.gd" id="1_x8c62"]
+[ext_resource type="Texture2D" uid="uid://cmot25cuuce2r" path="res://Assets/Buttons/LevelPicker/Button-Level-1.png" id="2_3g87n"]
+[ext_resource type="Texture2D" uid="uid://xdfevy2e7e7r" path="res://Assets/Buttons/LevelPicker/Button-Level-2.png" id="3_x8c62"]
+[ext_resource type="Texture2D" uid="uid://2u6hs6dliady" path="res://Assets/Buttons/LevelPicker/Button-Level-3.png" id="4_a8vvm"]
+[ext_resource type="Texture2D" uid="uid://c3hjl5uawku4d" path="res://Assets/Buttons/LevelPicker/Button-Level-4.png" id="5_7s41y"]
+[ext_resource type="Texture2D" uid="uid://cskhl0nclhasm" path="res://Assets/Buttons/LevelPicker/Button-Level-5.png" id="6_1obp6"]
+[ext_resource type="Texture2D" uid="uid://fxmnc7hn3rcs" path="res://Assets/Buttons/LevelPicker/Button-Level-6.png" id="7_jctgc"]
+[ext_resource type="PackedScene" uid="uid://bhahj3sfha8xs" path="res://Scenes/Dialogs/help_dialog.tscn" id="9_7s41y"]
+[ext_resource type="Texture2D" uid="uid://osm55giheu7s" path="res://Assets/Buttons/Button-help.png" id="10_1obp6"]
+[ext_resource type="Texture2D" uid="uid://bfg4npmuqyh55" path="res://Assets/Buttons/Button-Back-green.png" id="11_1obp6"]
+
+[node name="LevelPicker" type="Node2D"]
+script = ExtResource("1_x8c62")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_umr3n")
+
+[node name="LevelButtons" type="Node2D" parent="."]
+
+[node name="ButtonLevel1" type="TextureButton" parent="LevelButtons"]
+offset_left = 176.0
+offset_top = 160.0
+offset_right = 656.0
+offset_bottom = 476.0
+texture_normal = ExtResource("2_3g87n")
+
+[node name="ButtonLevel2" type="TextureButton" parent="LevelButtons"]
+offset_left = 724.0
+offset_top = 160.0
+offset_right = 1204.0
+offset_bottom = 476.0
+texture_normal = ExtResource("3_x8c62")
+
+[node name="ButtonLevel3" type="TextureButton" parent="LevelButtons"]
+offset_left = 1272.0
+offset_top = 160.0
+offset_right = 1752.0
+offset_bottom = 476.0
+texture_normal = ExtResource("4_a8vvm")
+
+[node name="ButtonLevel4" type="TextureButton" parent="LevelButtons"]
+offset_left = 176.0
+offset_top = 540.0
+offset_right = 656.0
+offset_bottom = 856.0
+texture_normal = ExtResource("5_7s41y")
+
+[node name="ButtonLevel5" type="TextureButton" parent="LevelButtons"]
+offset_left = 724.0
+offset_top = 540.0
+offset_right = 1204.0
+offset_bottom = 856.0
+texture_normal = ExtResource("6_1obp6")
+
+[node name="ButtonLevel6" type="TextureButton" parent="LevelButtons"]
+offset_left = 1272.0
+offset_top = 540.0
+offset_right = 1752.0
+offset_bottom = 856.0
+texture_normal = ExtResource("7_jctgc")
+
+[node name="HelpButton" type="TextureButton" parent="."]
+offset_left = 100.0
+offset_top = 944.0
+offset_right = 252.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("10_1obp6")
+
+[node name="BackButton" type="TextureButton" parent="."]
+offset_left = 1668.0
+offset_top = 944.0
+offset_right = 1820.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("11_1obp6")
+
+[node name="HelpDialog" parent="." instance=ExtResource("9_7s41y")]
+
+[connection signal="pressed" from="LevelButtons/ButtonLevel1" to="." method="_on_button_level_1_pressed"]
+[connection signal="pressed" from="LevelButtons/ButtonLevel2" to="." method="_on_button_level_2_pressed"]
+[connection signal="pressed" from="LevelButtons/ButtonLevel3" to="." method="_on_button_level_3_pressed"]
+[connection signal="pressed" from="HelpButton" to="HelpDialog" method="_on_help_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

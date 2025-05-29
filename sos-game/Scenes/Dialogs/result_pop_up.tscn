@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://p8jlq8xdcf0t"]
 
-[ext_resource type="Texture2D" uid="uid://d2fwkm7ofx7tj" path="res://Assets/Buttons and Dialogs/Result-dialog.png" id="1_qvygd"]
+[ext_resource type="Texture2D" uid="uid://d2fwkm7ofx7tj" path="res://Assets/Dialogs/Result-dialog.png" id="1_qvygd"]
 [ext_resource type="Script" uid="uid://bd4mgwpnngm2d" path="res://Scenes/Dialogs/result_dialog.gd" id="2_va6yu"]
 [ext_resource type="FontFile" uid="uid://c8f1xkqvr2h7a" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="3_347jp"]
 [ext_resource type="FontFile" uid="uid://cbkaala8qo5w5" path="res://Assets/Fonts/Silkscreen-Bold.ttf" id="4_jrslr"]
-[ext_resource type="Texture2D" uid="uid://mqa3wwnk2b00" path="res://Assets/Buttons and Dialogs/Button-nextlevel.png" id="5_p5num"]
-[ext_resource type="Texture2D" uid="uid://dkhddl4kkxhf2" path="res://Assets/Buttons and Dialogs/Button-tryagain.png" id="6_jrpct"]
-[ext_resource type="Script" uid="uid://c78ejc4piq8kg" path="res://Scripts/Buttons/next_level_button.gd" id="6_va6yu"]
+[ext_resource type="Texture2D" uid="uid://mqa3wwnk2b00" path="res://Assets/Buttons/Button-nextlevel.png" id="5_p5num"]
+[ext_resource type="Texture2D" uid="uid://dkhddl4kkxhf2" path="res://Assets/Buttons/Button-tryagain.png" id="6_jrpct"]
+[ext_resource type="Script" path="res://Scripts/Buttons/next_level_button.gd" id="6_va6yu"]
 [ext_resource type="Script" uid="uid://cym0jqgaabiea" path="res://Scripts/Buttons/try_again_button.gd" id="7_bmjpc"]
 
 [node name="ResultPopUp" type="Control"]
