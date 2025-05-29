@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btrvd3unuwufd"
-path="res://.godot/imported/Hover-Anleitung.png-22fabf5530ef95dcc24451883b99edfd.ctex"
+path="res://.godot/imported/Hover-Anleitung.png-c5fed72f80e030a0d8bb445c250ae566.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons and Dialogs/Hover-Anleitung.png"
-dest_files=["res://.godot/imported/Hover-Anleitung.png-22fabf5530ef95dcc24451883b99edfd.ctex"]
+source_file="res://Assets/Buttons/Hover-Anleitung.png"
+dest_files=["res://.godot/imported/Hover-Anleitung.png-c5fed72f80e030a0d8bb445c250ae566.ctex"]
 
 [params]
 

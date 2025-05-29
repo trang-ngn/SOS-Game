@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bt0xeoojmpu7x"
-path="res://.godot/imported/Show-Solution-Button.png-755db2e51c0d4f9734ab0f7ec6865f1e.ctex"
+path="res://.godot/imported/Show-Solution-Button.png-6d52623615e5405da16b87fd82662445.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons and Dialogs/Show-Solution-Button.png"
-dest_files=["res://.godot/imported/Show-Solution-Button.png-755db2e51c0d4f9734ab0f7ec6865f1e.ctex"]
+source_file="res://Assets/Buttons/Show-Solution-Button.png"
+dest_files=["res://.godot/imported/Show-Solution-Button.png-6d52623615e5405da16b87fd82662445.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0bh0dre1prsg"
-path="res://.godot/imported/mask.png-2743617d413c1b804cde951c6709aacf.ctex"
+path="res://.godot/imported/mask.png-aa1a24c74a8f1d71146415e49a95154e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons and Dialogs/mask.png"
-dest_files=["res://.godot/imported/mask.png-2743617d413c1b804cde951c6709aacf.ctex"]
+source_file="res://Assets/Buttons/mask.png"
+dest_files=["res://.godot/imported/mask.png-aa1a24c74a8f1d71146415e49a95154e.ctex"]
 
 [params]
 
