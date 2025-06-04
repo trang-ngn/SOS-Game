@@ -53,6 +53,7 @@ func update_houses_covered() -> void: #check if all houses is covered
 	all_houses_covered = num_covered_houses == len(houses)
 	
 	#enable Done when all_houses_covered
+	$DoneRestartContainer/CoveragePopUp.all_house_covered = all_houses_covered
 	$DoneRestartContainer/DoneButton.disabled = not all_houses_covered
 
 

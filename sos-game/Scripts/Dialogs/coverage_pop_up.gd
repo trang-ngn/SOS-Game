@@ -1,5 +1,6 @@
 extends TextureRect
 
+@export var all_house_covered : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,7 +13,7 @@ func _process(delta: float) -> void:
 
 
 func _on_done_button_mouse_entered() -> void:
-	visible = true
+	visible = !all_house_covered
 
 
 func _on_done_button_mouse_exited() -> void:

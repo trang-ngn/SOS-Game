@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://c2uykbl3d6bg5"]
+[gd_scene load_steps=33 format=4 uid="uid://c2uykbl3d6bg5"]
 
 [ext_resource type="PackedScene" uid="uid://8khcuvpd750f" path="res://Scenes/LevelTemplates/level_template_updated.tscn" id="1_m11of"]
 [ext_resource type="Texture2D" uid="uid://bubtpd0hdotqi" path="res://Assets/Tileset/Tileset_v3.png" id="2_sqlub"]
@@ -593,6 +593,9 @@ shader = ExtResource("4_pc44s")
 shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/outline_width = 1.5
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2mw1"]
+size = Vector2(43, 43)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qmmr"]
 size = Vector2(47, 47)
 
@@ -669,7 +672,7 @@ text = "00"
 [node name="CollisionSize" type="CollisionShape2D" parent="Houses/H0" index="2"]
 visible = false
 position = Vector2(0.5, 4.5)
-shape = SubResource("RectangleShape2D_7qmmr")
+shape = SubResource("RectangleShape2D_k2mw1")
 
 [node name="H4" type="StaticBody2D" parent="Houses" index="1"]
 position = Vector2(-602, 167)
@@ -1250,8 +1253,6 @@ editable = false
 [node name="OptResult" type="Control" parent="Stations/S2" index="3"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="HighlightRect" type="TextureRect" parent="Stations/S2/OptResult" index="0"]
 visible = false
