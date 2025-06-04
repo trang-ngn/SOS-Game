@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cbkaala8qo5w5" path="res://Assets/Fonts/Silkscreen-Bold.ttf" id="4_jrslr"]
 [ext_resource type="Texture2D" uid="uid://mqa3wwnk2b00" path="res://Assets/Buttons/Button-nextlevel.png" id="5_p5num"]
 [ext_resource type="Texture2D" uid="uid://dkhddl4kkxhf2" path="res://Assets/Buttons/Button-tryagain.png" id="6_jrpct"]
-[ext_resource type="Script" path="res://Scripts/Buttons/next_level_button.gd" id="6_va6yu"]
+[ext_resource type="Script" uid="uid://c78ejc4piq8kg" path="res://Scripts/Buttons/next_level_button.gd" id="6_va6yu"]
 [ext_resource type="Script" uid="uid://cym0jqgaabiea" path="res://Scripts/Buttons/try_again_button.gd" id="7_bmjpc"]
 
 [node name="ResultPopUp" type="Control"]

@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dru4m1t38rih1" path="res://Assets/Dialogs/Dialog-restart.png" id="17_vwyvl"]
 [ext_resource type="Texture2D" uid="uid://mqa3wwnk2b00" path="res://Assets/Buttons/Button-nextlevel.png" id="18_rim13"]
 [ext_resource type="Texture2D" uid="uid://d04k3dynlule1" path="res://Assets/Buttons/Button-close.png" id="18_srckx"]
-[ext_resource type="Script" path="res://Scripts/Buttons/next_level_button.gd" id="19_ie85g"]
+[ext_resource type="Script" uid="uid://c78ejc4piq8kg" path="res://Scripts/Buttons/next_level_button.gd" id="19_ie85g"]
 [ext_resource type="Script" uid="uid://efxlgmysihqy" path="res://Scripts/Dialogs/back_dialog.gd" id="19_rsp8e"]
 [ext_resource type="Texture2D" uid="uid://ct6b4rxd8ha2h" path="res://Assets/Dialogs/Dialog-Back.png" id="20_b76st"]
 [ext_resource type="Texture2D" uid="uid://dkhddl4kkxhf2" path="res://Assets/Buttons/Button-tryagain.png" id="20_gmdu1"]

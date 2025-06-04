@@ -1129,8 +1129,6 @@ texture = ExtResource("9_po7xu")
 [node name="OptResult" type="Control" parent="Stations/S0" index="2"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="HighlightRect" type="TextureRect" parent="Stations/S0/OptResult" index="0"]
 visible = false
@@ -1196,8 +1194,6 @@ editable = false
 [node name="OptResult" type="Control" parent="Stations/S1" index="3"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="HighlightRect" type="TextureRect" parent="Stations/S1/OptResult" index="0"]
 visible = false
@@ -1313,8 +1309,6 @@ editable = false
 [node name="OptResult" type="Control" parent="Stations/S3" index="3"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="HighlightRect" type="TextureRect" parent="Stations/S3/OptResult" index="0"]
 visible = false
@@ -1400,8 +1394,6 @@ editable = false
 [node name="OptResult" type="Control" parent="Stations/S4" index="3"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="HighlightRect" type="TextureRect" parent="Stations/S4/OptResult" index="0"]
 visible = false
@@ -1459,8 +1451,6 @@ editable = false
 [node name="OptResult" type="Control" parent="Stations/S5" index="3"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="HighlightRect" type="TextureRect" parent="Stations/S5/OptResult" index="0"]
 visible = false
@@ -1518,8 +1508,6 @@ editable = false
 [node name="OptResult" type="Control" parent="Stations/S6" index="3"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="HighlightRect" type="TextureRect" parent="Stations/S6/OptResult" index="0"]
 visible = false
@@ -1577,8 +1565,6 @@ editable = false
 [node name="OptResult" type="Control" parent="Stations/S7" index="3"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="HighlightRect" type="TextureRect" parent="Stations/S7/OptResult" index="0"]
 visible = false
@@ -1636,8 +1622,6 @@ editable = false
 [node name="OptResult" type="Control" parent="Stations/S8" index="3"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="HighlightRect" type="TextureRect" parent="Stations/S8/OptResult" index="0"]
 visible = false
@@ -1664,6 +1648,9 @@ debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 visible = false
 script = ExtResource("10_0b03d")
 color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="DisableBackground" parent="ResultPopUp" index="0"]
+color = Color(0.262745, 0.262745, 0.262745, 0.784314)
 
 [connection signal="button_up" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_button_up"]
 [connection signal="mouse_entered" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_entered"]
