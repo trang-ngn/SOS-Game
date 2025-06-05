@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dacahsa6a8y0w"]
+[gd_scene load_steps=16 format=3 uid="uid://dacahsa6a8y0w"]
 
 [ext_resource type="Texture2D" uid="uid://bubtpd0hdotqi" path="res://Assets/Tileset/Tileset_v3.png" id="1_6nv0m"]
 [ext_resource type="Texture2D" uid="uid://b2qe6xh3aeg1s" path="res://Assets/Houses/brown_house.png" id="2_v1q5q"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://b2r4cix5na7mw" path="res://Assets/Houses/green_house.png" id="7_v1q5q"]
 [ext_resource type="Texture2D" uid="uid://bc6ae7dvqt8hn" path="res://Assets/Rescue Station/rescue_station_3.png" id="8_iirw2"]
 [ext_resource type="Texture2D" uid="uid://cpf6p4v4xamb1" path="res://Assets/Rescue Station/plot.png" id="9_qb1l2"]
+[ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/LevelScripts/station_script.gd" id="10_orv67"]
+[ext_resource type="Texture2D" uid="uid://b0bh0dre1prsg" path="res://Assets/Buttons/mask.png" id="11_w13hc"]
+[ext_resource type="Script" uid="uid://bhn2knupgw6fc" path="res://Scripts/LevelScripts/radius_visual.gd" id="12_a4hjf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_orv67"]
 texture = ExtResource("1_6nv0m")
@@ -209,6 +212,9 @@ texture = ExtResource("1_6nv0m")
 [sub_resource type="TileSet" id="TileSet_w13hc"]
 sources/0 = SubResource("TileSetAtlasSource_orv67")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bf6fx"]
+radius = 9.0
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -220,7 +226,7 @@ layer_1/tile_data = PackedInt32Array(5, 0, 15, 65541, 65536, 1342177294, 131077,
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 8)
-zoom = Vector2(3.5, 3.5)
+zoom = Vector2(2, 2)
 
 [node name="Houses" type="Node2D" parent="."]
 
@@ -260,3 +266,68 @@ offset_top = 112.0
 offset_right = 14.0
 offset_bottom = 166.0
 texture_normal = ExtResource("9_qb1l2")
+
+[node name="S0" type="Node2D" parent="."]
+position = Vector2(208, -178)
+script = ExtResource("10_orv67")
+cost = 3
+radius = 9.0
+
+[node name="Plot" type="Button" parent="S0"]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "6
+3M €"
+icon = ExtResource("9_qb1l2")
+
+[node name="Sprite2D" type="Sprite2D" parent="S0"]
+visible = false
+position = Vector2(0, -10)
+texture = ExtResource("7_qb1l2")
+
+[node name="StationNumber" type="TextEdit" parent="S0"]
+visible = false
+offset_left = -14.0
+offset_top = -20.0
+offset_right = 13.0
+offset_bottom = 15.0
+text = "00"
+editable = false
+
+[node name="OptResult" type="Control" parent="S0"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="HighlightRect" type="TextureRect" parent="S0/OptResult"]
+visible = false
+layout_mode = 0
+offset_left = -56.0
+offset_top = -34.0
+offset_right = 168.0
+offset_bottom = 190.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_w13hc")
+expand_mode = 1
+
+[node name="Radius" type="Area2D" parent="S0"]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="S0/Radius"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_bf6fx")
+debug_color = Color(0.670384, 0.658091, 0.670901, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="S0/Radius"]
+visible = false
+script = ExtResource("12_a4hjf")
+color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[connection signal="button_up" from="S0/Plot" to="S0" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="S0/Plot" to="S0" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="S0/Plot" to="S0" method="_on_button_mouse_exited"]
+[connection signal="area_shape_entered" from="S0/Radius" to="S0" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="S0/Radius" to="S0" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="S0/Radius" to="S0" method="_on_area_2d_body_shape_entered"]
