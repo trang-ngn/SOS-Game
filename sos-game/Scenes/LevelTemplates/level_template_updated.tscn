@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://8khcuvpd750f"]
+[gd_scene load_steps=44 format=3 uid="uid://8khcuvpd750f"]
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/LevelScripts/level_script.gd" id="1_aaap5"]
 [ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://Assets/Tileset/Tileset_v2.png" id="2_spymw"]
@@ -166,6 +166,57 @@ sources/0 = SubResource("TileSetAtlasSource_08cxd")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g30sg"]
 size = Vector2(67, 68)
 
+[sub_resource type="Gradient" id="Gradient_p5gpb"]
+offsets = PackedFloat32Array(0, 0.495495, 1)
+colors = PackedColorArray(1, 1, 1, 0.0784314, 1, 1, 1, 1, 1, 1, 1, 0.0784314)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p5gpb"]
+gradient = SubResource("Gradient_p5gpb")
+width = 2
+height = 32
+fill_from = Vector2(0.45584, 0)
+fill_to = Vector2(0.547009, 1)
+
+[sub_resource type="Gradient" id="Gradient_otpg3"]
+offsets = PackedFloat32Array(0.00204499, 1)
+colors = PackedColorArray(1, 1, 1, 0.0784314, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_otpg3"]
+gradient = SubResource("Gradient_otpg3")
+
+[sub_resource type="Gradient" id="Gradient_s4288"]
+offsets = PackedFloat32Array(0.00204499, 0.492843, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_s4288"]
+gradient = SubResource("Gradient_s4288")
+
+[sub_resource type="Curve" id="Curve_p231p"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, -113.421), 0.0, 0.0, 0, 0, Vector2(0.110057, 71.8351), 0.0, 0.0, 0, 0, Vector2(0.252372, -78.4674), 0.0, 0.0, 0, 0, Vector2(0.362429, 63.6791), 0.0, 0.0, 0, 0, Vector2(0.500949, -81.9628), 0.0, 0.0, 0, 0, Vector2(0.607211, 61.3489), 0.0, 0.0, 0, 0, Vector2(0.745731, -80.7977), 0.0, 0.0, 0, 0, Vector2(0.907021, 76.4956), 0.0, 0.0, 0, 0]
+point_count = 8
+
+[sub_resource type="CurveTexture" id="CurveTexture_p231p"]
+curve = SubResource("Curve_p231p")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rim13"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(960, 540, 0)
+direction = Vector3(2, 0, 0)
+spread = 0.0
+gravity = Vector3(100, 20, 0)
+linear_accel_min = 3.0
+linear_accel_max = 6.0
+tangential_accel_min = 3.0
+tangential_accel_max = 5.0
+tangential_accel_curve = SubResource("CurveTexture_p231p")
+damping_max = 100.0
+scale_min = 3.0
+scale_max = 5.0
+color_ramp = SubResource("GradientTexture1D_s4288")
+color_initial_ramp = SubResource("GradientTexture1D_otpg3")
+
 [node name="LevelTemplate" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_aaap5")
@@ -190,6 +241,20 @@ anchor_mode = 0
 visible = false
 position = Vector2(1, -62)
 shape = SubResource("RectangleShape2D_g30sg")
+
+[node name="VFX" type="Node2D" parent="Camera"]
+
+[node name="Wind" type="GPUParticles2D" parent="Camera/VFX"]
+position = Vector2(936, 533)
+amount = 2
+texture = SubResource("GradientTexture2D_p5gpb")
+lifetime = 4.0
+preprocess = 2.0
+randomness = 0.2
+trail_enabled = true
+trail_lifetime = 1.0
+trail_sections = 10
+process_material = SubResource("ParticleProcessMaterial_rim13")
 
 [node name="StatistikBar" parent="." instance=ExtResource("5_pl6ql")]
 offset_left = 649.0
