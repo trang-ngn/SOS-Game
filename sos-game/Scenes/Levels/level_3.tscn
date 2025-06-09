@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://dwuepwmcx214o"]
+[gd_scene load_steps=58 format=4 uid="uid://dwuepwmcx214o"]
 
 [ext_resource type="PackedScene" uid="uid://8khcuvpd750f" path="res://Scenes/LevelTemplates/level_template_updated.tscn" id="1_f17ei"]
 [ext_resource type="Texture2D" uid="uid://bubtpd0hdotqi" path="res://Assets/Tileset/Tileset_v3.png" id="2_osqx1"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://bc5lk4pawxgc4" path="res://Scripts/LevelScripts/station_script.gd" id="8_411kh"]
 [ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://Assets/Rescue Station/rescue_station_2.png" id="9_sxvy5"]
 [ext_resource type="Script" uid="uid://bhn2knupgw6fc" path="res://Scripts/LevelScripts/radius_visual.gd" id="10_6ea8v"]
+[ext_resource type="Shader" uid="uid://dksxj0hluoa8f" path="res://Shaders/build_station.gdshader" id="11_13yca"]
 [ext_resource type="Texture2D" uid="uid://b0bh0dre1prsg" path="res://Assets/Buttons/mask.png" id="11_md4x4"]
 [ext_resource type="Texture2D" uid="uid://bc6ae7dvqt8hn" path="res://Assets/Rescue Station/rescue_station_3.png" id="12_sy7oa"]
 
@@ -633,39 +634,146 @@ shader_parameter/outline_width = 1.5
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kbnfp"]
 size = Vector2(47, 47)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8dmpc"]
+shader = ExtResource("11_13yca")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_fbjyp"]
 radius = 9.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_anjjd"]
+shader = ExtResource("11_13yca")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6y0rb"]
 radius = 15.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ocbj8"]
+shader = ExtResource("11_13yca")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_2fx8i"]
 radius = 15.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r8neg"]
+shader = ExtResource("11_13yca")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l22ag"]
 radius = 8.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rcyh2"]
+shader = ExtResource("11_13yca")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_v05v6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_13yca"]
+shader = ExtResource("11_13yca")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_knsqt"]
 radius = 12.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_341pv"]
+shader = ExtResource("11_13yca")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_q6wdx"]
 radius = 18.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wnlxl"]
+shader = ExtResource("11_13yca")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_chrwk"]
 radius = 15.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jgaqf"]
+shader = ExtResource("11_13yca")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_4xqtv"]
 radius = 16.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x66yp"]
+shader = ExtResource("11_13yca")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_j4mvy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ve8p"]
+shader = ExtResource("11_13yca")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nk41h"]
 radius = 19.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3m4x7"]
+shader = ExtResource("11_13yca")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_hn73n"]
 radius = 15.0
+
+[sub_resource type="Gradient" id="Gradient_s4288"]
+offsets = PackedFloat32Array(0.00204499, 1)
+colors = PackedColorArray(1, 1, 1, 0.0784314, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_p231p"]
+gradient = SubResource("Gradient_s4288")
+
+[sub_resource type="Gradient" id="Gradient_rim13"]
+offsets = PackedFloat32Array(0.00204499, 0.492843, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ie85g"]
+gradient = SubResource("Gradient_rim13")
+
+[sub_resource type="Curve" id="Curve_gmdu1"]
+_limits = [0.0, 1.0, 0.0, 0.8]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1e-05, 1), 0.0, 0.0, 0, 0, Vector2(0.8, 0), -0.309966, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ld5sx"]
+curve = SubResource("Curve_gmdu1")
+
+[sub_resource type="Curve" id="Curve_jk7dv"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, -113.421), 0.0, 0.0, 0, 0, Vector2(0.110057, 71.8351), 0.0, 0.0, 0, 0, Vector2(0.252372, -78.4674), 0.0, 0.0, 0, 0, Vector2(0.362429, 63.6791), 0.0, 0.0, 0, 0, Vector2(0.500949, -81.9628), 0.0, 0.0, 0, 0, Vector2(0.607211, 61.3489), 0.0, 0.0, 0, 0, Vector2(0.745731, -80.7977), 0.0, 0.0, 0, 0, Vector2(0.907021, 76.4956), 0.0, 0.0, 0, 0]
+point_count = 8
+
+[sub_resource type="CurveTexture" id="CurveTexture_xrijo"]
+curve = SubResource("Curve_jk7dv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1hf40"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(960, 540, 0)
+gravity = Vector3(100, 0, 0)
+linear_accel_min = 8.0
+linear_accel_max = 10.0
+tangential_accel_min = 3.0
+tangential_accel_max = 5.0
+tangential_accel_curve = SubResource("CurveTexture_xrijo")
+damping_max = 100.0
+scale_min = 2.5
+scale_max = 3.5
+scale_curve = SubResource("CurveTexture_ld5sx")
+color_ramp = SubResource("GradientTexture1D_ie85g")
+color_initial_ramp = SubResource("GradientTexture1D_p231p")
 
 [node name="LevelTemplate" instance=ExtResource("1_f17ei")]
 
@@ -1133,7 +1241,8 @@ text = "0
 3M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S0" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_8dmpc")
+instance_shader_parameters/progress = 0.0
 position = Vector2(0, -10)
 texture = ExtResource("9_sxvy5")
 
@@ -1190,7 +1299,8 @@ text = "1
 5M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S1" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_anjjd")
+instance_shader_parameters/progress = 0.0
 position = Vector2(0, -10)
 texture = ExtResource("9_sxvy5")
 
@@ -1247,7 +1357,7 @@ text = "2
 6M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S2" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_ocbj8")
 position = Vector2(0, -10)
 texture = ExtResource("12_sy7oa")
 
@@ -1304,7 +1414,7 @@ text = "3
 2M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S3" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_r8neg")
 position = Vector2(0, -10)
 texture = ExtResource("12_sy7oa")
 
@@ -1361,7 +1471,7 @@ text = "4
 3M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S4" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_rcyh2")
 position = Vector2(0, -10)
 texture = ExtResource("9_sxvy5")
 
@@ -1418,7 +1528,8 @@ text = "5
 3M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S5" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_13yca")
+instance_shader_parameters/progress = 0.0
 position = Vector2(0, -10)
 texture = ExtResource("12_sy7oa")
 
@@ -1475,7 +1586,7 @@ text = "6
 8M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S6" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_341pv")
 position = Vector2(0, -10)
 texture = ExtResource("9_sxvy5")
 
@@ -1532,7 +1643,7 @@ text = "7
 4M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S7" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_wnlxl")
 position = Vector2(0, -10)
 texture = ExtResource("9_sxvy5")
 
@@ -1589,7 +1700,7 @@ text = "8
 5M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S8" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_jgaqf")
 position = Vector2(0, -10)
 texture = ExtResource("9_sxvy5")
 
@@ -1646,7 +1757,7 @@ text = "9
 3M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S9" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_x66yp")
 position = Vector2(0, -10)
 texture = ExtResource("12_sy7oa")
 
@@ -1703,7 +1814,7 @@ text = "10
 13M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S10" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_8ve8p")
 position = Vector2(0, -10)
 texture = ExtResource("9_sxvy5")
 
@@ -1760,7 +1871,7 @@ text = "11
 6M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S11" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_3m4x7")
 position = Vector2(0, -10)
 texture = ExtResource("9_sxvy5")
 
@@ -1801,6 +1912,12 @@ debug_color = Color(0.650012, 0.681919, 0.622484, 0.42)
 visible = false
 script = ExtResource("10_6ea8v")
 color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="Wind" parent="Camera/VFX" index="0"]
+amount = 15
+lifetime = 5.0
+preprocess = 2.0
+process_material = SubResource("ParticleProcessMaterial_1hf40")
 
 [connection signal="button_up" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_button_up"]
 [connection signal="mouse_entered" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_entered"]

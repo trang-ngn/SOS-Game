@@ -1,4 +1,3 @@
-@tool
 class_name RescueStation
 extends Node2D
 
@@ -6,7 +5,7 @@ var houses : Array[House]
 @export var cost : int
 var id : int
 
-
+@onready var sprite = $Sprite2D
 @onready var radius_size : CollisionShape2D = $Radius/RadiusSize
 @export var radius : float : 
 	set(value):
@@ -18,19 +17,6 @@ var built : bool = false
 var optimal : bool = false #show-results
 
 signal stations_updated
-
-
-
-#For sandbox
-@export var rect: Rect2
-
-func get_global_rect():
-	return Rect2(
-		global_position - rect.size / 2,
-		rect.size
-	)
-func set_on_place():
-	modulate.a = 1
 
 
 func _ready() -> void:
@@ -46,9 +32,28 @@ func _on_button_button_up() -> void:
 
 	change_state()
 
+func play_animation()-> void :
+	
+	sprite.set_instance_shader_parameter("wiggle_strength", 2.4)
+	var total_time :float = 0.4
+	var interval : float = 0.05
+	var elapsed : float = 0.0
+	var new_progress : float = 0.0
+	
+	
+	while elapsed <= total_time:
+		var raw_progress = elapsed / total_time
+		var shader_progress = raw_progress if !built else (1.0 - raw_progress)
+		sprite.set_instance_shader_parameter("progress", shader_progress)
+		await get_tree().create_timer(interval).timeout
+		elapsed += interval
+		
+
+	# Disable wiggle after reveal
+	sprite.set_instance_shader_parameter("wiggle_strength", 0.0)
 
 func change_state()->void:
-	$Sprite2D.visible = built
+	play_animation()
 	#$TextEdit.visible = built
 	cover_houses(built)
 	emit_signal("stations_updated")
@@ -86,7 +91,7 @@ func set_optimal(state: bool) -> void:
 
 
 func initialize() -> void:
-	$Sprite2D.visible = false
+	sprite.set_instance_shader_parameter("progress",1.0)
 	$Plot.text = str(id) + "\n" +str(cost) + "M €"
 	$StationNumber.visible = false
 	$StationNumber.editable =false

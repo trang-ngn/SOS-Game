@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://cinss0t8uy06c"]
+[gd_scene load_steps=54 format=4 uid="uid://cinss0t8uy06c"]
 
 [ext_resource type="PackedScene" uid="uid://8khcuvpd750f" path="res://Scenes/LevelTemplates/level_template_updated.tscn" id="1_10pn0"]
 [ext_resource type="Texture2D" uid="uid://bubtpd0hdotqi" path="res://Assets/Tileset/Tileset_v3.png" id="2_1jlnc"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bc6ae7dvqt8hn" path="res://Assets/Rescue Station/rescue_station_3.png" id="9_u40f0"]
 [ext_resource type="Script" uid="uid://bhn2knupgw6fc" path="res://Scripts/LevelScripts/radius_visual.gd" id="10_peo1u"]
 [ext_resource type="Texture2D" uid="uid://b0bh0dre1prsg" path="res://Assets/Buttons/mask.png" id="12_eopvx"]
-[ext_resource type="PackedScene" uid="uid://b1qjiptc7oj6x" path="res://Scenes/VFX/wind_2.tscn" id="16_yxf76"]
+[ext_resource type="Shader" uid="uid://dksxj0hluoa8f" path="res://Shaders/build_station.gdshader" id="12_yxf76"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqiic"]
 texture = ExtResource("2_1jlnc")
@@ -639,29 +639,133 @@ shader_parameter/outline_width = 1.5
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mflsu"]
 size = Vector2(47, 47)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ia1lp"]
+shader = ExtResource("12_yxf76")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_i7r3y"]
 radius = 15.7403
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5buja"]
+shader = ExtResource("12_yxf76")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6oq7e"]
 radius = 15.7403
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jd2hh"]
+shader = ExtResource("12_yxf76")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_sogyn"]
 radius = 15.7403
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wyygt"]
+shader = ExtResource("12_yxf76")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1djvi"]
 radius = 15.7346
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jip10"]
+shader = ExtResource("12_yxf76")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_exh1n"]
 radius = 28.9631
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u87on"]
+shader = ExtResource("12_yxf76")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0trkh"]
 radius = 34.5344
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iunut"]
+shader = ExtResource("12_yxf76")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_d0ucp"]
 radius = 33.0691
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yxf76"]
+shader = ExtResource("12_yxf76")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_gvrap"]
 radius = 24.8681
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1xj2d"]
+shader = ExtResource("12_yxf76")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
+
+[sub_resource type="Gradient" id="Gradient_tjl6l"]
+offsets = PackedFloat32Array(0, 0.495495, 0.998198)
+colors = PackedColorArray(1, 1, 1, 0.0784314, 1, 1, 1, 1, 1, 1, 1, 0.0784314)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t27xo"]
+gradient = SubResource("Gradient_tjl6l")
+width = 2
+height = 32
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_yxf76"]
+offsets = PackedFloat32Array(0.00204499, 1)
+colors = PackedColorArray(1, 1, 1, 0.0784314, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_31phq"]
+gradient = SubResource("Gradient_yxf76")
+
+[sub_resource type="Gradient" id="Gradient_ia1lp"]
+offsets = PackedFloat32Array(0.00204499, 0.492843, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fayjm"]
+gradient = SubResource("Gradient_ia1lp")
+
+[sub_resource type="Curve" id="Curve_5buja"]
+_limits = [0.0, 1.0, 0.0, 0.8]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1e-05, 1), 0.0, 0.0, 0, 0, Vector2(0.8, 0), -0.309966, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_3628d"]
+curve = SubResource("Curve_5buja")
+
+[sub_resource type="Curve" id="Curve_wyygt"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, -113.421), 0.0, 0.0, 0, 0, Vector2(0.110057, 71.8351), 0.0, 0.0, 0, 0, Vector2(0.252372, -78.4674), 0.0, 0.0, 0, 0, Vector2(0.362429, 63.6791), 0.0, 0.0, 0, 0, Vector2(0.500949, -81.9628), 0.0, 0.0, 0, 0, Vector2(0.607211, 61.3489), 0.0, 0.0, 0, 0, Vector2(0.745731, -80.7977), 0.0, 0.0, 0, 0, Vector2(0.907021, 76.4956), 0.0, 0.0, 0, 0]
+point_count = 8
+
+[sub_resource type="CurveTexture" id="CurveTexture_vvknj"]
+curve = SubResource("Curve_wyygt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u87on"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(960, 540, 0)
+gravity = Vector3(100, 0, 0)
+linear_accel_min = 5.0
+linear_accel_max = 8.0
+tangential_accel_min = 3.0
+tangential_accel_max = 5.0
+tangential_accel_curve = SubResource("CurveTexture_vvknj")
+damping_max = 100.0
+scale_min = 2.5
+scale_max = 3.5
+scale_curve = SubResource("CurveTexture_3628d")
+color_ramp = SubResource("GradientTexture1D_fayjm")
+color_initial_ramp = SubResource("GradientTexture1D_31phq")
 
 [node name="LevelTemplate" instance=ExtResource("1_10pn0")]
 
@@ -1708,7 +1812,8 @@ text = "0
 2M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S0" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_ia1lp")
+instance_shader_parameters/progress = 0.0
 position = Vector2(0, -11)
 texture = ExtResource("9_u40f0")
 
@@ -1763,7 +1868,8 @@ text = "1
 2M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S1" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_5buja")
+instance_shader_parameters/progress = 0.0
 position = Vector2(0, -11)
 texture = ExtResource("9_u40f0")
 
@@ -1818,7 +1924,8 @@ text = "2
 2M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S2" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_jd2hh")
+instance_shader_parameters/progress = 0.0
 position = Vector2(0, -11)
 texture = ExtResource("9_u40f0")
 
@@ -1873,7 +1980,8 @@ text = "3
 2M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S3" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_wyygt")
+instance_shader_parameters/progress = 0.0
 position = Vector2(0, -11)
 texture = ExtResource("9_u40f0")
 
@@ -1928,7 +2036,8 @@ text = "4
 6M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S4" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_jip10")
+instance_shader_parameters/progress = 0.0
 position = Vector2(0, -11)
 texture = ExtResource("9_0roq7")
 
@@ -1983,7 +2092,8 @@ text = "5
 4M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S5" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_u87on")
+instance_shader_parameters/progress = 0.0
 position = Vector2(0, -9)
 texture = ExtResource("9_0roq7")
 
@@ -2038,7 +2148,8 @@ text = "6
 5M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S6" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_iunut")
+instance_shader_parameters/progress = 0.0
 position = Vector2(0, -11)
 texture = ExtResource("9_0roq7")
 
@@ -2093,7 +2204,8 @@ text = "7
 5M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S7" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_yxf76")
+instance_shader_parameters/progress = 0.0
 position = Vector2(0, -11)
 texture = ExtResource("9_0roq7")
 
@@ -2148,7 +2260,8 @@ text = "8
 3M €"
 
 [node name="Sprite2D" type="Sprite2D" parent="Stations/S8" index="1"]
-visible = false
+material = SubResource("ShaderMaterial_1xj2d")
+instance_shader_parameters/progress = 0.0
 position = Vector2(0, -11)
 texture = ExtResource("9_0roq7")
 
@@ -2191,7 +2304,17 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="VFX" type="Node2D" parent="." index="4"]
 
-[node name="Wind" parent="VFX" index="0" instance=ExtResource("16_yxf76")]
+[node name="Wind" type="GPUParticles2D" parent="VFX" index="0"]
+position = Vector2(960, 540)
+amount = 3
+texture = SubResource("GradientTexture2D_t27xo")
+lifetime = 8.0
+preprocess = 2.0
+randomness = 0.2
+trail_enabled = true
+trail_lifetime = 1.0
+trail_sections = 10
+process_material = SubResource("ParticleProcessMaterial_u87on")
 
 [connection signal="button_up" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_button_up"]
 [connection signal="mouse_entered" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_entered"]

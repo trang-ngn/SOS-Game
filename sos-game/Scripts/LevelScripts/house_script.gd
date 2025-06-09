@@ -1,4 +1,3 @@
-@tool
 class_name House
 extends StaticBody2D
 
