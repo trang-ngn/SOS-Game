@@ -4,4 +4,4 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="Startmenu" parent="." instance=ExtResource("1_ig7tw")]
+[node name="StartMenu" parent="." instance=ExtResource("1_ig7tw")]

@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cgxd2tb7s5oqi" path="res://Assets/Buttons/Button-Info.png" id="7_iceld"]
 [ext_resource type="PackedScene" uid="uid://bhahj3sfha8xs" path="res://Scenes/Dialogs/help_dialog.tscn" id="8_iceld"]
 
-[node name="Startmenu" type="Node2D"]
+[node name="StartMenu" type="Node2D"]
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1920.0
