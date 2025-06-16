@@ -6,13 +6,24 @@ stages:
 backend-test:
   image: python:3.10
   stage: test
-  script:
+  before_script:
     - cd backend
-    - touch testci.txt
     - pip install -r requirements.txt
-  artifacts:
-    paths:
-      - backend
+  script:
+    - echo "Testing Backend..."
+    - python -m pytest
+  only: 
+    - main
+
+godot-test:
+  image: barichello/godot-ci:latest
+  stage: test
+  script:
+    - echo "Testing Frontend..."
+    - godot --headless -s --path "$PWD" addons/gut/gut_cmdln.gd -gdir=res://test/integration -gexit
+    - godot --headless -s --path "$PWD" addons/gut/gut_cmdln.gd -gdir=res://test/unit -gexit
+  only: 
+    - main
 
 # stages:
 #   - build
