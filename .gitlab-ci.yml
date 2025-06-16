@@ -10,7 +10,7 @@ backend-test:
   script:
     - echo "Testing Backend..."
     - python -m pytest
-  only: 
+  only:
     - main
     - fix/gitlab-ci
 
@@ -19,11 +19,11 @@ godot-test:
   stage: test
   before_script:
     - cd sos-game
-    # - godot --headless --editor --quit || true  # import assets
+    - godot --editor --quit # import assets
   script:
     - echo "Testing Frontend..."
     - godot --headless -s --path "$PWD" addons/gut/gut_cmdln.gd -gdir=res://test/integration -gexit
     - godot --headless -s --path "$PWD" addons/gut/gut_cmdln.gd -gdir=res://test/unit -gexit
-  only: 
+  only:
     - main
     - fix/gitlab-ci
