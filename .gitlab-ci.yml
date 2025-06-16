@@ -19,7 +19,7 @@ godot-test:
   stage: test
   before_script:
     - cd sos-game
-    - godot --editor --quit # import assets
+    - godot --headless --import --quit # import assets
   script:
     - echo "Testing Frontend..."
     - godot --headless -s addons/gut/gut_cmdln.gd -gdir=res://test/integration -gexit
