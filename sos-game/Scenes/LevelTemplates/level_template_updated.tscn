@@ -1,8 +1,9 @@
-[gd_scene load_steps=47 format=3 uid="uid://8khcuvpd750f"]
+[gd_scene load_steps=48 format=3 uid="uid://8khcuvpd750f"]
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/LevelScripts/level_script.gd" id="1_aaap5"]
 [ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://Assets/Tileset/Tileset_v2.png" id="2_spymw"]
 [ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="4_b1o1d"]
+[ext_resource type="Script" uid="uid://bgq6arkeji71t" path="res://Scripts/camera_controller.gd" id="4_s4288"]
 [ext_resource type="PackedScene" uid="uid://bxs73etkg8msh" path="res://Scenes/Dialogs/statistik_bar.tscn" id="5_pl6ql"]
 [ext_resource type="Texture2D" uid="uid://brp4ew3xqd2nv" path="res://Assets/Buttons/Button-hide.png" id="6_otpg3"]
 [ext_resource type="Texture2D" uid="uid://4rqgghfr1k30" path="res://Assets/Buttons/Button-back.png" id="6_p5gpb"]
@@ -243,11 +244,7 @@ layer_0/tile_data = PackedInt32Array(-2162748, 0, 0, -2097212, 0, 0, -2031676, 0
 [node name="Camera" type="CharacterBody2D" parent="."]
 script = ExtResource("4_b1o1d")
 
-[node name="Camera2D" type="Camera2D" parent="Camera"]
-anchor_mode = 0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera"]
-visible = false
 position = Vector2(1, -62)
 shape = SubResource("RectangleShape2D_g30sg")
 
@@ -264,13 +261,23 @@ trail_lifetime = 1.0
 trail_sections = 10
 process_material = SubResource("ParticleProcessMaterial_it70i")
 
-[node name="StatistikBar" parent="." instance=ExtResource("5_pl6ql")]
+[node name="Camera2D" type="Camera2D" parent="Camera"]
+anchor_mode = 0
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
+script = ExtResource("4_s4288")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="StatistikBar" parent="UI" instance=ExtResource("5_pl6ql")]
 offset_left = 404.0
 offset_top = 0.0
 offset_right = 1392.0
 offset_bottom = 124.0
 
-[node name="BackButton" type="TextureButton" parent="."]
+[node name="BackButton" type="TextureButton" parent="UI"]
 offset_left = 130.0
 offset_right = 262.0
 offset_bottom = 124.0
@@ -278,7 +285,7 @@ texture_normal = ExtResource("6_p5gpb")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="HideButton" type="TextureButton" parent="."]
+[node name="HideButton" type="TextureButton" parent="UI"]
 offset_left = 1210.0
 offset_right = 1342.0
 offset_bottom = 64.0
@@ -287,7 +294,7 @@ texture_normal = ExtResource("6_otpg3")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="ShowButton" type="TextureButton" parent="."]
+[node name="ShowButton" type="TextureButton" parent="UI"]
 visible = false
 offset_left = 1200.0
 offset_right = 1352.0
@@ -297,12 +304,12 @@ texture_normal = ExtResource("7_otpg3")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="DoneRestartContainer" type="Control" parent="."]
+[node name="DoneRestartContainer" type="Control" parent="UI"]
 layout_mode = 3
 anchors_preset = 0
 rotation = -0.00189047
 
-[node name="DoneButton" type="TextureButton" parent="DoneRestartContainer"]
+[node name="DoneButton" type="TextureButton" parent="UI/DoneRestartContainer"]
 layout_mode = 1
 offset_left = 1534.0
 offset_right = 1790.0
@@ -313,7 +320,7 @@ texture_disabled = ExtResource("10_rim13")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="RestartButton" type="TextureButton" parent="DoneRestartContainer"]
+[node name="RestartButton" type="TextureButton" parent="UI/DoneRestartContainer"]
 layout_mode = 0
 offset_left = 1668.0
 offset_right = 1780.0
@@ -322,7 +329,7 @@ texture_normal = ExtResource("11_ie85g")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="CoveragePopUp" type="TextureRect" parent="DoneRestartContainer"]
+[node name="CoveragePopUp" type="TextureRect" parent="UI/DoneRestartContainer"]
 visible = false
 layout_mode = 0
 offset_left = 1320.0
@@ -333,7 +340,7 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("12_gmdu1")
 script = ExtResource("13_ld5sx")
 
-[node name="HelpButton" type="TextureButton" parent="."]
+[node name="HelpButton" type="TextureButton" parent="UI"]
 offset_left = 130.0
 offset_top = 976.0
 offset_right = 262.0
@@ -342,18 +349,18 @@ texture_normal = ExtResource("14_jk7dv")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="ResultPopUp" type="Control" parent="."]
+[node name="ResultPopUp" type="Control" parent="UI"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
 
-[node name="DisableBackground" type="ColorRect" parent="ResultPopUp"]
+[node name="DisableBackground" type="ColorRect" parent="UI/ResultPopUp"]
 layout_mode = 1
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.262745, 0.262745, 0.262745, 0.784314)
 
-[node name="ResultDialog" type="TextureRect" parent="ResultPopUp"]
+[node name="ResultDialog" type="TextureRect" parent="UI/ResultPopUp"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.757
@@ -368,7 +375,7 @@ texture = ExtResource("15_otpg3")
 expand_mode = 1
 script = ExtResource("16_s4288")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ResultPopUp/ResultDialog"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/ResultPopUp/ResultDialog"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.079
@@ -385,14 +392,14 @@ scale = Vector2(0.7, 0.7)
 theme_override_constants/separation = 90
 alignment = 1
 
-[node name="ScoreLabel" type="Label" parent="ResultPopUp/ResultDialog/HBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="UI/ResultPopUp/ResultDialog/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
 theme_override_fonts/font = ExtResource("8_s4288")
 theme_override_font_sizes/font_size = 40
 text = "Score"
 
-[node name="SuccessLabel" type="Label" parent="ResultPopUp/ResultDialog/HBoxContainer"]
+[node name="SuccessLabel" type="Label" parent="UI/ResultPopUp/ResultDialog/HBoxContainer"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
@@ -400,14 +407,14 @@ theme_override_fonts/font = ExtResource("17_p231p")
 theme_override_font_sizes/font_size = 40
 text = "Success!!!"
 
-[node name="NextLevelButton" type="TextureButton" parent="ResultPopUp/ResultDialog/HBoxContainer"]
+[node name="NextLevelButton" type="TextureButton" parent="UI/ResultPopUp/ResultDialog/HBoxContainer"]
 custom_minimum_size = Vector2(450, 30)
 layout_mode = 2
 texture_normal = ExtResource("18_rim13")
 stretch_mode = 5
 script = ExtResource("19_ie85g")
 
-[node name="TryAgainButton" type="TextureButton" parent="ResultPopUp/ResultDialog/HBoxContainer"]
+[node name="TryAgainButton" type="TextureButton" parent="UI/ResultPopUp/ResultDialog/HBoxContainer"]
 visible = false
 custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
@@ -415,7 +422,7 @@ texture_normal = ExtResource("20_gmdu1")
 stretch_mode = 5
 script = ExtResource("21_ld5sx")
 
-[node name="LeftLabel" type="Label" parent="ResultPopUp/ResultDialog"]
+[node name="LeftLabel" type="Label" parent="UI/ResultPopUp/ResultDialog"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.066
@@ -439,7 +446,7 @@ autowrap_mode = 3
 clip_text = true
 metadata/_edit_group_ = true
 
-[node name="RightLabel" type="Label" parent="ResultPopUp/ResultDialog"]
+[node name="RightLabel" type="Label" parent="UI/ResultPopUp/ResultDialog"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.542
@@ -462,7 +469,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 autowrap_mode = 3
 clip_text = true
 
-[node name="RestartDialog" type="Control" parent="."]
+[node name="RestartDialog" type="Control" parent="UI"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -470,13 +477,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("16_it70i")
 
-[node name="ColorRect" type="ColorRect" parent="RestartDialog"]
+[node name="ColorRect" type="ColorRect" parent="UI/RestartDialog"]
 layout_mode = 1
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.262745, 0.262745, 0.262745, 0.784314)
 
-[node name="NinePatchRect" type="NinePatchRect" parent="RestartDialog"]
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/RestartDialog"]
 layout_mode = 0
 offset_left = 550.0
 offset_top = 360.0
@@ -484,7 +491,7 @@ offset_right = 1370.0
 offset_bottom = 740.0
 texture = ExtResource("17_vwyvl")
 
-[node name="CloseButton" type="TextureButton" parent="RestartDialog"]
+[node name="CloseButton" type="TextureButton" parent="UI/RestartDialog"]
 layout_mode = 0
 offset_left = 1252.0
 offset_top = 404.0
@@ -494,7 +501,7 @@ texture_normal = ExtResource("18_srckx")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="OkButton" type="Button" parent="RestartDialog"]
+[node name="OkButton" type="Button" parent="UI/RestartDialog"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 960.0
@@ -502,7 +509,7 @@ offset_top = 633.0
 offset_right = 1357.0
 offset_bottom = 717.0
 
-[node name="CancelButton" type="Button" parent="RestartDialog"]
+[node name="CancelButton" type="Button" parent="UI/RestartDialog"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 563.0
@@ -510,7 +517,7 @@ offset_top = 629.0
 offset_right = 960.0
 offset_bottom = 719.0
 
-[node name="BackDialog" type="Control" parent="."]
+[node name="BackDialog" type="Control" parent="UI"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -518,13 +525,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("19_rsp8e")
 
-[node name="ColorRect" type="ColorRect" parent="BackDialog"]
+[node name="ColorRect" type="ColorRect" parent="UI/BackDialog"]
 layout_mode = 1
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.262745, 0.262745, 0.262745, 0.784314)
 
-[node name="NinePatchRect" type="NinePatchRect" parent="BackDialog"]
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/BackDialog"]
 layout_mode = 0
 offset_left = 550.0
 offset_top = 320.0
@@ -532,7 +539,7 @@ offset_right = 1370.0
 offset_bottom = 700.0
 texture = ExtResource("20_b76st")
 
-[node name="CloseButton" type="TextureButton" parent="BackDialog"]
+[node name="CloseButton" type="TextureButton" parent="UI/BackDialog"]
 layout_mode = 0
 offset_left = 1252.0
 offset_top = 404.0
@@ -542,7 +549,7 @@ texture_normal = ExtResource("18_srckx")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="OkButton" type="Button" parent="BackDialog"]
+[node name="OkButton" type="Button" parent="UI/BackDialog"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 961.0
@@ -550,7 +557,7 @@ offset_top = 591.0
 offset_right = 1356.0
 offset_bottom = 677.0
 
-[node name="CancelButton" type="Button" parent="BackDialog"]
+[node name="CancelButton" type="Button" parent="UI/BackDialog"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 561.0
@@ -558,19 +565,19 @@ offset_top = 588.0
 offset_right = 959.0
 offset_bottom = 677.0
 
-[node name="HelpDialog" type="Control" parent="."]
+[node name="HelpDialog" type="Control" parent="UI"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("21_dhoqh")
 
-[node name="ColorRect" type="ColorRect" parent="HelpDialog"]
+[node name="ColorRect" type="ColorRect" parent="UI/HelpDialog"]
 layout_mode = 1
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.262745, 0.262745, 0.262745, 0.784314)
 
-[node name="NinePatchRect" type="NinePatchRect" parent="HelpDialog"]
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/HelpDialog"]
 layout_mode = 1
 offset_left = 328.0
 offset_top = 210.0
@@ -578,7 +585,7 @@ offset_right = 1592.0
 offset_bottom = 890.0
 texture = ExtResource("22_5dk5o")
 
-[node name="CloseButton" type="Button" parent="HelpDialog"]
+[node name="CloseButton" type="Button" parent="UI/HelpDialog"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 1474.0
@@ -586,7 +593,7 @@ offset_top = 254.0
 offset_right = 1538.0
 offset_bottom = 318.0
 
-[node name="ShowOptButton" type="TextureButton" parent="."]
+[node name="ShowOptButton" type="TextureButton" parent="UI"]
 visible = false
 offset_left = 472.0
 offset_top = 664.0
@@ -594,7 +601,7 @@ offset_right = 856.0
 offset_bottom = 724.0
 texture_normal = ExtResource("23_5k26x")
 
-[node name="HideOptButton" type="TextureButton" parent="."]
+[node name="HideOptButton" type="TextureButton" parent="UI"]
 visible = false
 offset_left = 758.0
 offset_top = 48.0
@@ -602,19 +609,19 @@ offset_right = 1162.0
 offset_bottom = 128.0
 texture_normal = ExtResource("24_0sf4p")
 
-[node name="DoneDialog" type="Control" parent="."]
+[node name="DoneDialog" type="Control" parent="UI"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("25_28ldr")
 
-[node name="ColorRect" type="ColorRect" parent="DoneDialog"]
+[node name="ColorRect" type="ColorRect" parent="UI/DoneDialog"]
 layout_mode = 1
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.262745, 0.262745, 0.262745, 0.784314)
 
-[node name="NinePatchRect" type="NinePatchRect" parent="DoneDialog"]
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/DoneDialog"]
 layout_mode = 0
 offset_left = 550.0
 offset_top = 360.0
@@ -622,7 +629,7 @@ offset_right = 1370.0
 offset_bottom = 740.0
 texture = ExtResource("26_iqry0")
 
-[node name="CloseButton" type="TextureButton" parent="DoneDialog"]
+[node name="CloseButton" type="TextureButton" parent="UI/DoneDialog"]
 layout_mode = 0
 offset_left = 1252.0
 offset_top = 404.0
@@ -632,7 +639,7 @@ texture_normal = ExtResource("18_srckx")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="OkButton" type="Button" parent="DoneDialog"]
+[node name="OkButton" type="Button" parent="UI/DoneDialog"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 960.0
@@ -640,7 +647,7 @@ offset_top = 628.0
 offset_right = 1357.0
 offset_bottom = 719.0
 
-[node name="CancelButton" type="Button" parent="DoneDialog"]
+[node name="CancelButton" type="Button" parent="UI/DoneDialog"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 562.0
@@ -648,25 +655,25 @@ offset_top = 629.0
 offset_right = 959.0
 offset_bottom = 718.0
 
-[connection signal="pressed" from="BackButton" to="BackDialog" method="_on_back_button_pressed"]
-[connection signal="pressed" from="HideButton" to="." method="_on_hide_button_pressed"]
-[connection signal="pressed" from="ShowButton" to="." method="_on_show_button_pressed"]
-[connection signal="mouse_entered" from="DoneRestartContainer/DoneButton" to="DoneRestartContainer/CoveragePopUp" method="_on_done_button_mouse_entered"]
-[connection signal="mouse_exited" from="DoneRestartContainer/DoneButton" to="DoneRestartContainer/CoveragePopUp" method="_on_done_button_mouse_exited"]
-[connection signal="pressed" from="DoneRestartContainer/DoneButton" to="." method="_on_done_button_pressed"]
-[connection signal="pressed" from="DoneRestartContainer/RestartButton" to="RestartDialog" method="_on_restart_button_pressed"]
-[connection signal="pressed" from="HelpButton" to="HelpDialog" method="_on_help_button_pressed"]
-[connection signal="pressed" from="ResultPopUp/ResultDialog/HBoxContainer/NextLevelButton" to="ResultPopUp/ResultDialog/HBoxContainer/NextLevelButton" method="_on_pressed"]
-[connection signal="pressed" from="ResultPopUp/ResultDialog/HBoxContainer/TryAgainButton" to="ResultPopUp/ResultDialog/HBoxContainer/TryAgainButton" method="_on_pressed"]
-[connection signal="pressed" from="RestartDialog/CloseButton" to="RestartDialog" method="_on_close_button_pressed"]
-[connection signal="pressed" from="RestartDialog/OkButton" to="RestartDialog" method="_on_ok_button_pressed"]
-[connection signal="pressed" from="RestartDialog/CancelButton" to="RestartDialog" method="_on_cancel_button_pressed"]
-[connection signal="pressed" from="BackDialog/CloseButton" to="BackDialog" method="_on_close_button_pressed"]
-[connection signal="pressed" from="BackDialog/OkButton" to="BackDialog" method="_on_ok_button_pressed"]
-[connection signal="pressed" from="BackDialog/CancelButton" to="BackDialog" method="_on_cancel_button_pressed"]
-[connection signal="pressed" from="HelpDialog/CloseButton" to="HelpDialog" method="_on_close_button_pressed"]
-[connection signal="pressed" from="ShowOptButton" to="." method="_on_show_opt_button_pressed"]
-[connection signal="pressed" from="HideOptButton" to="." method="_on_hide_opt_button_pressed"]
-[connection signal="pressed" from="DoneDialog/CloseButton" to="DoneDialog" method="_on_close_button_pressed"]
-[connection signal="pressed" from="DoneDialog/OkButton" to="." method="_on_done_ok_button_pressed"]
-[connection signal="pressed" from="DoneDialog/CancelButton" to="DoneDialog" method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="UI/BackButton" to="UI/BackDialog" method="_on_back_button_pressed"]
+[connection signal="pressed" from="UI/HideButton" to="." method="_on_hide_button_pressed"]
+[connection signal="pressed" from="UI/ShowButton" to="." method="_on_show_button_pressed"]
+[connection signal="mouse_entered" from="UI/DoneRestartContainer/DoneButton" to="UI/DoneRestartContainer/CoveragePopUp" method="_on_done_button_mouse_entered"]
+[connection signal="mouse_exited" from="UI/DoneRestartContainer/DoneButton" to="UI/DoneRestartContainer/CoveragePopUp" method="_on_done_button_mouse_exited"]
+[connection signal="pressed" from="UI/DoneRestartContainer/DoneButton" to="." method="_on_done_button_pressed"]
+[connection signal="pressed" from="UI/DoneRestartContainer/RestartButton" to="UI/RestartDialog" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UI/HelpButton" to="UI/HelpDialog" method="_on_help_button_pressed"]
+[connection signal="pressed" from="UI/ResultPopUp/ResultDialog/HBoxContainer/NextLevelButton" to="UI/ResultPopUp/ResultDialog/HBoxContainer/NextLevelButton" method="_on_pressed"]
+[connection signal="pressed" from="UI/ResultPopUp/ResultDialog/HBoxContainer/TryAgainButton" to="UI/ResultPopUp/ResultDialog/HBoxContainer/TryAgainButton" method="_on_pressed"]
+[connection signal="pressed" from="UI/RestartDialog/CloseButton" to="UI/RestartDialog" method="_on_close_button_pressed"]
+[connection signal="pressed" from="UI/RestartDialog/OkButton" to="UI/RestartDialog" method="_on_ok_button_pressed"]
+[connection signal="pressed" from="UI/RestartDialog/CancelButton" to="UI/RestartDialog" method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="UI/BackDialog/CloseButton" to="UI/BackDialog" method="_on_close_button_pressed"]
+[connection signal="pressed" from="UI/BackDialog/OkButton" to="UI/BackDialog" method="_on_ok_button_pressed"]
+[connection signal="pressed" from="UI/BackDialog/CancelButton" to="UI/BackDialog" method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="UI/HelpDialog/CloseButton" to="UI/HelpDialog" method="_on_close_button_pressed"]
+[connection signal="pressed" from="UI/ShowOptButton" to="." method="_on_show_opt_button_pressed"]
+[connection signal="pressed" from="UI/HideOptButton" to="." method="_on_hide_opt_button_pressed"]
+[connection signal="pressed" from="UI/DoneDialog/CloseButton" to="UI/DoneDialog" method="_on_close_button_pressed"]
+[connection signal="pressed" from="UI/DoneDialog/OkButton" to="." method="_on_done_ok_button_pressed"]
+[connection signal="pressed" from="UI/DoneDialog/CancelButton" to="UI/DoneDialog" method="_on_cancel_button_pressed"]
