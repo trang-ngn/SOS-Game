@@ -323,12 +323,11 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="CoveragePopUp" type="TextureRect" parent="DoneRestartContainer"]
-visible = false
 layout_mode = 0
-offset_left = 158.537
-offset_top = -283.701
-offset_right = 903.537
-offset_bottom = -148.701
+offset_left = 1320.0
+offset_top = 110.0
+offset_right = 2065.0
+offset_bottom = 245.0
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("12_gmdu1")
 script = ExtResource("13_ld5sx")
