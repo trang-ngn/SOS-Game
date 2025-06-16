@@ -22,6 +22,7 @@ func _ready() -> void:
 	#$ShowOptButton.visible = false
 	#$HideOptButton.visible = false
 	#$ResultPopUp.visible = false
+	$ShowButton.visible = false
 	$DoneRestartContainer/DoneButton.disabled = true
 	#$DoneRestartContainer/CoveragePopUp.visible = false
 
@@ -106,16 +107,6 @@ func _on_done_ok_button_pressed() -> void:
 	
 
 
-
-
-func _on_hide_button_toggled(is_hidden: bool) -> void:
-	$HideButton/HideLabel.text = "Show" if is_hidden else "Hide"
-	$StatistikBar.visible = not is_hidden
-	$HelpButton.visible = not is_hidden
-	$BackButton.visible = not is_hidden
-	$DoneRestartContainer.visible = not is_hidden
-
-
 #show-results	
 func opt_highlight() -> void:
 	for station in stations:
@@ -155,3 +146,21 @@ func _on_hide_opt_button_pressed() -> void:
 	$HideButton.visible = true
 	#hide self
 	$HideOptButton.visible = false
+
+
+func _on_hide_button_pressed() -> void:
+	$HideButton.visible = false
+	$ShowButton.visible = true
+	$StatistikBar.visible = false
+	$HelpButton.visible = false
+	$BackButton.visible = false
+	$DoneRestartContainer.visible = false
+
+
+func _on_show_button_pressed() -> void:
+	$HideButton.visible = true
+	$ShowButton.visible = false
+	$StatistikBar.visible = true
+	$HelpButton.visible = true
+	$BackButton.visible = true
+	$DoneRestartContainer.visible = true

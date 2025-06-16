@@ -1,11 +1,12 @@
-[gd_scene load_steps=46 format=3 uid="uid://8khcuvpd750f"]
+[gd_scene load_steps=47 format=3 uid="uid://8khcuvpd750f"]
 
 [ext_resource type="Script" uid="uid://ohrrbcjy18tq" path="res://Scripts/LevelScripts/level_script.gd" id="1_aaap5"]
 [ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://Assets/Tileset/Tileset_v2.png" id="2_spymw"]
 [ext_resource type="Script" uid="uid://cie3h3o0ehln3" path="res://Scripts/camera_movement.gd" id="4_b1o1d"]
 [ext_resource type="PackedScene" uid="uid://bxs73etkg8msh" path="res://Scenes/Dialogs/statistik_bar.tscn" id="5_pl6ql"]
+[ext_resource type="Texture2D" uid="uid://brp4ew3xqd2nv" path="res://Assets/Buttons/Button-hide.png" id="6_otpg3"]
 [ext_resource type="Texture2D" uid="uid://4rqgghfr1k30" path="res://Assets/Buttons/Button-back.png" id="6_p5gpb"]
-[ext_resource type="Texture2D" uid="uid://drjlj1jgbcpqf" path="res://Assets/Buttons/Button-green.png" id="7_otpg3"]
+[ext_resource type="Texture2D" uid="uid://dpwf0pamagijn" path="res://Assets/Buttons/Button-show.png" id="7_otpg3"]
 [ext_resource type="FontFile" uid="uid://c8f1xkqvr2h7a" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="8_s4288"]
 [ext_resource type="Texture2D" uid="uid://bo35yi8jvcfwy" path="res://Assets/Buttons/Button-done-enabled.png" id="9_p231p"]
 [ext_resource type="Texture2D" uid="uid://dov56crmnobk7" path="res://Assets/Buttons/Button-done-disabled.png" id="10_rim13"]
@@ -264,64 +265,48 @@ trail_sections = 10
 process_material = SubResource("ParticleProcessMaterial_it70i")
 
 [node name="StatistikBar" parent="." instance=ExtResource("5_pl6ql")]
-offset_left = 649.0
+offset_left = 404.0
 offset_top = 0.0
-offset_right = 1264.0
-offset_bottom = 104.0
+offset_right = 1392.0
+offset_bottom = 124.0
 
 [node name="BackButton" type="TextureButton" parent="."]
-offset_left = 328.0
-offset_top = 3.0
-offset_right = 433.0
-offset_bottom = 98.0
+offset_left = 130.0
+offset_right = 262.0
+offset_bottom = 124.0
 texture_normal = ExtResource("6_p5gpb")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="HideButton" type="TextureButton" parent="."]
-offset_left = 1146.0
-offset_top = 4.0
-offset_right = 1238.0
-offset_bottom = 56.0
+offset_left = 1210.0
+offset_right = 1342.0
+offset_bottom = 64.0
+toggle_mode = true
+texture_normal = ExtResource("6_otpg3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ShowButton" type="TextureButton" parent="."]
+visible = false
+offset_left = 1200.0
+offset_right = 1352.0
+offset_bottom = 84.0
 toggle_mode = true
 texture_normal = ExtResource("7_otpg3")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="HideLabel" type="Label" parent="HideButton"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.098
-anchor_top = 0.173
-anchor_right = 0.897
-anchor_bottom = 0.673
-offset_left = -0.0160007
-offset_top = 0.00399971
-offset_right = 73.476
-offset_bottom = 26.004
-scale = Vector2(0.5, 0.5)
-theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
-theme_override_fonts/font = ExtResource("8_s4288")
-theme_override_font_sizes/font_size = 40
-text = "Hide"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="DoneRestartContainer" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 966.0
-offset_top = 376.0
-offset_right = 966.0
-offset_bottom = 376.0
 rotation = -0.00189047
 
 [node name="DoneButton" type="TextureButton" parent="DoneRestartContainer"]
-layout_mode = 0
-offset_left = 407.704
-offset_top = -371.867
-offset_right = 599.704
-offset_bottom = -287.867
+layout_mode = 1
+offset_left = 1534.0
+offset_right = 1790.0
+offset_bottom = 124.0
 disabled = true
 texture_normal = ExtResource("9_p231p")
 texture_disabled = ExtResource("10_rim13")
@@ -330,10 +315,9 @@ stretch_mode = 0
 
 [node name="RestartButton" type="TextureButton" parent="DoneRestartContainer"]
 layout_mode = 0
-offset_left = 505.0
-offset_top = -372.0
-offset_right = 599.0
-offset_bottom = -288.0
+offset_left = 1668.0
+offset_right = 1780.0
+offset_bottom = 104.0
 texture_normal = ExtResource("11_ie85g")
 ignore_texture_size = true
 stretch_mode = 0
@@ -350,10 +334,10 @@ texture = ExtResource("12_gmdu1")
 script = ExtResource("13_ld5sx")
 
 [node name="HelpButton" type="TextureButton" parent="."]
-offset_left = 256.0
-offset_top = 992.0
-offset_right = 360.0
-offset_bottom = 1075.0
+offset_left = 130.0
+offset_top = 976.0
+offset_right = 262.0
+offset_bottom = 1080.0
 texture_normal = ExtResource("14_jk7dv")
 ignore_texture_size = true
 stretch_mode = 0
@@ -725,7 +709,8 @@ offset_top = 61.0
 offset_bottom = 129.0
 
 [connection signal="pressed" from="BackButton" to="BackDialog" method="_on_back_button_pressed"]
-[connection signal="toggled" from="HideButton" to="." method="_on_hide_button_toggled"]
+[connection signal="pressed" from="HideButton" to="." method="_on_hide_button_pressed"]
+[connection signal="pressed" from="ShowButton" to="." method="_on_show_button_pressed"]
 [connection signal="mouse_entered" from="DoneRestartContainer/DoneButton" to="DoneRestartContainer/CoveragePopUp" method="_on_done_button_mouse_entered"]
 [connection signal="mouse_exited" from="DoneRestartContainer/DoneButton" to="DoneRestartContainer/CoveragePopUp" method="_on_done_button_mouse_exited"]
 [connection signal="pressed" from="DoneRestartContainer/DoneButton" to="." method="_on_done_button_pressed"]
