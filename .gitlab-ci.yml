@@ -15,15 +15,15 @@ backend-test:
     - fix/gitlab-ci
 
 godot-test:
-  image: barichello/godot-ci:latest
+  image: barichello/godot-ci:4.4
   stage: test
   before_script:
     - cd sos-game
     - godot --editor --quit # import assets
   script:
     - echo "Testing Frontend..."
-    - godot --headless -s --path "$PWD" addons/gut/gut_cmdln.gd -gdir=res://test/integration -gexit
-    - godot --headless -s --path "$PWD" addons/gut/gut_cmdln.gd -gdir=res://test/unit -gexit
+    - godot --headless -s addons/gut/gut_cmdln.gd -gdir=res://test/integration -gexit
+    - godot --headless -s addons/gut/gut_cmdln.gd -gdir=res://test/unit -gexit
   only:
     - main
     - fix/gitlab-ci
