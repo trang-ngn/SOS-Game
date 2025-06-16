@@ -1,0 +1,37 @@
+# image: barichello/godot-ci:latest
+
+stages:
+  - test
+
+backend-test:
+  image: python:3.10
+  stage: test
+  script:
+    - cd backend
+    - touch testci.txt
+    - pip install -r requirements.txt
+  artifacts:
+    - paths:
+      - backend
+
+# stages:
+#   - build
+#   - test
+
+# # jobs
+# create-file: # job's name
+#   image: alpine # will be destroyed after this job is finished
+#   stage: build
+#   script:
+#     - echo "Building"
+#     - mkdir build
+#     - touch build/somefile.txt
+#   artifacts: 
+#     paths:
+#       - build # store intermediate to later jobs
+    
+# test_file:
+#   image: alpine # new docker image
+#   stage: test
+#   script:
+#     - test -f build/somefile.txt #check if file exists
