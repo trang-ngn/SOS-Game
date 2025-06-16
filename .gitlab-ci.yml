@@ -10,9 +10,9 @@ backend-test:
   script:
     - echo "Testing Backend..."
     - python -m pytest
-  only:
-    - main
-    - fix/gitlab-ci
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: $CI_COMMIT_BRANCH == "fix/gitlab-ci" # fix or remove later
 
 godot-test:
   image: barichello/godot-ci:4.4
@@ -24,6 +24,6 @@ godot-test:
     - echo "Testing Frontend..."
     - godot --headless -s addons/gut/gut_cmdln.gd -gdir=res://test/integration -gexit
     - godot --headless -s addons/gut/gut_cmdln.gd -gdir=res://test/unit -gexit
-  only:
-    - main
-    - fix/gitlab-ci
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: $CI_COMMIT_BRANCH == "fix/gitlab-ci" # fix or remove later
