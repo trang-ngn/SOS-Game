@@ -1,5 +1,3 @@
-# image: barichello/godot-ci:latest
-
 stages:
   - test
 
@@ -12,37 +10,20 @@ backend-test:
   script:
     - echo "Testing Backend..."
     - python -m pytest
-  only: 
-    - main
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: $CI_COMMIT_BRANCH == "fix/gitlab-ci" # fix or remove later
 
 godot-test:
-  image: barichello/godot-ci:latest
+  image: barichello/godot-ci:4.4
   stage: test
+  before_script:
+    - cd sos-game
+    - godot --headless --import --quit # import assets
   script:
     - echo "Testing Frontend..."
-    - godot --headless -s --path "$PWD" addons/gut/gut_cmdln.gd -gdir=res://test/integration -gexit
-    - godot --headless -s --path "$PWD" addons/gut/gut_cmdln.gd -gdir=res://test/unit -gexit
-  only: 
-    - main
-
-# stages:
-#   - build
-#   - test
-
-# # jobs
-# create-file: # job's name
-#   image: alpine # will be destroyed after this job is finished
-#   stage: build
-#   script:
-#     - echo "Building"
-#     - mkdir build
-#     - touch build/somefile.txt
-#   artifacts: 
-#     paths:
-#       - build # store intermediate to later jobs
-    
-# test_file:
-#   image: alpine # new docker image
-#   stage: test
-#   script:
-#     - test -f build/somefile.txt #check if file exists
+    - godot --headless -s addons/gut/gut_cmdln.gd -gdir=res://test/integration -gexit
+    - godot --headless -s addons/gut/gut_cmdln.gd -gdir=res://test/unit -gexit
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: $CI_COMMIT_BRANCH == "fix/gitlab-ci" # fix or remove later
