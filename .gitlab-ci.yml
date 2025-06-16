@@ -18,7 +18,8 @@ godot-test:
   image: barichello/godot-ci:latest
   stage: test
   before_script:
-    - godot --headless --editor --quit || true  # import assets
+    - cd sos-game
+    # - godot --headless --editor --quit || true  # import assets
   script:
     - echo "Testing Frontend..."
     - godot --headless -s --path "$PWD" addons/gut/gut_cmdln.gd -gdir=res://test/integration -gexit
