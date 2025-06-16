@@ -1,5 +1,3 @@
-# image: barichello/godot-ci:latest
-
 stages:
   - test
 
@@ -18,31 +16,11 @@ backend-test:
 godot-test:
   image: barichello/godot-ci:latest
   stage: test
+  before_script:
+    - godot --headless --editor --quit || true  # import assets
   script:
     - echo "Testing Frontend..."
     - godot --headless -s --path "$PWD" addons/gut/gut_cmdln.gd -gdir=res://test/integration -gexit
     - godot --headless -s --path "$PWD" addons/gut/gut_cmdln.gd -gdir=res://test/unit -gexit
   only: 
     - main
-
-# stages:
-#   - build
-#   - test
-
-# # jobs
-# create-file: # job's name
-#   image: alpine # will be destroyed after this job is finished
-#   stage: build
-#   script:
-#     - echo "Building"
-#     - mkdir build
-#     - touch build/somefile.txt
-#   artifacts: 
-#     paths:
-#       - build # store intermediate to later jobs
-    
-# test_file:
-#   image: alpine # new docker image
-#   stage: test
-#   script:
-#     - test -f build/somefile.txt #check if file exists
