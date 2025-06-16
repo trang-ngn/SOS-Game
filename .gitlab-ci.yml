@@ -12,6 +12,7 @@ backend-test:
     - python -m pytest
   only: 
     - main
+    - fix/gitlab-ci
 
 godot-test:
   image: barichello/godot-ci:latest
@@ -24,3 +25,4 @@ godot-test:
     - godot --headless -s --path "$PWD" addons/gut/gut_cmdln.gd -gdir=res://test/unit -gexit
   only: 
     - main
+    - fix/gitlab-ci
