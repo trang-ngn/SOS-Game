@@ -4,7 +4,7 @@ func _ready():
 	visible = false  
 
 func _on_ok_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/start.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/start.tscn")
 
 
 

@@ -1804,9 +1804,6 @@ trail_lifetime = 1.0
 trail_sections = 10
 process_material = SubResource("ParticleProcessMaterial_7hll7")
 
-[node name="DisableBackground" parent="ResultPopUp" index="0"]
-color = Color(0.262745, 0.262745, 0.262745, 0.784314)
-
 [connection signal="button_up" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_button_up"]
 [connection signal="mouse_entered" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_exited"]

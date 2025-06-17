@@ -1,19 +1,22 @@
 class_name Level
 extends Node2D
 
-#var solution: Array[bool] = [false, false, true, true, true, true, false]
+# Var solution: Array[bool] = [false, false, true, true, true, true, false]
 var picked_stations: Array[bool] = []
 var total_cost: float = 0.0
 var all_houses_covered: bool = false
 var num_covered_houses: int = 0
 var num_picked_stations: int = 0
 
-#make sure the houses and station are in order
+# Make sure the houses and station are in order
 var stations: Array[RescueStation] = []
 var houses: Array[House] = []
 
-#show-results
+# Show-results
 var optimal_solution: Solution = null
+
+# Camera
+var camera: Camera2D
 
 func _ready() -> void:
 	initialize_arrays()
@@ -22,9 +25,11 @@ func _ready() -> void:
 	#$ShowOptButton.visible = false
 	#$HideOptButton.visible = false
 	#$ResultPopUp.visible = false
-	$ShowButton.visible = false
-	$DoneRestartContainer/DoneButton.disabled = true
+	$UI/ShowButton.visible = false
+	$UI/DoneRestartContainer/DoneButton.disabled = true
 	#$DoneRestartContainer/CoveragePopUp.visible = false
+	camera = $Camera2D
+	_setup_camera()
 
 
 func initialize_arrays() -> void:
@@ -53,9 +58,9 @@ func update_houses_covered() -> void: #check if all houses is covered
 	num_covered_houses = num
 	all_houses_covered = num_covered_houses == len(houses)
 	
-	#enable Done when all_houses_covered
-	$DoneRestartContainer/CoveragePopUp.all_house_covered = all_houses_covered
-	$DoneRestartContainer/DoneButton.disabled = not all_houses_covered
+	# Enable Done when all_houses_covered
+	$UI/DoneRestartContainer/CoveragePopUp.all_house_covered = all_houses_covered
+	$UI/DoneRestartContainer/DoneButton.disabled = not all_houses_covered
 
 
 func update_picked_stations():
@@ -76,16 +81,16 @@ func update_picked_stations():
 	update_statistik()
 
 func update_statistik():
-	$StatistikBar.update_number(num_picked_stations, len(stations))
-	$StatistikBar.update_coverage(num_covered_houses, len(houses))
-	$StatistikBar.update_cost(total_cost)
+	$UI/StatistikBar.update_number(num_picked_stations, len(stations))
+	$UI/StatistikBar.update_coverage(num_covered_houses, len(houses))
+	$UI/StatistikBar.update_cost(total_cost)
 
 func _on_done_button_pressed() -> void:
-	$DoneDialog.visible = true;
+	$UI/DoneDialog.visible = true;
 
 
 func _on_done_ok_button_pressed() -> void:
-	$DoneDialog.visible = false;
+	$UI/DoneDialog.visible = false;
 	update_picked_stations()
 	#var optimal_solution: Solution = await get_optimal_solution()
 	var i: Instance = Instance.new()
@@ -101,13 +106,13 @@ func _on_done_ok_button_pressed() -> void:
 		return 
 	print("Request successed!")
 	
-	$ResultPopUp/ResultDialog.show_results(optimal_solution, picked_stations, total_cost, all_houses_covered)
-	$ResultPopUp.visible = true
-	$ShowOptButton.visible = true
+	$UI/ResultPopUp/ResultDialog.show_results(optimal_solution, picked_stations, total_cost, all_houses_covered)
+	$UI/ResultPopUp.visible = true
+	$UI/ShowOptButton.visible = true
 	
 
 
-#show-results	
+# Show-results	
 func opt_highlight() -> void:
 	for station in stations:
 		var idx = int(station.name)
@@ -119,48 +124,56 @@ func opt_highlight() -> void:
 			station.set_optimal(false)
 
 
-#show-results
+# Show-results
 func _on_show_opt_button_pressed() -> void:
 	if optimal_solution != null:
-		opt_highlight() #show-results
-	$ResultPopUp.visible = false
-	$ShowOptButton.visible = false
-	#hide all buttons
-	$StatistikBar.visible = false
-	$HelpButton.visible = false
-	$BackButton.visible = false
-	$DoneRestartContainer.visible = false
-	$HideButton.visible = false
-	#show hideOptButton
-	$HideOptButton.visible = true
+		opt_highlight() # Show-results
+	$UI/ResultPopUp.visible = false
+	$UI/ShowOptButton.visible = false
+	
+	# Hide all buttons
+	$UI/StatistikBar.visible = false
+	$UI/HelpButton.visible = false
+	$UI/BackButton.visible = false
+	$UI/DoneRestartContainer.visible = false
+	$UI/HideButton.visible = false
+	
+	# Show hideOptButton
+	$UI/HideOptButton.visible = true
 
-#show-results
+# Show-results
 func _on_hide_opt_button_pressed() -> void:
-	$ResultPopUp.visible = true
-	$ShowOptButton.visible = true
-	#show all buttons
-	$StatistikBar.visible = true
-	$HelpButton.visible = true
-	$BackButton.visible = true
-	$DoneRestartContainer.visible = true
-	$HideButton.visible = true
-	#hide self
-	$HideOptButton.visible = false
+	$UI/ResultPopUp.visible = true
+	$UI/ShowOptButton.visible = true
+	# Show all buttons
+	$UI/StatistikBar.visible = true
+	$UI/HelpButton.visible = true
+	$UI/BackButton.visible = true
+	$UI/DoneRestartContainer.visible = true
+	$UI/HideButton.visible = true
+	# Hide self
+	$UI/HideOptButton.visible = false
 
 
 func _on_hide_button_pressed() -> void:
-	$HideButton.visible = false
-	$ShowButton.visible = true
-	$StatistikBar.visible = false
-	$HelpButton.visible = false
-	$BackButton.visible = false
-	$DoneRestartContainer.visible = false
+	$UI/HideButton.visible = false
+	$UI/StatistikBar.visible = false
+	$UI/HelpButton.visible = false
+	$UI/BackButton.visible = false
+	$UI/DoneRestartContainer.visible = false
+	$UI/ShowButton.visible = true
 
 
 func _on_show_button_pressed() -> void:
-	$HideButton.visible = true
-	$ShowButton.visible = false
-	$StatistikBar.visible = true
-	$HelpButton.visible = true
-	$BackButton.visible = true
-	$DoneRestartContainer.visible = true
+	$UI/HideButton.visible = true
+	$UI/ShowButton.visible = false
+	$UI/StatistikBar.visible = true
+	$UI/HelpButton.visible = true
+	$UI/BackButton.visible = true
+	$UI/DoneRestartContainer.visible = true
+	
+
+func _setup_camera():	
+	# Center camera on display origin
+	camera.position = Vector2.ZERO
+	camera.zoom = Vector2(1, 1) 
