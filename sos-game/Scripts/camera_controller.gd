@@ -6,7 +6,6 @@
 extends Camera2D
 
 # Config. variables (gladly tinker with them)
-
 @export var zoom_speed: float = 1.05
 @export var min_zoom: float = 0.5
 @export var max_zoom: float = 3.0
@@ -66,7 +65,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		# We move the camera by the amount the mouse moved (event.relative).
 		# importantly, we DIVIDE by the current zoom level. This makes the panning feel
 		# consistent: when you're zoomed in (e.g., zoom.x = 0.5), the world moves faster.
-		# When you're zoomed out (e.g., zoom.x = 2.0), the world moves slower.
+		# When you're zoomed out (e.g., zoom.x = 2.0), the world moves slower. 
+		#TODO: panning is still very fast when zoomed in and slow when out.
 		target_position -= event.relative * pan_sensitivity * zoom.x
 
 	# Check for trackpad input

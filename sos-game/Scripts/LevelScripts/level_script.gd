@@ -28,7 +28,7 @@ func _ready() -> void:
 	$UI/ShowButton.visible = false
 	$UI/DoneRestartContainer/DoneButton.disabled = true
 	#$DoneRestartContainer/CoveragePopUp.visible = false
-	camera = $Camera/Camera2D
+	camera = $Camera2D
 	_setup_camera()
 
 
