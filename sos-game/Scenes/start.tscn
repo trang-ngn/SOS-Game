@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://dhspi27r0u7kl" path="res://Scripts/Buttons/button_sandbox.gd" id="5_o3wvq"]
 [ext_resource type="Texture2D" uid="uid://osm55giheu7s" path="res://Assets/Buttons/Button-help.png" id="6_pg4io"]
 [ext_resource type="Texture2D" uid="uid://cgxd2tb7s5oqi" path="res://Assets/Buttons/Button-Info.png" id="7_iceld"]
-[ext_resource type="PackedScene" uid="uid://bhahj3sfha8xs" path="res://Scenes/Dialogs/help_dialog.tscn" id="8_iceld"]
+[ext_resource type="PackedScene" uid="uid://nknj662mngce" path="res://Scenes/Dialogs/help_dialog.tscn" id="8_iceld"]
 
 [node name="StartMenu" type="Node2D"]
 

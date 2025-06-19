@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bko038lk4tkn5"]
+
+[ext_resource type="Script" uid="uid://dda24cx7xxmwv" path="res://Scripts/SanboxScripts/delete_object.gd" id="1_ubms3"]
+[ext_resource type="Texture2D" uid="uid://hub27jtpuyaf" path="res://Assets/Cursor/delete_object_2.png" id="2_lxp12"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a31w4"]
+size = Vector2(32, 32)
+
+[node name="ObjectsDeleter" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_ubms3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a31w4")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_lxp12")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
