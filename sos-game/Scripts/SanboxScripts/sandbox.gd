@@ -80,8 +80,7 @@ func _on_cost_text_changed(new_text: String) -> void:
 	update_float_input(cost_input, new_text)
 
 func _on_radius_text_changed(new_text: String) -> void:
-	update_float_input(radius_input, new_text)
-	
+	radius_input.text = filter_float_input(new_text)	
 	if editing_station:
 		var formatted = new_text.strip_edges().replace(",", ".")
 		var value = formatted.to_float()
@@ -145,13 +144,26 @@ func _on_radius_submitted(text: String) -> void:
 		switch_mode(MODE.DEFAULT)
 
 func edit_existing_station(station: StationSandbox) -> void:
+	if editing_station and editing_station != station:
+		hide_radius(editing_station)
+	
 	editing_station = station
 	current_object = null
 	switch_mode(MODE.DEFAULT)
+	
+	station.set_radius(station.get_current_radius())
+	
 	show_cost_input()
+	
+	var radius = editing_station.get_current_radius()
+	radius_input.text = format_float(radius)
+	
+	editing_station.set_radius(radius)
 
-#func exit_editing_station(station: StationSandbox) -> void:
-#	editing_station = null
+func format_float(value: float) -> String:
+	if value == int(value):
+		return str(int(value))
+	return str(value)
 
 func _process(delta: float) -> void:
 	if (current_mode == MODE.BUILD or current_mode == MODE.DELETE) and current_object != null:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dyukcm048v2c4"]
 
 [ext_resource type="Texture2D" uid="uid://bwv35qbu4gaat" path="res://Assets/Dialogs/SandboxStatistikBar.png" id="1_n8tcy"]
-[ext_resource type="Script" uid="uid://mv5dcw4e1lfa" path="res://sandbox_statistik_bar.gd" id="2_jq16d"]
+[ext_resource type="Script" path="res://sandbox_statistik_bar.gd" id="2_jq16d"]
 [ext_resource type="FontFile" uid="uid://c8f1xkqvr2h7a" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="3_4hwwl"]
 
 [node name="SandboxStatistikBar" type="TextureRect"]

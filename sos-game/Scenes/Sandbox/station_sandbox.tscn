@@ -16,6 +16,7 @@ radius = 13.2673
 script = ExtResource("1_w60pj")
 
 [node name="Plot" type="Button" parent="."]
+z_index = 2
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -33,6 +34,7 @@ position = Vector2(-1.90735e-06, 3.5)
 shape = SubResource("RectangleShape2D_nfayr")
 
 [node name="Design" type="Control" parent="."]
+z_index = 2
 layout_mode = 3
 anchors_preset = 0
 offset_top = -12.0

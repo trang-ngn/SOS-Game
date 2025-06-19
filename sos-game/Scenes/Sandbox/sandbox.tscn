@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://ixfakxeau86w" path="res://Scripts/SanboxScripts/default_object.gd" id="4_aox5q"]
 [ext_resource type="PackedScene" uid="uid://bxs73etkg8msh" path="res://Scenes/Dialogs/statistik_bar.tscn" id="4_qa0nj"]
 [ext_resource type="Texture2D" uid="uid://dgux3ahvku82b" path="res://Assets/Buttons/DeleteButton.png" id="4_qby88"]
-[ext_resource type="Script" uid="uid://c1chy6r7tg00v" path="res://Scenes/Sandbox/ui.gd" id="5_8lgmn"]
+[ext_resource type="Script" path="res://Scenes/Sandbox/ui.gd" id="5_8lgmn"]
 [ext_resource type="Texture2D" uid="uid://drjlj1jgbcpqf" path="res://Assets/Buttons/Button-green.png" id="5_jdkil"]
 [ext_resource type="Script" uid="uid://dda24cx7xxmwv" path="res://Scripts/SanboxScripts/delete_object.gd" id="5_qee5c"]
 [ext_resource type="Texture2D" uid="uid://hub27jtpuyaf" path="res://Assets/Cursor/delete_object_2.png" id="6_0r1v2"]

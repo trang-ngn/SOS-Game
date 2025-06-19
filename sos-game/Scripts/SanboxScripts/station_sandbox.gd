@@ -12,6 +12,7 @@ class_name StationSandbox
 
 var station_number: int = 0
 var station_cost: int = 0
+var radius_value: float = 10
 var design_index: int = 0
 
 var plot_pressed: bool = false
@@ -56,22 +57,19 @@ func set_cost(cost: float) -> void:
 
 
 func set_radius(value: float) -> void:
+	radius_value = value
 	var shape := $Radius/RadiusSize.shape as CircleShape2D
 	if shape:
 		shape.radius = value
+	$Radius/RadiusVisual.queue_redraw()
 
-	# Testausgabe
-	var visual := $Radius/RadiusVisual
-	print("Visual is of type: ", typeof(visual), ", has method update: ", visual.has_method("update"))
-
-	visual.queue_redraw()
-
+func get_current_radius() -> float:
+	return radius_value
 
 func _on_plot_pressed() -> void:
 	var sandbox = get_tree().get_current_scene()
+#	sandbox.unedit_existing_station()
 	if plot_pressed == false:	
 		sandbox.edit_existing_station(self)
 		#plot_pressed = true
 	#else:
-		
-	
