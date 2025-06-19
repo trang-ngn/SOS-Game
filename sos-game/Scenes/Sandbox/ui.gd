@@ -44,7 +44,6 @@ func _on_delete_button_pressed():
 	var sandbox = get_tree().get_current_scene()
 	if sandbox.has_method("switch_mode"):
 		sandbox.switch_mode(sandbox.MODE.DELETE)
-	
-	
+
 	
 	

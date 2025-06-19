@@ -410,10 +410,29 @@ func update_statistik():
 	$Camera2D/CanvasLayer/UI/SandboxStatistikBar.update_stations(len(stations))
 	$Camera2D/CanvasLayer/UI/SandboxStatistikBar.update_coverage(num_covered_houses, len(houses))
 
+func _on_hide_button_pressed() -> void:
+	$Camera2D/CanvasLayer/UI/HideButton.visible = false
+	$Camera2D/CanvasLayer/UI/SandboxStatistikBar.visible = false
+	$Camera2D/CanvasLayer/UI/HelpButton.visible = false
+	$Camera2D/CanvasLayer/UI/BackButton.visible = false
+	$Camera2D/CanvasLayer/UI/DoneRestartContainer.visible = false
+	$Camera2D/CanvasLayer/UI/HouseButton.visible = false
+	$Camera2D/CanvasLayer/UI/StationButton.visible = false
+	$Camera2D/CanvasLayer/UI/StationDesigns.visible = false
+	$Camera2D/CanvasLayer/UI/HouseDesigns.visible = false
+	$Camera2D/CanvasLayer/UI/DesignBackground.visible = false
+	$Camera2D/CanvasLayer/UI/CostRadius.visible = false
+	$Camera2D/CanvasLayer/UI/DeleteButton.visible = false
+	$Camera2D/CanvasLayer/UI/ShowButton.visible = true
 
-func _on_hide_button_toggled(is_hidden: bool) -> void:
-	$HideButton/HideLabel.text = "Show" if is_hidden else "Hide"
-	$StatistikBar.visible = not is_hidden
-	$HelpButton.visible = not is_hidden
-	$BackButton.visible = not is_hidden
-	$DoneRestartContainer.visible = not is_hidden
+
+func _on_show_button_pressed() -> void:
+	$Camera2D/CanvasLayer/UI/HideButton.visible = true
+	$Camera2D/CanvasLayer/UI/ShowButton.visible = false
+	$Camera2D/CanvasLayer/UI/SandboxStatistikBar.visible = true
+	$Camera2D/CanvasLayer/UI/HelpButton.visible = true
+	$Camera2D/CanvasLayer/UI/BackButton.visible = true
+	$Camera2D/CanvasLayer/UI/DoneRestartContainer.visible = true
+	$Camera2D/CanvasLayer/UI/HouseButton.visible = true
+	$Camera2D/CanvasLayer/UI/StationButton.visible = true
+	$Camera2D/CanvasLayer/UI/DeleteButton.visible = true
