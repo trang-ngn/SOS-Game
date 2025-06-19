@@ -231,6 +231,7 @@ func spawn_building_instance() -> void:
 		current_object = new_station
 		set_offset(16,16)
 		new_station.set_design_index(current_station_design_index)
+		new_station.set_radius(10)
 
 func place_object() -> void:
 	if current_object.is_colliding():
