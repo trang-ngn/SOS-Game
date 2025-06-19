@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dov56crmnobk7" path="res://Assets/Buttons/Button-done-disabled.png" id="8_v3dyu"]
 [ext_resource type="Texture2D" uid="uid://bjbmqo6ktwsk0" path="res://Assets/Buttons/Button-restart.png" id="9_evkaq"]
 [ext_resource type="Texture2D" uid="uid://btrvd3unuwufd" path="res://Assets/Buttons/Hover-Anleitung.png" id="10_374c8"]
-[ext_resource type="Script" path="res://Scripts/Dialogs/coverage_pop_up.gd" id="11_0akad"]
+[ext_resource type="Script" uid="uid://by3fctddwmhg1" path="res://Scripts/Dialogs/coverage_pop_up.gd" id="11_0akad"]
 [ext_resource type="Texture2D" uid="uid://qpvjl5m1y4qa" path="res://Assets/Buttons/Button-help-weiss.png" id="12_lybwj"]
 [ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://Assets/Rescue Station/rescue_station_2.png" id="13_8lgmn"]
 [ext_resource type="Texture2D" uid="uid://d2fwkm7ofx7tj" path="res://Assets/Dialogs/Result-dialog.png" id="13_pyds4"]
