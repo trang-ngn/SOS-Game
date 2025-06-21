@@ -1,10 +1,9 @@
-[gd_scene load_steps=54 format=3 uid="uid://caufal412q3qk"]
+[gd_scene load_steps=53 format=3 uid="uid://caufal412q3qk"]
 
 [ext_resource type="Script" uid="uid://cwhhanmpthajn" path="res://Scripts/SanboxScripts/sandbox.gd" id="1_62cd8"]
 [ext_resource type="Texture2D" uid="uid://bubtpd0hdotqi" path="res://Assets/Tileset/Tileset_v3.png" id="2_62cd8"]
 [ext_resource type="Texture2D" uid="uid://dtmq5iuwdgydi" path="res://Assets/Cursor/default_object_2.png" id="3_4yamo"]
 [ext_resource type="Script" uid="uid://ixfakxeau86w" path="res://Scripts/SanboxScripts/default_object.gd" id="4_aox5q"]
-[ext_resource type="PackedScene" uid="uid://bxs73etkg8msh" path="res://Scenes/Dialogs/statistik_bar.tscn" id="4_qa0nj"]
 [ext_resource type="Texture2D" uid="uid://dgux3ahvku82b" path="res://Assets/Buttons/DeleteButton.png" id="4_qby88"]
 [ext_resource type="Script" uid="uid://c1chy6r7tg00v" path="res://Scenes/Sandbox/ui.gd" id="5_8lgmn"]
 [ext_resource type="Script" uid="uid://dda24cx7xxmwv" path="res://Scripts/SanboxScripts/delete_object.gd" id="5_qee5c"]
@@ -409,14 +408,6 @@ offset_top = 4.0
 offset_right = 1652.0
 offset_bottom = 160.0
 scale = Vector2(0.61, 0.61)
-
-[node name="StatistikBar" parent="Camera2D/CanvasLayer/UI" instance=ExtResource("4_qa0nj")]
-visible = false
-layout_mode = 0
-offset_left = 650.0
-offset_top = 0.0
-offset_right = 1265.0
-offset_bottom = 104.0
 
 [node name="HideButton" type="TextureButton" parent="Camera2D/CanvasLayer/UI"]
 layout_mode = 0
@@ -883,6 +874,7 @@ shape = SubResource("RectangleShape2D_rrb1b")
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/ShowButton" to="." method="_on_show_button_pressed"]
 [connection signal="mouse_entered" from="Camera2D/CanvasLayer/UI/DoneRestartContainer/DoneButton" to="Camera2D/CanvasLayer/UI/DoneRestartContainer/CoveragePopUp" method="_on_done_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/CanvasLayer/UI/DoneRestartContainer/DoneButton" to="Camera2D/CanvasLayer/UI/DoneRestartContainer/CoveragePopUp" method="_on_done_button_mouse_exited"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/UI/HelpButton" to="Camera2D/CanvasLayer/UI/HelpDialog" method="_on_help_button_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/ResultPopUp/ResultDialog/HBoxContainer/NextLevelButton" to="Camera2D/CanvasLayer/UI/ResultPopUp/ResultDialog/HBoxContainer/NextLevelButton" method="_on_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/ResultPopUp/ResultDialog/HBoxContainer/TryAgainButton" to="Camera2D/CanvasLayer/UI/ResultPopUp/ResultDialog/HBoxContainer/TryAgainButton" method="_on_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/RestartDialog/CloseButton" to="Camera2D/CanvasLayer/UI/RestartDialog" method="_on_close_button_pressed"]
