@@ -73,3 +73,13 @@ func _on_plot_pressed() -> void:
 		sandbox.edit_existing_station(self)
 		#plot_pressed = true
 	#else:
+
+func _on_plot_mouse_entered() -> void:
+	var sandbox = get_tree().get_current_scene()
+	sandbox.show_radius(self)
+
+
+func _on_plot_mouse_exited() -> void:
+	var sandbox = get_tree().get_current_scene()
+	if sandbox.editing_station != self:
+		sandbox.hide_radius(self)

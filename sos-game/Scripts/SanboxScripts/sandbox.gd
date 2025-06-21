@@ -154,11 +154,20 @@ func edit_existing_station(station: StationSandbox) -> void:
 	station.set_radius(station.get_current_radius())
 	
 	show_cost_input()
+	show_radius(editing_station)
 	
 	var radius = editing_station.get_current_radius()
 	radius_input.text = format_float(radius)
 	
 	editing_station.set_radius(radius)
+
+func hide_radius(station: StationSandbox) -> void:
+	var radius = station.get_node("Radius")
+	radius.visible = false
+
+func show_radius(station: StationSandbox) -> void:
+	var radius = station.get_node("Radius")
+	radius.visible = true
 
 func format_float(value: float) -> String:
 	if value == int(value):
@@ -242,8 +251,7 @@ func place_object() -> void:
 		houses.append(current_object)
 	elif current_object is StationSandbox:
 		stations.append(current_object)
-	
-	if current_object is StationSandbox:
+		
 		if editing_station:
 			hide_radius(editing_station)
 		
@@ -252,18 +260,16 @@ func place_object() -> void:
 		switch_mode(MODE.DEFAULT)
 		editing_station = placed_station
 		show_cost_input()
+		show_radius(placed_station)
 	else:
 		switch_mode(MODE.DEFAULT)
 	
 	update_statistik()
 
-func hide_radius(station: StationSandbox) -> void:
-	var radius = station.get_node("Radius")
-	radius.visible = false
-
 func show_cost_input() -> void:
 	#shows radius while editing
-	show_radius()
+	if editing_station:
+		show_radius(editing_station)
 	
 	cost_input.text = ""
 	radius_input.text = ""
@@ -272,11 +278,6 @@ func show_cost_input() -> void:
 	cost_radius_ui.visible = false
 	cost_radius_ui.visible = true
 	cost_input.grab_focus()
-
-func show_radius() -> void:
-	if editing_station:
-		var radius = editing_station.get_node("Radius")
-		radius.visible = true
 
 func delete_object() -> void:
 	var target = object_deleter.collided_object

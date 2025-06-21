@@ -64,4 +64,6 @@ color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="mouse_entered" from="Plot" to="." method="_on_plot_mouse_entered"]
+[connection signal="mouse_exited" from="Plot" to="." method="_on_plot_mouse_exited"]
 [connection signal="pressed" from="Plot" to="." method="_on_plot_pressed"]
