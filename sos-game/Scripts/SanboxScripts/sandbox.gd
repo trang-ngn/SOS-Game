@@ -249,8 +249,7 @@ func place_object() -> void:
 	
 	if current_object is HouseSandbox:
 		houses.append(current_object)
-		current_object = null 
-		spawn_building_instance()
+
 		
 	elif current_object is StationSandbox:
 		stations.append(current_object)
@@ -265,8 +264,8 @@ func place_object() -> void:
 		show_cost_input()
 		show_radius(placed_station)
 		
-	else:
-		switch_mode(MODE.DEFAULT)
+	switch_mode(MODE.DEFAULT)
+	
 	
 	update_statistik()
 
