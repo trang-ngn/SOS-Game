@@ -50,7 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://dtcvw0xmb37ax" path="res://Assets/Houses/red_house.png" id="40_lybwj"]
 [ext_resource type="Texture2D" uid="uid://wdkq6dlpx1a0" path="res://Assets/Houses/white_house.png" id="41_pyds4"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h7ofb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4yamo"]
 texture = ExtResource("2_62cd8")
 0:0/0 = 0
 1:0/0 = 0
@@ -247,7 +247,7 @@ texture = ExtResource("2_62cd8")
 8:16/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_0r1v2"]
-sources/0 = SubResource("TileSetAtlasSource_h7ofb")
+sources/0 = SubResource("TileSetAtlasSource_4yamo")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrb1b"]
 size = Vector2(64, 64)

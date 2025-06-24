@@ -451,12 +451,14 @@ func _on_test_pressed() -> void:
 	
 	for house in houses:
 		if house is HouseSandbox :
-			house.set_id()
-			Buildings.houses_data.append({"position" : house.position, "id" : house.id, "design" : house.design_index})
+			#house.set_id()
+			#Buildings.houses_data.append({"position" : house.position, "id" : house.id, "design" : house.design_index})
+			Buildings.houses_data.append({"position" : house.position, "design" : house.design_index})
 		
 	
 	for station in stations:
 		if station is StationSandbox:
-			Buildings.stations_data.append({"position" : station.position, "id" : station.station_number, "design" : station.design_index, "cost" : station.station_cost, "radius" : station.radius_value})
-			
-	get_tree().change_scene_to_file("res://Scenes/Sandbox/level_sandbox.tscn")
+			#station.set_id()
+			#Buildings.stations_data.append({"position" : station.position, "id" : station.station_number, "design" : station.design_index, "cost" : station.station_cost, "radius" : station.radius_value})
+			Buildings.stations_data.append({"position" : station.position, "design" : station.design_index, "cost" : station.station_cost, "radius" : station.radius_value})
+	get_tree().change_scene_to_file("res://Scenes/Sandbox/LevelSandbox/level_sandbox.tscn")
