@@ -851,14 +851,6 @@ offset_left = -306.0
 offset_top = 61.0
 offset_bottom = 129.0
 
-[node name="Test" type="Button" parent="Camera2D/CanvasLayer/UI"]
-layout_mode = 0
-offset_left = 1632.0
-offset_top = 110.0
-offset_right = 1769.0
-offset_bottom = 210.0
-text = "TEST"
-
 [node name="ConstantObject" type="Node2D" parent="."]
 
 [node name="DefaultObject" type="Sprite2D" parent="ConstantObject"]
@@ -894,6 +886,5 @@ shape = SubResource("RectangleShape2D_rrb1b")
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/HelpDialog/CloseButton" to="Camera2D/CanvasLayer/UI/HelpDialog" method="_on_close_button_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/DoneDialog/CloseButton" to="Camera2D/CanvasLayer/UI/DoneDialog" method="_on_close_button_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/DoneDialog/CancelButton" to="Camera2D/CanvasLayer/UI/DoneDialog" method="_on_cancel_button_pressed"]
-[connection signal="pressed" from="Camera2D/CanvasLayer/UI/Test" to="." method="_on_test_pressed"]
 [connection signal="area_entered" from="ConstantObject/ObjectDeleter" to="ConstantObject/ObjectDeleter" method="_on_area_entered"]
 [connection signal="area_exited" from="ConstantObject/ObjectDeleter" to="ConstantObject/ObjectDeleter" method="_on_area_exited"]

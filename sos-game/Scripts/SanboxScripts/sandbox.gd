@@ -75,6 +75,11 @@ func _ready() -> void:
 	
 	#$DoneRestartContainer/DoneButton.disabled = true
 
+func _process(delta: float) -> void:
+	if (current_mode == MODE.BUILD or current_mode == MODE.DELETE) and current_object != null:
+		update_object_position()
+	#debug purpose
+	#print("house : " + str(houses_container.get_child_count()) + "stations : " + str(stations_container.get_child_count()))
 
 func _on_cost_text_changed(new_text: String) -> void:
 	update_float_input(cost_input, new_text)
@@ -174,9 +179,7 @@ func format_float(value: float) -> String:
 		return str(int(value))
 	return str(value)
 
-func _process(delta: float) -> void:
-	if (current_mode == MODE.BUILD or current_mode == MODE.DELETE) and current_object != null:
-		update_object_position()
+
 
 func update_object_position() -> void:
 	var mouse_pos = get_global_mouse_position()
@@ -238,7 +241,7 @@ func spawn_building_instance() -> void:
 		var new_station = station_scene.instantiate() as StationSandbox
 		stations_container.add_child(new_station)
 		current_object = new_station
-		set_offset(16,16)
+		set_offset(16,12)
 		new_station.set_design_index(current_station_design_index)
 		new_station.set_radius(10)
 
@@ -409,7 +412,7 @@ func update_picked_stations():
 	update_statistik()
 
 func update_statistik():
-	print((houses))
+	#print((houses))
 	$Camera2D/CanvasLayer/UI/SandboxStatistikBar.update_houses(len(houses))
 	$Camera2D/CanvasLayer/UI/SandboxStatistikBar.update_stations(len(stations))
 	$Camera2D/CanvasLayer/UI/SandboxStatistikBar.update_coverage(num_covered_houses, len(houses))
@@ -440,3 +443,20 @@ func _on_show_button_pressed() -> void:
 	$Camera2D/CanvasLayer/UI/HouseButton.visible = true
 	$Camera2D/CanvasLayer/UI/StationButton.visible = true
 	$Camera2D/CanvasLayer/UI/DeleteButton.visible = true
+
+
+func _on_test_pressed() -> void:
+	Buildings.houses_data.clear()
+	Buildings.stations_data.clear()
+	
+	for house in houses:
+		if house is HouseSandbox :
+			house.set_id()
+			Buildings.houses_data.append({"position" : house.position, "id" : house.id, "design" : house.design_index})
+		
+	
+	for station in stations:
+		if station is StationSandbox:
+			Buildings.stations_data.append({"position" : station.position, "id" : station.station_number, "design" : station.design_index, "cost" : station.station_cost, "radius" : station.radius_value})
+			
+	get_tree().change_scene_to_file("res://Scenes/Sandbox/level_sandbox.tscn")

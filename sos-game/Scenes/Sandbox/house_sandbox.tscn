@@ -12,9 +12,9 @@ size = Vector2(63.99, 63.99)
 
 [node name="HouseSandbox" type="Area2D"]
 script = ExtResource("1_56b1i")
+id = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_eg1ne")
 
 [node name="Design" type="Node2D" parent="."]

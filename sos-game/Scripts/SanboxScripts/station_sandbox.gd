@@ -10,6 +10,7 @@ class_name StationSandbox
 
 @onready var plot_button: Button = $Plot
 
+
 var station_number: int = 0
 var station_cost: int = 0
 var radius_value: float = 10
@@ -19,6 +20,7 @@ var plot_pressed: bool = false
 
 func _ready() -> void:
 	update_design_visibility()
+	
 
 func update_design_visibility() -> void:
 	for i in range(designs.size()):

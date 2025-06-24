@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bhn2knupgw6fc" path="res://Scripts/LevelScripts/radius_visual.gd" id="5_ehows"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfayr"]
-size = Vector2(84, 103)
+size = Vector2(79.5, 111.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6ypof"]
 radius = 13.2673
@@ -29,7 +29,6 @@ text = "0
 icon_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-1.90735e-06, 3.5)
 shape = SubResource("RectangleShape2D_nfayr")
 
