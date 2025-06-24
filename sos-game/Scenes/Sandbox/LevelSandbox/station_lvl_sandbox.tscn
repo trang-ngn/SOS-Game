@@ -1,0 +1,88 @@
+[gd_scene load_steps=12 format=3 uid="uid://uj3amfheuvmd"]
+
+[ext_resource type="Script" uid="uid://dbuvek7dhn4gu" path="res://Scripts/SanboxScripts/LevelSandbox/station_lvl_sandbox.gd" id="1_cg516"]
+[ext_resource type="Texture2D" uid="uid://c3e1xphfgndjb" path="res://Assets/Rescue Station/rescue_station_4.png" id="1_ev3x8"]
+[ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://Assets/Rescue Station/rescue_station_2.png" id="2_cg516"]
+[ext_resource type="Shader" uid="uid://dksxj0hluoa8f" path="res://Shaders/build_station.gdshader" id="2_u8345"]
+[ext_resource type="Texture2D" uid="uid://bc6ae7dvqt8hn" path="res://Assets/Rescue Station/rescue_station_3.png" id="3_4selj"]
+[ext_resource type="Texture2D" uid="uid://b0bh0dre1prsg" path="res://Assets/Buttons/mask.png" id="5_4selj"]
+[ext_resource type="Script" uid="uid://bhn2knupgw6fc" path="res://Scripts/LevelScripts/radius_visual.gd" id="6_jpnfl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_11f5k"]
+shader = ExtResource("2_u8345")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eonqi"]
+shader = ExtResource("2_u8345")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0jdor"]
+shader = ExtResource("2_u8345")
+shader_parameter/wiggle_speed = 2.0
+shader_parameter/wiggle_offset = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpnfl"]
+radius = 11.7335
+
+[node name="StationLVLSandbox" type="Node2D"]
+script = ExtResource("1_cg516")
+
+[node name="Design" type="Node2D" parent="."]
+z_index = 2
+position = Vector2(0, -11)
+
+[node name="Station1" type="Sprite2D" parent="Design"]
+material = SubResource("ShaderMaterial_11f5k")
+texture = ExtResource("1_ev3x8")
+
+[node name="Station2" type="Sprite2D" parent="Design"]
+material = SubResource("ShaderMaterial_eonqi")
+texture = ExtResource("2_cg516")
+
+[node name="Station3" type="Sprite2D" parent="Design"]
+material = SubResource("ShaderMaterial_0jdor")
+texture = ExtResource("3_4selj")
+
+[node name="Plot" type="Button" parent="."]
+texture_filter = 1
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 36.0
+text = "x
+xM €"
+
+[node name="OptResult" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="HighlightRect" type="TextureRect" parent="OptResult"]
+visible = false
+layout_mode = 0
+offset_left = -56.0
+offset_top = -34.0
+offset_right = 168.0
+offset_bottom = 190.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_4selj")
+expand_mode = 1
+
+[node name="Radius" type="Area2D" parent="."]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Radius"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_jpnfl")
+debug_color = Color(0.984314, 0.968627, 0.988235, 0.188235)
+
+[node name="RadiusVisual" type="Node2D" parent="Radius"]
+visible = false
+script = ExtResource("6_jpnfl")
+color = Color(1, 1, 1, 0.0666667)
+
+[connection signal="button_up" from="Plot" to="." method="_on_plot_button_up"]
+[connection signal="mouse_entered" from="Plot" to="." method="_on_plot_mouse_entered"]
+[connection signal="mouse_exited" from="Plot" to="." method="_on_plot_mouse_exited"]
+[connection signal="area_entered" from="Radius" to="." method="_on_radius_area_entered"]

@@ -9,7 +9,7 @@ class_name StationSandbox
 
 @onready var plot_button: Button = $Plot
 
-
+var id : int = 0
 var station_number: int = 0
 var station_cost: int = 0
 var radius_value: float = 10
@@ -55,6 +55,8 @@ func set_cost(cost: float) -> void:
 		plot_button.text = str(station_number) + "\n" + str(integer) + " M€"
 	else:
 		plot_button.text = str(station_number) + "\n" + str(fl) + " M€"
+		
+	station_cost = cost
 
 
 func set_radius(value: float) -> void:
