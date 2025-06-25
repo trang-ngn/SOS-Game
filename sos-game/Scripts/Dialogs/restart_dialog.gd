@@ -5,6 +5,8 @@ func _ready():
 
 func _on_ok_button_pressed() -> void:
 	get_tree().reload_current_scene()
+	Buildings.houses_data.clear()
+	Buildings.stations_data.clear()
 
 
 func _on_close_button_pressed() -> void:

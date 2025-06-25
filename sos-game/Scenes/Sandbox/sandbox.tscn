@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://caufal412q3qk"]
+[gd_scene load_steps=43 format=3 uid="uid://caufal412q3qk"]
 
 [ext_resource type="Script" uid="uid://cwhhanmpthajn" path="res://Scripts/SanboxScripts/sandbox.gd" id="1_62cd8"]
 [ext_resource type="Texture2D" uid="uid://bubtpd0hdotqi" path="res://Assets/Tileset/Tileset_v3.png" id="2_62cd8"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://c1chy6r7tg00v" path="res://Scenes/Sandbox/ui.gd" id="5_8lgmn"]
 [ext_resource type="Script" uid="uid://dda24cx7xxmwv" path="res://Scripts/SanboxScripts/delete_object.gd" id="5_qee5c"]
 [ext_resource type="Texture2D" uid="uid://hub27jtpuyaf" path="res://Assets/Cursor/delete_object_2.png" id="6_0r1v2"]
-[ext_resource type="FontFile" uid="uid://c8f1xkqvr2h7a" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="6_828it"]
 [ext_resource type="Texture2D" uid="uid://4rqgghfr1k30" path="res://Assets/Buttons/Button-back.png" id="7_4yamo"]
 [ext_resource type="Texture2D" uid="uid://bo35yi8jvcfwy" path="res://Assets/Buttons/Button-done-enabled.png" id="7_n33o5"]
 [ext_resource type="Texture2D" uid="uid://dov56crmnobk7" path="res://Assets/Buttons/Button-done-disabled.png" id="8_v3dyu"]
@@ -17,16 +16,9 @@
 [ext_resource type="Script" uid="uid://by3fctddwmhg1" path="res://Scripts/Dialogs/coverage_pop_up.gd" id="11_0akad"]
 [ext_resource type="Texture2D" uid="uid://qpvjl5m1y4qa" path="res://Assets/Buttons/Button-help-weiss.png" id="12_lybwj"]
 [ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://Assets/Rescue Station/rescue_station_2.png" id="13_8lgmn"]
-[ext_resource type="Texture2D" uid="uid://d2fwkm7ofx7tj" path="res://Assets/Dialogs/Result-dialog.png" id="13_pyds4"]
 [ext_resource type="Texture2D" uid="uid://c3e1xphfgndjb" path="res://Assets/Rescue Station/rescue_station_4.png" id="13_qby88"]
-[ext_resource type="Script" uid="uid://bd4mgwpnngm2d" path="res://Scenes/Dialogs/result_dialog.gd" id="14_occg0"]
-[ext_resource type="FontFile" uid="uid://cbkaala8qo5w5" path="res://Assets/Fonts/Silkscreen-Bold.ttf" id="15_u43jc"]
 [ext_resource type="PackedScene" uid="uid://ux1w5cnn6cso" path="res://cost_radius.tscn" id="16_h7ofb"]
-[ext_resource type="Texture2D" uid="uid://mqa3wwnk2b00" path="res://Assets/Buttons/Button-nextlevel.png" id="16_qby88"]
-[ext_resource type="Script" uid="uid://c78ejc4piq8kg" path="res://Scripts/Buttons/next_level_button.gd" id="17_h7ofb"]
-[ext_resource type="Texture2D" uid="uid://dkhddl4kkxhf2" path="res://Assets/Buttons/Button-tryagain.png" id="18_gxqs4"]
 [ext_resource type="PackedScene" uid="uid://dyukcm048v2c4" path="res://sandbox_statistik_bar.tscn" id="18_h7ofb"]
-[ext_resource type="Script" uid="uid://cym0jqgaabiea" path="res://Scripts/Buttons/try_again_button.gd" id="19_8lgmn"]
 [ext_resource type="Texture2D" uid="uid://brp4ew3xqd2nv" path="res://Assets/Buttons/Button-hide.png" id="20_h7ofb"]
 [ext_resource type="Script" uid="uid://co33oh6oqpu8d" path="res://Scripts/Dialogs/restart_dialog.gd" id="20_hiohr"]
 [ext_resource type="Texture2D" uid="uid://dru4m1t38rih1" path="res://Assets/Dialogs/Dialog-restart.png" id="21_60jfv"]
@@ -36,8 +28,6 @@
 [ext_resource type="Texture2D" uid="uid://ct6b4rxd8ha2h" path="res://Assets/Dialogs/Dialog-Back.png" id="24_x4hmm"]
 [ext_resource type="Script" uid="uid://g0k7bbimhpye" path="res://Scripts/Dialogs/dialog_help.gd" id="25_c24qu"]
 [ext_resource type="Texture2D" uid="uid://bgqeqcmhkawy6" path="res://Assets/Dialogs/Dialog-Help.png" id="26_lgotq"]
-[ext_resource type="Texture2D" uid="uid://bt0xeoojmpu7x" path="res://Assets/Buttons/Show-Solution-Button.png" id="27_cwc36"]
-[ext_resource type="Texture2D" uid="uid://dqb6u0etuyidd" path="res://Assets/Buttons/Hide-Solution-Button.png" id="28_c2x22"]
 [ext_resource type="Script" uid="uid://8gk5ix1c4wm2" path="res://Scripts/Dialogs/done_dialog.gd" id="29_8h5rr"]
 [ext_resource type="Texture2D" uid="uid://0hnlcv2g8514" path="res://Assets/Dialogs/Dialog-done.png" id="30_xinmp"]
 [ext_resource type="Texture2D" uid="uid://b2r4cix5na7mw" path="res://Assets/Houses/green_house.png" id="31_eokq1"]
@@ -483,137 +473,6 @@ texture_normal = ExtResource("12_lybwj")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="ResultPopUp" type="Control" parent="Camera2D/CanvasLayer/UI"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 256.0
-offset_top = 120.0
-offset_right = 1766.0
-offset_bottom = 952.0
-
-[node name="DisableBackground" type="ColorRect" parent="Camera2D/CanvasLayer/UI/ResultPopUp"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -256.0
-offset_top = -120.0
-offset_right = 154.0
-offset_bottom = 128.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.383597, 0.383597, 0.383597, 0.184314)
-
-[node name="ResultDialog" type="TextureRect" parent="Camera2D/CanvasLayer/UI/ResultPopUp"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.757
-anchor_bottom = 0.668
-offset_left = 230.0
-offset_top = 142.0
-offset_right = 140.93
-offset_bottom = 127.224
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("13_pyds4")
-expand_mode = 1
-script = ExtResource("14_occg0")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/CanvasLayer/UI/ResultPopUp/ResultDialog"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.079
-anchor_top = 0.826
-anchor_right = 0.918
-anchor_bottom = 0.961
-offset_left = -0.266006
-offset_top = 0.133972
-offset_right = 382.428
-offset_bottom = 32.099
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.7, 0.7)
-theme_override_constants/separation = 90
-alignment = 1
-
-[node name="ScoreLabel" type="Label" parent="Camera2D/CanvasLayer/UI/ResultPopUp/ResultDialog/HBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
-theme_override_fonts/font = ExtResource("6_828it")
-theme_override_font_sizes/font_size = 40
-text = "Score"
-
-[node name="SuccessLabel" type="Label" parent="Camera2D/CanvasLayer/UI/ResultPopUp/ResultDialog/HBoxContainer"]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
-theme_override_fonts/font = ExtResource("15_u43jc")
-theme_override_font_sizes/font_size = 40
-text = "Success!!!"
-
-[node name="NextLevelButton" type="TextureButton" parent="Camera2D/CanvasLayer/UI/ResultPopUp/ResultDialog/HBoxContainer"]
-custom_minimum_size = Vector2(450, 30)
-layout_mode = 2
-texture_normal = ExtResource("16_qby88")
-stretch_mode = 5
-script = ExtResource("17_h7ofb")
-
-[node name="TryAgainButton" type="TextureButton" parent="Camera2D/CanvasLayer/UI/ResultPopUp/ResultDialog/HBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(200, 30)
-layout_mode = 2
-texture_normal = ExtResource("18_gxqs4")
-stretch_mode = 5
-script = ExtResource("19_8lgmn")
-
-[node name="LeftLabel" type="Label" parent="Camera2D/CanvasLayer/UI/ResultPopUp/ResultDialog"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.066
-anchor_top = 0.198
-anchor_right = 0.454
-anchor_bottom = 0.77
-offset_left = 9.436
-offset_top = 20.882
-offset_right = 587.484
-offset_bottom = 442.43
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.4, 0.4)
-theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
-theme_override_fonts/font = ExtResource("6_828it")
-theme_override_font_sizes/font_size = 55
-text = "Left
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-"
-autowrap_mode = 3
-clip_text = true
-metadata/_edit_group_ = true
-
-[node name="RightLabel" type="Label" parent="Camera2D/CanvasLayer/UI/ResultPopUp/ResultDialog"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.542
-anchor_top = 0.205
-anchor_right = 0.941
-anchor_bottom = 0.769
-offset_left = 7.73199
-offset_top = 17.095
-offset_right = 587.186
-offset_bottom = 423.971
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.4, 0.4)
-theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
-theme_override_fonts/font = ExtResource("6_828it")
-theme_override_font_sizes/font_size = 55
-text = "Right
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-"
-autowrap_mode = 3
-clip_text = true
-
 [node name="RestartDialog" type="Control" parent="Camera2D/CanvasLayer/UI"]
 visible = false
 layout_mode = 3
@@ -775,25 +634,6 @@ offset_top = -235.0
 offset_right = 452.0
 offset_bottom = -171.0
 
-[node name="ShowOptButton" type="TextureButton" parent="Camera2D/CanvasLayer/UI"]
-visible = false
-layout_mode = 0
-offset_left = 630.0
-offset_top = 628.0
-offset_right = 1014.0
-offset_bottom = 692.0
-scale = Vector2(0.7, 0.7)
-texture_normal = ExtResource("27_cwc36")
-
-[node name="HideOptButton" type="TextureButton" parent="Camera2D/CanvasLayer/UI"]
-visible = false
-layout_mode = 0
-offset_left = 820.0
-offset_top = 147.0
-offset_right = 1224.0
-offset_bottom = 227.0
-texture_normal = ExtResource("28_c2x22")
-
 [node name="DoneDialog" type="Control" parent="Camera2D/CanvasLayer/UI"]
 visible = false
 layout_mode = 3
@@ -851,14 +691,6 @@ offset_left = -306.0
 offset_top = 61.0
 offset_bottom = 129.0
 
-[node name="Test" type="Button" parent="Camera2D/CanvasLayer/UI"]
-layout_mode = 0
-offset_left = 1632.0
-offset_top = 110.0
-offset_right = 1769.0
-offset_bottom = 210.0
-text = "TEST"
-
 [node name="ConstantObject" type="Node2D" parent="."]
 
 [node name="DefaultObject" type="Sprite2D" parent="ConstantObject"]
@@ -877,14 +709,20 @@ texture = ExtResource("6_0r1v2")
 visible = false
 shape = SubResource("RectangleShape2D_rrb1b")
 
+[node name="Button" type="Button" parent="."]
+offset_left = 1550.0
+offset_top = 418.0
+offset_right = 1732.0
+offset_bottom = 513.0
+
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/HideButton" to="." method="_on_hide_button_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/ShowButton" to="." method="_on_show_button_pressed"]
 [connection signal="mouse_entered" from="Camera2D/CanvasLayer/UI/DoneRestartContainer/DoneButton" to="Camera2D/CanvasLayer/UI/DoneRestartContainer/CoveragePopUp" method="_on_done_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/CanvasLayer/UI/DoneRestartContainer/DoneButton" to="Camera2D/CanvasLayer/UI/DoneRestartContainer/CoveragePopUp" method="_on_done_button_mouse_exited"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/UI/DoneRestartContainer/DoneButton" to="." method="_on_done_button_pressed"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/UI/DoneRestartContainer/RestartButton" to="Camera2D/CanvasLayer/UI/RestartDialog" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/HelpButton" to="Camera2D/CanvasLayer/UI/HelpDialog" method="_on_help_button_pressed"]
-[connection signal="pressed" from="Camera2D/CanvasLayer/UI/ResultPopUp/ResultDialog/HBoxContainer/NextLevelButton" to="Camera2D/CanvasLayer/UI/ResultPopUp/ResultDialog/HBoxContainer/NextLevelButton" method="_on_pressed"]
-[connection signal="pressed" from="Camera2D/CanvasLayer/UI/ResultPopUp/ResultDialog/HBoxContainer/TryAgainButton" to="Camera2D/CanvasLayer/UI/ResultPopUp/ResultDialog/HBoxContainer/TryAgainButton" method="_on_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/RestartDialog/CloseButton" to="Camera2D/CanvasLayer/UI/RestartDialog" method="_on_close_button_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/RestartDialog/OkButton" to="Camera2D/CanvasLayer/UI/RestartDialog" method="_on_ok_button_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/RestartDialog/CancelButton" to="Camera2D/CanvasLayer/UI/RestartDialog" method="_on_cancel_button_pressed"]
@@ -894,6 +732,6 @@ shape = SubResource("RectangleShape2D_rrb1b")
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/HelpDialog/CloseButton" to="Camera2D/CanvasLayer/UI/HelpDialog" method="_on_close_button_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/DoneDialog/CloseButton" to="Camera2D/CanvasLayer/UI/DoneDialog" method="_on_close_button_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/DoneDialog/CancelButton" to="Camera2D/CanvasLayer/UI/DoneDialog" method="_on_cancel_button_pressed"]
-[connection signal="pressed" from="Camera2D/CanvasLayer/UI/Test" to="." method="_on_test_pressed"]
 [connection signal="area_entered" from="ConstantObject/ObjectDeleter" to="ConstantObject/ObjectDeleter" method="_on_area_entered"]
 [connection signal="area_exited" from="ConstantObject/ObjectDeleter" to="ConstantObject/ObjectDeleter" method="_on_area_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -16,10 +16,7 @@ func _ready() -> void:
 
 	
 func is_covered() -> bool :
-	if(num_stat_cover > 0) :
-		return true
-	else :
-		return false
+	return num_stat_cover > 0
 
 func set_outline() -> void :
 	if(num_stat_cover == 0) :
