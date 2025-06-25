@@ -17,6 +17,12 @@ func initialize(pos : Vector2, design : int) -> void:
 func set_id() :
 	id = get_index()
 
+func is_covered() -> bool :
+	if(num_stat_cover > 0) :
+		return true
+	else :
+		return false
+
 func set_design() -> void :
 	for d in designs:
 		d.visible = false

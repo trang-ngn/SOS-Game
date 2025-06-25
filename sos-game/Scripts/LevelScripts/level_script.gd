@@ -126,6 +126,11 @@ func opt_highlight() -> void:
 
 # Show-results
 func _on_show_opt_button_pressed() -> void:
+	
+	for s in stations :
+		s.built = false
+		s.change_state()
+	
 	if optimal_solution != null:
 		opt_highlight() # Show-results
 	$UI/ResultPopUp.visible = false
