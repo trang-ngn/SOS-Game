@@ -1,8 +1,9 @@
-extends LevelSBObject
+extends Node2D
 class_name StationLVL
 
 @onready var plot = $Plot
 @onready var radius :CollisionShape2D = $Radius/RadiusSize
+@onready var optimal_result = $OptResult/HighlightRect
 @onready var designs : Array[Sprite2D] = [
 	$Design/Station1,
 	$Design/Station2,
@@ -16,6 +17,8 @@ var houses : Array[HouseLVL]
 var radius_size : float
 var built : bool = false
 var optimal : bool = false
+
+signal stations_updated
 
 func initialize(pos : Vector2, design : int, cost : int, rad : float) -> void :
 	self.position = pos
@@ -47,10 +50,13 @@ func set_radius() -> void :
 	
 	$Radius/RadiusVisual.queue_redraw()
 
+func set_optimal(state: bool) -> void:
+	optimal_result.visible = state
 
 func change_state() -> void :
 	play_animation()
 	cover_houses(built)
+	emit_signal("stations_updated")
 
 func cover_houses(value: bool)->void:
 	for h in houses:
@@ -83,12 +89,10 @@ func play_animation()-> void :
 	designs[design_index].set_instance_shader_parameter("wiggle_strength", 0.0)
 
 func get_covered_houses() -> Array:
-	var bodies: Array = $Radius.get_overlapping_bodies()
 	var index_array: Array = []
-
-	for body in bodies:
-		if body is HouseLVL:
-			index_array.append(body.id)
+	for h in houses:
+		if h is HouseLVL:
+			index_array.append(h.id)
 	#print("index_array: ", index_array)
 	return index_array
 
