@@ -159,8 +159,7 @@ func edit_existing_station(station: StationSandbox) -> void:
 	station.set_radius(station.get_current_radius())
 	
 	show_cost_input()
-	show_radius(editing_station)
-	
+	editing_station.show_radius()	
 	var radius = editing_station.get_current_radius()
 	radius_input.text = format_float(radius)
 	
@@ -265,8 +264,8 @@ func place_object() -> void:
 		switch_mode(MODE.DEFAULT)
 		editing_station = placed_station
 		show_cost_input()
-		show_radius(placed_station)
-		
+		placed_station.show_radius()
+	
 	switch_mode(MODE.DEFAULT)
 	
 	
@@ -275,7 +274,7 @@ func place_object() -> void:
 func show_cost_input() -> void:
 	#shows radius while editing
 	if editing_station:
-		show_radius(editing_station)
+		editing_station.show_radius()
 	
 	cost_input.text = ""
 	radius_input.text = ""

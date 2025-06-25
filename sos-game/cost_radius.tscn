@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dg2mqu0ey2yyy" path="res://Assets/Dialogs/CostRadius.png" id="1_j0ixd"]
 [ext_resource type="FontFile" uid="uid://c8f1xkqvr2h7a" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="2_vws7r"]
-[ext_resource type="Script" uid="uid://rwq4s5amv8m6" path="res://cost_radius.gd" id="2_wuovj"]
+[ext_resource type="Script" path="res://cost_radius.gd" id="2_wuovj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wuovj"]
 

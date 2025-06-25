@@ -38,7 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://bgqeqcmhkawy6" path="res://Assets/Dialogs/Dialog-Help.png" id="26_lgotq"]
 [ext_resource type="Texture2D" uid="uid://bt0xeoojmpu7x" path="res://Assets/Buttons/Show-Solution-Button.png" id="27_cwc36"]
 [ext_resource type="Texture2D" uid="uid://dqb6u0etuyidd" path="res://Assets/Buttons/Hide-Solution-Button.png" id="28_c2x22"]
-[ext_resource type="Script" uid="uid://8gk5ix1c4wm2" path="res://Scripts/Dialogs/done_dialog.gd" id="29_8h5rr"]
+[ext_resource type="Script" path="res://Scripts/Dialogs/done_dialog.gd" id="29_8h5rr"]
 [ext_resource type="Texture2D" uid="uid://0hnlcv2g8514" path="res://Assets/Dialogs/Dialog-done.png" id="30_xinmp"]
 [ext_resource type="Texture2D" uid="uid://b2r4cix5na7mw" path="res://Assets/Houses/green_house.png" id="31_eokq1"]
 [ext_resource type="Texture2D" uid="uid://b6fubdqyhimd1" path="res://Assets/Buttons/HouseButton.png" id="31_lybwj"]

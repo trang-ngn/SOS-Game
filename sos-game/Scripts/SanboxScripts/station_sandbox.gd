@@ -1,7 +1,6 @@
 extends ObjectSandbox
 class_name StationSandbox
 
-# Liste der Station-Design-Sprites – passe die Pfade ggf. an!
 @onready var designs : Array[Sprite2D] = [
 	$Design/Station1,
 	$Design/Station2,
@@ -68,6 +67,18 @@ func set_radius(value: float) -> void:
 func get_current_radius() -> float:
 	return radius_value
 
+func show_radius() -> void:
+	set_radius(get_current_radius())
+	$Radius.visible = true
+	$Radius/RadiusSize.visible = true
+	$Radius/RadiusVisual.visible = true
+
+func hide_radius() -> void:
+	set_radius(get_current_radius())
+	$Radius.visible = false
+	$Radius/RadiusSize.visible = false
+	$Radius/RadiusVisual.visible = false
+
 func _on_plot_pressed() -> void:
 	var sandbox = get_tree().get_current_scene()
 #	sandbox.unedit_existing_station()
@@ -78,10 +89,10 @@ func _on_plot_pressed() -> void:
 
 func _on_plot_mouse_entered() -> void:
 	var sandbox = get_tree().get_current_scene()
-	sandbox.show_radius(self)
-
+	if sandbox.editing_station != self:
+		show_radius()
 
 func _on_plot_mouse_exited() -> void:
 	var sandbox = get_tree().get_current_scene()
 	if sandbox.editing_station != self:
-		sandbox.hide_radius(self)
+		hide_radius()

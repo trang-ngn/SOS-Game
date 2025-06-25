@@ -39,7 +39,7 @@ func _on_station_button_pressed():
 func _on_design_button_pressed(design_name: String):
 	var sandbox = get_tree().get_current_scene()
 	sandbox.set_design_by_name(design_name)
-	
+
 func _on_delete_button_pressed():
 	var sandbox = get_tree().get_current_scene()
 	if sandbox.has_method("switch_mode"):
