@@ -242,7 +242,7 @@ texture = ExtResource("2_62cd8")
 sources/0 = SubResource("TileSetAtlasSource_h7ofb")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrb1b"]
-size = Vector2(64, 64)
+size = Vector2(1, 1)
 
 [node name="Sandbox" type="Node2D"]
 script = ExtResource("1_62cd8")
@@ -376,7 +376,6 @@ layout_mode = 2
 texture_normal = ExtResource("33_myi1d")
 
 [node name="CostRadius" parent="Camera2D/CanvasLayer/UI" instance=ExtResource("16_h7ofb")]
-visible = false
 layout_mode = 0
 offset_left = 1462.0
 offset_top = 990.0
@@ -439,7 +438,6 @@ layout_mode = 1
 offset_left = 1534.0
 offset_right = 1790.0
 offset_bottom = 124.0
-disabled = true
 texture_normal = ExtResource("7_n33o5")
 texture_disabled = ExtResource("8_v3dyu")
 ignore_texture_size = true
@@ -708,7 +706,6 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("6_0r1v2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConstantObject/ObjectDeleter"]
-visible = false
 shape = SubResource("RectangleShape2D_rrb1b")
 
 [node name="Button" type="Button" parent="."]

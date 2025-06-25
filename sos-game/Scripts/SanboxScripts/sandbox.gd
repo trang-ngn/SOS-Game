@@ -22,6 +22,7 @@ var current_object : ObjectSandbox = null
 var current_mode : MODE = MODE.DEFAULT
 var current_building : BUILDING = BUILDING.HOUSE
 
+var text_finished : bool = false
 var current_house_design_index : int = 0
 var current_station_design_index : int = 0
 
@@ -87,6 +88,7 @@ func _on_cost_text_changed(new_text: String) -> void:
 	update_float_input(cost_input, new_text)
 
 func _on_radius_text_changed(new_text: String) -> void:
+	update_float_input(radius_input,new_text)
 	radius_input.text = filter_float_input(new_text)	
 	if editing_station:
 		var formatted = new_text.strip_edges().replace(",", ".")
