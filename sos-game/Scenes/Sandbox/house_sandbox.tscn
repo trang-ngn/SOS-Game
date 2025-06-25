@@ -8,11 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://dtcvw0xmb37ax" path="res://Assets/Houses/red_house.png" id="5_o6nwq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eg1ne"]
-size = Vector2(63.99, 63.99)
+size = Vector2(63.5, 63.5)
 
 [node name="HouseSandbox" type="Area2D"]
 script = ExtResource("1_56b1i")
-id = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_eg1ne")

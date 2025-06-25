@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://bhn2knupgw6fc" path="res://Scripts/LevelScripts/radius_visual.gd" id="10_0b03d"]
 [ext_resource type="Texture2D" uid="uid://b0bh0dre1prsg" path="res://Assets/Buttons/mask.png" id="11_po7xu"]
 [ext_resource type="Texture2D" uid="uid://bc6ae7dvqt8hn" path="res://Assets/Rescue Station/rescue_station_3.png" id="14_k2mw1"]
-[ext_resource type="Shader" path="res://Shaders/build_station.gdshader" id="15_3628d"]
+[ext_resource type="Shader" uid="uid://dksxj0hluoa8f" path="res://Shaders/build_station.gdshader" id="15_3628d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7qmmr"]
 texture = ExtResource("2_sqlub")
@@ -1297,7 +1297,6 @@ debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="RadiusVisual" type="Node2D" parent="Stations/S0/Radius" index="1"]
 visible = false
 script = ExtResource("10_0b03d")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S1" type="Node2D" parent="Stations" index="1"]
 position = Vector2(-406.667, -276.667)
@@ -1354,7 +1353,6 @@ debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="RadiusVisual" type="Node2D" parent="Stations/S1/Radius" index="1"]
 visible = false
 script = ExtResource("10_0b03d")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S2" type="Node2D" parent="Stations" index="2"]
 position = Vector2(-469.167, -4.99999)
@@ -1412,7 +1410,6 @@ debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="RadiusVisual" type="Node2D" parent="Stations/S2/Radius" index="1"]
 visible = false
 script = ExtResource("10_0b03d")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S3" type="Node2D" parent="Stations" index="3"]
 position = Vector2(-460, 246)
@@ -1470,7 +1467,6 @@ debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="RadiusVisual" type="Node2D" parent="Stations/S3/Radius" index="1"]
 visible = false
 script = ExtResource("10_0b03d")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="RadiusSize2" type="CollisionShape2D" parent="Stations/S3/Radius" index="2"]
 visible = false
@@ -1482,7 +1478,6 @@ debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="RadiusVisual2" type="Node2D" parent="Stations/S3/Radius" index="3"]
 visible = false
 script = ExtResource("10_0b03d")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Stations/S3" index="5"]
 visible = false
@@ -1556,7 +1551,6 @@ debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="RadiusVisual" type="Node2D" parent="Stations/S4/Radius" index="1"]
 visible = false
 script = ExtResource("10_0b03d")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S5" type="Node2D" parent="Stations" index="5"]
 position = Vector2(-86.6666, 190)
@@ -1614,7 +1608,6 @@ debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="RadiusVisual" type="Node2D" parent="Stations/S5/Radius" index="1"]
 visible = false
 script = ExtResource("10_0b03d")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S6" type="Node2D" parent="Stations" index="6"]
 position = Vector2(104, 150)
@@ -1672,7 +1665,6 @@ debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="RadiusVisual" type="Node2D" parent="Stations/S6/Radius" index="1"]
 visible = false
 script = ExtResource("10_0b03d")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S7" type="Node2D" parent="Stations" index="7"]
 position = Vector2(411.667, -21.6667)
@@ -1730,7 +1722,6 @@ debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="RadiusVisual" type="Node2D" parent="Stations/S7/Radius" index="1"]
 visible = false
 script = ExtResource("10_0b03d")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S8" type="Node2D" parent="Stations" index="8"]
 position = Vector2(-135, 7.49999)
@@ -1788,7 +1779,6 @@ debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="RadiusVisual" type="Node2D" parent="Stations/S8/Radius" index="1"]
 visible = false
 script = ExtResource("10_0b03d")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="VFX" type="Node2D" parent="." index="4"]
 
@@ -1803,6 +1793,9 @@ trail_enabled = true
 trail_lifetime = 1.0
 trail_sections = 10
 process_material = SubResource("ParticleProcessMaterial_7hll7")
+
+[node name="StatistikBar" parent="UI" index="0"]
+metadata/_edit_use_anchors_ = true
 
 [connection signal="button_up" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_button_up"]
 [connection signal="mouse_entered" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_entered"]

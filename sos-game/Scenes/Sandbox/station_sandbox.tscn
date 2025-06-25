@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bhn2knupgw6fc" path="res://Scripts/LevelScripts/radius_visual.gd" id="5_ehows"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfayr"]
-size = Vector2(79.5, 111.5)
+size = Vector2(79.5, 110.25)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6ypof"]
 radius = 13.2673
@@ -29,7 +29,7 @@ text = "0
 icon_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.90735e-06, 3.5)
+position = Vector2(-1.90735e-06, 4.125)
 shape = SubResource("RectangleShape2D_nfayr")
 
 [node name="Design" type="Control" parent="."]
@@ -53,16 +53,18 @@ texture = ExtResource("4_ehows")
 texture_filter = 1
 
 [node name="RadiusSize" type="CollisionShape2D" parent="Radius"]
+visible = false
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_6ypof")
 debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="RadiusVisual" type="Node2D" parent="Radius"]
+visible = false
 script = ExtResource("5_ehows")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
 [connection signal="mouse_entered" from="Plot" to="." method="_on_plot_mouse_entered"]
 [connection signal="mouse_exited" from="Plot" to="." method="_on_plot_mouse_exited"]
 [connection signal="pressed" from="Plot" to="." method="_on_plot_pressed"]
+[connection signal="area_entered" from="Radius" to="." method="_on_radius_area_entered"]
