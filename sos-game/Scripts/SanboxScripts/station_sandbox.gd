@@ -9,6 +9,7 @@ class_name StationSandbox
 
 @onready var plot_button: Button = $Plot
 
+var houses : Array[HouseSandbox]
 var id : int = 0
 var station_number: int = 0
 var station_cost: int = 0
@@ -68,6 +69,19 @@ func set_radius(value: float) -> void:
 
 func get_current_radius() -> float:
 	return radius_value
+
+func cover_houses(built : bool) -> void:
+	var new_houses = $Radius.get_overlapping_areas()
+	for h in new_houses :
+		if h is HouseSandbox :
+			houses.append(h)
+	
+	if built :
+		for h in houses :
+			h.num_stat_cover += 1
+	else :
+		for h in houses :
+			h.num_stat_cover -= 1
 
 func show_radius() -> void:
 	set_radius(get_current_radius())

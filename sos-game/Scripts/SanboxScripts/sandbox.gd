@@ -15,6 +15,8 @@ extends Node2D
 @onready var cost_input: LineEdit = $Camera2D/CanvasLayer/UI/CostRadius/Cost
 @onready var radius_input: LineEdit = $Camera2D/CanvasLayer/UI/CostRadius/Radius
 
+@onready var done_button = $Camera2D/CanvasLayer/UI/DoneRestartContainer/DoneButton
+
 var offset : Vector2 = Vector2(0,0)
 var current_object : ObjectSandbox = null
 var current_mode : MODE = MODE.DEFAULT
@@ -69,9 +71,9 @@ func _ready() -> void:
 	cost_input.text_changed.connect(_on_cost_text_changed)
 	radius_input.text_changed.connect(_on_radius_text_changed)
 	
-	initialize_arrays()
-	connect_signal()
-	update_picked_stations()
+	#initialize_arrays()
+	#connect_signal()
+	#update_picked_stations()
 	
 	#$DoneRestartContainer/DoneButton.disabled = true
 
@@ -295,6 +297,7 @@ func delete_object() -> void:
 		target.queue_free()
 		houses.erase(target)
 	elif target is StationSandbox:
+		target.cover_houses(false)
 		target.queue_free()
 		stations.erase(target)
 		update_station_numbers()
@@ -366,49 +369,49 @@ func set_design_by_name(design_name: String) -> void:
 			set_station_design_index(2)
 			switch_mode(MODE.BUILD)
 
-func connect_signal() -> void:
-	for station in stations:
-		station.connect("stations_updated", Callable(self, "update_picked_stations"))
+#func connect_signal() -> void:
+	#for station in stations:
+		#station.connect("stations_updated", Callable(self, "update_picked_stations"))
 
-func initialize_arrays() -> void:
-	var station_nodes = $Stations.get_children()
-	for node in station_nodes:
-		if node is RescueStation:
-			stations.append(node)
-			
-	var houses_node = $Houses.get_children()
-	for node in houses_node:
-		if node is House:
-			houses.append(node)
+#func initialize_arrays() -> void:
+	#var station_nodes = $Stations.get_children()
+	#for node in station_nodes:
+		#if node is S:
+			#stations.append(node)
+			#
+	#var houses_node = $Houses.get_children()
+	#for node in houses_node:
+		#if node is House:
+			#houses.append(node)
 
 #check if all houses is covered
-func update_houses_covered() -> void:
-	var num : int = 0
-	for house in houses:
-		if (house.is_covered()):
-			num += 1
-	num_covered_houses = num
-	all_houses_covered = num_covered_houses == len(houses)
-	
-	#enable Done when all_houses_covered
-	#$DoneRestartContainer/DoneButton.disabled = not all_houses_covered
+#func update_houses_covered() -> void:
+	#var num : int = 0
+	#for house in houses:
+		#if (house.is_covered()):
+			#num += 1
+	#num_covered_houses = num
+	#all_houses_covered = num_covered_houses == len(houses)
+	#
+	##enable Done when all_houses_covered
+	##$DoneRestartContainer/DoneButton.disabled = not all_houses_covered
 
-func update_picked_stations():
-	var result: Array[bool] = []
-	var cost: float = 0.0
-	var num: int = 0
-
-	for station in stations:
-		if station.is_built():
-			cost += station.cost
-			num += 1
-		result.append(station.is_built())
-
-	#total_cost = cost
-	picked_stations = result
-	num_picked_stations = num
-	update_houses_covered()
-	update_statistik()
+#func update_picked_stations():
+	#var result: Array[bool] = []
+	#var cost: float = 0.0
+	#var num: int = 0
+#
+	#for station in stations:
+		#if station.is_built():
+			#cost += station.cost
+			#num += 1
+		#result.append(station.is_built())
+#
+	##total_cost = cost
+	#picked_stations = result
+	#num_picked_stations = num
+	#update_houses_covered()
+	#update_statistik()
 
 func update_statistik():
 	#print((houses))
@@ -441,10 +444,21 @@ func _on_show_button_pressed() -> void:
 	$Camera2D/CanvasLayer/UI/DoneRestartContainer.visible = true
 	$Camera2D/CanvasLayer/UI/HouseButton.visible = true
 	$Camera2D/CanvasLayer/UI/StationButton.visible = true
-	$Camera2D/CanvasLayer/UI/DeleteButton.visible = true
+	$Camera2D/CanvasLayer/UI/DeleteButton.visible = true	
+	
 
+func check_coverage() -> bool :
+	for s in stations :
+		s.cover_houses(true)
+	
+	for h in houses :
+		if h.is_covered() :
+			continue 
+		else :
+			return false
+	return true
 
-func _on_test_pressed() -> void:
+func transfer_data() -> void:
 	Buildings.houses_data.clear()
 	Buildings.stations_data.clear()
 	
@@ -454,10 +468,18 @@ func _on_test_pressed() -> void:
 			#Buildings.houses_data.append({"position" : house.position, "id" : house.id, "design" : house.design_index})
 			Buildings.houses_data.append({"position" : house.position, "design" : house.design_index})
 		
-	
 	for station in stations:
 		if station is StationSandbox:
 			#station.set_id()
 			#Buildings.stations_data.append({"position" : station.position, "id" : station.station_number, "design" : station.design_index, "cost" : station.station_cost, "radius" : station.radius_value})
 			Buildings.stations_data.append({"position" : station.position, "design" : station.design_index, "cost" : station.station_cost, "radius" : station.radius_value})
+
+
+func _on_done_button_pressed() -> void:
+	transfer_data()
 	get_tree().change_scene_to_file("res://Scenes/Sandbox/LevelSandbox/level_sandbox.tscn")
+	
+
+
+func _on_button_pressed() -> void:
+	print(check_coverage())
