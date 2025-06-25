@@ -61,7 +61,6 @@ debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 [node name="RadiusVisual" type="Node2D" parent="Radius"]
 visible = false
 script = ExtResource("5_ehows")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

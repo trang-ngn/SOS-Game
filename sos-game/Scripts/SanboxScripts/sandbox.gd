@@ -151,6 +151,7 @@ func _on_radius_submitted(text: String) -> void:
 		editing_station = null
 		cost_radius_ui.visible = false
 		switch_mode(MODE.DEFAULT)
+		check_coverage()
 
 func edit_existing_station(station: StationSandbox) -> void:
 	if editing_station and editing_station != station:
@@ -163,12 +164,12 @@ func edit_existing_station(station: StationSandbox) -> void:
 	station.set_radius(station.get_current_radius())
 	
 	show_cost_input()
-	show_radius(editing_station)
-	
+	editing_station.show_radius()	
 	var radius = editing_station.get_current_radius()
 	radius_input.text = format_float(radius)
 	
 	editing_station.set_radius(radius)
+	
 
 func hide_radius(station: StationSandbox) -> void:
 	var radius = station.get_node("Radius")
@@ -269,17 +270,16 @@ func place_object() -> void:
 		switch_mode(MODE.DEFAULT)
 		editing_station = placed_station
 		show_cost_input()
-		show_radius(placed_station)
-		
-	switch_mode(MODE.DEFAULT)
+		placed_station.show_radius()
 	
+	switch_mode(MODE.DEFAULT)
 	
 	update_statistik()
 
 func show_cost_input() -> void:
 	#shows radius while editing
 	if editing_station:
-		show_radius(editing_station)
+		editing_station.show_radius()
 	
 	cost_input.text = ""
 	radius_input.text = ""
@@ -372,52 +372,9 @@ func set_design_by_name(design_name: String) -> void:
 			set_station_design_index(2)
 			switch_mode(MODE.BUILD)
 
-#func connect_signal() -> void:
-	#for station in stations:
-		#station.connect("stations_updated", Callable(self, "update_picked_stations"))
-
-#func initialize_arrays() -> void:
-	#var station_nodes = $Stations.get_children()
-	#for node in station_nodes:
-		#if node is S:
-			#stations.append(node)
-			#
-	#var houses_node = $Houses.get_children()
-	#for node in houses_node:
-		#if node is House:
-			#houses.append(node)
-
-#check if all houses is covered
-#func update_houses_covered() -> void:
-	#var num : int = 0
-	#for house in houses:
-		#if (house.is_covered()):
-			#num += 1
-	#num_covered_houses = num
-	#all_houses_covered = num_covered_houses == len(houses)
-	#
-	##enable Done when all_houses_covered
-	##$DoneRestartContainer/DoneButton.disabled = not all_houses_covered
-
-#func update_picked_stations():
-	#var result: Array[bool] = []
-	#var cost: float = 0.0
-	#var num: int = 0
-#
-	#for station in stations:
-		#if station.is_built():
-			#cost += station.cost
-			#num += 1
-		#result.append(station.is_built())
-#
-	##total_cost = cost
-	#picked_stations = result
-	#num_picked_stations = num
-	#update_houses_covered()
-	#update_statistik()
-
 func update_statistik():
 	#print((houses))
+	check_coverage()
 	$Camera2D/CanvasLayer/UI/SandboxStatistikBar.update_houses(len(houses))
 	$Camera2D/CanvasLayer/UI/SandboxStatistikBar.update_stations(len(stations))
 	$Camera2D/CanvasLayer/UI/SandboxStatistikBar.update_coverage(num_covered_houses, len(houses))
@@ -449,17 +406,29 @@ func _on_show_button_pressed() -> void:
 	$Camera2D/CanvasLayer/UI/StationButton.visible = true
 	$Camera2D/CanvasLayer/UI/DeleteButton.visible = true	
 	
+	
+func set_done_button() -> void :
+	$Camera2D/CanvasLayer/UI/DoneRestartContainer/CoveragePopUp.all_house_covered = all_houses_covered
+	$Camera2D/CanvasLayer/UI/DoneRestartContainer/DoneButton.disabled = not all_houses_covered
 
-func check_coverage() -> bool :
+func reset_coverage () -> void :
+	for h in houses :
+		h.num_stat_cover = 0
+
+func check_coverage() -> void :
+	var counter :int = 0
+	reset_coverage()
 	for s in stations :
 		s.cover_houses(true)
 	
 	for h in houses :
 		if h.is_covered() :
-			continue 
-		else :
-			return false
-	return true
+			counter += 1 
+		#else :
+			#continue
+	all_houses_covered = (counter == len(houses))
+	print(all_houses_covered)
+	set_done_button()
 
 func transfer_data() -> void:
 	Buildings.houses_data.clear()
@@ -484,5 +453,4 @@ func _on_done_button_pressed() -> void:
 	
 
 
-func _on_button_pressed() -> void:
-	print(check_coverage())
+	

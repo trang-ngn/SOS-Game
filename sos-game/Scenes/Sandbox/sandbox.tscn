@@ -436,6 +436,7 @@ layout_mode = 1
 offset_left = 1534.0
 offset_right = 1790.0
 offset_bottom = 124.0
+disabled = true
 texture_normal = ExtResource("7_n33o5")
 texture_disabled = ExtResource("8_v3dyu")
 ignore_texture_size = true
@@ -706,12 +707,6 @@ texture = ExtResource("6_0r1v2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConstantObject/ObjectDeleter"]
 shape = SubResource("RectangleShape2D_rrb1b")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 1550.0
-offset_top = 418.0
-offset_right = 1732.0
-offset_bottom = 513.0
-
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/HideButton" to="." method="_on_hide_button_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/ShowButton" to="." method="_on_show_button_pressed"]
@@ -731,4 +726,3 @@ offset_bottom = 513.0
 [connection signal="pressed" from="Camera2D/CanvasLayer/UI/DoneDialog/CancelButton" to="Camera2D/CanvasLayer/UI/DoneDialog" method="_on_cancel_button_pressed"]
 [connection signal="area_entered" from="ConstantObject/ObjectDeleter" to="ConstantObject/ObjectDeleter" method="_on_area_entered"]
 [connection signal="area_exited" from="ConstantObject/ObjectDeleter" to="ConstantObject/ObjectDeleter" method="_on_area_exited"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

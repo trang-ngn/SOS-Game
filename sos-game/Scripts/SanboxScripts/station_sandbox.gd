@@ -1,7 +1,6 @@
 extends ObjectSandbox
 class_name StationSandbox
 
-# Liste der Station-Design-Sprites – passe die Pfade ggf. an!
 @onready var designs : Array[Sprite2D] = [
 	$Design/Station1,
 	$Design/Station2,
@@ -72,6 +71,7 @@ func get_current_radius() -> float:
 	return radius_value
 
 func cover_houses(built : bool) -> void:
+	houses.clear()
 	var new_houses = $Radius.get_overlapping_areas()
 	for h in new_houses :
 		if h is HouseSandbox :
@@ -82,7 +82,23 @@ func cover_houses(built : bool) -> void:
 			h.num_stat_cover += 1
 	else :
 		for h in houses :
-			h.num_stat_cover -= 1
+			if h.num_stat_cover <= 0 :
+				h.num_stat_cover = 0
+			else :
+				h.num_stat_cover -= 1
+
+
+func show_radius() -> void:
+	set_radius(get_current_radius())
+	$Radius.visible = true
+	$Radius/RadiusSize.visible = true
+	$Radius/RadiusVisual.visible = true
+
+func hide_radius() -> void:
+	set_radius(get_current_radius())
+	$Radius.visible = false
+	$Radius/RadiusSize.visible = false
+	$Radius/RadiusVisual.visible = false
 
 func _on_plot_pressed() -> void:
 	var sandbox = get_tree().get_current_scene()
@@ -94,10 +110,10 @@ func _on_plot_pressed() -> void:
 
 func _on_plot_mouse_entered() -> void:
 	var sandbox = get_tree().get_current_scene()
-	sandbox.show_radius(self)
-
+	if sandbox.editing_station != self:
+		show_radius()
 
 func _on_plot_mouse_exited() -> void:
 	var sandbox = get_tree().get_current_scene()
 	if sandbox.editing_station != self:
-		sandbox.hide_radius(self)
+		hide_radius()

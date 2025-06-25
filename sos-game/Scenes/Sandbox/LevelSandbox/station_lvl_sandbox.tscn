@@ -80,7 +80,6 @@ debug_color = Color(0.984314, 0.968627, 0.988235, 0.188235)
 [node name="RadiusVisual" type="Node2D" parent="Radius"]
 visible = false
 script = ExtResource("6_jpnfl")
-color = Color(1, 1, 1, 0.0666667)
 
 [connection signal="button_up" from="Plot" to="." method="_on_plot_button_up"]
 [connection signal="mouse_entered" from="Plot" to="." method="_on_plot_mouse_entered"]

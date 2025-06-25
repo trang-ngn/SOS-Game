@@ -3,7 +3,7 @@ extends Node2D
 # get parent node
 @onready var RadiusSizeNode: CollisionShape2D = get_node("../RadiusSize")
 
-@export var color : Color
+var color : Color = Color(1,1,1,0.18)
 
 # built_in function to draw shape
 func _draw() -> void:
