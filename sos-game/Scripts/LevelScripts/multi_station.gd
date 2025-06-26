@@ -36,7 +36,7 @@ func _on_texture_button_button_up() -> void:
 		stations[current_station].change_state()
 		stations[current_station].toggle_radius(true)
 		
-	elif current_station > 0 and current_station < 3 :
+	elif current_station > 0 and current_station < num_of_stations :
 		stations[current_station - 1].built = false
 		stations[current_station - 1].toggle_radius(false)
 		stations[current_station - 1].change_state()
