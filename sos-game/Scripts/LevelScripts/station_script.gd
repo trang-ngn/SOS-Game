@@ -23,6 +23,9 @@ func _ready() -> void:
 	id = get_index()
 	initialize()
 
+func hide_plot() :
+	$Plot.visible = false
+	$Plot.disabled = true
 
 func _on_button_button_up() -> void:
 	if (!built):
@@ -102,11 +105,12 @@ func _on_area_2d_body_entered(body: Node) -> void:
 	if body is House:
 		houses.append(body)
 
+func toggle_radius(value : bool) -> void:
+	$Radius/RadiusSize.visible = value
+	$Radius/RadiusVisual.visible = value
 
 func _on_button_mouse_entered() -> void:
-	$Radius/RadiusSize.visible = true
-	$Radius/RadiusVisual.visible = true
+	toggle_radius(true)
 
 func _on_button_mouse_exited() -> void:
-	$Radius/RadiusSize.visible = false
-	$Radius/RadiusVisual.visible = false
+	toggle_radius(false)
