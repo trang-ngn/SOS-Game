@@ -1,0 +1,110 @@
+[gd_scene load_steps=17 format=3 uid="uid://bui54wc7h83l1"]
+
+[ext_resource type="Script" uid="uid://cbp7n17vw7kf6" path="res://gui_manager/gui_manager.gd" id="1_wp3by"]
+[ext_resource type="PackedScene" uid="uid://rh3071qdk5gl" path="res://gui_manager/bars/statistic_bar.tscn" id="2_t1bw7"]
+[ext_resource type="Texture2D" uid="uid://btpq1y1ve0xno" path="res://assets/buttons/show_button.png" id="5_dcg2h"]
+[ext_resource type="Texture2D" uid="uid://cpbbn5en1lnsk" path="res://assets/buttons/hide_button.png" id="6_kv1u4"]
+[ext_resource type="Texture2D" uid="uid://euvc8ihaq02t" path="res://assets/buttons/back_button.png" id="7_nteft"]
+[ext_resource type="Texture2D" uid="uid://vhkdifg36uns" path="res://assets/buttons/help_button.png" id="8_gfh60"]
+[ext_resource type="Texture2D" uid="uid://c63lcghs0kew7" path="res://assets/buttons/done_green_button.png" id="9_ethlq"]
+[ext_resource type="Texture2D" uid="uid://kk061r18mtth" path="res://assets/buttons/done_red_button.png" id="10_31uaj"]
+[ext_resource type="Texture2D" uid="uid://ch0sh7n0er4gl" path="res://assets/buttons/restart_button.png" id="11_2cuj5"]
+[ext_resource type="Texture2D" uid="uid://bs5xb7m8wvhim" path="res://assets/bars/done_message.png" id="12_hk21s"]
+[ext_resource type="PackedScene" uid="uid://hsuljdmpce28" path="res://gui_manager/dialogs/back_dialog.tscn" id="13_y0hvh"]
+[ext_resource type="PackedScene" uid="uid://dkrvkdljlqq4q" path="res://gui_manager/dialogs/help_dialog.tscn" id="14_dcg2h"]
+[ext_resource type="PackedScene" uid="uid://batsuhceskjwg" path="res://gui_manager/dialogs/restart_dialog.tscn" id="15_kv1u4"]
+[ext_resource type="PackedScene" uid="uid://b71pjfgb3w61k" path="res://gui_manager/dialogs/done_dialog.tscn" id="16_nteft"]
+[ext_resource type="PackedScene" uid="uid://ctuqn1pepfeoo" path="res://gui_manager/dialogs/error_dialog.tscn" id="17_kv1u4"]
+[ext_resource type="PackedScene" uid="uid://ciunpltsb7ici" path="res://gui_manager/dialogs/result_dialog.tscn" id="18_nteft"]
+
+[node name="UiManager" type="CanvasLayer"]
+script = ExtResource("1_wp3by")
+
+[node name="StatisticBar" parent="." instance=ExtResource("2_t1bw7")]
+
+[node name="ShowButton" type="TextureButton" parent="."]
+visible = false
+offset_left = 1210.0
+offset_right = 1342.0
+offset_bottom = 64.0
+texture_normal = ExtResource("5_dcg2h")
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HideButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 1210.0
+offset_right = 1342.0
+offset_bottom = 64.0
+texture_normal = ExtResource("6_kv1u4")
+
+[node name="BackButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 140.0
+offset_right = 252.0
+offset_bottom = 104.0
+texture_normal = ExtResource("7_nteft")
+
+[node name="HelpButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 976.0
+offset_right = 252.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("8_gfh60")
+
+[node name="DoneButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 1544.0
+offset_right = 1780.0
+offset_bottom = 104.0
+disabled = true
+texture_normal = ExtResource("9_ethlq")
+texture_disabled = ExtResource("10_31uaj")
+
+[node name="RestartButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 1668.0
+offset_right = 1780.0
+offset_bottom = 104.0
+texture_normal = ExtResource("11_2cuj5")
+
+[node name="ResultDialog" parent="." instance=ExtResource("18_nteft")]
+
+[node name="Dialogs" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackDialog" parent="Dialogs" instance=ExtResource("13_y0hvh")]
+visible = false
+layout_mode = 1
+
+[node name="HelpDialog" parent="Dialogs" instance=ExtResource("14_dcg2h")]
+layout_mode = 1
+
+[node name="RestartDialog" parent="Dialogs" instance=ExtResource("15_kv1u4")]
+visible = false
+layout_mode = 1
+
+[node name="DoneHoverMsg" type="TextureRect" parent="Dialogs"]
+visible = false
+layout_mode = 0
+offset_left = 1268.0
+offset_top = 110.0
+offset_right = 1792.0
+offset_bottom = 185.0
+texture = ExtResource("12_hk21s")
+
+[node name="DoneDialog" parent="Dialogs" instance=ExtResource("16_nteft")]
+visible = false
+layout_mode = 1
+
+[node name="ErrorDialog" parent="Dialogs" instance=ExtResource("17_kv1u4")]
+visible = false
+layout_mode = 1

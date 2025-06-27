@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://l2s0qubkbnbw"]
+
+[ext_resource type="Texture2D" uid="uid://dc8qwuar6jsql" path="res://assets/background/background.png" id="1_118ke"]
+[ext_resource type="Script" uid="uid://datv8nvkp4gc2" path="res://start_menu/start_menu.gd" id="1_f23aw"]
+[ext_resource type="Texture2D" uid="uid://baqri45aahcho" path="res://assets/buttons/start_button.png" id="2_6rtdh"]
+[ext_resource type="Texture2D" uid="uid://c5u1u62k3rjig" path="res://assets/buttons/sandbox_button.png" id="3_6w4dd"]
+[ext_resource type="Texture2D" uid="uid://bh6qkgnobp345" path="res://assets/buttons/info_button.png" id="5_r1lls"]
+[ext_resource type="Texture2D" uid="uid://tqfgghbifuo7" path="res://assets/buttons/help__green_button.png" id="6_3qg5j"]
+[ext_resource type="PackedScene" uid="uid://dkrvkdljlqq4q" path="res://gui_manager/dialogs/help_dialog.tscn" id="6_r1lls"]
+[ext_resource type="PackedScene" uid="uid://bc4a57nsuy1ai" path="res://gui_manager/dialogs/info_dialog.tscn" id="8_mwivf"]
+
+[node name="StartMenu" type="Node2D"]
+script = ExtResource("1_f23aw")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_118ke")
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 660.0
+offset_top = 372.0
+offset_right = 1268.0
+offset_bottom = 524.0
+texture_normal = ExtResource("2_6rtdh")
+
+[node name="SandboxButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 660.0
+offset_top = 562.0
+offset_right = 1268.0
+offset_bottom = 714.0
+texture_normal = ExtResource("3_6w4dd")
+
+[node name="InfoButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 1668.0
+offset_top = 944.0
+offset_right = 1820.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("5_r1lls")
+
+[node name="HelpButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 944.0
+offset_right = 252.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("6_3qg5j")
+
+[node name="Dialogs" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InfoDialog" parent="Dialogs" instance=ExtResource("8_mwivf")]
+layout_mode = 1
+
+[node name="HelpDialog" parent="Dialogs" instance=ExtResource("6_r1lls")]
+layout_mode = 1

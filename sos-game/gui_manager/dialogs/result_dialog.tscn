@@ -1,0 +1,119 @@
+[gd_scene load_steps=9 format=3 uid="uid://ciunpltsb7ici"]
+
+[ext_resource type="Texture2D" uid="uid://gdgswod8pd75" path="res://assets/dialogs/result_dialog.png" id="1_3v3mn"]
+[ext_resource type="Script" uid="uid://ltiin8l5ciad" path="res://gui_manager/dialogs/result_dialog.gd" id="1_s3pt8"]
+[ext_resource type="FontFile" uid="uid://dy3tdfr3o6i5p" path="res://backup_old/Assets/Fonts/Silkscreen-Regular.ttf" id="2_s3pt8"]
+[ext_resource type="FontFile" uid="uid://dk1ekcwlorg8y" path="res://backup_old/Assets/Fonts/Silkscreen-Bold.ttf" id="3_0uybl"]
+[ext_resource type="Texture2D" uid="uid://mqa3wwnk2b00" path="res://backup_old/Assets/Buttons/Button-nextlevel.png" id="4_5vg06"]
+[ext_resource type="Texture2D" uid="uid://dkhddl4kkxhf2" path="res://backup_old/Assets/Buttons/Button-tryagain.png" id="6_1xyhq"]
+[ext_resource type="Texture2D" uid="uid://bt0xeoojmpu7x" path="res://backup_old/Assets/Buttons/Show-Solution-Button.png" id="6_3v3mn"]
+[ext_resource type="Texture2D" uid="uid://bxbqg8ljxlmhr" path="res://assets/buttons/hide_solution_button.png" id="7_3v3mn"]
+
+[node name="ResultDialog" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_s3pt8")
+
+[node name="HideSolutionButton" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 758.0
+offset_top = 48.0
+offset_right = 1142.0
+offset_bottom = 108.0
+texture_normal = ExtResource("7_3v3mn")
+
+[node name="Modal" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DisableBG" type="ColorRect" parent="Modal"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.262745, 0.262745, 0.262745, 0.784314)
+
+[node name="Dialog" type="TextureRect" parent="Modal"]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 232.0
+offset_right = 1582.0
+offset_bottom = 892.0
+texture = ExtResource("1_3v3mn")
+
+[node name="LeftLabel" type="Label" parent="Modal"]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 387.0
+offset_right = 916.0
+offset_bottom = 661.0
+theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_fonts/font = ExtResource("2_s3pt8")
+theme_override_font_sizes/font_size = 30
+text = "Left
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+"
+autowrap_mode = 3
+clip_text = true
+
+[node name="RightLabel" type="Label" parent="Modal"]
+layout_mode = 0
+offset_left = 1011.0
+offset_top = 387.0
+offset_right = 1506.0
+offset_bottom = 661.0
+theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_fonts/font = ExtResource("2_s3pt8")
+theme_override_font_sizes/font_size = 30
+text = "Right
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+"
+autowrap_mode = 3
+clip_text = true
+
+[node name="InfoContainer" type="HBoxContainer" parent="Modal"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 792.0
+offset_right = 1507.0
+offset_bottom = 852.0
+theme_override_constants/separation = 90
+alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="Modal/InfoContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_fonts/font = ExtResource("2_s3pt8")
+theme_override_font_sizes/font_size = 36
+text = "Score"
+
+[node name="SuccessLabel" type="Label" parent="Modal/InfoContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_fonts/font = ExtResource("3_0uybl")
+theme_override_font_sizes/font_size = 36
+text = "Success!!!"
+
+[node name="NextLevelButton" type="TextureButton" parent="Modal/InfoContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_5vg06")
+stretch_mode = 5
+
+[node name="TryAgainButton" type="TextureButton" parent="Modal/InfoContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("6_1xyhq")
+stretch_mode = 5
+
+[node name="ShowSolutionButton" type="TextureButton" parent="Modal"]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 664.0
+offset_right = 856.0
+offset_bottom = 724.0
+texture_normal = ExtResource("6_3v3mn")

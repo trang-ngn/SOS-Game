@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://batsuhceskjwg"]
+
+[ext_resource type="PackedScene" uid="uid://cotwrns28n00w" path="res://gui_manager/dialogs_templates/base_dialog.tscn" id="1_avveh"]
+[ext_resource type="Script" uid="uid://pogk40l7xnmg" path="res://gui_manager/dialogs/restart_dialog.gd" id="2_4td43"]
+[ext_resource type="Texture2D" uid="uid://bmlpwrcirqpob" path="res://assets/dialogs/restart_dialog.png" id="2_ab88j"]
+
+[node name="RestartDialog" instance=ExtResource("1_avveh")]
+script = ExtResource("2_4td43")
+
+[node name="Dialog" parent="." index="1"]
+texture = ExtResource("2_ab88j")
+
+[node name="CancelButton" type="Button" parent="." index="3"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 560.0
+offset_top = 631.0
+offset_right = 959.0
+offset_bottom = 719.0
+
+[node name="OkButton" type="Button" parent="." index="4"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 962.0
+offset_top = 631.0
+offset_right = 1361.0
+offset_bottom = 719.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2qe6xh3aeg1s"
-path="res://.godot/imported/brown_house.png-4559f55b8df6de620b871bae4928df11.ctex"
+uid="uid://bphrnn6loor1g"
+path="res://.godot/imported/brown_house.png-e0ef23ef799e9894971acf1a29a6113c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Houses/brown_house.png"
-dest_files=["res://.godot/imported/brown_house.png-4559f55b8df6de620b871bae4928df11.ctex"]
+source_file="res://assets/houses/brown_house.png"
+dest_files=["res://.godot/imported/brown_house.png-e0ef23ef799e9894971acf1a29a6113c.ctex"]
 
 [params]
 

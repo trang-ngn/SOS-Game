@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc4a57nsuy1ai"]
+
+[ext_resource type="PackedScene" uid="uid://cotwrns28n00w" path="res://gui_manager/dialogs_templates/base_dialog.tscn" id="1_tucow"]
+[ext_resource type="Texture2D" uid="uid://cl1xcnmt3mshi" path="res://assets/dialogs/info_dialog.png" id="2_tucow"]
+
+[node name="InfoDialog" instance=ExtResource("1_tucow")]
+visible = false
+
+[node name="Dialog" parent="." index="1"]
+offset_left = 336.0
+offset_top = 210.0
+offset_right = 1580.0
+offset_bottom = 870.0
+texture = ExtResource("2_tucow")
+
+[node name="CloseButton" parent="." index="2"]
+offset_left = 1474.0
+offset_top = 254.0
+offset_right = 1538.0
+offset_bottom = 318.0

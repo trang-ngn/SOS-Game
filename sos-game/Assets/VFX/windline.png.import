@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g8dqfxvybwhj"
-path="res://.godot/imported/windline.png-d1721ffdb10f546a951b8c30db5ea4ea.ctex"
+uid="uid://cp7wy184d4ltt"
+path="res://.godot/imported/windline.png-8d5c9c60736e2671919f878e361b864f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/VFX/windline.png"
-dest_files=["res://.godot/imported/windline.png-d1721ffdb10f546a951b8c30db5ea4ea.ctex"]
+source_file="res://assets/vfx/windline.png"
+dest_files=["res://.godot/imported/windline.png-8d5c9c60736e2671919f878e361b864f.ctex"]
 
 [params]
 

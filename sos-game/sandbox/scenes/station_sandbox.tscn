@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpwy82qe4ahhh"]
+
+[ext_resource type="Script" uid="uid://b3o2ramcrysvq" path="res://sandbox/scripts/station_sandbox.gd" id="1_cyslk"]
+[ext_resource type="Texture2D" uid="uid://c3e1xphfgndjb" path="res://backup_old/Assets/Rescue Station/rescue_station_4.png" id="2_tt4nq"]
+[ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://backup_old/Assets/Rescue Station/rescue_station_2.png" id="3_0chva"]
+[ext_resource type="Texture2D" uid="uid://bc6ae7dvqt8hn" path="res://backup_old/Assets/Rescue Station/rescue_station_3.png" id="4_4xt86"]
+[ext_resource type="Script" uid="uid://e51081tjtwso" path="res://entities/station_radius.gd" id="5_tt4nq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfayr"]
+size = Vector2(79.5, 110.25)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ypof"]
+radius = 13.2673
+
+[node name="StationSandbox" type="Area2D"]
+script = ExtResource("1_cyslk")
+
+[node name="Plot" type="Button" parent="."]
+z_index = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 54.0
+grow_horizontal = 2
+text = "0
+0M€"
+icon_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.90735e-06, 4.125)
+shape = SubResource("RectangleShape2D_nfayr")
+
+[node name="Design" type="Control" parent="."]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_top = -12.0
+offset_right = 40.0
+offset_bottom = 28.0
+
+[node name="Station1" type="Sprite2D" parent="Design"]
+texture = ExtResource("2_tt4nq")
+
+[node name="Station2" type="Sprite2D" parent="Design"]
+texture = ExtResource("3_0chva")
+
+[node name="Station3" type="Sprite2D" parent="Design"]
+texture = ExtResource("4_4xt86")
+
+[node name="Radius" type="Area2D" parent="."]
+texture_filter = 1
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Radius"]
+visible = false
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_6ypof")
+debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
+
+[node name="RadiusVisual" type="Node2D" parent="Radius"]
+visible = false
+script = ExtResource("5_tt4nq")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="mouse_entered" from="Plot" to="." method="_on_plot_mouse_entered"]
+[connection signal="mouse_exited" from="Plot" to="." method="_on_plot_mouse_exited"]
+[connection signal="pressed" from="Plot" to="." method="_on_plot_pressed"]
+[connection signal="area_entered" from="Radius" to="." method="_on_radius_area_entered"]

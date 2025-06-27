@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Buildings="*res://Scripts/SanboxScripts/buildings.gd"
+Buildings="*res://backup_old/Scripts/SanboxScripts/buildings.gd"
 
 [display]
 
@@ -27,7 +27,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+enabled=PackedStringArray("res://addons/SimpleFormatOnSave/plugin.cfg", "res://addons/gut/plugin.cfg")
 
 [input]
 

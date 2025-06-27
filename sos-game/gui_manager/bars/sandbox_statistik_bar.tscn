@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw0dw48caoysk"]
+
+[ext_resource type="Texture2D" uid="uid://bwv35qbu4gaat" path="res://backup_old/Assets/Dialogs/SandboxStatistikBar.png" id="1_7rf1x"]
+[ext_resource type="Script" uid="uid://dmlnv3ktmbler" path="res://backup_old/sandbox_statistik_bar.gd" id="2_ci8jh"]
+[ext_resource type="FontFile" uid="uid://dy3tdfr3o6i5p" path="res://backup_old/Assets/Fonts/Silkscreen-Regular.ttf" id="3_wusaa"]
+
+[node name="SandboxStatistikBar" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_7rf1x")
+script = ExtResource("2_ci8jh")
+
+[node name="HousesLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.106
+anchor_right = 0.02
+anchor_bottom = 0.106
+offset_left = 61.18
+offset_top = 42.464
+offset_right = 217.18
+offset_bottom = 102.464
+scale = Vector2(0.85, 0.85)
+theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_fonts/font = ExtResource("3_wusaa")
+theme_override_font_sizes/font_size = 45
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StationsLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.106
+anchor_right = 0.02
+anchor_bottom = 0.106
+offset_left = 304.18
+offset_top = 42.464
+offset_right = 460.18
+offset_bottom = 102.464
+scale = Vector2(0.85, 0.85)
+theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_fonts/font = ExtResource("3_wusaa")
+theme_override_font_sizes/font_size = 45
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoverageLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.106
+anchor_right = 0.02
+anchor_bottom = 0.106
+offset_left = 554.18
+offset_top = 42.464
+offset_right = 710.18
+offset_bottom = 102.464
+scale = Vector2(0.85, 0.85)
+theme_override_colors/font_color = Color(0.4, 0.294118, 0.180392, 1)
+theme_override_fonts/font = ExtResource("3_wusaa")
+theme_override_font_sizes/font_size = 45
+text = "0/0"
+horizontal_alignment = 1
+vertical_alignment = 1

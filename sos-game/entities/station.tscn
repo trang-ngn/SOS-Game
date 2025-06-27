@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyk7v0d36fvs6"]
+
+[ext_resource type="Script" uid="uid://8k2g1ea5lvjp" path="res://entities/station.gd" id="1_xkuuy"]
+[ext_resource type="Script" uid="uid://e51081tjtwso" path="res://entities/station_radius.gd" id="2_xkuuy"]
+[ext_resource type="Texture2D" uid="uid://b55x4ix5nu4aa" path="res://assets/stations/rescue_station_2.png" id="3_fysdy"]
+[ext_resource type="Texture2D" uid="uid://b0bh0dre1prsg" path="res://backup_old/Assets/Buttons/mask.png" id="4_csmuh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_35frx"]
+radius = 108.116
+
+[node name="S0" type="Node2D"]
+script = ExtResource("1_xkuuy")
+
+[node name="Plot" type="Button" parent="."]
+offset_left = -30.0
+offset_top = 2.0
+offset_right = 32.0
+offset_bottom = 56.0
+text = "0
+0M €"
+
+[node name="Radius" type="Area2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 2)
+
+[node name="RadiusSize" type="CollisionShape2D" parent="Radius"]
+shape = SubResource("CircleShape2D_35frx")
+debug_color = Color(0.682353, 0.415686, 0.737255, 0.180392)
+
+[node name="RadiusVisual" type="Node2D" parent="Radius"]
+visible = false
+z_index = 100
+script = ExtResource("2_xkuuy")
+
+[node name="Design" type="Sprite2D" parent="."]
+z_index = 200
+position = Vector2(0, -10)
+texture = ExtResource("3_fysdy")
+
+[node name="OptimalMarker" type="TextureRect" parent="."]
+visible = false
+offset_left = -57.0
+offset_top = -70.0
+offset_right = 167.0
+offset_bottom = 154.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_csmuh")
+expand_mode = 1

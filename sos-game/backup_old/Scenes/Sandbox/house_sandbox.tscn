@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvwglm8jol5a1"]
+
+[ext_resource type="Script" uid="uid://b7v6ccpj4h5kd" path="res://backup_old/Scripts/SanboxScripts/house_sandbox.gd" id="1_56b1i"]
+[ext_resource type="Texture2D" uid="uid://b2qe6xh3aeg1s" path="res://backup_old/Assets/Houses/brown_house.png" id="2_56b1i"]
+[ext_resource type="Texture2D" uid="uid://wdkq6dlpx1a0" path="res://backup_old/Assets/Houses/white_house.png" id="3_an53c"]
+[ext_resource type="Texture2D" uid="uid://b2r4cix5na7mw" path="res://backup_old/Assets/Houses/green_house.png" id="4_ud6bi"]
+[ext_resource type="Texture2D" uid="uid://b5bgggeqoytgv" path="res://backup_old/Assets/Houses/lightb_house.png" id="4_utkkg"]
+[ext_resource type="Texture2D" uid="uid://dtcvw0xmb37ax" path="res://backup_old/Assets/Houses/red_house.png" id="5_o6nwq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eg1ne"]
+size = Vector2(63.5, 63.5)
+
+[node name="HouseSandbox" type="Area2D"]
+script = ExtResource("1_56b1i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eg1ne")
+
+[node name="Design" type="Node2D" parent="."]
+
+[node name="Brown" type="Sprite2D" parent="Design"]
+texture = ExtResource("2_56b1i")
+
+[node name="Green" type="Sprite2D" parent="Design"]
+texture = ExtResource("4_ud6bi")
+
+[node name="Lightb" type="Sprite2D" parent="Design"]
+texture = ExtResource("4_utkkg")
+
+[node name="Red" type="Sprite2D" parent="Design"]
+texture = ExtResource("5_o6nwq")
+
+[node name="White" type="Sprite2D" parent="Design"]
+texture = ExtResource("3_an53c")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=3 uid="uid://bm0uygmmrbah5"]
+
+[ext_resource type="Script" uid="uid://b6h4yuiv6b7xd" path="res://level_picker/level_picker.gd" id="1_6edwq"]
+[ext_resource type="Texture2D" uid="uid://dc8qwuar6jsql" path="res://assets/background/background.png" id="1_qww52"]
+[ext_resource type="Texture2D" uid="uid://bov23ak411wub" path="res://assets/level_picker_buttons/level_1.png" id="2_wb1kl"]
+[ext_resource type="Texture2D" uid="uid://bgl0tsbofe71v" path="res://assets/level_picker_buttons/level_2.png" id="3_6edwq"]
+[ext_resource type="Texture2D" uid="uid://lrkqd8lahi8m" path="res://assets/level_picker_buttons/level_3.png" id="4_fb8np"]
+[ext_resource type="Texture2D" uid="uid://ck5pmhy7k7x5e" path="res://assets/level_picker_buttons/level_4.png" id="5_iejsw"]
+[ext_resource type="Texture2D" uid="uid://bftgw467qq0c3" path="res://assets/level_picker_buttons/level_5.png" id="6_hfx8m"]
+[ext_resource type="Texture2D" uid="uid://q88cl5de0icn" path="res://assets/level_picker_buttons/level_6.png" id="7_cx6rl"]
+[ext_resource type="Texture2D" uid="uid://dking8al2jwpf" path="res://assets/level_picker_buttons/back_button.png" id="9_wb1kl"]
+[ext_resource type="PackedScene" uid="uid://dkrvkdljlqq4q" path="res://gui_manager/dialogs/help_dialog.tscn" id="10_6edwq"]
+[ext_resource type="Texture2D" uid="uid://tqfgghbifuo7" path="res://assets/buttons/help__green_button.png" id="10_fb8np"]
+
+[node name="LevelPicker" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6edwq")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_qww52")
+
+[node name="LevelButtons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Level1" type="TextureButton" parent="LevelButtons"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 160.0
+offset_right = 648.0
+offset_bottom = 468.0
+texture_normal = ExtResource("2_wb1kl")
+
+[node name="Level2" type="TextureButton" parent="LevelButtons"]
+layout_mode = 0
+offset_left = 724.0
+offset_top = 160.0
+offset_right = 1196.0
+offset_bottom = 468.0
+texture_normal = ExtResource("3_6edwq")
+
+[node name="Level3" type="TextureButton" parent="LevelButtons"]
+layout_mode = 0
+offset_left = 1272.0
+offset_top = 160.0
+offset_right = 1744.0
+offset_bottom = 468.0
+texture_normal = ExtResource("4_fb8np")
+
+[node name="Level4" type="TextureButton" parent="LevelButtons"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 540.0
+offset_right = 648.0
+offset_bottom = 848.0
+texture_normal = ExtResource("5_iejsw")
+
+[node name="Level5" type="TextureButton" parent="LevelButtons"]
+layout_mode = 0
+offset_left = 724.0
+offset_top = 540.0
+offset_right = 1196.0
+offset_bottom = 848.0
+texture_normal = ExtResource("6_hfx8m")
+
+[node name="Level6" type="TextureButton" parent="LevelButtons"]
+layout_mode = 0
+offset_left = 1272.0
+offset_top = 540.0
+offset_right = 1744.0
+offset_bottom = 848.0
+texture_normal = ExtResource("7_cx6rl")
+
+[node name="BackButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1668.0
+offset_top = 944.0
+offset_right = 1820.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("9_wb1kl")
+
+[node name="HelpButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 944.0
+offset_right = 252.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("10_fb8np")
+
+[node name="HelpDialog" parent="." instance=ExtResource("10_6edwq")]
+layout_mode = 1

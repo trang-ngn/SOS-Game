@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://rh3071qdk5gl"]
+
+[ext_resource type="Texture2D" uid="uid://d1onl0srx1x4a" path="res://assets/bars/statistic_bar.png" id="1_0ylia"]
+[ext_resource type="FontFile" uid="uid://1sbjkcbnm31v" path="res://assets/fonts/Silkscreen-Regular.ttf" id="2_0ylia"]
+[ext_resource type="Script" uid="uid://drn3vljy0kmig" path="res://gui_manager/bars/statistic_bar.gd" id="2_66joc"]
+
+[node name="StatisticBar" type="TextureRect"]
+offset_left = 414.0
+offset_right = 1382.0
+offset_bottom = 104.0
+texture = ExtResource("1_0ylia")
+script = ExtResource("2_66joc")
+
+[node name="NumberLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 42.0
+offset_right = 229.0
+offset_bottom = 89.0
+theme_override_colors/font_color = Color(0.419608, 0.290196, 0.156863, 1)
+theme_override_fonts/font = ExtResource("2_0ylia")
+theme_override_font_sizes/font_size = 36
+text = "0/0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoverageLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 299.0
+offset_top = 39.0
+offset_right = 479.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.419608, 0.290196, 0.156863, 1)
+theme_override_fonts/font = ExtResource("2_0ylia")
+theme_override_font_sizes/font_size = 36
+text = "0/0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CostLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 39.0
+offset_right = 731.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.419608, 0.290196, 0.156863, 1)
+theme_override_fonts/font = ExtResource("2_0ylia")
+theme_override_font_sizes/font_size = 36
+text = "0€"
+horizontal_alignment = 1
+vertical_alignment = 1

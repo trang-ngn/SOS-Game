@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1qjiptc7oj6x"]
+
+[ext_resource type="Texture2D" uid="uid://g8dqfxvybwhj" path="res://backup_old/Assets/VFX/windline.png" id="1_42i78"]
+
+[sub_resource type="Curve" id="Curve_ia1lp"]
+_data = [Vector2(0, 0.2), 0.0, 0.0, 0, 0, Vector2(0.492611, 0.6), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_5buja"]
+curve = SubResource("Curve_ia1lp")
+
+[sub_resource type="Curve" id="Curve_wyygt"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_u87on"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 0.00377357), 0.0, 0.0, 0, 0, Vector2(0.246305, 1), 0.0, 0.0, 0, 0, Vector2(0.502463, -1), 0.0, 0.0, 0, 0, Vector2(0.748768, 1), 0.0, 0.0, 0, 0, Vector2(1, -0.0415094), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_iunut"]
+curve_x = SubResource("Curve_wyygt")
+curve_y = SubResource("Curve_u87on")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jd2hh"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(960, 590, 1)
+spread = 0.0
+initial_velocity_min = 30.0
+initial_velocity_max = 50.0
+directional_velocity_min = 20.0
+directional_velocity_max = 50.0
+directional_velocity_curve = SubResource("CurveXYZTexture_iunut")
+gravity = Vector3(0, 0, 0)
+scale_min = 0.05
+scale_max = 0.05
+alpha_curve = SubResource("CurveTexture_5buja")
+
+[node name="Wind" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(960, 590)
+amount = 16
+texture = ExtResource("1_42i78")
+lifetime = 5.0
+trail_enabled = true
+trail_lifetime = 0.5
+trail_sections = 60
+trail_section_subdivisions = 60
+process_material = SubResource("ParticleProcessMaterial_jd2hh")

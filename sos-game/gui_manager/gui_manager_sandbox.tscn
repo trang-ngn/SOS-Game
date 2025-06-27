@@ -1,0 +1,219 @@
+[gd_scene load_steps=30 format=3 uid="uid://ce5i4v105wjym"]
+
+[ext_resource type="Script" uid="uid://cudfk688dyoqi" path="res://gui_manager/gui_manager_sandbox.gd" id="1_p82ws"]
+[ext_resource type="PackedScene" uid="uid://dyukcm048v2c4" path="res://backup_old/sandbox_statistik_bar.tscn" id="2_p82ws"]
+[ext_resource type="Texture2D" uid="uid://da5v6er0urx8s" path="res://backup_old/Assets/Buttons/HouseDesignBackground.png" id="2_pc1x4"]
+[ext_resource type="Texture2D" uid="uid://b2qe6xh3aeg1s" path="res://backup_old/Assets/Houses/brown_house.png" id="3_v8bbb"]
+[ext_resource type="Texture2D" uid="uid://btpq1y1ve0xno" path="res://assets/buttons/show_button.png" id="3_ympm6"]
+[ext_resource type="Texture2D" uid="uid://b2r4cix5na7mw" path="res://backup_old/Assets/Houses/green_house.png" id="4_j1oj6"]
+[ext_resource type="Texture2D" uid="uid://cpbbn5en1lnsk" path="res://assets/buttons/hide_button.png" id="4_rttmc"]
+[ext_resource type="Texture2D" uid="uid://b5bgggeqoytgv" path="res://backup_old/Assets/Houses/lightb_house.png" id="5_fm7ph"]
+[ext_resource type="Texture2D" uid="uid://euvc8ihaq02t" path="res://assets/buttons/back_button.png" id="5_p8is1"]
+[ext_resource type="Texture2D" uid="uid://dtcvw0xmb37ax" path="res://backup_old/Assets/Houses/red_house.png" id="6_d4w7n"]
+[ext_resource type="Texture2D" uid="uid://vhkdifg36uns" path="res://assets/buttons/help_button.png" id="6_xr55w"]
+[ext_resource type="Texture2D" uid="uid://wdkq6dlpx1a0" path="res://backup_old/Assets/Houses/white_house.png" id="7_4drte"]
+[ext_resource type="Texture2D" uid="uid://c63lcghs0kew7" path="res://assets/buttons/done_green_button.png" id="7_x6skm"]
+[ext_resource type="Texture2D" uid="uid://c3e1xphfgndjb" path="res://backup_old/Assets/Rescue Station/rescue_station_4.png" id="8_c68la"]
+[ext_resource type="Texture2D" uid="uid://kk061r18mtth" path="res://assets/buttons/done_red_button.png" id="8_nhfai"]
+[ext_resource type="Texture2D" uid="uid://ch0sh7n0er4gl" path="res://assets/buttons/restart_button.png" id="9_qsoyy"]
+[ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://backup_old/Assets/Rescue Station/rescue_station_2.png" id="9_wphxn"]
+[ext_resource type="Texture2D" uid="uid://bc6ae7dvqt8hn" path="res://backup_old/Assets/Rescue Station/rescue_station_3.png" id="10_152j7"]
+[ext_resource type="PackedScene" uid="uid://ciunpltsb7ici" path="res://gui_manager/dialogs/result_dialog.tscn" id="10_yw4ym"]
+[ext_resource type="PackedScene" uid="uid://hsuljdmpce28" path="res://gui_manager/dialogs/back_dialog.tscn" id="11_pc1x4"]
+[ext_resource type="PackedScene" uid="uid://ux1w5cnn6cso" path="res://backup_old/cost_radius.tscn" id="11_yfds8"]
+[ext_resource type="PackedScene" uid="uid://dkrvkdljlqq4q" path="res://gui_manager/dialogs/help_dialog.tscn" id="12_v8bbb"]
+[ext_resource type="PackedScene" uid="uid://batsuhceskjwg" path="res://gui_manager/dialogs/restart_dialog.tscn" id="13_j1oj6"]
+[ext_resource type="Texture2D" uid="uid://bs5xb7m8wvhim" path="res://assets/bars/done_message.png" id="14_fm7ph"]
+[ext_resource type="PackedScene" uid="uid://b71pjfgb3w61k" path="res://gui_manager/dialogs/done_dialog.tscn" id="15_d4w7n"]
+[ext_resource type="PackedScene" uid="uid://ctuqn1pepfeoo" path="res://gui_manager/dialogs/error_dialog.tscn" id="16_4drte"]
+[ext_resource type="Texture2D" uid="uid://dgux3ahvku82b" path="res://backup_old/Assets/Buttons/DeleteButton.png" id="20_fm7ph"]
+[ext_resource type="Texture2D" uid="uid://b6fubdqyhimd1" path="res://backup_old/Assets/Buttons/HouseButton.png" id="21_d4w7n"]
+[ext_resource type="Texture2D" uid="uid://b4bcb3hlikfis" path="res://backup_old/Assets/Buttons/StationButton.png" id="22_4drte"]
+
+[node name="UiManagerSandbox" type="CanvasLayer"]
+script = ExtResource("1_p82ws")
+
+[node name="DesignBackground" type="TextureRect" parent="."]
+visible = false
+offset_left = 915.0
+offset_top = 991.0
+offset_right = 1779.0
+offset_bottom = 1131.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_pc1x4")
+
+[node name="HouseDesigns" type="HBoxContainer" parent="."]
+visible = false
+offset_left = 943.0
+offset_top = 1000.0
+offset_right = 1403.0
+offset_bottom = 1064.0
+theme_override_constants/separation = 35
+
+[node name="BrownHouse" type="TextureButton" parent="HouseDesigns"]
+layout_mode = 2
+texture_normal = ExtResource("3_v8bbb")
+
+[node name="GreenHouse" type="TextureButton" parent="HouseDesigns"]
+layout_mode = 2
+texture_normal = ExtResource("4_j1oj6")
+
+[node name="LightbHouse" type="TextureButton" parent="HouseDesigns"]
+layout_mode = 2
+texture_normal = ExtResource("5_fm7ph")
+
+[node name="RedHouse" type="TextureButton" parent="HouseDesigns"]
+layout_mode = 2
+texture_normal = ExtResource("6_d4w7n")
+
+[node name="WhiteHouse" type="TextureButton" parent="HouseDesigns"]
+layout_mode = 2
+texture_normal = ExtResource("7_4drte")
+
+[node name="StationDesigns" type="HBoxContainer" parent="."]
+visible = false
+offset_left = 971.0
+offset_top = 990.0
+offset_right = 1384.0
+offset_bottom = 1070.0
+theme_override_constants/separation = 80
+
+[node name="Station1" type="TextureButton" parent="StationDesigns"]
+layout_mode = 2
+texture_normal = ExtResource("8_c68la")
+
+[node name="Station2" type="TextureButton" parent="StationDesigns"]
+layout_mode = 2
+texture_normal = ExtResource("9_wphxn")
+
+[node name="Station3" type="TextureButton" parent="StationDesigns"]
+layout_mode = 2
+texture_normal = ExtResource("10_152j7")
+
+[node name="CostRadius" parent="." instance=ExtResource("11_yfds8")]
+offset_left = 1462.0
+offset_top = 990.0
+offset_right = 1904.0
+offset_bottom = 1126.0
+script = null
+
+[node name="StatisticBar" parent="." instance=ExtResource("2_p82ws")]
+offset_left = 585.0
+offset_right = 1576.0
+offset_bottom = 156.0
+scale = Vector2(0.8, 0.8)
+expand_mode = 1
+
+[node name="ShowButton" type="TextureButton" parent="."]
+visible = false
+offset_left = 1210.0
+offset_right = 1342.0
+offset_bottom = 64.0
+texture_normal = ExtResource("3_ympm6")
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HideButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 1210.0
+offset_right = 1342.0
+offset_bottom = 64.0
+texture_normal = ExtResource("4_rttmc")
+
+[node name="BackButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 140.0
+offset_right = 252.0
+offset_bottom = 104.0
+texture_normal = ExtResource("5_p8is1")
+
+[node name="HelpButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 976.0
+offset_right = 252.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("6_xr55w")
+
+[node name="DoneButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 1544.0
+offset_right = 1780.0
+offset_bottom = 104.0
+disabled = true
+texture_normal = ExtResource("7_x6skm")
+texture_disabled = ExtResource("8_nhfai")
+
+[node name="RestartButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 1668.0
+offset_right = 1780.0
+offset_bottom = 104.0
+texture_normal = ExtResource("9_qsoyy")
+
+[node name="DeleteButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 991.0
+offset_right = 980.0
+offset_bottom = 1127.0
+scale = Vector2(0.6, 0.62)
+texture_normal = ExtResource("20_fm7ph")
+
+[node name="HouseButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 991.0
+offset_right = 703.0
+offset_bottom = 1127.0
+scale = Vector2(0.6, 0.62)
+texture_normal = ExtResource("21_d4w7n")
+
+[node name="StationButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 620.0
+offset_top = 991.0
+offset_right = 843.0
+offset_bottom = 1127.0
+scale = Vector2(0.6, 0.62)
+texture_normal = ExtResource("22_4drte")
+
+[node name="ResultDialog" parent="." instance=ExtResource("10_yw4ym")]
+
+[node name="Dialogs" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackDialog" parent="Dialogs" instance=ExtResource("11_pc1x4")]
+visible = false
+layout_mode = 1
+
+[node name="HelpDialog" parent="Dialogs" instance=ExtResource("12_v8bbb")]
+layout_mode = 1
+
+[node name="RestartDialog" parent="Dialogs" instance=ExtResource("13_j1oj6")]
+visible = false
+layout_mode = 1
+
+[node name="DoneHoverMsg" type="TextureRect" parent="Dialogs"]
+visible = false
+layout_mode = 0
+offset_left = 1268.0
+offset_top = 110.0
+offset_right = 1792.0
+offset_bottom = 185.0
+texture = ExtResource("14_fm7ph")
+
+[node name="DoneDialog" parent="Dialogs" instance=ExtResource("15_d4w7n")]
+visible = false
+layout_mode = 1
+
+[node name="ErrorDialog" parent="Dialogs" instance=ExtResource("16_4drte")]
+visible = false
+layout_mode = 1

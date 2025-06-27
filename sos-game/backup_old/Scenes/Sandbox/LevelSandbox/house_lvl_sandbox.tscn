@@ -1,0 +1,66 @@
+[gd_scene load_steps=14 format=3 uid="uid://cepi4jc87ni52"]
+
+[ext_resource type="Script" uid="uid://d0srn7xsqgyen" path="res://backup_old/Scripts/SanboxScripts/LevelSandbox/house_level_sandbox.gd" id="1_gbmbn"]
+[ext_resource type="Texture2D" uid="uid://b2qe6xh3aeg1s" path="res://backup_old/Assets/Houses/brown_house.png" id="2_3j1k3"]
+[ext_resource type="Shader" uid="uid://b1wvm2ng2bjhx" path="res://backup_old/Shaders/highlight.gdshader" id="2_4t0lx"]
+[ext_resource type="Texture2D" uid="uid://wdkq6dlpx1a0" path="res://backup_old/Assets/Houses/white_house.png" id="3_4t0lx"]
+[ext_resource type="Texture2D" uid="uid://b2r4cix5na7mw" path="res://backup_old/Assets/Houses/green_house.png" id="4_7rqnx"]
+[ext_resource type="Texture2D" uid="uid://b5bgggeqoytgv" path="res://backup_old/Assets/Houses/lightb_house.png" id="5_ytdsc"]
+[ext_resource type="Texture2D" uid="uid://dtcvw0xmb37ax" path="res://backup_old/Assets/Houses/red_house.png" id="6_2oa85"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7rqnx"]
+shader = ExtResource("2_4t0lx")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 1.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ytdsc"]
+shader = ExtResource("2_4t0lx")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 1.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2oa85"]
+shader = ExtResource("2_4t0lx")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 1.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b667n"]
+shader = ExtResource("2_4t0lx")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 1.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_848li"]
+shader = ExtResource("2_4t0lx")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 1.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujyf8"]
+size = Vector2(43, 43)
+
+[node name="HouseLVLSandbox" type="Area2D"]
+script = ExtResource("1_gbmbn")
+
+[node name="Design" type="Node2D" parent="."]
+
+[node name="Brown" type="Sprite2D" parent="Design"]
+material = SubResource("ShaderMaterial_7rqnx")
+texture = ExtResource("2_3j1k3")
+
+[node name="White" type="Sprite2D" parent="Design"]
+material = SubResource("ShaderMaterial_ytdsc")
+texture = ExtResource("3_4t0lx")
+
+[node name="Green" type="Sprite2D" parent="Design"]
+material = SubResource("ShaderMaterial_2oa85")
+texture = ExtResource("4_7rqnx")
+
+[node name="Lightb" type="Sprite2D" parent="Design"]
+material = SubResource("ShaderMaterial_b667n")
+texture = ExtResource("5_ytdsc")
+
+[node name="Red" type="Sprite2D" parent="Design"]
+material = SubResource("ShaderMaterial_848li")
+texture = ExtResource("6_2oa85")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_ujyf8")

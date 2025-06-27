@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dk62mfcykye61"]
+
+[ext_resource type="Script" uid="uid://dewa6nwtmgh23" path="res://entities/house.gd" id="1_d72mu"]
+[ext_resource type="Shader" uid="uid://b1wvm2ng2bjhx" path="res://backup_old/Shaders/highlight.gdshader" id="2_e416n"]
+[ext_resource type="Texture2D" uid="uid://bphrnn6loor1g" path="res://assets/houses/brown_house.png" id="3_qv6u7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pjvig"]
+shader = ExtResource("2_e416n")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 1.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2mw1"]
+size = Vector2(43, 37.5)
+
+[node name="H0" type="StaticBody2D"]
+script = ExtResource("1_d72mu")
+
+[node name="Design" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_pjvig")
+instance_shader_parameters/active = false
+texture = ExtResource("3_qv6u7")
+
+[node name="CollisionSize" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_k2mw1")
