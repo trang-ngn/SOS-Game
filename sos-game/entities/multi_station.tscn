@@ -10,7 +10,7 @@ shader = ExtResource("3_vgv0t")
 shader_parameter/wiggle_speed = 2.0
 shader_parameter/wiggle_offset = 0.0
 
-[node name="MS" type="Node2D"]
+[node name="MS0" type="Node2D"]
 script = ExtResource("1_ovqco")
 
 [node name="Plot" type="TextureButton" parent="."]
@@ -35,6 +35,3 @@ instance_shader_parameters/progress = 0.0
 instance_shader_parameters/wiggle_strength = 0.0
 position = Vector2(16, -16)
 texture = ExtResource("4_rv36y")
-
-[connection signal="mouse_entered" from="Plot" to="." method="_on_texture_button_mouse_entered"]
-[connection signal="mouse_exited" from="Plot" to="." method="_on_texture_button_mouse_exited"]

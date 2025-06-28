@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bubtpd0hdotqi" path="res://backup_old/Assets/Tileset/Tileset_v3.png" id="2_ucll5"]
 [ext_resource type="Texture2D" uid="uid://c6a4bexnlpebd" path="res://backup_old/Assets/Tileset/animated_water_test.png" id="3_wixro"]
 [ext_resource type="PackedScene" uid="uid://cyk7v0d36fvs6" path="res://entities/station.tscn" id="5_wixro"]
-[ext_resource type="Texture2D" uid="uid://bc6ae7dvqt8hn" path="res://backup_old/Assets/Rescue Station/rescue_station_3.png" id="7_36m4b"]
-[ext_resource type="Texture2D" uid="uid://c3e1xphfgndjb" path="res://backup_old/Assets/Rescue Station/rescue_station_4.png" id="7_jjl1c"]
+[ext_resource type="Texture2D" uid="uid://8jekb2tcjxi6" path="res://assets/stations/rescue_station_4.png" id="6_gwceb"]
+[ext_resource type="Texture2D" uid="uid://bp4f24vtvqyxg" path="res://assets/stations/rescue_station_3.png" id="7_l53as"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ta65"]
 texture = ExtResource("2_ucll5")
@@ -605,31 +605,31 @@ texture = ExtResource("2_ucll5")
 [sub_resource type="TileSet" id="TileSet_r0lp5"]
 sources/0 = SubResource("TileSetAtlasSource_a3epv")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_a0qnu"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_gwceb"]
 radius = 220.656
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6mfay"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_l53as"]
 radius = 184.44
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kfp27"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_3sk1a"]
 radius = 175.046
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_im2oi"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_08mmt"]
 radius = 264.03
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ye3kj"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ot28"]
 radius = 252.873
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jclqn"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_aerfg"]
 radius = 280.765
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ixqha"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_nmsli"]
 radius = 397.257
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_r1dlu"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_betor"]
 radius = 254.386
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wfjo8"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_vjtdm"]
 radius = 695.236
 
 [node name="Level1" instance=ExtResource("1_8rb2g")]
@@ -736,7 +736,7 @@ text = "0
 4M €"
 
 [node name="RadiusSize" parent="Stations/S0/Radius" index="0"]
-shape = SubResource("CircleShape2D_a0qnu")
+shape = SubResource("CircleShape2D_gwceb")
 
 [node name="S1" parent="Stations" index="1" instance=ExtResource("5_wixro")]
 position = Vector2(450, 201)
@@ -748,10 +748,10 @@ text = "1
 3M €"
 
 [node name="RadiusSize" parent="Stations/S1/Radius" index="0"]
-shape = SubResource("CircleShape2D_6mfay")
+shape = SubResource("CircleShape2D_l53as")
 
 [node name="Design" parent="Stations/S1" index="2"]
-texture = ExtResource("7_jjl1c")
+texture = ExtResource("6_gwceb")
 
 [node name="S2" parent="Stations" index="2" instance=ExtResource("5_wixro")]
 position = Vector2(389, 554)
@@ -762,7 +762,7 @@ text = "2
 1M €"
 
 [node name="RadiusSize" parent="Stations/S2/Radius" index="0"]
-shape = SubResource("CircleShape2D_kfp27")
+shape = SubResource("CircleShape2D_3sk1a")
 
 [node name="S3" parent="Stations" index="3" instance=ExtResource("5_wixro")]
 position = Vector2(448, 736)
@@ -774,10 +774,10 @@ text = "3
 4M €"
 
 [node name="RadiusSize" parent="Stations/S3/Radius" index="0"]
-shape = SubResource("CircleShape2D_im2oi")
+shape = SubResource("CircleShape2D_08mmt")
 
 [node name="Design" parent="Stations/S3" index="2"]
-texture = ExtResource("7_36m4b")
+texture = ExtResource("7_l53as")
 
 [node name="S4" parent="Stations" index="4" instance=ExtResource("5_wixro")]
 position = Vector2(374, 853)
@@ -788,7 +788,7 @@ text = "4
 5M €"
 
 [node name="RadiusSize" parent="Stations/S4/Radius" index="0"]
-shape = SubResource("CircleShape2D_ye3kj")
+shape = SubResource("CircleShape2D_5ot28")
 
 [node name="S5" parent="Stations" index="5" instance=ExtResource("5_wixro")]
 position = Vector2(852, 766)
@@ -800,10 +800,10 @@ text = "5
 3M €"
 
 [node name="RadiusSize" parent="Stations/S5/Radius" index="0"]
-shape = SubResource("CircleShape2D_jclqn")
+shape = SubResource("CircleShape2D_aerfg")
 
 [node name="Design" parent="Stations/S5" index="2"]
-texture = ExtResource("7_36m4b")
+texture = ExtResource("7_l53as")
 
 [node name="S6" parent="Stations" index="6" instance=ExtResource("5_wixro")]
 position = Vector2(1083, 707)
@@ -814,7 +814,7 @@ text = "6
 4M €"
 
 [node name="RadiusSize" parent="Stations/S6/Radius" index="0"]
-shape = SubResource("CircleShape2D_ixqha")
+shape = SubResource("CircleShape2D_nmsli")
 
 [node name="S7" parent="Stations" index="7" instance=ExtResource("5_wixro")]
 position = Vector2(1454, 516)
@@ -826,10 +826,10 @@ text = "7
 3M €"
 
 [node name="RadiusSize" parent="Stations/S7/Radius" index="0"]
-shape = SubResource("CircleShape2D_r1dlu")
+shape = SubResource("CircleShape2D_betor")
 
 [node name="Design" parent="Stations/S7" index="2"]
-texture = ExtResource("7_36m4b")
+texture = ExtResource("7_l53as")
 
 [node name="S8" parent="Stations" index="8" instance=ExtResource("5_wixro")]
 position = Vector2(797, 553)
@@ -841,10 +841,10 @@ text = "8
 14M €"
 
 [node name="RadiusSize" parent="Stations/S8/Radius" index="0"]
-shape = SubResource("CircleShape2D_wfjo8")
+shape = SubResource("CircleShape2D_vjtdm")
 
 [node name="Design" parent="Stations/S8" index="2"]
-texture = ExtResource("7_jjl1c")
+texture = ExtResource("6_gwceb")
 
 [editable path="Stations/S0"]
 [editable path="Stations/S1"]
