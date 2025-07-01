@@ -1,5 +1,144 @@
-[gd_scene load_steps=2 format=3 uid="uid://mrj38kkxfhte"]
+[gd_scene load_steps=4 format=3 uid="uid://mrj38kkxfhte"]
 
 [ext_resource type="PackedScene" uid="uid://pfkxxpgv3128" path="res://level_templates/level_template.tscn" id="1_x1lei"]
+[ext_resource type="PackedScene" uid="uid://c1l4p1cjifyjh" path="res://entities/multi_station.tscn" id="2_dhnqt"]
+[ext_resource type="PackedScene" uid="uid://cyk7v0d36fvs6" path="res://entities/station.tscn" id="2_yaabq"]
 
 [node name="Level5" instance=ExtResource("1_x1lei")]
+
+[node name="MultiStations" type="Node2D" parent="." index="1"]
+
+[node name="MS0" parent="MultiStations" index="0" node_paths=PackedStringArray("stations") instance=ExtResource("2_dhnqt")]
+position = Vector2(1136, 456)
+stations = [NodePath("../../Stations/S9"), NodePath("../../Stations/S19")]
+
+[node name="MS1" parent="MultiStations" index="1" node_paths=PackedStringArray("stations") instance=ExtResource("2_dhnqt")]
+position = Vector2(688, 712)
+stations = [NodePath("../../Stations/S7"), NodePath("../../Stations/S18")]
+
+[node name="MS2" parent="MultiStations" index="2" node_paths=PackedStringArray("stations") instance=ExtResource("2_dhnqt")]
+position = Vector2(688, 520)
+stations = [NodePath("../../Stations/S4"), NodePath("../../Stations/S17")]
+
+[node name="MS3" parent="MultiStations" index="3" node_paths=PackedStringArray("stations") instance=ExtResource("2_dhnqt")]
+position = Vector2(1136, 840)
+stations = [NodePath("../../Stations/S11"), NodePath("../../Stations/S20")]
+
+[node name="MS4" parent="MultiStations" index="4" node_paths=PackedStringArray("stations") instance=ExtResource("2_dhnqt")]
+position = Vector2(264, 552)
+stations = [NodePath("../../Stations/S3"), NodePath("../../Stations/S21")]
+
+[node name="MS5" parent="MultiStations" index="5" node_paths=PackedStringArray("stations") instance=ExtResource("2_dhnqt")]
+position = Vector2(1456, 584)
+stations = [NodePath("../../Stations/S14"), NodePath("../../Stations/S22")]
+
+[node name="Stations" parent="." index="3"]
+position = Vector2(64, 0)
+
+[node name="S0" parent="Stations" index="0" instance=ExtResource("2_yaabq")]
+position = Vector2(168, 296)
+cost = 4
+texture_choice = "3"
+radius = 268.5
+
+[node name="S1" parent="Stations" index="1" instance=ExtResource("2_yaabq")]
+position = Vector2(264, 296)
+cost = 5
+show_radius = false
+radius = 224.5
+
+[node name="S2" parent="Stations" index="2" instance=ExtResource("2_yaabq")]
+position = Vector2(168, 800)
+cost = 10
+radius = 334.5
+
+[node name="S6" parent="Stations" index="3" instance=ExtResource("2_yaabq")]
+position = Vector2(272, 800)
+cost = 12
+texture_choice = "4"
+show_radius = false
+radius = 469.0
+
+[node name="S3" parent="Stations" index="4" instance=ExtResource("2_yaabq")]
+position = Vector2(216, 544)
+cost = 6
+show_radius = false
+radius = 264.5
+
+[node name="S21" parent="Stations" index="5" instance=ExtResource("2_yaabq")]
+position = Vector2(216, 544)
+cost = 8
+texture_choice = "4"
+show_radius = false
+radius = 320.5
+
+[node name="S4" parent="Stations" index="6" instance=ExtResource("2_yaabq")]
+position = Vector2(640, 512)
+radius = 138.0
+
+[node name="S17" parent="Stations" index="7" instance=ExtResource("2_yaabq")]
+position = Vector2(640, 512)
+radius = 138.0
+
+[node name="S5" parent="Stations" index="8" instance=ExtResource("2_yaabq")]
+position = Vector2(640, 400)
+cost = 8
+texture_choice = "3"
+show_radius = false
+radius = 338.5
+
+[node name="S7" parent="Stations" index="9" instance=ExtResource("2_yaabq")]
+position = Vector2(640, 704)
+radius = 138.0
+
+[node name="S18" parent="Stations" index="10" instance=ExtResource("2_yaabq")]
+position = Vector2(640, 704)
+radius = 138.0
+
+[node name="S12" parent="Stations" index="11" instance=ExtResource("2_yaabq")]
+position = Vector2(640, 816)
+radius = 138.0
+
+[node name="S8" parent="Stations" index="12" instance=ExtResource("2_yaabq")]
+position = Vector2(1088, 256)
+radius = 138.0
+
+[node name="S9" parent="Stations" index="13" instance=ExtResource("2_yaabq")]
+position = Vector2(1088, 448)
+radius = 138.0
+
+[node name="S19" parent="Stations" index="14" instance=ExtResource("2_yaabq")]
+position = Vector2(1088, 448)
+radius = 138.0
+
+[node name="S10" parent="Stations" index="15" instance=ExtResource("2_yaabq")]
+position = Vector2(1088, 640)
+radius = 138.0
+
+[node name="S11" parent="Stations" index="16" instance=ExtResource("2_yaabq")]
+position = Vector2(1088, 832)
+radius = 138.0
+
+[node name="S20" parent="Stations" index="17" instance=ExtResource("2_yaabq")]
+position = Vector2(1088, 832)
+radius = 138.0
+
+[node name="S13" parent="Stations" index="18" instance=ExtResource("2_yaabq")]
+position = Vector2(1536, 384)
+radius = 138.0
+
+[node name="S14" parent="Stations" index="19" instance=ExtResource("2_yaabq")]
+position = Vector2(1408, 576)
+radius = 138.0
+
+[node name="S22" parent="Stations" index="20" instance=ExtResource("2_yaabq")]
+position = Vector2(1408, 576)
+radius = 138.0
+
+[node name="S15" parent="Stations" index="21" instance=ExtResource("2_yaabq")]
+position = Vector2(1664, 576)
+radius = 138.0
+
+[node name="S16" parent="Stations" index="22" instance=ExtResource("2_yaabq")]
+position = Vector2(1536, 768)
+radius = 138.0

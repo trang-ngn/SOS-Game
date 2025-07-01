@@ -25,6 +25,21 @@ var BUILD_STATION_SHADER := load("uid://p7q2vflbay8j")
 		if design:
 			design.texture = TEXTURE_OPTIONS.get(texture_choice)
 
+@export var show_radius: bool = true:
+	set(value):
+		show_radius = value
+
+		if radius_size:
+			radius_size.visible = show_radius
+
+@export_range(50, 700, 0.5) var radius: float = 100:
+	set(value):
+		radius = value
+
+		if radius_size:
+			var shape: CircleShape2D = radius_size.shape
+			shape.radius = radius
+
 # Node References
 @onready var design: Sprite2D = $Design
 @onready var plot: Button = $Plot

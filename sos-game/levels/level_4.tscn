@@ -1283,6 +1283,8 @@ stations = [NodePath("../../Stations/S19"), NodePath("../../Stations/S20"), Node
 position = Vector2(165, 354)
 cost = 4
 texture_choice = "3"
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S0" index="0"]
 text = "0
@@ -1299,12 +1301,15 @@ texture = ExtResource("4_0fd8o")
 position = Vector2(439, 262)
 cost = 5
 texture_choice = "3"
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S1" index="0"]
 text = "1
 5M €"
 
 [node name="RadiusSize" parent="Stations/S1/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_04hp8")
 
 [node name="Design" parent="Stations/S1" index="2"]
@@ -1313,6 +1318,8 @@ texture = ExtResource("4_0fd8o")
 [node name="S2" parent="Stations" index="2" instance=ExtResource("3_hokjj")]
 position = Vector2(170, 657)
 cost = 10
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S2" index="0"]
 text = "2
@@ -1326,6 +1333,8 @@ shape = SubResource("CircleShape2D_8hlpj")
 position = Vector2(379, 827)
 cost = 20
 texture_choice = "4"
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S4" index="0"]
 text = "3
@@ -1342,6 +1351,8 @@ texture = ExtResource("5_dmnu2")
 position = Vector2(1084, 281)
 cost = 25
 texture_choice = "3"
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S5" index="0"]
 text = "4
@@ -1356,6 +1367,8 @@ texture = ExtResource("4_0fd8o")
 [node name="S6" parent="Stations" index="5" instance=ExtResource("3_hokjj")]
 position = Vector2(1435, 247)
 cost = 10
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S6" index="0"]
 text = "5
@@ -1368,6 +1381,8 @@ shape = SubResource("CircleShape2D_5oqfd")
 position = Vector2(1586, 426)
 cost = 8
 texture_choice = "4"
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S7" index="0"]
 text = "6
@@ -1384,6 +1399,8 @@ texture = ExtResource("5_dmnu2")
 position = Vector2(1719, 577)
 cost = 12
 texture_choice = "4"
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S8" index="0"]
 text = "7
@@ -1399,6 +1416,8 @@ texture = ExtResource("5_dmnu2")
 [node name="S9" parent="Stations" index="8" instance=ExtResource("3_hokjj")]
 position = Vector2(1637, 844)
 cost = 8
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S9" index="0"]
 text = "8
@@ -1412,6 +1431,8 @@ shape = SubResource("CircleShape2D_a7qdg")
 position = Vector2(674, 895)
 cost = 21
 texture_choice = "4"
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S10" index="0"]
 text = "9
@@ -1428,6 +1449,8 @@ texture = ExtResource("5_dmnu2")
 position = Vector2(1331, 888)
 cost = 15
 texture_choice = "3"
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S11" index="0"]
 text = "10
@@ -1444,6 +1467,8 @@ texture = ExtResource("4_0fd8o")
 position = Vector2(279, 524)
 cost = 15
 texture_choice = "4"
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S12" index="0"]
 text = "11
@@ -1460,6 +1485,8 @@ texture = ExtResource("5_dmnu2")
 position = Vector2(1256, 466)
 cost = 14
 texture_choice = "3"
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S13" index="0"]
 text = "12
@@ -1475,6 +1502,8 @@ texture = ExtResource("4_0fd8o")
 [node name="S14" parent="Stations" index="13" instance=ExtResource("3_hokjj")]
 position = Vector2(1448, 665)
 cost = 14
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S14" index="0"]
 text = "13
@@ -1487,6 +1516,8 @@ shape = SubResource("CircleShape2D_bv8dl")
 [node name="S15" parent="Stations" index="14" instance=ExtResource("3_hokjj")]
 position = Vector2(755, 273)
 cost = 16
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S15" index="0"]
 text = "14
@@ -1499,7 +1530,8 @@ shape = SubResource("CircleShape2D_uhmd0")
 [node name="S16" parent="Stations" index="15" instance=ExtResource("3_hokjj")]
 position = Vector2(1046, 517)
 cost = 10
-texture_choice = "4"
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S16" index="0"]
 text = "15
@@ -1509,13 +1541,12 @@ metadata/_edit_use_anchors_ = true
 [node name="RadiusSize" parent="Stations/S16/Radius" index="0"]
 shape = SubResource("CircleShape2D_8c4vb")
 
-[node name="Design" parent="Stations/S16" index="2"]
-texture = ExtResource("5_dmnu2")
-
 [node name="S17" parent="Stations" index="16" instance=ExtResource("3_hokjj")]
 position = Vector2(1046, 517)
 cost = 15
 texture_choice = "3"
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S17" index="0"]
 text = "16
@@ -1531,6 +1562,9 @@ texture = ExtResource("4_0fd8o")
 [node name="S18" parent="Stations" index="17" instance=ExtResource("3_hokjj")]
 position = Vector2(1046, 517)
 cost = 20
+texture_choice = "4"
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S18" index="0"]
 text = "17
@@ -1540,9 +1574,14 @@ metadata/_edit_use_anchors_ = true
 [node name="RadiusSize" parent="Stations/S18/Radius" index="0"]
 shape = SubResource("CircleShape2D_25iwj")
 
+[node name="Design" parent="Stations/S18" index="2"]
+texture = ExtResource("5_dmnu2")
+
 [node name="S19" parent="Stations" index="18" instance=ExtResource("3_hokjj")]
 position = Vector2(612, 644)
 cost = 4
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S19" index="0"]
 text = "18
@@ -1555,6 +1594,9 @@ shape = SubResource("CircleShape2D_0bers")
 [node name="S20" parent="Stations" index="19" instance=ExtResource("3_hokjj")]
 position = Vector2(612, 644)
 cost = 8
+texture_choice = "3"
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S20" index="0"]
 text = "19
@@ -1564,9 +1606,15 @@ metadata/_edit_use_anchors_ = true
 [node name="RadiusSize" parent="Stations/S20/Radius" index="0"]
 shape = SubResource("CircleShape2D_27cb5")
 
+[node name="Design" parent="Stations/S20" index="2"]
+texture = ExtResource("4_0fd8o")
+
 [node name="S21" parent="Stations" index="20" instance=ExtResource("3_hokjj")]
 position = Vector2(612, 644)
 cost = 12
+texture_choice = "4"
+show_radius = false
+radius = 0.0
 
 [node name="Plot" parent="Stations/S21" index="0"]
 text = "20
@@ -1578,6 +1626,8 @@ shape = SubResource("CircleShape2D_kiqbd")
 
 [node name="Wind" parent="Camera/VFX" index="0"]
 amount = 5
+[node name="Design" parent="Stations/S21" index="2"]
+texture = ExtResource("5_dmnu2")
 
 [editable path="Stations/S0"]
 [editable path="Stations/S1"]
