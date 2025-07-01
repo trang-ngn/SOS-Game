@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ux1w5cnn6cso"]
+[gd_scene load_steps=10 format=3 uid="uid://ux1w5cnn6cso"]
 
 [ext_resource type="Texture2D" uid="uid://dg2mqu0ey2yyy" path="res://backup_old/Assets/Dialogs/CostRadius.png" id="1_j0ixd"]
 [ext_resource type="FontFile" uid="uid://dy3tdfr3o6i5p" path="res://backup_old/Assets/Fonts/Silkscreen-Regular.ttf" id="2_vws7r"]
@@ -9,6 +9,16 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4o0mo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vws7r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxs2s"]
+bg_color = Color(0.419608, 0.290196, 0.156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shamv"]
+bg_color = Color(0.584314, 0.658824, 0.321569, 1)
+
+[sub_resource type="Theme" id="Theme_ejfuo"]
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_uxs2s")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_shamv")
 
 [node name="CostRadius" type="TextureRect"]
 offset_left = 1479.0
@@ -36,6 +46,7 @@ alignment = 1
 max_length = 4
 
 [node name="Radius" type="LineEdit" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 226.0
 offset_top = 70.0
@@ -68,3 +79,16 @@ theme_override_fonts/font = ExtResource("2_vws7r")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxEmpty_vws7r")
 placeholder_text = "M€ "
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 62.0
+offset_right = 394.0
+offset_bottom = 142.0
+theme = SubResource("Theme_ejfuo")
+min_value = 5.0
+max_value = 40.0
+step = 0.25
+value = 5.0
+rounded = true

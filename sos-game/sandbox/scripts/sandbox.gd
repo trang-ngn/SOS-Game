@@ -15,7 +15,7 @@ class_name Sandbox
 @onready var ui: UiManagerSandbox = $UiManagerSandbox
 @onready var cost_radius_ui = $UiManagerSandbox/CostRadius
 @onready var cost_input: LineEdit = $UiManagerSandbox/CostRadius/Cost
-@onready var radius_input: LineEdit = $UiManagerSandbox/CostRadius/Radius
+@onready var radius_input: HSlider = $UiManagerSandbox/CostRadius/HSlider
 @onready var done_button = $UiManagerSandbox/Buttons/DoneButton
 
 var offset : Vector2 = Vector2(0,0)
@@ -69,10 +69,10 @@ var editing_station: StationSandbox = null
 func _ready() -> void:
 	switch_mode(MODE.DEFAULT)
 	cost_input.text_submitted.connect(_on_cost_submitted)
-	radius_input.text_submitted.connect(_on_radius_submitted)
+	#radius_input.text_submitted.connect(_on_radius_submitted)
 
 	cost_input.text_changed.connect(_on_cost_text_changed)
-	radius_input.text_changed.connect(_on_radius_text_changed)
+	radius_input.value_changed.connect(_on_radius_text_changed)
 	ui.done_dialog.done_ok_button_pressed.connect(_on_done_ok_button_pressed)
 
 
@@ -88,13 +88,13 @@ func _on_cost_text_changed(new_text: String) -> void:
 	update_float_input(cost_input, new_text)
 
 
-func _on_radius_text_changed(new_text: String) -> void:
-	update_float_input(radius_input,new_text)
-	radius_input.text = filter_float_input(new_text)
+func _on_radius_text_changed(value: float) -> void:
+	#update_float_input(radius_input,new_text)
+	#radius_input.text = filter_float_input(new_text)
 
 	if editing_station:
-		var formatted = new_text.strip_edges().replace(",", ".")
-		var value = formatted.to_float()
+		#var formatted = new_text.strip_edges().replace(",", ".")
+		#var value = formatted.to_float()
 
 		if value > 0:
 			editing_station.set_radius(value)
@@ -138,16 +138,17 @@ func _on_cost_submitted(text: String) -> void:
 			print("Ungültige Kostenangabe")
 			return
 
-		switch_to_radius(value)
+		editing_station.set_cost(value)
+		#switch_to_radius(value)
 
 
-func switch_to_radius(value: float) -> void:
-	editing_station.set_cost(value)
-	radius_input.text = ""
-	radius_input.editable = true
-	radius_input.visible = true
-	radius_input.grab_focus()
-	check_coverage()
+#func switch_to_radius(value: float) -> void:
+	#editing_station.set_cost(value)
+	#radius_input.text = ""
+	#radius_input.editable = true
+	#radius_input.visible = true
+	#radius_input.grab_focus()
+	#check_coverage()
 
 
 func _on_radius_submitted(text: String) -> void:
@@ -182,7 +183,8 @@ func edit_existing_station(station: StationSandbox) -> void:
 	show_cost_input()
 	editing_station.show_radius()
 	var radius = editing_station.get_current_radius()
-	radius_input.text = format_float(radius)
+	#radius_input.text = format_float(radius)
+	radius_input.value = radius
 
 	editing_station.set_radius(radius)
 	check_coverage()
@@ -298,6 +300,7 @@ func place_object() -> void:
 		editing_station = placed_station
 		show_cost_input()
 		placed_station.show_radius()
+		radius_input.value = placed_station.radius_value
 
 	switch_mode(MODE.DEFAULT)
 	check_coverage()
@@ -309,10 +312,10 @@ func show_cost_input() -> void:
 		editing_station.show_radius()
 
 	cost_input.text = ""
-	radius_input.text = ""
-	radius_input.editable = false
-	radius_input.visible = false
-	cost_radius_ui.visible = false
+	#radius_input.text = ""
+	#radius_input.editable = false
+	#radius_input.visible = false
+	#cost_radius_ui.visible = false
 	cost_radius_ui.visible = true
 	cost_input.grab_focus()
 
