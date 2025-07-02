@@ -1,5 +1,5 @@
 # create a global name for a script, making it easier to reference in other scripts.
-class_name Instance
+#class_name Instance
 extends Resource # data container
 
 var n: int

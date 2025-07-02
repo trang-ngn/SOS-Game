@@ -1,5 +1,5 @@
 # create a global name for a script, making it easier to reference in other scripts.
-class_name Solution
+#class_name Solution
 extends Resource # data container
 
 var instance: Instance
