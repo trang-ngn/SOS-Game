@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://hsuljdmpce28"]
 
 [ext_resource type="PackedScene" uid="uid://cotwrns28n00w" path="res://gui_manager/dialogs_templates/base_dialog.tscn" id="1_y6pxm"]
-[ext_resource type="Texture2D" uid="uid://dn5x344gpn5qx" path="res://asset/dialogs/back_dialog.png" id="2_6g78u"]
+[ext_resource type="Texture2D" uid="uid://dn5x344gpn5qx" path="res://assets/dialogs/back_dialog.png" id="2_6g78u"]
 [ext_resource type="Script" uid="uid://dppsxdns240bj" path="res://gui_manager/dialogs/back_dialog.gd" id="2_ll4tp"]
 
 [node name="BackDialog" instance=ExtResource("1_y6pxm")]

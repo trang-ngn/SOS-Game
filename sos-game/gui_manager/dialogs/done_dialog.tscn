@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cotwrns28n00w" path="res://gui_manager/dialogs_templates/base_dialog.tscn" id="1_jehuf"]
 [ext_resource type="Script" uid="uid://xwsqq8g2ye1y" path="res://gui_manager/dialogs/done_dialog.gd" id="2_kafra"]
-[ext_resource type="Texture2D" uid="uid://bnirrquimvfbu" path="res://asset/dialogs/done_dialog.png" id="2_smqfw"]
+[ext_resource type="Texture2D" uid="uid://bnirrquimvfbu" path="res://assets/dialogs/done_dialog.png" id="2_smqfw"]
 
 [node name="DoneDialog" instance=ExtResource("1_jehuf")]
 script = ExtResource("2_kafra")

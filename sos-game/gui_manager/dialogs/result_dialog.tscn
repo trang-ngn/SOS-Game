@@ -1,17 +1,17 @@
 [gd_scene load_steps=13 format=3 uid="uid://ciunpltsb7ici"]
 
-[ext_resource type="Texture2D" uid="uid://gdgswod8pd75" path="res://asset/dialogs/result_dialog.png" id="1_3v3mn"]
+[ext_resource type="Texture2D" uid="uid://gdgswod8pd75" path="res://assets/dialogs/result_dialog.png" id="1_3v3mn"]
 [ext_resource type="Script" uid="uid://ltiin8l5ciad" path="res://gui_manager/dialogs/result_dialog.gd" id="1_s3pt8"]
 [ext_resource type="FontFile" uid="uid://dy3tdfr3o6i5p" path="res://backup_old/Assets/Fonts/Silkscreen-Regular.ttf" id="2_s3pt8"]
 [ext_resource type="FontFile" uid="uid://dk1ekcwlorg8y" path="res://backup_old/Assets/Fonts/Silkscreen-Bold.ttf" id="3_0uybl"]
 [ext_resource type="Texture2D" uid="uid://mqa3wwnk2b00" path="res://backup_old/Assets/Buttons/Button-nextlevel.png" id="4_5vg06"]
 [ext_resource type="Texture2D" uid="uid://dkhddl4kkxhf2" path="res://backup_old/Assets/Buttons/Button-tryagain.png" id="6_1xyhq"]
 [ext_resource type="Texture2D" uid="uid://bt0xeoojmpu7x" path="res://backup_old/Assets/Buttons/Show-Solution-Button.png" id="6_3v3mn"]
-[ext_resource type="Texture2D" uid="uid://bxbqg8ljxlmhr" path="res://asset/buttons/hide_solution_button.png" id="7_3v3mn"]
-[ext_resource type="Texture2D" uid="uid://j12spgnawoc3" path="res://asset/buttons/nextlevel_button_click.png" id="7_cbg1l"]
-[ext_resource type="Texture2D" uid="uid://drhom7d6ov4c0" path="res://asset/buttons/nextlevel_button_hover.png" id="8_ko88h"]
-[ext_resource type="Texture2D" uid="uid://bouq3j0h2qmjj" path="res://asset/buttons/show_solution_button_click.png" id="11_6b7q6"]
-[ext_resource type="Texture2D" uid="uid://crybrdqgq0x0u" path="res://asset/buttons/show_solution_button_hover.png" id="12_cfva7"]
+[ext_resource type="Texture2D" uid="uid://bxbqg8ljxlmhr" path="res://assets/buttons/hide_solution_button.png" id="7_3v3mn"]
+[ext_resource type="Texture2D" uid="uid://j12spgnawoc3" path="res://assets/buttons/nextlevel_button_click.png" id="7_cbg1l"]
+[ext_resource type="Texture2D" uid="uid://drhom7d6ov4c0" path="res://assets/buttons/nextlevel_button_hover.png" id="8_ko88h"]
+[ext_resource type="Texture2D" uid="uid://bouq3j0h2qmjj" path="res://assets/buttons/show_solution_button_click.png" id="11_6b7q6"]
+[ext_resource type="Texture2D" uid="uid://crybrdqgq0x0u" path="res://assets/buttons/show_solution_button_hover.png" id="12_cfva7"]
 
 [node name="ResultDialog" type="Control"]
 visible = false

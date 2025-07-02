@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dewa6nwtmgh23" path="res://entities/house.gd" id="1_d72mu"]
 [ext_resource type="Shader" uid="uid://b1wvm2ng2bjhx" path="res://backup_old/Shaders/highlight.gdshader" id="2_e416n"]
-[ext_resource type="Texture2D" uid="uid://bphrnn6loor1g" path="res://asset/houses/brown_house.png" id="3_qv6u7"]
+[ext_resource type="Texture2D" uid="uid://bphrnn6loor1g" path="res://assets/houses/brown_house.png" id="3_qv6u7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pjvig"]
 shader = ExtResource("2_e416n")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://8k2g1ea5lvjp" path="res://entities/station.gd" id="1_xkuuy"]
 [ext_resource type="Script" uid="uid://e51081tjtwso" path="res://entities/station_radius.gd" id="2_xkuuy"]
-[ext_resource type="Texture2D" uid="uid://b55x4ix5nu4aa" path="res://asset/stations/rescue_station_2.png" id="3_fysdy"]
+[ext_resource type="Texture2D" uid="uid://b55x4ix5nu4aa" path="res://assets/stations/rescue_station_2.png" id="3_fysdy"]
 [ext_resource type="Texture2D" uid="uid://b0bh0dre1prsg" path="res://backup_old/Assets/Buttons/mask.png" id="4_csmuh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_35frx"]

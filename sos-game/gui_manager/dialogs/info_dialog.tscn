@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bc4a57nsuy1ai"]
 
 [ext_resource type="PackedScene" uid="uid://cotwrns28n00w" path="res://gui_manager/dialogs_templates/base_dialog.tscn" id="1_tucow"]
-[ext_resource type="Texture2D" uid="uid://cl1xcnmt3mshi" path="res://asset/dialogs/info_dialog.png" id="2_tucow"]
+[ext_resource type="Texture2D" uid="uid://cl1xcnmt3mshi" path="res://assets/dialogs/info_dialog.png" id="2_tucow"]
 
 [node name="InfoDialog" instance=ExtResource("1_tucow")]
 visible = false

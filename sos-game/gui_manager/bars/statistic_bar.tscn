@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://rh3071qdk5gl"]
 
-[ext_resource type="Texture2D" uid="uid://d1onl0srx1x4a" path="res://asset/bars/statistic_bar.png" id="1_0ylia"]
-[ext_resource type="FontFile" uid="uid://1sbjkcbnm31v" path="res://asset/fonts/Silkscreen-Regular.ttf" id="2_0ylia"]
+[ext_resource type="Texture2D" uid="uid://d1onl0srx1x4a" path="res://assets/bars/statistic_bar.png" id="1_0ylia"]
+[ext_resource type="FontFile" uid="uid://1sbjkcbnm31v" path="res://assets/fonts/Silkscreen-Regular.ttf" id="2_0ylia"]
 [ext_resource type="Script" uid="uid://drn3vljy0kmig" path="res://gui_manager/bars/statistic_bar.gd" id="2_66joc"]
 
 [node name="StatisticBar" type="TextureRect"]
