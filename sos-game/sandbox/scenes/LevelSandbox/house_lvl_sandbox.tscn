@@ -34,7 +34,7 @@ shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/outline_width = 1.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujyf8"]
-size = Vector2(43, 43)
+size = Vector2(43, 37.5)
 
 [node name="HouseLVLSandbox" type="Area2D"]
 script = ExtResource("1_2xgvq")
@@ -62,5 +62,5 @@ material = SubResource("ShaderMaterial_848li")
 texture = ExtResource("7_nqeri")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(0, 5.75)
 shape = SubResource("RectangleShape2D_ujyf8")

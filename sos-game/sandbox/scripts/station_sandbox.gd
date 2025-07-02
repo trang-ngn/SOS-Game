@@ -86,7 +86,14 @@ func get_current_radius() -> float:
 
 func cover_houses(built: bool) -> void:
 	houses.clear()
-	var new_houses = $Radius.get_overlapping_areas()
+	var bodies = $Radius.get_overlapping_bodies()
+	var new_houses: Array[HouseSandbox] = []
+
+	for bd in bodies:
+		var house = bd.get_parent()
+
+		if house is HouseSandbox:
+			new_houses.append(house)
 
 	for h in new_houses:
 		if h is HouseSandbox:
@@ -95,6 +102,7 @@ func cover_houses(built: bool) -> void:
 	if built:
 		for h in houses:
 			h.num_stat_cover += 1
+
 	else:
 		for h in houses:
 			if h.num_stat_cover <= 0:

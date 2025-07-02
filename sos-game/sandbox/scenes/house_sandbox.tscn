@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1gujflbm4onn"]
+[gd_scene load_steps=9 format=3 uid="uid://b1gujflbm4onn"]
 
 [ext_resource type="Script" uid="uid://dlogu44vc3roe" path="res://sandbox/scripts/house_sandbox.gd" id="1_r3hka"]
 [ext_resource type="Texture2D" uid="uid://b2qe6xh3aeg1s" path="res://backup_old/Assets/Houses/brown_house.png" id="2_smslr"]
@@ -9,6 +9,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eg1ne"]
 size = Vector2(63.5, 63.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dxde"]
+size = Vector2(43, 37.5)
 
 [node name="HouseSandbox" type="Area2D"]
 script = ExtResource("1_r3hka")
@@ -32,6 +35,12 @@ texture = ExtResource("5_juvva")
 
 [node name="White" type="Sprite2D" parent="Design"]
 texture = ExtResource("6_7hcot")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_6dxde")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
