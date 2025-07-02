@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bm5at6gsw38cl"
-path="res://.godot/imported/Button-Level-1-Click.png-638877a7b01721a87fe173e26266e8fc.ctex"
+path="res://.godot/imported/Button-Level-1-Click.png-f442136750c215c1893ba7d9bb4b9914.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/level_picker_buttons/Button-Level-1-Click.png"
-dest_files=["res://.godot/imported/Button-Level-1-Click.png-638877a7b01721a87fe173e26266e8fc.ctex"]
+source_file="res://Assets/level_picker_buttons/Button-Level-1-Click.png"
+dest_files=["res://.godot/imported/Button-Level-1-Click.png-f442136750c215c1893ba7d9bb4b9914.ctex"]
 
 [params]
 

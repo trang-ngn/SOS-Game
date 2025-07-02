@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pbl44lds2tdb"
-path="res://.godot/imported/error_dialog.png-0d8d4af2cdc1382fc0525c47acb49be9.ctex"
+path="res://.godot/imported/error_dialog.png-00595392e166ceb5d322d759b1643f6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dialogs/error_dialog.png"
-dest_files=["res://.godot/imported/error_dialog.png-0d8d4af2cdc1382fc0525c47acb49be9.ctex"]
+source_file="res://Assets/dialogs/error_dialog.png"
+dest_files=["res://.godot/imported/error_dialog.png-00595392e166ceb5d322d759b1643f6c.ctex"]
 
 [params]
 

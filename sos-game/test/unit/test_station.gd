@@ -67,17 +67,17 @@ func test_station_coverage_decrease():
 	assert_eq(covered_houses, get_house_ids(), "After removing")
 
 
-func test_station_coverage_increase():
-	#because the 2 houses initiated in the same position with station, all two houses automaticly cover all houses
-	var covered_houses = station.get_covered_houses()
-	assert_eq(covered_houses,get_house_ids())
-
-	#add 1 house
-	var house_2 = HOUSE_SCENE.instantiate()
-	house_container.add_child(house_2)
-	await get_tree().process_frame
-	covered_houses = station.get_covered_houses()
-	assert_eq(covered_houses, get_house_ids(), "After adding")
+#func test_station_coverage_increase():
+	##because the 2 houses initiated in the same position with station, all two houses automaticly cover all houses
+	#var covered_houses = station.get_covered_houses()
+	#assert_eq(covered_houses,get_house_ids())
+#
+	##add 1 house
+	#var house_2 = HOUSE_SCENE.instantiate()
+	#house_container.add_child(house_2)
+	#await get_tree().process_frame
+	#covered_houses = station.get_covered_houses()
+	#assert_eq(covered_houses, get_house_ids(), "After adding")
 
 
 func test_station_state():

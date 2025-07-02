@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tgdu0wva8iea"
-path="res://.godot/imported/Button-Level-3-Hover.png-579e49d3a4e2a23f89616bd790299ca6.ctex"
+path="res://.godot/imported/Button-Level-3-Hover.png-873a65e8c36175c5d484874aa936ed47.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/level_picker_buttons/Button-Level-3-Hover.png"
-dest_files=["res://.godot/imported/Button-Level-3-Hover.png-579e49d3a4e2a23f89616bd790299ca6.ctex"]
+source_file="res://Assets/level_picker_buttons/Button-Level-3-Hover.png"
+dest_files=["res://.godot/imported/Button-Level-3-Hover.png-873a65e8c36175c5d484874aa936ed47.ctex"]
 
 [params]
 
