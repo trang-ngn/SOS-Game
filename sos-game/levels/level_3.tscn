@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://c6a4bexnlpebd" path="res://backup_old/Assets/Tileset/animated_water_test.png" id="3_ggx06"]
 [ext_resource type="PackedScene" uid="uid://dk62mfcykye61" path="res://entities/house.tscn" id="4_73bo8"]
 [ext_resource type="PackedScene" uid="uid://cyk7v0d36fvs6" path="res://entities/station.tscn" id="4_ggx06"]
-[ext_resource type="Texture2D" uid="uid://bp4f24vtvqyxg" path="res://assets/stations/rescue_station_3.png" id="6_lfnxh"]
-[ext_resource type="Texture2D" uid="uid://8jekb2tcjxi6" path="res://assets/stations/rescue_station_4.png" id="7_ofchu"]
+[ext_resource type="Texture2D" uid="uid://bp4f24vtvqyxg" path="res://asset/stations/rescue_station_3.png" id="6_lfnxh"]
+[ext_resource type="Texture2D" uid="uid://8jekb2tcjxi6" path="res://asset/stations/rescue_station_4.png" id="7_ofchu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_73bo8"]
 texture = ExtResource("2_rrhnm")

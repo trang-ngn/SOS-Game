@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cotwrns28n00w" path="res://gui_manager/dialogs_templates/base_dialog.tscn" id="1_avveh"]
 [ext_resource type="Script" uid="uid://pogk40l7xnmg" path="res://gui_manager/dialogs/restart_dialog.gd" id="2_4td43"]
-[ext_resource type="Texture2D" uid="uid://bmlpwrcirqpob" path="res://assets/dialogs/restart_dialog.png" id="2_ab88j"]
+[ext_resource type="Texture2D" uid="uid://bmlpwrcirqpob" path="res://asset/dialogs/restart_dialog.png" id="2_ab88j"]
 
 [node name="RestartDialog" instance=ExtResource("1_avveh")]
 script = ExtResource("2_4td43")

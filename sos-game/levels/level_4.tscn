@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://backup_old/Assets/Tileset/Tileset_v2.png" id="2_0fd8o"]
 [ext_resource type="PackedScene" uid="uid://dk62mfcykye61" path="res://entities/house.tscn" id="2_t6q73"]
 [ext_resource type="PackedScene" uid="uid://c1l4p1cjifyjh" path="res://entities/multi_station.tscn" id="3_0fd8o"]
-[ext_resource type="Texture2D" uid="uid://cp8xusyicf04j" path="res://assets/tilesets/Tileset_v3.png" id="3_dmnu2"]
+[ext_resource type="Texture2D" uid="uid://cp8xusyicf04j" path="res://asset/tilesets/Tileset_v3.png" id="3_dmnu2"]
 [ext_resource type="PackedScene" uid="uid://cyk7v0d36fvs6" path="res://entities/station.tscn" id="3_hokjj"]
-[ext_resource type="Texture2D" uid="uid://bp4f24vtvqyxg" path="res://assets/stations/rescue_station_3.png" id="4_0fd8o"]
-[ext_resource type="Texture2D" uid="uid://do65c7og20gu3" path="res://assets/tilesets/animated_water_test.png" id="4_ng40l"]
-[ext_resource type="Texture2D" uid="uid://d3wdu1b0u58um" path="res://assets/tilesets/Tileset_v2.png" id="5_04hp8"]
-[ext_resource type="Texture2D" uid="uid://8jekb2tcjxi6" path="res://assets/stations/rescue_station_4.png" id="5_dmnu2"]
+[ext_resource type="Texture2D" uid="uid://bp4f24vtvqyxg" path="res://asset/stations/rescue_station_3.png" id="4_0fd8o"]
+[ext_resource type="Texture2D" uid="uid://do65c7og20gu3" path="res://asset/tilesets/animated_water_test.png" id="4_ng40l"]
+[ext_resource type="Texture2D" uid="uid://d3wdu1b0u58um" path="res://asset/tilesets/Tileset_v2.png" id="5_04hp8"]
+[ext_resource type="Texture2D" uid="uid://8jekb2tcjxi6" path="res://asset/stations/rescue_station_4.png" id="5_dmnu2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_08cxd"]
 texture = ExtResource("2_0fd8o")
