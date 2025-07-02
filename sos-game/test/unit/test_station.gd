@@ -29,9 +29,13 @@ func before_each():
 	house_container.add_child(house_1)
 
 	await get_tree().process_frame
+	await get_tree().physics_frame
 
 
-func after_all():
+func after_each():
+	station_container.queue_free()
+	house_container.queue_free()
+	await get_tree().process_frame
 	await get_tree().process_frame
 
 
@@ -58,12 +62,19 @@ func get_house_ids() -> Array[int]:
 func test_station_coverage_decrease():
 	#because the 2 houses initiated in the same position with station, all two houses automaticly cover all houses
 	var covered_houses = station.get_covered_houses()
-	assert_eq(covered_houses,get_house_ids(),"Initial array")
+	var expected_covered_houses = get_house_ids()
+	covered_houses.sort()
+	expected_covered_houses.sort()
+	assert_eq(covered_houses, expected_covered_houses, "Initial array")
 
 	#remove 1 house
 	house_1.queue_free()
 	await get_tree().process_frame
 	covered_houses = station.get_covered_houses()
+	covered_houses.sort()
+	expected_covered_houses = get_house_ids()
+	expected_covered_houses.sort()
+
 	assert_eq(covered_houses, get_house_ids(), "After removing")
 
 
