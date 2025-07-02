@@ -30,6 +30,8 @@ func before_each():
 
 	await get_tree().process_frame
 	await get_tree().physics_frame
+	await get_tree().physics_frame
+	await get_tree().process_frame
 
 
 func after_each():
