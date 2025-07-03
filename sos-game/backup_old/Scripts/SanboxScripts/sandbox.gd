@@ -162,7 +162,7 @@ func _on_radius_submitted(text: String) -> void:
 
 		editing_station.set_radius(value)
 
-		hide_radius(editing_station)
+		editing_station.hide_radius()
 
 		editing_station = null
 		cost_radius_ui.visible = false
@@ -172,7 +172,7 @@ func _on_radius_submitted(text: String) -> void:
 
 func edit_existing_station(station: StationSandbox) -> void:
 	if editing_station and editing_station != station:
-		hide_radius(editing_station)
+		editing_station.hide_radius()
 
 	editing_station = station
 	current_object = null
@@ -186,16 +186,6 @@ func edit_existing_station(station: StationSandbox) -> void:
 	radius_input.text = format_float(radius)
 
 	editing_station.set_radius(radius)
-
-
-func hide_radius(station: StationSandbox) -> void:
-	var radius = station.get_node("Radius")
-	radius.visible = false
-
-
-func show_radius(station: StationSandbox) -> void:
-	var radius = station.get_node("Radius")
-	radius.visible = true
 
 
 func format_float(value: float) -> String:
@@ -288,7 +278,7 @@ func place_object() -> void:
 		stations.append(current_object)
 
 		if editing_station:
-			hide_radius(editing_station)
+			editing_station.hide_radius()
 
 		var placed_station = current_object
 		current_object = null
