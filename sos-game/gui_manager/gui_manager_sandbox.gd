@@ -25,6 +25,14 @@ func _ready() -> void:
 	hide_designs()
 
 
+func _set_ui_visible(visible_state: bool):
+	show_button.visible = not visible_state
+	buttons.visible = visible_state
+	dialogs.visible = visible_state
+	statistic.visible = visible_state
+	hide_designs()
+
+
 func hide_designs():
 	house_designs.visible = false
 	station_designs.visible = false

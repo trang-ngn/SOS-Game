@@ -299,16 +299,19 @@ func spawn_building_instance() -> void:
 		current_object = new_house
 		set_offset(8,8)
 		new_house.set_design_index(current_house_design_index)
+		toggle_stations_radius(true)
 
 	elif current_building == BUILDING.STATION:
 		var new_station = station_scene.instantiate() as StationSandbox
 		stations_container.add_child(new_station)
 		new_station.edit_station.connect(on_plot_pressed)
 
-		current_object = new_station
 		set_offset(16,12)
 		new_station.set_design_index(current_station_design_index)
 		new_station.set_radius(10)
+		new_station.toggle_radius_visibility(true)
+		new_station.plot_pressed = true
+		current_object = new_station
 
 
 func on_plot_pressed(station:StationSandbox) -> void:
@@ -327,9 +330,12 @@ func place_object() -> void:
 
 	if current_object is HouseSandbox:
 		houses.append(current_object)
+		toggle_stations_radius(false)
 
 	elif current_object is StationSandbox:
 		stations.append(current_object)
+		current_object.toggle_radius_visibility(false)
+		current_object.plot_pressed = false
 
 		#if editing_station:
 			#hide_radius(editing_station)
@@ -383,6 +389,12 @@ func delete_object() -> void:
 		#update_station_numbers()
 
 	check_coverage()
+
+
+func toggle_stations_radius(value: bool) -> void:
+	for s in stations:
+		s.plot_pressed = value
+		s.toggle_radius_visibility(value)
 
 
 func update_station_numbers() -> void:
