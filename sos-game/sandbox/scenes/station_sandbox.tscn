@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfayr"]
 size = Vector2(79.5, 110.25)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6ypof"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_715n2"]
 radius = 13.2673
 
 [node name="StationSandbox" type="Area2D"]
@@ -55,7 +55,7 @@ texture_filter = 1
 [node name="RadiusSize" type="CollisionShape2D" parent="Radius"]
 visible = false
 scale = Vector2(15, 15)
-shape = SubResource("CircleShape2D_6ypof")
+shape = SubResource("CircleShape2D_715n2")
 debug_color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="RadiusVisual" type="Node2D" parent="Radius"]

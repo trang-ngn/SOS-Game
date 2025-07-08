@@ -18,6 +18,8 @@ var design_index: int = 0
 
 var plot_pressed: bool = false
 
+signal edit_station(station : StationSandbox)
+
 
 func _ready() -> void:
 	update_design_visibility()
@@ -111,39 +113,48 @@ func cover_houses(built: bool) -> void:
 				h.num_stat_cover -= 1
 
 
-func show_radius() -> void:
-	set_radius(get_current_radius())
-	$Radius.visible = true
-	$Radius/RadiusSize.visible = true
-	$Radius/RadiusVisual.visible = true
+#func show_radius() -> void:
+	#set_radius(get_current_radius())
+	#$Radius.visible = true
+	#$Radius/RadiusSize.visible = true
+	#$Radius/RadiusVisual.visible = true
+#
+#
+#func hide_radius() -> void:
+	#set_radius(get_current_radius())
+	#$Radius.visible = false
+	#$Radius/RadiusSize.visible = false
+	#$Radius/RadiusVisual.visible = false
 
 
-func hide_radius() -> void:
+func toggle_radius_visibility(value: bool):
 	set_radius(get_current_radius())
-	$Radius.visible = false
-	$Radius/RadiusSize.visible = false
-	$Radius/RadiusVisual.visible = false
+	$Radius.visible = value
+	$Radius/RadiusSize.visible = value
+	$Radius/RadiusVisual.visible = value
 
 
 func _on_plot_pressed() -> void:
-	var sandbox = get_tree().get_current_scene()
-#	sandbox.unedit_existing_station()
-	if plot_pressed == false:
-		sandbox.edit_existing_station(self)
-		#plot_pressed = true
+	#var sandbox = get_tree().get_current_scene()
+##	sandbox.unedit_existing_station()
+	#if plot_pressed == false:
+		#sandbox.edit_existing_station(self)
+		##plot_pressed = true
 
+	emit_signal("edit_station",self)
 	#else:
 
 
 func _on_plot_mouse_entered() -> void:
-	var sandbox = get_tree().get_current_scene()
-
-	if sandbox.editing_station != self:
-		show_radius()
+	#var sandbox = get_tree().get_current_scene()
+#
+	#if sandbox.editing_station != self:
+	print(radius_value)
+	toggle_radius_visibility(true)
 
 
 func _on_plot_mouse_exited() -> void:
-	var sandbox = get_tree().get_current_scene()
-
-	if sandbox.editing_station != self:
-		hide_radius()
+	#var sandbox = get_tree().get_current_scene()
+#
+	#if sandbox.editing_station != self:
+	toggle_radius_visibility(false)

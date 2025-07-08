@@ -30,7 +30,8 @@ var current_station_design_index: int = 0
 enum MODE {
 	DEFAULT,
 	BUILD,
-	DELETE
+	DELETE,
+	EDIT_STATION
 }
 
 enum BUILDING {
@@ -81,7 +82,21 @@ func _process(delta: float) -> void:
 		update_object_position()
 
 	#debug purpose
+	#print(editing_station)
 	#print("house : " + str(houses_container.get_child_count()) + "stations : " + str(stations_container.get_child_count()))
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+		if current_mode == MODE.BUILD:
+			place_object()
+		elif current_mode == MODE.DELETE:
+			delete_object()
+
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.is_pressed():
+		if current_mode == MODE.DELETE or current_mode == MODE.EDIT_STATION:
+			set_off_edit_mode()
+			switch_mode(MODE.DEFAULT)
 
 
 func _on_cost_text_changed(new_text: String) -> void:
@@ -95,9 +110,10 @@ func _on_radius_text_changed(value: float) -> void:
 	if editing_station:
 		#var formatted = new_text.strip_edges().replace(",", ".")
 		#var value = formatted.to_float()
-
+		editing_station.toggle_radius_visibility(true)
 		if value > 0:
 			editing_station.set_radius(value)
+			print(editing_station.radius_value)
 
 	check_coverage()
 
@@ -151,53 +167,53 @@ func _on_cost_submitted(text: String) -> void:
 	#check_coverage()
 
 
-func _on_radius_submitted(text: String) -> void:
-	if editing_station:
-		var formatted = text.strip_edges().replace(",", ".")
-		var value = formatted.to_float()
-
-		if value <= 0:
-			print("Ungültiger Radiuswert")
-			return
-
-		editing_station.set_radius(value)
-
-		hide_radius(editing_station)
-
-		editing_station = null
-		cost_radius_ui.visible = false
-		switch_mode(MODE.DEFAULT)
-		check_coverage()
-
-
-func edit_existing_station(station: StationSandbox) -> void:
-	if editing_station and editing_station != station:
-		hide_radius(editing_station)
-
-	editing_station = station
-	current_object = null
-	switch_mode(MODE.DEFAULT)
-
-	station.set_radius(station.get_current_radius())
-
-	show_cost_input()
-	editing_station.show_radius()
-	var radius = editing_station.get_current_radius()
-	#radius_input.text = format_float(radius)
-	radius_input.value = radius
-
-	editing_station.set_radius(radius)
-	check_coverage()
+#func _on_radius_submitted(text: String) -> void:
+	#if editing_station:
+		#var formatted = text.strip_edges().replace(",", ".")
+		#var value = formatted.to_float()
+#
+		#if value <= 0:
+			#print("Ungültiger Radiuswert")
+			#return
+#
+		#editing_station.set_radius(value)
+#
+		#hide_radius(editing_station)
+#
+		#editing_station = null
+		#cost_radius_ui.visible = false
+		#switch_mode(MODE.DEFAULT)
+		#check_coverage()
 
 
-func hide_radius(station: StationSandbox) -> void:
-	var radius = station.get_node("Radius")
-	radius.visible = false
+#func edit_existing_station(station: StationSandbox) -> void:
+	#if editing_station and editing_station != station:
+		#hide_radius(editing_station)
+#
+	#editing_station = station
+	#current_object = null
+	#switch_mode(MODE.DEFAULT)
+#
+	#station.set_radius(station.get_current_radius())
+#
+	#show_cost_input()
+	#editing_station.show_radius()
+	#var radius = editing_station.get_current_radius()
+	##radius_input.text = format_float(radius)
+	#radius_input.value = radius
+#
+	#editing_station.set_radius(radius)
+	#check_coverage()
 
 
-func show_radius(station: StationSandbox) -> void:
-	var radius = station.get_node("Radius")
-	radius.visible = true
+#func hide_radius(station: StationSandbox) -> void:
+	#var radius = station.get_node("Radius")
+	#radius.visible = false
+#
+#
+#func show_radius(station: StationSandbox) -> void:
+	#var radius = station.get_node("Radius")
+	#radius.visible = true
 
 
 func format_float(value: float) -> String:
@@ -214,25 +230,16 @@ func update_object_position() -> void:
 	current_object.position = to_global(world_pos + offset).snapped(Vector2.ONE)
 
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
-		if current_mode == MODE.BUILD:
-			place_object()
-		elif current_mode == MODE.DELETE:
-			delete_object()
-
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.is_pressed():
-		if current_mode == MODE.DELETE:
-			switch_mode(MODE.DEFAULT)
-
-
 func switch_mode(new_mode: MODE) -> void:
+
 	if new_mode == MODE.DEFAULT:
 		set_default_mode()
 	elif new_mode == MODE.BUILD:
 		set_build_mode()
 	elif new_mode == MODE.DELETE:
 		set_delete_mode()
+	elif new_mode == MODE.EDIT_STATION:
+		set_edit_mode()
 
 
 func set_default_mode() -> void:
@@ -258,6 +265,19 @@ func set_delete_mode() -> void:
 	set_offset(0, 0)
 
 
+func set_edit_mode() -> void:
+	current_mode = MODE.EDIT_STATION
+	cost_radius_ui.visible = true
+	default_object.switch_default(false)
+	object_deleter.switch_deleter(false)
+
+
+func set_off_edit_mode() -> void:
+	cost_radius_ui.visible = false
+	editing_station.toggle_radius_visibility(false)
+	editing_station = null
+
+
 func spawn_building_instance() -> void:
 	if current_object != null and current_object != default_object and current_object != object_deleter:
 		current_object.queue_free()
@@ -272,12 +292,21 @@ func spawn_building_instance() -> void:
 	elif current_building == BUILDING.STATION:
 		var new_station = station_scene.instantiate() as StationSandbox
 		stations_container.add_child(new_station)
+		new_station.edit_station.connect(on_plot_pressed)
+
 		current_object = new_station
 		set_offset(16,12)
 		new_station.set_design_index(current_station_design_index)
 		new_station.set_radius(10)
 
 	check_coverage()
+
+
+func on_plot_pressed(station:StationSandbox) -> void:
+	switch_mode(MODE.EDIT_STATION)
+	editing_station = station
+	radius_input.value = station.radius_value
+	#print(station.name)
 
 
 func place_object() -> void:
@@ -291,33 +320,33 @@ func place_object() -> void:
 	elif current_object is StationSandbox:
 		stations.append(current_object)
 
-		if editing_station:
-			hide_radius(editing_station)
+		#if editing_station:
+			#hide_radius(editing_station)
 
-		var placed_station = current_object
-		current_object = null
-		switch_mode(MODE.DEFAULT)
-		editing_station = placed_station
-		show_cost_input()
-		placed_station.show_radius()
-		radius_input.value = placed_station.radius_value
+		#var placed_station = current_object
+		#current_object = null
+		#switch_mode(MODE.DEFAULT)
+		#editing_station = placed_station
+		#show_cost_input()
+		#placed_station.show_radius()
+		#radius_input.value = placed_station.radius_value
 
 	switch_mode(MODE.DEFAULT)
 	check_coverage()
 
 
-func show_cost_input() -> void:
-	#shows radius while editing
-	if editing_station:
-		editing_station.show_radius()
-
-	cost_input.text = ""
-	#radius_input.text = ""
-	#radius_input.editable = false
-	#radius_input.visible = false
-	#cost_radius_ui.visible = false
-	cost_radius_ui.visible = true
-	cost_input.grab_focus()
+#func show_cost_input() -> void:
+	##shows radius while editing
+	#if editing_station:
+		#editing_station.show_radius()
+#
+	#cost_input.text = ""
+	##radius_input.text = ""
+	##radius_input.editable = false
+	##radius_input.visible = false
+	##cost_radius_ui.visible = false
+	#cost_radius_ui.visible = true
+	#cost_input.grab_focus()
 
 
 func delete_object() -> void:
@@ -428,20 +457,28 @@ func reset_coverage() -> void:
 		h.num_stat_cover = 0
 
 
-func check_coverage() -> void:
+func set_done_button() -> void:
+	pass
+
+func check_coverage() -> bool:
 	var counter:int = 0
 	reset_coverage()
-	for s in stations:
-		s.cover_houses(true)
+	for s in stations_container.get_children():
+		if s is StationSandbox :
+			s.cover_houses(true)
 
 	for h in houses:
 		if h.is_covered():
-			counter += 1
+			continue
+		else :
+			return false
 
 	num_covered_houses = counter
 	all_houses_covered = (counter == len(houses))
 	ui.all_houses_covered = all_houses_covered
 	ui.update_statistic_sandbox(len(houses), len(stations), num_covered_houses)
+	
+	return true
 
 
 func transfer_data() -> void:
