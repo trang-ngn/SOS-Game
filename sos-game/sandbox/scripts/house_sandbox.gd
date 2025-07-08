@@ -27,13 +27,13 @@ func is_covered() -> bool:
 	#else:
 		#$Sprite2D.set_instance_shader_parameter("active",true)
 
-
-func _process(delta: float) -> void:
-	time_passed += delta
-
-	if time_passed >= 2.5:
-		print(self.name + " : " + str(num_stat_cover))
-		time_passed = 0.0
+#
+#func _process(delta: float) -> void:
+	#time_passed += delta
+#
+	#if time_passed >= 2.5:
+		#print(self.name + " : " + str(num_stat_cover))
+		#time_passed = 0.0
 
 
 #func initialize() -> void:

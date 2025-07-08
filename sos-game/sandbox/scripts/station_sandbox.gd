@@ -24,12 +24,12 @@ var time_passed := 0.0
 signal edit_station(station: StationSandbox)
 
 
-func _process(delta: float) -> void:
-	time_passed += delta
-
-	if time_passed >= 2.5:
-		print(self.name + str(houses))
-		time_passed = 0.0
+#func _process(delta: float) -> void:
+	#time_passed += delta
+#
+	#if time_passed >= 2.5:
+		#print(self.name + str(houses))
+		#time_passed = 0.0
 
 
 func _ready() -> void:
@@ -179,7 +179,7 @@ func _on_plot_mouse_exited() -> void:
 
 
 func _on_radius_body_entered(body: Node2D) -> void:
-	print(name + "SOMEONE ENTERED ME")
+	#print(name + "SOMEONE ENTERED ME")
 	if body.get_parent() is HouseSandbox:
 		check_coverage_from_sandbox()
 

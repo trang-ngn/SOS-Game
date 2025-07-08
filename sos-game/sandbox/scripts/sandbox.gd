@@ -69,6 +69,7 @@ var editing_station: StationSandbox = null
 
 func _ready() -> void:
 	switch_mode(MODE.DEFAULT)
+	cost_radius_ui.visible = false
 	cost_input.text_submitted.connect(_on_cost_submitted)
 	#radius_input.text_submitted.connect(_on_radius_submitted)
 
@@ -116,7 +117,7 @@ func _on_radius_text_changed(value: float) -> void:
 		if value > 0:
 			editing_station.set_radius(value)
 
-	check_coverage()
+	#check_coverage()
 
 
 func update_float_input(line_edit: LineEdit, input: String) -> void:
@@ -236,7 +237,7 @@ func update_object_position() -> void:
 
 
 func switch_mode(new_mode: MODE) -> void:
-	check_coverage()
+	#check_coverage()
 
 	if editing_station != null:
 		set_off_edit_mode()
@@ -253,7 +254,7 @@ func switch_mode(new_mode: MODE) -> void:
 
 func set_default_mode() -> void:
 	current_mode = MODE.DEFAULT
-	default_object.switch_default(true)
+	default_object.switch_default(false)
 	object_deleter.switch_deleter(false)
 	current_object = default_object
 	set_offset(8,8)
@@ -315,6 +316,7 @@ func on_plot_pressed(station:StationSandbox) -> void:
 	editing_station = station
 	editing_station.plot_pressed = true
 	radius_input.value = station.radius_value
+	cost_input.text = str(station.station_cost)
 	#print(station.name)
 
 
@@ -341,8 +343,8 @@ func place_object() -> void:
 		#radius_input.value = placed_station.radius_value
 
 	#current_object = null
-	await get_tree().process_frame
-	await get_tree().physics_frame
+	#await get_tree().process_frame
+	#await get_tree().physics_frame
 	check_coverage()
 
 	switch_mode(MODE.DEFAULT)
@@ -474,8 +476,6 @@ func reset_coverage() -> void:
 func check_coverage() -> void:
 	var counter:int = 0
 	update_coverage()
-	await get_tree().physics_frame
-	await get_tree().process_frame
 
 	for h in houses:
 		if h.is_covered():
