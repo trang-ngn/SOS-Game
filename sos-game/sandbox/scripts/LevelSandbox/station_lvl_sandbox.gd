@@ -68,18 +68,28 @@ func change_state() -> void:
 
 func cover_houses(value: bool)->void:
 	for h in houses:
-		if (value == true):
+		if value:
 			h.update_num_covering_stations(+1)
 		elif(value == false && h.num_covering_stations == 0):
 			h.update_num_covering_stations(0)
 		else:
 			h.update_num_covering_stations(-1)
 
+	#if not built :
+		#return  
+
+	#for h in houses:
+		#if value:
+			#h.update_num_covering_stations(+1)
+
+		#else:
+			#h.update_num_covering_stations(-1)
+
 
 func play_animation()-> void:
 
 	designs[design_index].set_instance_shader_parameter("wiggle_strength", 2.4)
-	var total_time:float = 0.4
+	var total_time:float = 0.25
 	var interval: float = 0.05
 	var elapsed: float = 0.0
 	var new_progress: float = 0.0
@@ -112,22 +122,21 @@ func is_built()->bool:
 
 
 func _on_plot_button_up() -> void:
-	if (!built):
-		built = true
-	else:
-		built = false
-
+	built = !built
 	change_state()
 
 
+func toggle_radius_visibility(value: bool) -> void:
+	$Radius/RadiusSize.visible = value
+	$Radius/RadiusVisual.visible = value
+
+
 func _on_plot_mouse_entered() -> void:
-	$Radius/RadiusSize.visible = true
-	$Radius/RadiusVisual.visible = true
+	toggle_radius_visibility(true)
 
 
 func _on_plot_mouse_exited() -> void:
-	$Radius/RadiusSize.visible = false
-	$Radius/RadiusVisual.visible = false
+	toggle_radius_visibility(false)
 
 
 func _on_radius_area_entered(area: HouseLVL) -> void:

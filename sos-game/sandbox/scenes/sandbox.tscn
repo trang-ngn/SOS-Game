@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://dvov0eouqk3cl" path="res://sandbox/scripts/delete_object.gd" id="38_gyefc"]
 [ext_resource type="Texture2D" uid="uid://hub27jtpuyaf" path="res://backup_old/Assets/Cursor/delete_object_2.png" id="39_pojp0"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h7ofb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_84njt"]
 texture = ExtResource("2_m0fvw")
 0:0/0 = 0
 1:0/0 = 0
@@ -226,7 +226,7 @@ texture = ExtResource("3_84njt")
 7:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_0r1v2"]
-sources/0 = SubResource("TileSetAtlasSource_h7ofb")
+sources/0 = SubResource("TileSetAtlasSource_84njt")
 sources/1 = SubResource("TileSetAtlasSource_kt1oo")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrb1b"]
