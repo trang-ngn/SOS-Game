@@ -116,7 +116,7 @@ func _on_radius_text_changed(value: float) -> void:
 		if value > 0:
 			editing_station.set_radius(value)
 
-	check_coverage_deferred()
+	check_coverage()
 
 
 func update_float_input(line_edit: LineEdit, input: String) -> void:
@@ -230,9 +230,13 @@ func update_object_position() -> void:
 	var world_pos = tilemap.map_to_local(tile_pos)
 	current_object.position = to_global(world_pos + offset).snapped(Vector2.ONE)
 
+	#if current_object is HouseSandbox:
+		#print("name")
+		#check_coverage()
+
 
 func switch_mode(new_mode: MODE) -> void:
-	check_coverage_deferred()
+	check_coverage()
 
 	if editing_station != null:
 		set_off_edit_mode()
@@ -337,7 +341,10 @@ func place_object() -> void:
 		#radius_input.value = placed_station.radius_value
 
 	#current_object = null
-	check_coverage_deferred()
+	await get_tree().process_frame
+	await get_tree().physics_frame
+	check_coverage()
+
 	switch_mode(MODE.DEFAULT)
 
 
@@ -373,7 +380,7 @@ func delete_object() -> void:
 		stations.erase(target)
 		#update_station_numbers()
 
-	check_coverage_deferred()
+	check_coverage()
 
 
 func update_station_numbers() -> void:
@@ -465,12 +472,10 @@ func reset_coverage() -> void:
 
 
 func check_coverage() -> void:
-	reset_coverage()
 	var counter:int = 0
-
-	for s in stations_container.get_children():
-		if s is StationSandbox:
-			s.cover_houses()
+	update_coverage()
+	await get_tree().physics_frame
+	await get_tree().process_frame
 
 	for h in houses:
 		if h.is_covered():
@@ -480,9 +485,11 @@ func check_coverage() -> void:
 	ui.update_statistic_sandbox(len(houses), len(stations), num_covered_houses)
 
 
-func check_coverage_deferred() -> void:
-	await get_tree().physics_frame
-	check_coverage()
+func update_coverage() -> void:
+	reset_coverage()
+	for s in stations_container.get_children():
+		if s is StationSandbox:
+			s.cover_houses()
 
 
 func transfer_data() -> void:

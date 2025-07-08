@@ -36,7 +36,7 @@ texture = ExtResource("5_juvva")
 [node name="White" type="Sprite2D" parent="Design"]
 texture = ExtResource("6_7hcot")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="CharacterBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 5.75)

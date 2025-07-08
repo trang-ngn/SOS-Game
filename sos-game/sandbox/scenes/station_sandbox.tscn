@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpwy82qe4ahhh"]
+[gd_scene load_steps=9 format=3 uid="uid://cpwy82qe4ahhh"]
 
 [ext_resource type="Script" uid="uid://b3o2ramcrysvq" path="res://sandbox/scripts/station_sandbox.gd" id="1_cyslk"]
 [ext_resource type="Texture2D" uid="uid://c3e1xphfgndjb" path="res://backup_old/Assets/Rescue Station/rescue_station_4.png" id="2_tt4nq"]
 [ext_resource type="Texture2D" uid="uid://u3dkhecguxkp" path="res://backup_old/Assets/Rescue Station/rescue_station_2.png" id="3_0chva"]
 [ext_resource type="Texture2D" uid="uid://bc6ae7dvqt8hn" path="res://backup_old/Assets/Rescue Station/rescue_station_3.png" id="4_4xt86"]
 [ext_resource type="Script" uid="uid://e51081tjtwso" path="res://entities/station_radius.gd" id="5_tt4nq"]
+[ext_resource type="Script" uid="uid://ciqhnxppsj0lm" path="res://sandbox/scripts/radius_sandbox.gd" id="5_y052x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfayr"]
 size = Vector2(79.5, 110.25)
@@ -50,6 +51,7 @@ texture = ExtResource("4_4xt86")
 
 [node name="Radius" type="Area2D" parent="."]
 texture_filter = 1
+script = ExtResource("5_y052x")
 
 [node name="RadiusSize" type="CollisionShape2D" parent="Radius"]
 scale = Vector2(15, 15)
@@ -66,3 +68,5 @@ script = ExtResource("5_tt4nq")
 [connection signal="mouse_exited" from="Plot" to="." method="_on_plot_mouse_exited"]
 [connection signal="pressed" from="Plot" to="." method="_on_plot_pressed"]
 [connection signal="area_entered" from="Radius" to="." method="_on_radius_area_entered"]
+[connection signal="body_entered" from="Radius" to="." method="_on_radius_body_entered"]
+[connection signal="body_exited" from="Radius" to="." method="_on_radius_body_exited"]

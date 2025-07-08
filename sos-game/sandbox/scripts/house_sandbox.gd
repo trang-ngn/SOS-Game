@@ -54,6 +54,7 @@ func change_sprite(direction: bool) -> void:
 
 
 func _on_area_entered(area: ObjectSandbox) -> void:
+
 	area.collision_count += 1
 
 

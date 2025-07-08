@@ -102,8 +102,6 @@ func set_radius(value: float) -> void:
 	shape_node.shape = new_shape
 
 	$Radius/RadiusVisual.queue_redraw()
-	
-	
 
 
 func get_current_radius() -> float:
@@ -145,7 +143,7 @@ func cover_houses() -> void:
 
 
 func toggle_radius_visibility(value: bool):
-	set_radius(get_current_radius())
+	#set_radius(get_current_radius())
 	#$Radius.visible = value
 	#$Radius/RadiusSize.visible = value
 	$Radius/RadiusVisual.visible = value
@@ -178,3 +176,21 @@ func _on_plot_mouse_exited() -> void:
 		toggle_radius_visibility(true)
 	else:
 		toggle_radius_visibility(false)
+
+
+func _on_radius_body_entered(body: Node2D) -> void:
+	print(name + "SOMEONE ENTERED ME")
+	if body.get_parent() is HouseSandbox:
+		check_coverage_from_sandbox()
+
+
+func _on_radius_body_exited(body: Node2D) -> void:
+	if body.get_parent() is HouseSandbox:
+		check_coverage_from_sandbox()
+
+
+func check_coverage_from_sandbox():
+	var sandbox = get_tree().get_current_scene()
+
+	if sandbox and sandbox.has_method("check_coverage"):
+		sandbox.check_coverage()
