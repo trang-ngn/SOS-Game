@@ -101,9 +101,9 @@ func _input(event: InputEvent) -> void:
 		if current_mode == MODE.EDIT_STATION:
 			switch_mode(MODE.DEFAULT)
 
-
-func _on_cost_text_changed(new_text: String) -> void:
-	update_float_input(cost_input, new_text)
+		if current_mode == MODE.BUILD:
+			current_object.queue_free()
+			switch_mode(MODE.DEFAULT)
 
 
 func _on_radius_text_changed(value: float) -> void:
@@ -120,31 +120,58 @@ func _on_radius_text_changed(value: float) -> void:
 	#check_coverage()
 
 
-func update_float_input(line_edit: LineEdit, input: String) -> void:
+func _on_cost_text_changed(new_text: String) -> void:
+
+	update_input(cost_input, new_text)
+	submit_cost(new_text)
+
+
+func update_input(line_edit: LineEdit, input: String) -> void:
 	var old_cursor = line_edit.caret_column
-	var filtered = filter_float_input(input)
+	var filtered = filter_input(input)
 
 	if line_edit.text != filtered:
 		line_edit.text = filtered
 		line_edit.caret_column = clamp(old_cursor, 0, filtered.length())
 
 
-func filter_float_input(input: String) -> String:
-	var allowed_chars = "0123456789.,"
+func filter_input(input: String) -> String:
+	var allowed_chars = "0123456789"
 	var result = ""
 	var dot_found = false
 
 	for c in input:
-		if c in ".,": # max one , or . allowed
-			if dot_found:
-				continue
+		#if c in ".,": # max one , or . allowed
+			#if dot_found:
+				#continue
+#
+			#result += "."
+			#dot_found = true
 
-			result += "."
-			dot_found = true
-		elif c in "0123456789":
+		#elif c in "0123456789":
+		if c in allowed_chars:
 			result += c
 
 	return result
+	#var result = ""
+#
+	#for c in input:
+		#if c.is_valid_int():
+			#result += c
+#
+	#return result
+
+
+func submit_cost(text: String) -> void:
+	if editing_station:
+		var formatted = text.strip_edges().replace(",", ".")
+		var value = formatted.to_int()
+
+		if value <= 0:
+			print("Ungültige Kostenangabe")
+			return
+
+		editing_station.set_cost(value)
 
 
 func _on_cost_submitted(text: String) -> void:
@@ -294,13 +321,14 @@ func spawn_building_instance() -> void:
 	if current_object != null and current_object != default_object and current_object != object_deleter:
 		current_object.queue_free()
 
+	toggle_stations_radius(true)
+
 	if current_building == BUILDING.HOUSE:
 		var new_house = house_scene.instantiate() as HouseSandbox
 		houses_container.add_child(new_house)
 		current_object = new_house
 		set_offset(8,8)
 		new_house.set_design_index(current_house_design_index)
-		toggle_stations_radius(true)
 
 	elif current_building == BUILDING.STATION:
 		var new_station = station_scene.instantiate() as StationSandbox
@@ -316,6 +344,9 @@ func spawn_building_instance() -> void:
 
 
 func on_plot_pressed(station:StationSandbox) -> void:
+	if current_mode == MODE.BUILD:
+		return
+
 	switch_mode(MODE.EDIT_STATION)
 	editing_station = station
 	editing_station.plot_pressed = true
@@ -331,11 +362,9 @@ func place_object() -> void:
 
 	if current_object is HouseSandbox:
 		houses.append(current_object)
-		toggle_stations_radius(false)
 
 	elif current_object is StationSandbox:
 		stations.append(current_object)
-		current_object.toggle_radius_visibility(false)
 		current_object.plot_pressed = false
 
 		#if editing_station:
@@ -352,6 +381,7 @@ func place_object() -> void:
 	#current_object = null
 	#await get_tree().process_frame
 	#await get_tree().physics_frame
+	toggle_stations_radius(false)
 	check_coverage()
 
 	switch_mode(MODE.DEFAULT)
