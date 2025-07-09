@@ -682,7 +682,7 @@ texture_choice = "green"
 
 [node name="H8" parent="Houses" index="8" instance=ExtResource("2_rdpme")]
 position = Vector2(494, 879)
-texture_choice = "lightb"
+texture_choice = "green"
 
 [node name="H9" parent="Houses" index="9" instance=ExtResource("2_rdpme")]
 position = Vector2(282, 849)
@@ -710,7 +710,7 @@ texture_choice = "green"
 
 [node name="H15" parent="Houses" index="15" instance=ExtResource("2_rdpme")]
 position = Vector2(1270, 447)
-texture_choice = "lightb"
+texture_choice = "red"
 
 [node name="H16" parent="Houses" index="16" instance=ExtResource("2_rdpme")]
 position = Vector2(1242, 549)

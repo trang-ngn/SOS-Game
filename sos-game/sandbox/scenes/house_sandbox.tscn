@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1gujflbm4onn"]
+[gd_scene load_steps=15 format=3 uid="uid://b1gujflbm4onn"]
 
+[ext_resource type="Shader" uid="uid://bqeeeb5g3i7xc" path="res://utils/shaders/red.gdshader" id="1_1xb5a"]
 [ext_resource type="Script" uid="uid://dlogu44vc3roe" path="res://sandbox/scripts/house_sandbox.gd" id="1_r3hka"]
 [ext_resource type="Texture2D" uid="uid://b2qe6xh3aeg1s" path="res://backup_old/Assets/Houses/brown_house.png" id="2_smslr"]
 [ext_resource type="Texture2D" uid="uid://b2r4cix5na7mw" path="res://backup_old/Assets/Houses/green_house.png" id="3_x7pie"]
@@ -9,6 +10,26 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eg1ne"]
 size = Vector2(63.5, 63.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1xb5a"]
+shader = ExtResource("1_1xb5a")
+shader_parameter/red_intensity = 0.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r6m0m"]
+shader = ExtResource("1_1xb5a")
+shader_parameter/red_intensity = 0.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t8g3r"]
+shader = ExtResource("1_1xb5a")
+shader_parameter/red_intensity = 0.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hyn71"]
+shader = ExtResource("1_1xb5a")
+shader_parameter/red_intensity = 0.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v4p4p"]
+shader = ExtResource("1_1xb5a")
+shader_parameter/red_intensity = 0.4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6dxde"]
 size = Vector2(43, 37.5)
@@ -22,21 +43,31 @@ shape = SubResource("RectangleShape2D_eg1ne")
 [node name="Design" type="Node2D" parent="."]
 
 [node name="Brown" type="Sprite2D" parent="Design"]
+material = SubResource("ShaderMaterial_1xb5a")
+instance_shader_parameters/use_red = false
 texture = ExtResource("2_smslr")
 
 [node name="Green" type="Sprite2D" parent="Design"]
+material = SubResource("ShaderMaterial_r6m0m")
+instance_shader_parameters/use_red = false
 texture = ExtResource("3_x7pie")
 
 [node name="Lightb" type="Sprite2D" parent="Design"]
+material = SubResource("ShaderMaterial_t8g3r")
+instance_shader_parameters/use_red = false
 texture = ExtResource("4_3eq4c")
 
 [node name="Red" type="Sprite2D" parent="Design"]
+material = SubResource("ShaderMaterial_hyn71")
+instance_shader_parameters/use_red = false
 texture = ExtResource("5_juvva")
 
 [node name="White" type="Sprite2D" parent="Design"]
+material = SubResource("ShaderMaterial_v4p4p")
+instance_shader_parameters/use_red = false
 texture = ExtResource("6_7hcot")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="CharacterBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 5.75)

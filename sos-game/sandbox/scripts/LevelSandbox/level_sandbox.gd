@@ -96,11 +96,11 @@ func update_picked_stations():
 	num_picked_stations = 0
 
 	for station in stations:
-		if station.is_built:
+		if station.is_built():
 			total_cost += station.cost
 			num_picked_stations += 1
 
-		picked_stations.append(station.built)
+		picked_stations.append(station.is_built())
 
 	_update_coverage()
 	ui.update_statistic(num_picked_stations, len(stations), num_covered_houses, len(houses), total_cost)
