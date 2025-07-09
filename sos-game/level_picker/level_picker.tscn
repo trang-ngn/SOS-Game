@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://bm0uygmmrbah5"]
 
 [ext_resource type="Script" uid="uid://b6h4yuiv6b7xd" path="res://level_picker/level_picker.gd" id="1_6edwq"]
-[ext_resource type="Texture2D" uid="uid://dc8qwuar6jsql" path="res://assets/background/background.png" id="1_qww52"]
+[ext_resource type="Texture2D" uid="uid://doegnj8fv51ig" path="res://assets/background/menu3_60%.png" id="2_fs2fd"]
 [ext_resource type="Texture2D" uid="uid://bov23ak411wub" path="res://assets/level_picker_buttons/level_1.png" id="2_wb1kl"]
 [ext_resource type="Texture2D" uid="uid://bgl0tsbofe71v" path="res://assets/level_picker_buttons/level_2.png" id="3_6edwq"]
 [ext_resource type="Texture2D" uid="uid://bm5at6gsw38cl" path="res://assets/level_picker_buttons/Button-Level-1-Click.png" id="4_1011r"]
@@ -37,9 +37,10 @@ script = ExtResource("1_6edwq")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_qww52")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_fs2fd")
+expand_mode = 1
 
 [node name="LevelButtons" type="Control" parent="."]
 anchors_preset = 0
