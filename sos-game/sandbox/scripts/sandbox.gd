@@ -150,7 +150,7 @@ func filter_float_input(input: String) -> String:
 func _on_cost_submitted(text: String) -> void:
 	if editing_station:
 		var formatted = text.strip_edges().replace(",", ".")
-		var value = formatted.to_float()
+		var value = formatted.to_int()
 
 		if value <= 0:
 			print("Ungültige Kostenangabe")
