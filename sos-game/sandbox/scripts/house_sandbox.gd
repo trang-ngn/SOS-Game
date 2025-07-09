@@ -20,12 +20,17 @@ func is_covered() -> bool:
 	return num_stat_cover > 0
 
 
+func set_collision_indicator(value: bool) -> void:
+	designs[design_index].set_instance_shader_parameter("use_red",value)
+
+
 #func set_outline() -> void:
 	#if (num_stat_cover == 0):
 		#$Sprite2D.set_instance_shader_parameter("active",false)
 
 	#else:
 		#$Sprite2D.set_instance_shader_parameter("active",true)
+
 
 #
 #func _process(delta: float) -> void:

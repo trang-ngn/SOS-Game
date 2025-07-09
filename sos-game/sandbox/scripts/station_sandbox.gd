@@ -41,6 +41,10 @@ func update_design_visibility() -> void:
 		designs[i].visible = (i == design_index)
 
 
+func set_collision_indicator(value: bool) -> void:
+	designs[design_index].set_instance_shader_parameter("use_red",value)
+
+
 # Kollisionsbehandlung
 func _on_area_entered(area: ObjectSandbox) -> void:
 	area.collision_count += 1

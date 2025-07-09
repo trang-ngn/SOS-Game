@@ -231,9 +231,10 @@ func update_object_position() -> void:
 	var world_pos = tilemap.map_to_local(tile_pos)
 	current_object.position = to_global(world_pos + offset).snapped(Vector2.ONE)
 
-	#if current_object is HouseSandbox:
-		#print("name")
-		#check_coverage()
+	if current_object.is_colliding():
+		current_object.set_collision_indicator(true)
+	else:
+		current_object.set_collision_indicator(false)
 
 
 func switch_mode(new_mode: MODE) -> void:
