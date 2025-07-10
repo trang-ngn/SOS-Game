@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1l4p1cjifyjh"]
+[gd_scene load_steps=8 format=3 uid="uid://c1l4p1cjifyjh"]
 
 [ext_resource type="Script" uid="uid://r0kqd02u4qiw" path="res://entities/multi_station.gd" id="1_ovqco"]
-[ext_resource type="Texture2D" uid="uid://oaujf1ock2wk" path="res://backup_old/Assets/Rescue Station/multi_plot.png" id="2_0xcuk"]
+[ext_resource type="Texture2D" uid="uid://cs8ajiy4c4c64" path="res://assets/stations/multi_plot.png" id="2_tujwn"]
+[ext_resource type="Texture2D" uid="uid://bycln1ljpjgk8" path="res://assets/stations/multi_plot_outline.png" id="3_56mtd"]
+[ext_resource type="Texture2D" uid="uid://billjjfcysh6f" path="res://assets/stations/multi_plot_hover.png" id="3_nujqt"]
 [ext_resource type="Shader" uid="uid://dksxj0hluoa8f" path="res://backup_old/Shaders/build_station.gdshader" id="3_vgv0t"]
 [ext_resource type="Texture2D" uid="uid://coxtvxa3gff2q" path="res://backup_old/Assets/Rescue Station/Template_station.png" id="4_rv36y"]
 
@@ -14,12 +16,13 @@ shader_parameter/wiggle_offset = 0.0
 script = ExtResource("1_ovqco")
 
 [node name="Plot" type="TextureButton" parent="."]
-self_modulate = Color(0.427451, 0.592157, 0.819608, 1)
 offset_left = -31.0
 offset_top = -1.0
 offset_right = 64.0
 offset_bottom = 53.0
-texture_normal = ExtResource("2_0xcuk")
+texture_normal = ExtResource("2_tujwn")
+texture_hover = ExtResource("3_nujqt")
+texture_focused = ExtResource("3_56mtd")
 
 [node name="Label" type="Label" parent="Plot"]
 layout_mode = 0
