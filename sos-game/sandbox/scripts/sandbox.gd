@@ -253,11 +253,23 @@ func format_float(value: float) -> String:
 
 
 func update_object_position() -> void:
-	var mouse_pos = get_global_mouse_position()
-	var tile_pos = tilemap.local_to_map(mouse_pos)
-	var world_pos = tilemap.map_to_local(tile_pos)
-	current_object.position = to_global(world_pos + offset).snapped(Vector2.ONE)
+	var mouse_pos
+	var tile_pos
+	var world_pos
 
+	if current_mode == MODE.DELETE:
+		mouse_pos = get_global_mouse_position()
+		current_object.position = to_global(mouse_pos + offset).snapped(Vector2.ONE)
+	else:
+		mouse_pos = get_global_mouse_position()
+		tile_pos = tilemap.local_to_map(mouse_pos)
+		world_pos = tilemap.map_to_local(tile_pos)
+		current_object.position = to_global(world_pos + offset).snapped(Vector2.ONE)
+
+	update_collision_indicator()
+
+
+func update_collision_indicator() -> void:
 	if current_object.is_colliding():
 		current_object.set_collision_indicator(true)
 	else:
@@ -284,6 +296,7 @@ func set_default_mode() -> void:
 	current_mode = MODE.DEFAULT
 	default_object.switch_default(false)
 	object_deleter.switch_deleter(false)
+	toggle_stations_radius(false)
 	current_object = default_object
 	set_offset(8,8)
 
