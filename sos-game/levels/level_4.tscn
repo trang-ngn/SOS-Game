@@ -1292,6 +1292,7 @@ text = "0
 metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S0/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_ng40l")
 
 [node name="Design" parent="Stations/S0" index="2"]
@@ -1327,6 +1328,7 @@ text = "2
 metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S2/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_8hlpj")
 
 [node name="S4" parent="Stations" index="3" instance=ExtResource("3_hokjj")]
@@ -1342,6 +1344,7 @@ text = "3
 metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S4/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_qhnv2")
 
 [node name="Design" parent="Stations/S4" index="2"]
@@ -1359,6 +1362,7 @@ text = "4
 25M €"
 
 [node name="RadiusSize" parent="Stations/S5/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_vru0x")
 
 [node name="Design" parent="Stations/S5" index="2"]
@@ -1375,6 +1379,7 @@ text = "5
 10M €"
 
 [node name="RadiusSize" parent="Stations/S6/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_5oqfd")
 
 [node name="S7" parent="Stations" index="6" instance=ExtResource("3_hokjj")]
@@ -1390,6 +1395,7 @@ text = "6
 metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S7/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_8mt0c")
 
 [node name="Design" parent="Stations/S7" index="2"]
@@ -1408,6 +1414,7 @@ text = "7
 metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S8/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_dp2yl")
 
 [node name="Design" parent="Stations/S8" index="2"]
@@ -1425,6 +1432,7 @@ text = "8
 metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S9/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_a7qdg")
 
 [node name="S10" parent="Stations" index="9" instance=ExtResource("3_hokjj")]
@@ -1440,6 +1448,7 @@ text = "9
 metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S10/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_g1ha7")
 
 [node name="Design" parent="Stations/S10" index="2"]
@@ -1458,6 +1467,7 @@ text = "10
 metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S11/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_52a3b")
 
 [node name="Design" parent="Stations/S11" index="2"]
@@ -1476,6 +1486,7 @@ text = "11
 metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S12/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_3ff1r")
 
 [node name="Design" parent="Stations/S12" index="2"]
@@ -1494,6 +1505,7 @@ text = "12
 metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S13/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_cmohj")
 
 [node name="Design" parent="Stations/S13" index="2"]
@@ -1511,6 +1523,7 @@ text = "13
 metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S14/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_bv8dl")
 
 [node name="S15" parent="Stations" index="14" instance=ExtResource("3_hokjj")]
@@ -1525,6 +1538,7 @@ text = "14
 metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S15/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_uhmd0")
 
 [node name="S16" parent="Stations" index="15" instance=ExtResource("3_hokjj")]
@@ -1539,6 +1553,7 @@ text = "15
 metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S16/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_8c4vb")
 
 [node name="S17" parent="Stations" index="16" instance=ExtResource("3_hokjj")]
@@ -1554,6 +1569,7 @@ text = "16
 metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S17/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_gu0mu")
 
 [node name="Design" parent="Stations/S17" index="2"]
@@ -1572,6 +1588,7 @@ text = "17
 metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S18/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_25iwj")
 
 [node name="Design" parent="Stations/S18" index="2"]
@@ -1589,6 +1606,7 @@ text = "18
 metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S19/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_0bers")
 
 [node name="S20" parent="Stations" index="19" instance=ExtResource("3_hokjj")]
@@ -1604,6 +1622,7 @@ text = "19
 metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S20/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_27cb5")
 
 [node name="Design" parent="Stations/S20" index="2"]
@@ -1622,12 +1641,14 @@ text = "20
 metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S21/Radius" index="0"]
+visible = true
 shape = SubResource("CircleShape2D_kiqbd")
+
+[node name="Design" parent="Stations/S21" index="2"]
+texture = ExtResource("5_dmnu2")
 
 [node name="Wind" parent="Camera/VFX" index="0"]
 amount = 5
-[node name="Design" parent="Stations/S21" index="2"]
-texture = ExtResource("5_dmnu2")
 
 [editable path="Stations/S0"]
 [editable path="Stations/S1"]

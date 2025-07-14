@@ -22,7 +22,7 @@ func _ready() -> void:
 func initialize_stations() -> void:
 	for s in stations:
 		s.hide_plot()
-		s.position = template.global_position + Vector2(0,11)
+		#s.position = template.global_position + Vector2(0,11)
 
 	template.visible = false
 
