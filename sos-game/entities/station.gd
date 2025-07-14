@@ -62,6 +62,9 @@ func _ready() -> void:
 	id = get_index()
 
 	if radius_size and radius_size.shape:
+		var shape: CircleShape2D = radius_size.shape
+		shape.radius = radius
+
 		radius_size.shape = radius_size.shape.duplicate(true)
 
 	radius_visual.visible = false
