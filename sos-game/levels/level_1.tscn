@@ -606,31 +606,31 @@ texture = ExtResource("2_ucll5")
 sources/0 = SubResource("TileSetAtlasSource_a3epv")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gwceb"]
-radius = 220.656
+radius = 100.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l53as"]
-radius = 184.44
+radius = 100.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3sk1a"]
-radius = 175.046
+radius = 100.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_08mmt"]
-radius = 264.03
+radius = 100.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ot28"]
-radius = 252.873
+radius = 100.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aerfg"]
-radius = 280.765
+radius = 100.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nmsli"]
-radius = 397.257
+radius = 100.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_betor"]
-radius = 254.386
+radius = 100.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vjtdm"]
-radius = 695.236
+radius = 100.0
 
 [node name="Level1" instance=ExtResource("1_8rb2g")]
 

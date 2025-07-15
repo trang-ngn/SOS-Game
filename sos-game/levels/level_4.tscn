@@ -1020,67 +1020,67 @@ sources/0 = SubResource("TileSetAtlasSource_vru0x")
 sources/1 = SubResource("TileSetAtlasSource_5oqfd")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ng40l"]
-radius = 195.0
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_04hp8"]
-radius = 205.295
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8hlpj"]
-radius = 236.846
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhnv2"]
-radius = 336.442
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vru0x"]
-radius = 310.266
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5oqfd"]
-radius = 211.085
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8mt0c"]
-radius = 217.83
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dp2yl"]
-radius = 273.249
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a7qdg"]
-radius = 149.111
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g1ha7"]
-radius = 379.796
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_52a3b"]
-radius = 280.717
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ff1r"]
-radius = 328.306
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cmohj"]
-radius = 318.058
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bv8dl"]
-radius = 256.425
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uhmd0"]
-radius = 256.425
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8c4vb"]
-radius = 256.425
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gu0mu"]
-radius = 341.33
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_25iwj"]
-radius = 494.696
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0bers"]
-radius = 204.198
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_27cb5"]
-radius = 330.074
+radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kiqbd"]
-radius = 375.065
+radius = 0.0
 
 [node name="Level4" instance=ExtResource("1_se1oc")]
 
