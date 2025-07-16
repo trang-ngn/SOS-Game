@@ -12,10 +12,10 @@ radius = 100.0
 script = ExtResource("1_xkuuy")
 
 [node name="Plot" type="Button" parent="."]
-offset_left = -30.0
-offset_top = 2.0
-offset_right = 32.0
-offset_bottom = 56.0
+offset_left = -34.0
+offset_top = 3.0
+offset_right = 34.0
+offset_bottom = 57.0
 text = "0
 0M €"
 
