@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://cinss0t8uy06c"]
+[gd_scene load_steps=56 format=4 uid="uid://cinss0t8uy06c"]
 
 [ext_resource type="PackedScene" uid="uid://8khcuvpd750f" path="res://backup_old/Scenes/LevelTemplates/level_template_updated.tscn" id="1_10pn0"]
 [ext_resource type="Texture2D" uid="uid://bubtpd0hdotqi" path="res://backup_old/Assets/Tileset/Tileset_v3.png" id="2_1jlnc"]
@@ -16,6 +16,8 @@
 [ext_resource type="Script" uid="uid://bhn2knupgw6fc" path="res://backup_old/Scripts/LevelScripts/radius_visual.gd" id="10_peo1u"]
 [ext_resource type="Texture2D" uid="uid://b0bh0dre1prsg" path="res://backup_old/Assets/Buttons/mask.png" id="12_eopvx"]
 [ext_resource type="Shader" uid="uid://dksxj0hluoa8f" path="res://backup_old/Shaders/build_station.gdshader" id="12_yxf76"]
+[ext_resource type="AudioStream" uid="uid://drqmtyfif7ogv" path="res://assets/sfx/construct station.mp3" id="17_uhius"]
+[ext_resource type="AudioStream" uid="uid://cqiog03fw2lop" path="res://assets/sfx/destroy.mp3" id="18_mnagw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqiic"]
 texture = ExtResource("2_1jlnc")
@@ -1852,7 +1854,6 @@ shape = SubResource("CircleShape2D_i7r3y")
 [node name="RadiusVisual" type="Node2D" parent="Stations/S0/Radius" index="1"]
 visible = false
 script = ExtResource("10_peo1u")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S1" type="Node2D" parent="Stations" index="1"]
 position = Vector2(480, 229)
@@ -1908,7 +1909,6 @@ shape = SubResource("CircleShape2D_6oq7e")
 [node name="RadiusVisual" type="Node2D" parent="Stations/S1/Radius" index="1"]
 visible = false
 script = ExtResource("10_peo1u")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S2" type="Node2D" parent="Stations" index="2"]
 position = Vector2(480, -163)
@@ -1964,7 +1964,6 @@ shape = SubResource("CircleShape2D_sogyn")
 [node name="RadiusVisual" type="Node2D" parent="Stations/S2/Radius" index="1"]
 visible = false
 script = ExtResource("10_peo1u")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S3" type="Node2D" parent="Stations" index="3"]
 position = Vector2(-473, -114)
@@ -2020,7 +2019,6 @@ shape = SubResource("CircleShape2D_1djvi")
 [node name="RadiusVisual" type="Node2D" parent="Stations/S3/Radius" index="1"]
 visible = false
 script = ExtResource("10_peo1u")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S4" type="Node2D" parent="Stations" index="4"]
 position = Vector2(8, -3)
@@ -2076,7 +2074,6 @@ shape = SubResource("CircleShape2D_exh1n")
 [node name="RadiusVisual" type="Node2D" parent="Stations/S4/Radius" index="1"]
 visible = false
 script = ExtResource("10_peo1u")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S5" type="Node2D" parent="Stations" index="5"]
 position = Vector2(7, 205)
@@ -2132,7 +2129,6 @@ shape = SubResource("CircleShape2D_0trkh")
 [node name="RadiusVisual" type="Node2D" parent="Stations/S5/Radius" index="1"]
 visible = false
 script = ExtResource("10_peo1u")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S6" type="Node2D" parent="Stations" index="6"]
 position = Vector2(8, -161)
@@ -2188,7 +2184,6 @@ shape = SubResource("CircleShape2D_d0ucp")
 [node name="RadiusVisual" type="Node2D" parent="Stations/S6/Radius" index="1"]
 visible = false
 script = ExtResource("10_peo1u")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S7" type="Node2D" parent="Stations" index="7"]
 position = Vector2(-552, 45)
@@ -2244,7 +2239,6 @@ shape = SubResource("CircleShape2D_gvrap")
 [node name="RadiusVisual" type="Node2D" parent="Stations/S7/Radius" index="1"]
 visible = false
 script = ExtResource("10_peo1u")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="S8" type="Node2D" parent="Stations" index="8"]
 position = Vector2(520, 59)
@@ -2300,7 +2294,6 @@ shape = SubResource("CircleShape2D_gvrap")
 [node name="RadiusVisual" type="Node2D" parent="Stations/S8/Radius" index="1"]
 visible = false
 script = ExtResource("10_peo1u")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="VFX" type="Node2D" parent="." index="4"]
 
@@ -2315,6 +2308,13 @@ trail_enabled = true
 trail_lifetime = 1.0
 trail_sections = 10
 process_material = SubResource("ParticleProcessMaterial_u87on")
+
+[node name="build sfx" type="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource("17_uhius")
+
+[node name="destroy sfx" type="AudioStreamPlayer" parent="." index="8"]
+stream = ExtResource("18_mnagw")
+pitch_scale = 0.5
 
 [connection signal="button_up" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_button_up"]
 [connection signal="mouse_entered" from="Stations/S0/Plot" to="Stations/S0" method="_on_button_mouse_entered"]

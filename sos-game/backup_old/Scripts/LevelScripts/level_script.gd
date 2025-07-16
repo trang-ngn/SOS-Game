@@ -18,6 +18,7 @@ var optimal_solution: Solution = null
 # Camera
 var camera: Camera2D
 
+
 func _ready() -> void:
 	initialize_arrays()
 	connect_signal()
@@ -34,30 +35,37 @@ func _ready() -> void:
 
 func initialize_arrays() -> void:
 	var station_nodes = $Stations.get_children()
+
 	for node in station_nodes:
 		if node is RescueStation:
 			stations.append(node)
-			
+
 	var houses_node = $Houses.get_children()
+
 	for node in houses_node:
 		if node is House:
 			houses.append(node)
 
+
 func connect_signal() -> void:
 	for station in stations:
 		station.connect("stations_updated", Callable(self, "update_picked_stations"))
-	
+
+
 #func _process(delta: float) -> void:
 	#print(stations)
-	
+
+
 func update_houses_covered() -> void: #check if all houses is covered
-	var num : int = 0
+	var num: int = 0
+
 	for house in houses:
-		if (house.is_covered()):
+		if (house.is_covered):
 			num += 1
+
 	num_covered_houses = num
 	all_houses_covered = num_covered_houses == len(houses)
-	
+
 	# Enable Done when all_houses_covered
 	$UI/DoneRestartContainer/CoveragePopUp.all_house_covered = all_houses_covered
 	$UI/DoneRestartContainer/DoneButton.disabled = not all_houses_covered
@@ -72,6 +80,7 @@ func update_picked_stations():
 		if station.is_built():
 			cost += station.cost
 			num += 1
+
 		result.append(station.is_built())
 
 	total_cost = cost
@@ -80,10 +89,12 @@ func update_picked_stations():
 	update_houses_covered()
 	update_statistik()
 
+
 func update_statistik():
 	$UI/StatistikBar.update_number(num_picked_stations, len(stations))
 	$UI/StatistikBar.update_coverage(num_covered_houses, len(houses))
 	$UI/StatistikBar.update_cost(total_cost)
+
 
 func _on_done_button_pressed() -> void:
 	$UI/DoneDialog.visible = true;
@@ -101,21 +112,23 @@ func _on_done_ok_button_pressed() -> void:
 		i.coverage.append(station.get_covered_houses())
 
 	optimal_solution = await Resquest.get_solution(self, i)
+
 	if optimal_solution == null:
 		print("Request failed!")
-		return 
+		return
+
 	print("Request successed!")
-	
+
 	$UI/ResultPopUp/ResultDialog.show_results(optimal_solution, picked_stations, total_cost, all_houses_covered)
 	$UI/ResultPopUp.visible = true
 	$UI/ShowOptButton.visible = true
-	
 
 
 # Show-results	
 func opt_highlight() -> void:
 	for station in stations:
 		var idx = int(station.name)
+
 		if optimal_solution.selected[idx]:
 			print("true:", idx)
 			station.set_optimal(true)
@@ -126,25 +139,27 @@ func opt_highlight() -> void:
 
 # Show-results
 func _on_show_opt_button_pressed() -> void:
-	
-	for s in stations :
+
+	for s in stations:
 		s.built = false
 		s.change_state()
-	
+
 	if optimal_solution != null:
 		opt_highlight() # Show-results
+
 	$UI/ResultPopUp.visible = false
 	$UI/ShowOptButton.visible = false
-	
+
 	# Hide all buttons
 	$UI/StatistikBar.visible = false
 	$UI/HelpButton.visible = false
 	$UI/BackButton.visible = false
 	$UI/DoneRestartContainer.visible = false
 	$UI/HideButton.visible = false
-	
+
 	# Show hideOptButton
 	$UI/HideOptButton.visible = true
+
 
 # Show-results
 func _on_hide_opt_button_pressed() -> void:
@@ -176,9 +191,9 @@ func _on_show_button_pressed() -> void:
 	$UI/HelpButton.visible = true
 	$UI/BackButton.visible = true
 	$UI/DoneRestartContainer.visible = true
-	
 
-func _setup_camera():	
+
+func _setup_camera():
 	# Center camera on display origin
 	camera.position = Vector2.ZERO
-	camera.zoom = Vector2(1, 1) 
+	camera.zoom = Vector2(1, 1)

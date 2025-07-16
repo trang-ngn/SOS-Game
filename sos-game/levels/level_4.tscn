@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://bd57hgbps6n2"]
+[gd_scene load_steps=44 format=4 uid="uid://bd57hgbps6n2"]
 
 [ext_resource type="PackedScene" uid="uid://pfkxxpgv3128" path="res://level_templates/level_template.tscn" id="1_se1oc"]
 [ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://backup_old/Assets/Tileset/Tileset_v2.png" id="2_0fd8o"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://do65c7og20gu3" path="res://assets/tilesets/animated_water_test.png" id="4_ng40l"]
 [ext_resource type="Texture2D" uid="uid://d3wdu1b0u58um" path="res://assets/tilesets/Tileset_v2.png" id="5_04hp8"]
 [ext_resource type="Texture2D" uid="uid://8jekb2tcjxi6" path="res://assets/stations/rescue_station_4.png" id="5_dmnu2"]
+[ext_resource type="AudioStream" uid="uid://drqmtyfif7ogv" path="res://assets/sfx/construct station.mp3" id="11_8hlpj"]
+[ext_resource type="AudioStream" uid="uid://cqiog03fw2lop" path="res://assets/sfx/destroy.mp3" id="12_qhnv2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_08cxd"]
 texture = ExtResource("2_0fd8o")
@@ -1649,6 +1651,13 @@ texture = ExtResource("5_dmnu2")
 
 [node name="Wind" parent="Camera/VFX" index="0"]
 amount = 5
+
+[node name="build sfx" type="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource("11_8hlpj")
+
+[node name="destroy sfx" type="AudioStreamPlayer" parent="." index="8"]
+stream = ExtResource("12_qhnv2")
+pitch_scale = 0.5
 
 [editable path="Stations/S0"]
 [editable path="Stations/S1"]

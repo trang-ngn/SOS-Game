@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dub051pbrlwsx"
+path="res://.godot/imported/construct house.mp3-32fa09ac8b72375c4ce763c679a3750e.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/construct house.mp3"
+dest_files=["res://.godot/imported/construct house.mp3-32fa09ac8b72375c4ce763c679a3750e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

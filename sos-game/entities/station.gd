@@ -95,6 +95,12 @@ func _on_radius_area_body_entered(body: Node) -> void:
 
 func change_state(built_state: bool = not is_built) -> void:
 	is_built = built_state # change state
+
+	if is_built:
+		$"../../build sfx".play()
+	else:
+		$"../../destroy sfx".play()
+
 	_play_animation()
 	_update_house_coverage_count(is_built)
 	emit_signal("stations_updated")
@@ -106,7 +112,7 @@ func _on_plot_button_up() -> void:
 
 func _play_animation()-> void:
 	design.set_instance_shader_parameter("wiggle_strength", 2.4)
-	var total_time:float = 0.25
+	var total_time:float = 1.0
 	var interval: float = 0.05
 	var elapsed: float = 0.0
 

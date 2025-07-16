@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://mrj38kkxfhte"]
+[gd_scene load_steps=42 format=4 uid="uid://mrj38kkxfhte"]
 
 [ext_resource type="PackedScene" uid="uid://pfkxxpgv3128" path="res://level_templates/level_template.tscn" id="1_x1lei"]
 [ext_resource type="PackedScene" uid="uid://c1l4p1cjifyjh" path="res://entities/multi_station.tscn" id="2_dhnqt"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dk62mfcykye61" path="res://entities/house.tscn" id="3_r02ll"]
 [ext_resource type="Texture2D" uid="uid://bp4f24vtvqyxg" path="res://assets/stations/rescue_station_3.png" id="5_26h77"]
 [ext_resource type="Texture2D" uid="uid://8jekb2tcjxi6" path="res://assets/stations/rescue_station_4.png" id="6_1y5xd"]
+[ext_resource type="AudioStream" uid="uid://drqmtyfif7ogv" path="res://assets/sfx/construct station.mp3" id="9_8vr3t"]
+[ext_resource type="AudioStream" uid="uid://cqiog03fw2lop" path="res://assets/sfx/destroy.mp3" id="10_a58qw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8vr3t"]
 texture = ExtResource("2_v5ho1")
@@ -1240,6 +1242,13 @@ text = "22
 
 [node name="RadiusSize" parent="Stations/S16/Radius" index="0"]
 shape = SubResource("CircleShape2D_1a4ff")
+
+[node name="build sfx" type="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource("9_8vr3t")
+
+[node name="destroy sfx" type="AudioStreamPlayer" parent="." index="8"]
+stream = ExtResource("10_a58qw")
+pitch_scale = 0.5
 
 [editable path="Stations/S0"]
 [editable path="Stations/S1"]
