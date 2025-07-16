@@ -971,9 +971,6 @@ cost = 20
 texture_choice = "4"
 radius = 514.0
 
-[node name="UiManager" parent="." index="6"]
-visible = false
-
 [node name="build sfx" type="AudioStreamPlayer" parent="." index="7"]
 stream = ExtResource("7_xn6mk")
 

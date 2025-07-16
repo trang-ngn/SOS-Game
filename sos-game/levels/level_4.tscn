@@ -1021,12 +1021,6 @@ texture = ExtResource("5_04hp8")
 sources/0 = SubResource("TileSetAtlasSource_vru0x")
 sources/1 = SubResource("TileSetAtlasSource_5oqfd")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ng40l"]
-radius = 0.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_04hp8"]
-radius = 0.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_8hlpj"]
 radius = 0.0
 
@@ -1082,6 +1076,12 @@ radius = 0.0
 radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kiqbd"]
+radius = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0l8tu"]
+radius = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nfoyp"]
 radius = 0.0
 
 [node name="Level4" instance=ExtResource("1_se1oc")]
@@ -1295,7 +1295,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S0/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_ng40l")
+shape = SubResource("CircleShape2D_8hlpj")
 
 [node name="Design" parent="Stations/S0" index="2"]
 texture = ExtResource("4_0fd8o")
@@ -1313,7 +1313,7 @@ text = "1
 
 [node name="RadiusSize" parent="Stations/S1/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_04hp8")
+shape = SubResource("CircleShape2D_qhnv2")
 
 [node name="Design" parent="Stations/S1" index="2"]
 texture = ExtResource("4_0fd8o")
@@ -1331,7 +1331,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S2/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_8hlpj")
+shape = SubResource("CircleShape2D_vru0x")
 
 [node name="S4" parent="Stations" index="3" instance=ExtResource("3_hokjj")]
 position = Vector2(379, 827)
@@ -1347,7 +1347,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S4/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_qhnv2")
+shape = SubResource("CircleShape2D_5oqfd")
 
 [node name="Design" parent="Stations/S4" index="2"]
 texture = ExtResource("5_dmnu2")
@@ -1365,7 +1365,7 @@ text = "4
 
 [node name="RadiusSize" parent="Stations/S5/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_vru0x")
+shape = SubResource("CircleShape2D_8mt0c")
 
 [node name="Design" parent="Stations/S5" index="2"]
 texture = ExtResource("4_0fd8o")
@@ -1382,7 +1382,7 @@ text = "5
 
 [node name="RadiusSize" parent="Stations/S6/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_5oqfd")
+shape = SubResource("CircleShape2D_dp2yl")
 
 [node name="S7" parent="Stations" index="6" instance=ExtResource("3_hokjj")]
 position = Vector2(1586, 426)
@@ -1398,7 +1398,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S7/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_8mt0c")
+shape = SubResource("CircleShape2D_a7qdg")
 
 [node name="Design" parent="Stations/S7" index="2"]
 texture = ExtResource("5_dmnu2")
@@ -1417,7 +1417,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S8/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_dp2yl")
+shape = SubResource("CircleShape2D_g1ha7")
 
 [node name="Design" parent="Stations/S8" index="2"]
 texture = ExtResource("5_dmnu2")
@@ -1435,7 +1435,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S9/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_a7qdg")
+shape = SubResource("CircleShape2D_52a3b")
 
 [node name="S10" parent="Stations" index="9" instance=ExtResource("3_hokjj")]
 position = Vector2(674, 895)
@@ -1451,7 +1451,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S10/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_g1ha7")
+shape = SubResource("CircleShape2D_3ff1r")
 
 [node name="Design" parent="Stations/S10" index="2"]
 texture = ExtResource("5_dmnu2")
@@ -1470,7 +1470,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S11/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_52a3b")
+shape = SubResource("CircleShape2D_cmohj")
 
 [node name="Design" parent="Stations/S11" index="2"]
 texture = ExtResource("4_0fd8o")
@@ -1489,7 +1489,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S12/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_3ff1r")
+shape = SubResource("CircleShape2D_bv8dl")
 
 [node name="Design" parent="Stations/S12" index="2"]
 texture = ExtResource("5_dmnu2")
@@ -1508,7 +1508,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S13/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_cmohj")
+shape = SubResource("CircleShape2D_uhmd0")
 
 [node name="Design" parent="Stations/S13" index="2"]
 texture = ExtResource("4_0fd8o")
@@ -1526,7 +1526,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S14/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_bv8dl")
+shape = SubResource("CircleShape2D_8c4vb")
 
 [node name="S15" parent="Stations" index="14" instance=ExtResource("3_hokjj")]
 position = Vector2(755, 273)
@@ -1541,7 +1541,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S15/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_uhmd0")
+shape = SubResource("CircleShape2D_gu0mu")
 
 [node name="S16" parent="Stations" index="15" instance=ExtResource("3_hokjj")]
 position = Vector2(1046, 517)
@@ -1556,7 +1556,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S16/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_8c4vb")
+shape = SubResource("CircleShape2D_25iwj")
 
 [node name="S17" parent="Stations" index="16" instance=ExtResource("3_hokjj")]
 position = Vector2(1046, 517)
@@ -1572,7 +1572,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S17/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_gu0mu")
+shape = SubResource("CircleShape2D_0bers")
 
 [node name="Design" parent="Stations/S17" index="2"]
 texture = ExtResource("4_0fd8o")
@@ -1591,7 +1591,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S18/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_25iwj")
+shape = SubResource("CircleShape2D_27cb5")
 
 [node name="Design" parent="Stations/S18" index="2"]
 texture = ExtResource("5_dmnu2")
@@ -1609,7 +1609,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S19/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_0bers")
+shape = SubResource("CircleShape2D_kiqbd")
 
 [node name="S20" parent="Stations" index="19" instance=ExtResource("3_hokjj")]
 position = Vector2(612, 644)
@@ -1625,7 +1625,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S20/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_27cb5")
+shape = SubResource("CircleShape2D_0l8tu")
 
 [node name="Design" parent="Stations/S20" index="2"]
 texture = ExtResource("4_0fd8o")
@@ -1644,7 +1644,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RadiusSize" parent="Stations/S21/Radius" index="0"]
 visible = true
-shape = SubResource("CircleShape2D_kiqbd")
+shape = SubResource("CircleShape2D_nfoyp")
 
 [node name="Design" parent="Stations/S21" index="2"]
 texture = ExtResource("5_dmnu2")

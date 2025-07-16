@@ -113,7 +113,7 @@ func _on_plot_button_up() -> void:
 func _play_animation()-> void:
 	design.set_instance_shader_parameter("wiggle_strength", 2.4)
 	var total_time:float = 1.0
-	var interval: float = 0.05
+	var interval: float = 0.1
 	var elapsed: float = 0.0
 
 	while elapsed <= total_time:
