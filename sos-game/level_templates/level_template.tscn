@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://pfkxxpgv3128"]
+[gd_scene load_steps=21 format=3 uid="uid://pfkxxpgv3128"]
 
 [ext_resource type="Script" uid="uid://b3tflivwfma6" path="res://level_templates/level_template.gd" id="1_uqthf"]
 [ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://backup_old/Assets/Tileset/Tileset_v2.png" id="2_nhn3r"]

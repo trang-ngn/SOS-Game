@@ -47,17 +47,23 @@ In `/sos-game/scripts/UsageExample.gd`, you will see an example of how to create
 extends Node
 
 func _ready():
-	# Create an instance with custom-type Instance
-	var i: Instance = Instance.new()
-	i.n = 3
-	i.costs = [1, 2, 3, 4]
-	i.coverage = [[0], [1], [2], [0, 1, 2]]
-	
-	# Get solution
-	var solution: Solution = await Resquest.get_solution(self, i) 
-	...
-```
+# Create an instance with custom-type Instance
+    var i: Instance = Instance.new()
+    i.n = 3
+    i.costs = [1, 2, 3, 4]
+    i.coverage = [[0], [1], [2], [0, 1, 2]]
 
-<i>Remember that, every time you want to call the solution on Godot (client), you need to start the server!</i>
+# Get solution
+    var solution: Solution = await Resquest.get_solution(self, i) 
+    ...
+    ```
+
+    <i>Remember that, every time you want to call the solution on Godot (client), you need to start the server!</i>
 
 (It is like if you want to get food from your sleeping mom, you need to awake her first)
+## How to export the game
+### MacOS
+    Editor -> Manage export templates -> Dowload and install
+    Project -> export -> Add -> MacOS -> Bundle Indentifier =sos-game
+    Project -> Project setting ->(search "S3") Rendering -> Textures -> ON (Import S§TC BPTC) -> save and restart
+    Export window -> export project
