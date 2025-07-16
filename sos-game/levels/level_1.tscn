@@ -606,31 +606,31 @@ texture = ExtResource("2_ucll5")
 sources/0 = SubResource("TileSetAtlasSource_a3epv")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gwceb"]
-radius = 206.5
+radius = 332.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l53as"]
-radius = 217.5
+radius = 245.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3sk1a"]
-radius = 206.5
+radius = 259.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_08mmt"]
-radius = 189.5
+radius = 355.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ot28"]
-radius = 248.5
+radius = 433.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aerfg"]
-radius = 181.0
+radius = 282.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nmsli"]
-radius = 220.0
+radius = 405.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_betor"]
-radius = 248.0
+radius = 285.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vjtdm"]
-radius = 694.0
+radius = 700.0
 
 [node name="Level1" instance=ExtResource("1_8rb2g")]
 
@@ -730,7 +730,7 @@ position = Vector2(0, 8)
 [node name="S0" parent="Stations" index="0" instance=ExtResource("5_wixro")]
 position = Vector2(370, 301)
 cost = 4
-radius = 206.5
+radius = 332.5
 
 [node name="Plot" parent="Stations/S0" index="0"]
 text = "0
@@ -743,7 +743,7 @@ shape = SubResource("CircleShape2D_gwceb")
 position = Vector2(450, 201)
 cost = 3
 texture_choice = "4"
-radius = 217.5
+radius = 245.5
 
 [node name="Plot" parent="Stations/S1" index="0"]
 text = "1
@@ -758,7 +758,7 @@ texture = ExtResource("6_gwceb")
 [node name="S2" parent="Stations" index="2" instance=ExtResource("5_wixro")]
 position = Vector2(389, 554)
 cost = 1
-radius = 206.5
+radius = 259.5
 
 [node name="Plot" parent="Stations/S2" index="0"]
 text = "2
@@ -771,7 +771,7 @@ shape = SubResource("CircleShape2D_3sk1a")
 position = Vector2(448, 736)
 cost = 4
 texture_choice = "3"
-radius = 189.5
+radius = 355.0
 
 [node name="Plot" parent="Stations/S3" index="0"]
 text = "3
@@ -786,7 +786,7 @@ texture = ExtResource("7_l53as")
 [node name="S4" parent="Stations" index="4" instance=ExtResource("5_wixro")]
 position = Vector2(374, 853)
 cost = 5
-radius = 248.5
+radius = 433.5
 
 [node name="Plot" parent="Stations/S4" index="0"]
 text = "4
@@ -799,7 +799,7 @@ shape = SubResource("CircleShape2D_5ot28")
 position = Vector2(852, 766)
 cost = 3
 texture_choice = "3"
-radius = 181.0
+radius = 282.0
 
 [node name="Plot" parent="Stations/S5" index="0"]
 text = "5
@@ -814,7 +814,7 @@ texture = ExtResource("7_l53as")
 [node name="S6" parent="Stations" index="6" instance=ExtResource("5_wixro")]
 position = Vector2(1083, 707)
 cost = 4
-radius = 220.0
+radius = 405.5
 
 [node name="Plot" parent="Stations/S6" index="0"]
 text = "6
@@ -827,7 +827,7 @@ shape = SubResource("CircleShape2D_nmsli")
 position = Vector2(1454, 516)
 cost = 3
 texture_choice = "3"
-radius = 248.0
+radius = 285.0
 
 [node name="Plot" parent="Stations/S7" index="0"]
 text = "7
@@ -843,7 +843,7 @@ texture = ExtResource("7_l53as")
 position = Vector2(797, 553)
 cost = 14
 texture_choice = "4"
-radius = 694.0
+radius = 700.0
 
 [node name="Plot" parent="Stations/S8" index="0"]
 text = "8
