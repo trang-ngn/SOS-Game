@@ -211,7 +211,6 @@ shape = SubResource("CircleShape2D_fypjr")
 [node name="RadiusVisual" type="Node2D" parent="Stations/S0/Radius"]
 visible = false
 script = ExtResource("10_0jff0")
-color = Color(0.682341, 0.415773, 0.735881, 0.42)
 
 [node name="Camera" type="CharacterBody2D" parent="."]
 script = ExtResource("7_jr16f")

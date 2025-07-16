@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://drqmtyfif7ogv"
-path="res://.godot/imported/construct station.mp3-acd18faac0c905263cd7a9e9b2fa41e4.mp3str"
+path="res://.godot/imported/construct station.mp3-35f9fdc1a8a055f41b70114470d6a7d6.mp3str"
 
 [deps]
 
-source_file="res://assets/sfx/construct station.mp3"
-dest_files=["res://.godot/imported/construct station.mp3-acd18faac0c905263cd7a9e9b2fa41e4.mp3str"]
+source_file="res://Assets/sfx/construct station.mp3"
+dest_files=["res://.godot/imported/construct station.mp3-35f9fdc1a8a055f41b70114470d6a7d6.mp3str"]
 
 [params]
 

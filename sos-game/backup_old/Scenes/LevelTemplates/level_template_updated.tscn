@@ -227,7 +227,7 @@ scale_curve = SubResource("CurveTexture_ld5sx")
 color_ramp = SubResource("GradientTexture1D_ie85g")
 color_initial_ramp = SubResource("GradientTexture1D_p231p")
 
-[node name="LevelTemplate" type="Node2D"]
+[node name="LevelTemplate2" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_aaap5")
 

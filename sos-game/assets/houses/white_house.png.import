@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqiguguw1o4kq"
-path="res://.godot/imported/white_house.png-db6a95da82f8249abfae571a3a2cb66a.ctex"
+path="res://.godot/imported/white_house.png-fcfd277dcb566535be096af53ee53863.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/houses/white_house.png"
-dest_files=["res://.godot/imported/white_house.png-db6a95da82f8249abfae571a3a2cb66a.ctex"]
+source_file="res://Assets/houses/white_house.png"
+dest_files=["res://.godot/imported/white_house.png-fcfd277dcb566535be096af53ee53863.ctex"]
 
 [params]
 

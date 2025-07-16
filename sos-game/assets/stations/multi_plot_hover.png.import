@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://billjjfcysh6f"
-path="res://.godot/imported/multi_plot_hover.png-ab3b4aaab3c80287dfb4c4cd8e2b431c.ctex"
+path="res://.godot/imported/multi_plot_hover.png-8f40b917d97bf0d756b45a706be6ce1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/stations/multi_plot_hover.png"
-dest_files=["res://.godot/imported/multi_plot_hover.png-ab3b4aaab3c80287dfb4c4cd8e2b431c.ctex"]
+source_file="res://Assets/stations/multi_plot_hover.png"
+dest_files=["res://.godot/imported/multi_plot_hover.png-8f40b917d97bf0d756b45a706be6ce1b.ctex"]
 
 [params]
 

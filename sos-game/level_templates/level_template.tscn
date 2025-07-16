@@ -1,9 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://pfkxxpgv3128"]
+[gd_scene load_steps=19 format=3 uid="uid://pfkxxpgv3128"]
 
 [ext_resource type="Script" uid="uid://b3tflivwfma6" path="res://level_templates/level_template.gd" id="1_uqthf"]
 [ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://backup_old/Assets/Tileset/Tileset_v2.png" id="2_nhn3r"]
 [ext_resource type="Script" uid="uid://co6tw7ujuyidi" path="res://utils/camera/camera_movement.gd" id="3_2bj0a"]
-[ext_resource type="Script" uid="uid://ctwpumf40hhr1" path="res://utils/camera/camera_controller.gd" id="4_ka7xu"]
 [ext_resource type="PackedScene" uid="uid://bui54wc7h83l1" path="res://gui_manager/gui_manager.tscn" id="5_uqthf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_08cxd"]
@@ -232,13 +231,5 @@ trail_enabled = true
 trail_lifetime = 1.0
 trail_sections = 10
 process_material = SubResource("ParticleProcessMaterial_it70i")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-drag_left_margin = 0.0
-drag_top_margin = 0.0
-drag_right_margin = 0.0
-drag_bottom_margin = 0.0
-script = ExtResource("4_ka7xu")
 
 [node name="UiManager" parent="." instance=ExtResource("5_uqthf")]

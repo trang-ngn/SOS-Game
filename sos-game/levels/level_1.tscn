@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://bubtpd0hdotqi" path="res://backup_old/Assets/Tileset/Tileset_v3.png" id="2_ucll5"]
 [ext_resource type="Texture2D" uid="uid://c6a4bexnlpebd" path="res://backup_old/Assets/Tileset/animated_water_test.png" id="3_wixro"]
 [ext_resource type="PackedScene" uid="uid://cyk7v0d36fvs6" path="res://entities/station.tscn" id="5_wixro"]
-[ext_resource type="Texture2D" uid="uid://8jekb2tcjxi6" path="res://assets/stations/rescue_station_4.png" id="6_gwceb"]
-[ext_resource type="Texture2D" uid="uid://bp4f24vtvqyxg" path="res://assets/stations/rescue_station_3.png" id="7_l53as"]
-[ext_resource type="AudioStream" uid="uid://drqmtyfif7ogv" path="res://assets/sfx/construct station.mp3" id="8_l53as"]
-[ext_resource type="AudioStream" uid="uid://cqiog03fw2lop" path="res://assets/sfx/destroy.mp3" id="9_3sk1a"]
+[ext_resource type="Texture2D" uid="uid://8jekb2tcjxi6" path="res://Assets/stations/rescue_station_4.png" id="6_gwceb"]
+[ext_resource type="Texture2D" uid="uid://bp4f24vtvqyxg" path="res://Assets/stations/rescue_station_3.png" id="7_l53as"]
+[ext_resource type="AudioStream" uid="uid://drqmtyfif7ogv" path="res://Assets/sfx/construct station.mp3" id="8_l53as"]
+[ext_resource type="AudioStream" uid="uid://cqiog03fw2lop" path="res://Assets/sfx/destroy.mp3" id="9_3sk1a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ta65"]
 texture = ExtResource("2_ucll5")

@@ -16,7 +16,7 @@ var houses: Array[House] = []
 var optimal_solution: Solution = null
 
 # Camera
-var camera: Camera2D
+#var camera: Camera2D
 
 
 func _ready() -> void:
@@ -29,8 +29,8 @@ func _ready() -> void:
 	$UI/ShowButton.visible = false
 	$UI/DoneRestartContainer/DoneButton.disabled = true
 	#$DoneRestartContainer/CoveragePopUp.visible = false
-	camera = $Camera2D
-	_setup_camera()
+	#camera = $Camera2D
+	#_setup_camera()
 
 
 func initialize_arrays() -> void:
@@ -193,7 +193,7 @@ func _on_show_button_pressed() -> void:
 	$UI/DoneRestartContainer.visible = true
 
 
-func _setup_camera():
+'''func _setup_camera():
 	# Center camera on display origin
 	camera.position = Vector2.ZERO
-	camera.zoom = Vector2(1, 1)
+	camera.zoom = Vector2(1, 1)'''

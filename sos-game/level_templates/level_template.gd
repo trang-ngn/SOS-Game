@@ -1,7 +1,7 @@
 extends Node2D
 class_name LevelTemplate
 
-@onready var camera: Camera2D = $Camera2D
+#@onready var camera: Camera2D = $Camera2D
 @onready var ui: UiManager = $UiManager
 
 # Make sure the houses and station are in order
@@ -22,7 +22,7 @@ func _ready() -> void:
 	_initialize_station_arrays()
 	_connect_signals()
 	update_picked_stations()
-	_setup_camera()
+	#_setup_camera()
 
 
 func _initialize_station_arrays() -> void:
@@ -106,7 +106,7 @@ func _highlight_optimal_stations() -> void:
 			station.change_state(false)
 
 
-func _setup_camera():
+'''func _setup_camera():
 	# Center camera on display origin
 	camera.position = Vector2.ZERO
-	camera.zoom = Vector2(1, 1)
+	camera.zoom = Vector2(1, 1)'''
