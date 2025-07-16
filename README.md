@@ -1,12 +1,16 @@
 # SOS-Game
 
 ## Introduction
+
 TODO
 
 ## Setup Git with Godot
+
 ### Clone the repo
+
 - If you already cloned, try `git pull`, if there are some errors, install vpn and try again.
 - Open terminal:
+
 ```sh
 git clone git@git.rz.tu-bs.de:isf/sep/sep2025/ibr_alg_g1/code.git
 ```
@@ -14,21 +18,24 @@ git clone git@git.rz.tu-bs.de:isf/sep/sep2025/ibr_alg_g1/code.git
 ## Setup Server
 
 Make sure that you installed Python (if not, go to python.org and install it). Check by:
+
 ```sh
-python --version 
+python --version
 pip --version
 ```
 
 ### 1. Install dependencies for server
+
 ```sh
 cd backend/
 pip install -r requirements.txt
 ```
 
 ### 2. Start the development server
+
 ```sh
 # root of the repo
-cd code/ 
+cd code/
 PYTHONPATH=. uvicorn backend.api:app --reload
 
 # or on Linus/MacOs
@@ -41,7 +48,7 @@ fastapi dev
 
 ### 3. Get solution on Godot by sending request to server
 
-In `/sos-game/scripts/UsageExample.gd`, you will see an example of how to create an instance and how to get the solution from your created instance. 
+In `/sos-game/scripts/UsageExample.gd`, you will see an example of how to create an instance and how to get the solution from your created instance.
 
 ```python
 extends Node
@@ -54,16 +61,22 @@ func _ready():
     i.coverage = [[0], [1], [2], [0, 1, 2]]
 
 # Get solution
-    var solution: Solution = await Resquest.get_solution(self, i) 
+    var solution: Solution = await Resquest.get_solution(self, i)
     ...
-    ```
+```
 
-    <i>Remember that, every time you want to call the solution on Godot (client), you need to start the server!</i>
+<i>Remember that, every time you want to call the solution on Godot (client), you need to start the server!</i>
 
 (It is like if you want to get food from your sleeping mom, you need to awake her first)
+
 ## How to export the game
+
 ### MacOS
-    Editor -> Manage export templates -> Dowload and install
-    Project -> export -> Add -> MacOS -> Bundle Indentifier =sos-game
-    Project -> Project setting ->(search "S3") Rendering -> Textures -> ON (Import S§TC BPTC) -> save and restart
-    Export window -> export project
+
+Editor -> Manage export templates -> Dowload and install
+
+Project -> export -> Add -> MacOS -> Bundle Indentifier =sos-game
+
+Project -> Project setting ->(search "S3") Rendering -> Textures -> ON (Import S§TC BPTC) -> save and restart
+
+Export window -> export project
