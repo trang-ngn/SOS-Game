@@ -321,6 +321,7 @@ func set_edit_mode() -> void:
 	cost_radius_ui.visible = true
 	default_object.switch_default(false)
 	object_deleter.switch_deleter(false)
+	cost_input.text = ""
 	cost_input.edit()
 
 
@@ -365,7 +366,12 @@ func on_plot_pressed(station:StationSandbox) -> void:
 	editing_station = station
 	editing_station.plot_pressed = true
 	radius_input.value = station.radius_value
-	cost_input.text = str(station.station_cost)
+
+	if station.station_cost == 0:
+		cost_input.text = ""
+	else:
+		cost_input.text = str(station.station_cost)
+
 	#print(station.name)
 
 
@@ -380,7 +386,6 @@ func place_object() -> void:
 	elif current_object is StationSandbox:
 		stations.append(current_object)
 		current_object.plot_pressed = false
-
 		#if editing_station:
 			#hide_radius(editing_station)
 
@@ -395,10 +400,9 @@ func place_object() -> void:
 	#current_object = null
 	#await get_tree().process_frame
 	#await get_tree().physics_frame
+	switch_mode(MODE.DEFAULT)
 	toggle_stations_radius(false)
 	check_coverage()
-
-	switch_mode(MODE.DEFAULT)
 
 
 func show_cost_input() -> void:
