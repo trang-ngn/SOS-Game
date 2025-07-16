@@ -619,40 +619,40 @@ texture = ExtResource("2_rrhnm")
 sources/0 = SubResource("TileSetAtlasSource_x8nol")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lfnxh"]
-radius = 176.182
+radius = 170.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ofchu"]
-radius = 225.078
+radius = 234.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jq78i"]
-radius = 168.0
+radius = 161.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lsnkt"]
-radius = 248.516
+radius = 234.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wj73x"]
-radius = 256.07
+radius = 315.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0unm6"]
-radius = 218.073
+radius = 206.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q42ux"]
-radius = 216.453
+radius = 209.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wi0qq"]
-radius = 136.015
+radius = 142.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s3q8p"]
-radius = 122.0
+radius = 119.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u4kh1"]
-radius = 280.007
+radius = 290.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_svivd"]
-radius = 252.23
+radius = 245.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yafm2"]
-radius = 160.112
+radius = 161.5
 
 [node name="Level3" instance=ExtResource("1_jlitu")]
 
@@ -747,6 +747,7 @@ position = Vector2(0, 8)
 position = Vector2(824, 400)
 cost = 3
 texture_choice = "3"
+radius = 170.0
 
 [node name="Plot" parent="Stations/S0" index="0"]
 text = "0
@@ -761,6 +762,7 @@ texture = ExtResource("6_lfnxh")
 [node name="S1" parent="Stations" index="1" instance=ExtResource("4_ggx06")]
 position = Vector2(1064, 480)
 cost = 6
+radius = 234.5
 
 [node name="Plot" parent="Stations/S1" index="0"]
 text = "1
@@ -773,6 +775,7 @@ shape = SubResource("CircleShape2D_ofchu")
 position = Vector2(600, 672)
 cost = 3
 texture_choice = "3"
+radius = 161.5
 
 [node name="Plot" parent="Stations/S2" index="0"]
 text = "2
@@ -788,6 +791,7 @@ texture = ExtResource("6_lfnxh")
 position = Vector2(696, 656)
 cost = 5
 texture_choice = "4"
+radius = 234.5
 
 [node name="Plot" parent="Stations/S3" index="0"]
 text = "3
@@ -802,6 +806,7 @@ texture = ExtResource("7_ofchu")
 [node name="S4" parent="Stations" index="4" instance=ExtResource("4_ggx06")]
 position = Vector2(912, 608)
 cost = 8
+radius = 315.5
 
 [node name="Plot" parent="Stations/S4" index="0"]
 text = "4
@@ -813,6 +818,7 @@ shape = SubResource("CircleShape2D_wj73x")
 [node name="S5" parent="Stations" index="5" instance=ExtResource("4_ggx06")]
 position = Vector2(952, 720)
 cost = 4
+radius = 206.5
 
 [node name="Plot" parent="Stations/S5" index="0"]
 text = "5
@@ -824,6 +830,7 @@ shape = SubResource("CircleShape2D_0unm6")
 [node name="S6" parent="Stations" index="6" instance=ExtResource("4_ggx06")]
 position = Vector2(1208, 720)
 cost = 6
+radius = 209.5
 
 [node name="Plot" parent="Stations/S6" index="0"]
 text = "6
@@ -835,6 +842,7 @@ shape = SubResource("CircleShape2D_q42ux")
 [node name="S7" parent="Stations" index="7" instance=ExtResource("4_ggx06")]
 position = Vector2(1320, 760)
 cost = 3
+radius = 142.0
 
 [node name="Plot" parent="Stations/S7" index="0"]
 text = "7
@@ -846,6 +854,7 @@ shape = SubResource("CircleShape2D_wi0qq")
 [node name="S8" parent="Stations" index="8" instance=ExtResource("4_ggx06")]
 position = Vector2(1400, 536)
 cost = 2
+radius = 119.5
 
 [node name="Plot" parent="Stations/S8" index="0"]
 text = "8
@@ -857,6 +866,7 @@ shape = SubResource("CircleShape2D_s3q8p")
 [node name="S9" parent="Stations" index="9" instance=ExtResource("4_ggx06")]
 position = Vector2(1232, 560)
 cost = 13
+radius = 290.5
 
 [node name="Plot" parent="Stations/S9" index="0"]
 text = "9
@@ -868,6 +878,7 @@ shape = SubResource("CircleShape2D_u4kh1")
 [node name="S10" parent="Stations" index="10" instance=ExtResource("4_ggx06")]
 position = Vector2(1240, 432)
 cost = 5
+radius = 245.5
 
 [node name="Plot" parent="Stations/S10" index="0"]
 text = "10
@@ -879,6 +890,7 @@ shape = SubResource("CircleShape2D_svivd")
 [node name="S11" parent="Stations" index="11" instance=ExtResource("4_ggx06")]
 position = Vector2(1168, 344)
 cost = 3
+radius = 161.5
 
 [node name="Plot" parent="Stations/S11" index="0"]
 text = "11

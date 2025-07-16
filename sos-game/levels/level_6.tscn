@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bbl6mtw2tyt3"]
+[gd_scene load_steps=14 format=4 uid="uid://bbl6mtw2tyt3"]
 
 [ext_resource type="PackedScene" uid="uid://pfkxxpgv3128" path="res://level_templates/level_template.tscn" id="1_udrxo"]
 [ext_resource type="PackedScene" uid="uid://c1l4p1cjifyjh" path="res://entities/multi_station.tscn" id="2_pltw0"]
@@ -6,8 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cyk7v0d36fvs6" path="res://entities/station.tscn" id="2_vflpa"]
 [ext_resource type="Texture2D" uid="uid://do65c7og20gu3" path="res://assets/tilesets/animated_water_test.png" id="3_fpvgn"]
 [ext_resource type="PackedScene" uid="uid://dk62mfcykye61" path="res://entities/house.tscn" id="3_qskt5"]
-[ext_resource type="AudioStream" uid="uid://drqmtyfif7ogv" path="res://assets/sfx/construct station.mp3" id="7_xn6mk"]
-[ext_resource type="AudioStream" uid="uid://cqiog03fw2lop" path="res://assets/sfx/destroy.mp3" id="8_3t5n2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xn6mk"]
 texture = ExtResource("2_rqsg2")
@@ -970,10 +968,3 @@ position = Vector2(1280, 832)
 cost = 20
 texture_choice = "4"
 radius = 514.0
-
-[node name="build sfx" type="AudioStreamPlayer" parent="." index="7"]
-stream = ExtResource("7_xn6mk")
-
-[node name="destroy sfx" type="AudioStreamPlayer" parent="." index="8"]
-stream = ExtResource("8_3t5n2")
-pitch_scale = 0.5

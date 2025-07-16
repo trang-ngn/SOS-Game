@@ -1,14 +1,12 @@
-[gd_scene load_steps=26 format=4 uid="uid://xevvpwpugnd"]
+[gd_scene load_steps=24 format=4 uid="uid://xevvpwpugnd"]
 
 [ext_resource type="PackedScene" uid="uid://pfkxxpgv3128" path="res://level_templates/level_template.tscn" id="1_8rb2g"]
 [ext_resource type="PackedScene" uid="uid://dk62mfcykye61" path="res://entities/house.tscn" id="2_rdpme"]
 [ext_resource type="Texture2D" uid="uid://bubtpd0hdotqi" path="res://backup_old/Assets/Tileset/Tileset_v3.png" id="2_ucll5"]
 [ext_resource type="Texture2D" uid="uid://c6a4bexnlpebd" path="res://backup_old/Assets/Tileset/animated_water_test.png" id="3_wixro"]
 [ext_resource type="PackedScene" uid="uid://cyk7v0d36fvs6" path="res://entities/station.tscn" id="5_wixro"]
-[ext_resource type="Texture2D" uid="uid://8jekb2tcjxi6" path="res://Assets/stations/rescue_station_4.png" id="6_gwceb"]
-[ext_resource type="Texture2D" uid="uid://bp4f24vtvqyxg" path="res://Assets/stations/rescue_station_3.png" id="7_l53as"]
-[ext_resource type="AudioStream" uid="uid://drqmtyfif7ogv" path="res://Assets/sfx/construct station.mp3" id="8_l53as"]
-[ext_resource type="AudioStream" uid="uid://cqiog03fw2lop" path="res://Assets/sfx/destroy.mp3" id="9_3sk1a"]
+[ext_resource type="Texture2D" uid="uid://8jekb2tcjxi6" path="res://assets/stations/rescue_station_4.png" id="6_gwceb"]
+[ext_resource type="Texture2D" uid="uid://bp4f24vtvqyxg" path="res://assets/stations/rescue_station_3.png" id="7_l53as"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ta65"]
 texture = ExtResource("2_ucll5")
@@ -607,32 +605,32 @@ texture = ExtResource("2_ucll5")
 [sub_resource type="TileSet" id="TileSet_r0lp5"]
 sources/0 = SubResource("TileSetAtlasSource_a3epv")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gwceb"]
+radius = 206.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l53as"]
+radius = 217.5
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_3sk1a"]
-radius = 100.0
+radius = 206.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_08mmt"]
-radius = 100.0
+radius = 189.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ot28"]
-radius = 100.0
+radius = 248.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aerfg"]
-radius = 100.0
+radius = 181.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nmsli"]
-radius = 100.0
+radius = 220.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_betor"]
-radius = 100.0
+radius = 248.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vjtdm"]
-radius = 100.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_bgw3c"]
-radius = 100.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_lrvbd"]
-radius = 100.0
+radius = 694.0
 
 [node name="Level1" instance=ExtResource("1_8rb2g")]
 
@@ -732,25 +730,27 @@ position = Vector2(0, 8)
 [node name="S0" parent="Stations" index="0" instance=ExtResource("5_wixro")]
 position = Vector2(370, 301)
 cost = 4
+radius = 206.5
 
 [node name="Plot" parent="Stations/S0" index="0"]
 text = "0
 4M €"
 
 [node name="RadiusSize" parent="Stations/S0/Radius" index="0"]
-shape = SubResource("CircleShape2D_3sk1a")
+shape = SubResource("CircleShape2D_gwceb")
 
 [node name="S1" parent="Stations" index="1" instance=ExtResource("5_wixro")]
 position = Vector2(450, 201)
 cost = 3
 texture_choice = "4"
+radius = 217.5
 
 [node name="Plot" parent="Stations/S1" index="0"]
 text = "1
 3M €"
 
 [node name="RadiusSize" parent="Stations/S1/Radius" index="0"]
-shape = SubResource("CircleShape2D_08mmt")
+shape = SubResource("CircleShape2D_l53as")
 
 [node name="Design" parent="Stations/S1" index="2"]
 texture = ExtResource("6_gwceb")
@@ -758,25 +758,27 @@ texture = ExtResource("6_gwceb")
 [node name="S2" parent="Stations" index="2" instance=ExtResource("5_wixro")]
 position = Vector2(389, 554)
 cost = 1
+radius = 206.5
 
 [node name="Plot" parent="Stations/S2" index="0"]
 text = "2
 1M €"
 
 [node name="RadiusSize" parent="Stations/S2/Radius" index="0"]
-shape = SubResource("CircleShape2D_5ot28")
+shape = SubResource("CircleShape2D_3sk1a")
 
 [node name="S3" parent="Stations" index="3" instance=ExtResource("5_wixro")]
 position = Vector2(448, 736)
 cost = 4
 texture_choice = "3"
+radius = 189.5
 
 [node name="Plot" parent="Stations/S3" index="0"]
 text = "3
 4M €"
 
 [node name="RadiusSize" parent="Stations/S3/Radius" index="0"]
-shape = SubResource("CircleShape2D_aerfg")
+shape = SubResource("CircleShape2D_08mmt")
 
 [node name="Design" parent="Stations/S3" index="2"]
 texture = ExtResource("7_l53as")
@@ -784,25 +786,27 @@ texture = ExtResource("7_l53as")
 [node name="S4" parent="Stations" index="4" instance=ExtResource("5_wixro")]
 position = Vector2(374, 853)
 cost = 5
+radius = 248.5
 
 [node name="Plot" parent="Stations/S4" index="0"]
 text = "4
 5M €"
 
 [node name="RadiusSize" parent="Stations/S4/Radius" index="0"]
-shape = SubResource("CircleShape2D_nmsli")
+shape = SubResource("CircleShape2D_5ot28")
 
 [node name="S5" parent="Stations" index="5" instance=ExtResource("5_wixro")]
 position = Vector2(852, 766)
 cost = 3
 texture_choice = "3"
+radius = 181.0
 
 [node name="Plot" parent="Stations/S5" index="0"]
 text = "5
 3M €"
 
 [node name="RadiusSize" parent="Stations/S5/Radius" index="0"]
-shape = SubResource("CircleShape2D_betor")
+shape = SubResource("CircleShape2D_aerfg")
 
 [node name="Design" parent="Stations/S5" index="2"]
 texture = ExtResource("7_l53as")
@@ -810,25 +814,27 @@ texture = ExtResource("7_l53as")
 [node name="S6" parent="Stations" index="6" instance=ExtResource("5_wixro")]
 position = Vector2(1083, 707)
 cost = 4
+radius = 220.0
 
 [node name="Plot" parent="Stations/S6" index="0"]
 text = "6
 4M €"
 
 [node name="RadiusSize" parent="Stations/S6/Radius" index="0"]
-shape = SubResource("CircleShape2D_vjtdm")
+shape = SubResource("CircleShape2D_nmsli")
 
 [node name="S7" parent="Stations" index="7" instance=ExtResource("5_wixro")]
 position = Vector2(1454, 516)
 cost = 3
 texture_choice = "3"
+radius = 248.0
 
 [node name="Plot" parent="Stations/S7" index="0"]
 text = "7
 3M €"
 
 [node name="RadiusSize" parent="Stations/S7/Radius" index="0"]
-shape = SubResource("CircleShape2D_bgw3c")
+shape = SubResource("CircleShape2D_betor")
 
 [node name="Design" parent="Stations/S7" index="2"]
 texture = ExtResource("7_l53as")
@@ -837,23 +843,17 @@ texture = ExtResource("7_l53as")
 position = Vector2(797, 553)
 cost = 14
 texture_choice = "4"
+radius = 694.0
 
 [node name="Plot" parent="Stations/S8" index="0"]
 text = "8
 14M €"
 
 [node name="RadiusSize" parent="Stations/S8/Radius" index="0"]
-shape = SubResource("CircleShape2D_lrvbd")
+shape = SubResource("CircleShape2D_vjtdm")
 
 [node name="Design" parent="Stations/S8" index="2"]
 texture = ExtResource("6_gwceb")
-
-[node name="build sfx" type="AudioStreamPlayer" parent="." index="6"]
-stream = ExtResource("8_l53as")
-
-[node name="destroy sfx" type="AudioStreamPlayer" parent="." index="7"]
-stream = ExtResource("9_3sk1a")
-pitch_scale = 0.5
 
 [editable path="Stations/S0"]
 [editable path="Stations/S1"]

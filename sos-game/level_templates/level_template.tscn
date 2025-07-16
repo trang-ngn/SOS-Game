@@ -1,9 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://pfkxxpgv3128"]
+[gd_scene load_steps=22 format=3 uid="uid://pfkxxpgv3128"]
 
 [ext_resource type="Script" uid="uid://b3tflivwfma6" path="res://level_templates/level_template.gd" id="1_uqthf"]
 [ext_resource type="Texture2D" uid="uid://7i7wa6wouk24" path="res://backup_old/Assets/Tileset/Tileset_v2.png" id="2_nhn3r"]
 [ext_resource type="Script" uid="uid://co6tw7ujuyidi" path="res://utils/camera/camera_movement.gd" id="3_2bj0a"]
 [ext_resource type="PackedScene" uid="uid://bui54wc7h83l1" path="res://gui_manager/gui_manager.tscn" id="5_uqthf"]
+[ext_resource type="AudioStream" uid="uid://drqmtyfif7ogv" path="res://assets/sfx/construct station.mp3" id="6_dcfcr"]
+[ext_resource type="AudioStream" uid="uid://cqiog03fw2lop" path="res://assets/sfx/destroy.mp3" id="7_q73k6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_08cxd"]
 texture = ExtResource("2_nhn3r")
@@ -233,3 +235,10 @@ trail_sections = 10
 process_material = SubResource("ParticleProcessMaterial_it70i")
 
 [node name="UiManager" parent="." instance=ExtResource("5_uqthf")]
+
+[node name="build sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_dcfcr")
+
+[node name="destroy sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_q73k6")
+pitch_scale = 0.5

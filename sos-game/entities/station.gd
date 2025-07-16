@@ -47,7 +47,8 @@ var BUILD_STATION_SHADER := load("uid://p7q2vflbay8j")
 @onready var radius_area: Area2D = $Radius
 @onready var radius_size: CollisionShape2D = $Radius/RadiusSize
 @onready var radius_visual: Node2D = $Radius/RadiusVisual
-
+@onready var build_sound : AudioStreamPlayer = $"../../build sfx"
+@onready var destroy_sound: AudioStreamPlayer = $"../../destroy sfx"
 # State
 var id: int
 var covered_houses: Array[House] = []
@@ -97,9 +98,9 @@ func change_state(built_state: bool = not is_built) -> void:
 	is_built = built_state # change state
 
 	if is_built:
-		$"../../build sfx".play()
+		build_sound.play()
 	else:
-		$"../../destroy sfx".play()
+		destroy_sound.play()
 
 	_play_animation()
 	_update_house_coverage_count(is_built)

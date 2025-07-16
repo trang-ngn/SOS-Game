@@ -24,7 +24,6 @@ texture_filter = 1
 position = Vector2(0, 2)
 
 [node name="RadiusSize" type="CollisionShape2D" parent="Radius"]
-visible = false
 shape = SubResource("CircleShape2D_35frx")
 debug_color = Color(0.682353, 0.415686, 0.737255, 0.180392)
 
