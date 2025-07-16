@@ -154,14 +154,13 @@ func toggle_radius_visibility(value: bool):
 
 
 func _on_plot_pressed() -> void:
-	#var sandbox = get_tree().get_current_scene()
-##	sandbox.unedit_existing_station()
+	#	sandbox.unedit_existing_station()
+
 	#if plot_pressed == false:
 		#sandbox.edit_existing_station(self)
 		##plot_pressed = true
 
 	emit_signal("edit_station",self)
-	#else:
 
 
 func _on_plot_mouse_entered() -> void:

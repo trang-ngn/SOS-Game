@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://vq3hxgbojsbq"]
 
 [ext_resource type="Texture2D" uid="uid://db0irs6w4evab" path="res://backup_old/Assets/Background/Background50%.png" id="1_3bxa3"]
-[ext_resource type="Texture2D" uid="uid://c1xuybe8d22do" path="res://backup_old/Assets/Buttons/Button-Start.png" id="2_5ogh5"]
+[ext_resource type="Texture2D" uid="uid://dqmbldmqppypk" path="res://assets/buttons/Button-Start.png" id="2_8cu6m"]
 [ext_resource type="Script" uid="uid://djwlskhntoyi4" path="res://backup_old/Scripts/Buttons/button_start.gd" id="3_lb6bl"]
 [ext_resource type="Texture2D" uid="uid://suvrfljtlo33" path="res://backup_old/Assets/Buttons/Button-Sandbox.png" id="4_rk01k"]
 [ext_resource type="Script" uid="uid://dhspi27r0u7kl" path="res://backup_old/Scripts/Buttons/button_sandbox.gd" id="5_o3wvq"]
@@ -23,7 +23,7 @@ offset_left = 660.0
 offset_top = 372.0
 offset_right = 1268.0
 offset_bottom = 524.0
-texture_normal = ExtResource("2_5ogh5")
+texture_normal = ExtResource("2_8cu6m")
 script = ExtResource("3_lb6bl")
 
 [node name="SandboxButton" type="TextureButton" parent="Buttons"]

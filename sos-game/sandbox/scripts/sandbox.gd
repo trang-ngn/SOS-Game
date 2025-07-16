@@ -321,6 +321,7 @@ func set_edit_mode() -> void:
 	cost_radius_ui.visible = true
 	default_object.switch_default(false)
 	object_deleter.switch_deleter(false)
+	cost_input.edit()
 
 
 func set_off_edit_mode() -> void:
@@ -400,18 +401,18 @@ func place_object() -> void:
 	switch_mode(MODE.DEFAULT)
 
 
-#func show_cost_input() -> void:
-	##shows radius while editing
-	#if editing_station:
-		#editing_station.show_radius()
-#
-	#cost_input.text = ""
-	##radius_input.text = ""
-	##radius_input.editable = false
-	##radius_input.visible = false
-	##cost_radius_ui.visible = false
-	#cost_radius_ui.visible = true
-	#cost_input.grab_focus()
+func show_cost_input() -> void:
+	#shows radius while editing
+	if editing_station:
+		editing_station.show_radius()
+
+	cost_input.text = ""
+	radius_input.text = ""
+	radius_input.editable = false
+	radius_input.visible = false
+	cost_radius_ui.visible = false
+	cost_radius_ui.visible = true
+	cost_input.grab_focus()
 
 
 func delete_object() -> void:
