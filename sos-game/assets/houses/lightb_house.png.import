@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ca18pjm6f2lqn"
-path="res://.godot/imported/lightb_house.png-5d392737d611b72c77f2783681af9417.ctex"
+path="res://.godot/imported/lightb_house.png-d23a56fe52aeed7a0da70ffa7228f1d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/houses/lightb_house.png"
-dest_files=["res://.godot/imported/lightb_house.png-5d392737d611b72c77f2783681af9417.ctex"]
+source_file="res://assets/houses/lightb_house.png"
+dest_files=["res://.godot/imported/lightb_house.png-d23a56fe52aeed7a0da70ffa7228f1d3.ctex"]
 
 [params]
 

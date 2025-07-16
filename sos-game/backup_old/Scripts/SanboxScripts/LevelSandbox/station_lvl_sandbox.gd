@@ -63,6 +63,12 @@ func set_optimal(state: bool) -> void:
 
 
 func change_state() -> void:
+	if built:
+		print("hallo")
+		$"build sfx".play()
+	else:
+		$"destroy sfx".play()
+
 	play_animation()
 	cover_houses(built)
 	emit_signal("stations_updated")
@@ -84,8 +90,8 @@ func cover_houses(value: bool)->void:
 func play_animation()-> void:
 
 	designs[design_index].set_instance_shader_parameter("wiggle_strength", 2.4)
-	var total_time:float = 0.4
-	var interval: float = 0.05
+	var total_time:float = 1
+	var interval: float = 0.1
 	var elapsed: float = 0.0
 	var new_progress: float = 0.0
 
@@ -117,10 +123,7 @@ func is_built()->bool:
 
 
 func _on_plot_button_up() -> void:
-	if (!built):
-		built = true
-	else:
-		built = false
+	built = !built
 
 	change_state()
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dub051pbrlwsx"
-path="res://.godot/imported/construct house.mp3-c00309934e746aa52dbd8793c5719d36.mp3str"
+path="res://.godot/imported/construct house.mp3-32fa09ac8b72375c4ce763c679a3750e.mp3str"
 
 [deps]
 
-source_file="res://Assets/sfx/construct house.mp3"
-dest_files=["res://.godot/imported/construct house.mp3-c00309934e746aa52dbd8793c5719d36.mp3str"]
+source_file="res://assets/sfx/construct house.mp3"
+dest_files=["res://.godot/imported/construct house.mp3-32fa09ac8b72375c4ce763c679a3750e.mp3str"]
 
 [params]
 

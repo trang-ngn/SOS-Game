@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpbbn5en1lnsk"
-path="res://.godot/imported/hide_button.png-6a8c3f189fef36bea5d05ba01cf1cbae.ctex"
+path="res://.godot/imported/hide_button.png-39e117388b08bbbb029dba274bf9307b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/buttons/hide_button.png"
-dest_files=["res://.godot/imported/hide_button.png-6a8c3f189fef36bea5d05ba01cf1cbae.ctex"]
+source_file="res://assets/buttons/hide_button.png"
+dest_files=["res://.godot/imported/hide_button.png-39e117388b08bbbb029dba274bf9307b.ctex"]
 
 [params]
 

@@ -61,6 +61,11 @@ func set_optimal(state: bool) -> void:
 
 
 func change_state() -> void:
+	if built:
+		$"build sfx".play()
+	else:
+		$"destroy sfx".play()
+
 	play_animation()
 	cover_houses(built)
 	emit_signal("stations_updated")

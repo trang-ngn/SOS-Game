@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://r5f4tkq4fcfs"
-path="res://.godot/imported/black_house(dont use).png-722f692081df202ce9d6e209514b659d.ctex"
+path="res://.godot/imported/black_house(dont use).png-d7bd11d269c9be459460ae6c0e8325af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/houses/black_house(dont use).png"
-dest_files=["res://.godot/imported/black_house(dont use).png-722f692081df202ce9d6e209514b659d.ctex"]
+source_file="res://assets/houses/black_house(dont use).png"
+dest_files=["res://.godot/imported/black_house(dont use).png-d7bd11d269c9be459460ae6c0e8325af.ctex"]
 
 [params]
 

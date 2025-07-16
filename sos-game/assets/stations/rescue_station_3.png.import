@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bp4f24vtvqyxg"
-path="res://.godot/imported/rescue_station_3.png-dd30a37e71f568f7afb2946ee08ab33b.ctex"
+path="res://.godot/imported/rescue_station_3.png-1826102723d783b9b02b9ede9dbf7ad2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/stations/rescue_station_3.png"
-dest_files=["res://.godot/imported/rescue_station_3.png-dd30a37e71f568f7afb2946ee08ab33b.ctex"]
+source_file="res://assets/stations/rescue_station_3.png"
+dest_files=["res://.godot/imported/rescue_station_3.png-1826102723d783b9b02b9ede9dbf7ad2.ctex"]
 
 [params]
 
