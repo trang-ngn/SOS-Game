@@ -1,8 +1,11 @@
 # SOS-Game
 
 ## Introduction
+🔥 This project was introduced by the Algorithmik Institute of TU Braunschweig (Softwareentwicklung 2025).
 
-TODO
+💠 The goal of the game is to find the optimal solution for building rescue stations, ensuring that the budget remains minimal while guaranteeing that citizens can reach a rescue station.
+
+<img width="721" height="405" alt="image" src="https://github.com/user-attachments/assets/b116104c-b196-4ae3-b53a-7aa9a43dd156" />
 
 ## Setup Git with Godot
 
